@@ -1,0 +1,39 @@
+{
+  "experiment": "H23_pmc_extraction",
+  "n_searched": 200,
+  "n_articles_with_pvalues": 28,
+  "n_failed": 1,
+  "median_pvalues_per_article": 9.5,
+  "mean_frac_significant": 0.5246,
+  "mean_frac_just_below_05": 0.0211,
+  "n_if_flagged": 3,
+  "frac_if_flagged": 0.1071,
+  "top5_anomalous": [
+    {
+      "pmc_id": "13007106",
+      "n_pvalues": 3,
+      "anomaly_score": 0.087
+    },
+    {
+      "pmc_id": "13013445",
+      "n_pvalues": 8,
+      "anomaly_score": 0.0743
+    },
+    {
+      "pmc_id": "12987491",
+      "n_pvalues": 44,
+      "anomaly_score": 0.003
+    },
+    {
+      "pmc_id": "12952321",
+      "n_pvalues": 65,
+      "anomaly_score": -0.0013
+    },
+    {
+      "pmc_id": "12972540",
+      "n_pvalues": 3,
+      "anomaly_score": -0.0078
+    }
+  ],
+  "elapsed_s": 564.9
+}

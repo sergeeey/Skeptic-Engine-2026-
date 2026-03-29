@@ -1,0 +1,198 @@
+{
+  "experiment": "H24+H21_combined",
+  "results": [
+    {
+      "method": "resample",
+      "if_standalone_auc": 0.2762,
+      "benford": {
+        "label": "resample_benford",
+        "RF": {
+          "auc": 0.8637,
+          "ap": 0.8438,
+          "f1": 0.7876,
+          "ba": 0.7778
+        },
+        "LR": {
+          "auc": 0.6127,
+          "ap": 0.5267,
+          "f1": 0.6425,
+          "ba": 0.6074
+        }
+      },
+      "cell_features": {
+        "label": "resample_cell_features",
+        "RF": {
+          "auc": 0.956,
+          "ap": 0.926,
+          "f1": 0.9143,
+          "ba": 0.912
+        },
+        "LR": {
+          "auc": 0.8069,
+          "ap": 0.7891,
+          "f1": 0.7512,
+          "ba": 0.7222
+        }
+      },
+      "isolation_forest": {
+        "label": "resample_isolation_forest",
+        "RF": {
+          "auc": 0.6391,
+          "ap": 0.6273,
+          "f1": 0.5808,
+          "ba": 0.575
+        },
+        "LR": {
+          "auc": 0.7137,
+          "ap": 0.7089,
+          "f1": 0.6886,
+          "ba": 0.6398
+        }
+      },
+      "fusion": {
+        "label": "resample_fusion",
+        "RF": {
+          "auc": 0.9776,
+          "ap": 0.9701,
+          "f1": 0.9412,
+          "ba": 0.9398
+        },
+        "LR": {
+          "auc": 0.8389,
+          "ap": 0.7965,
+          "f1": 0.7885,
+          "ba": 0.7815
+        }
+      }
+    },
+    {
+      "method": "noise",
+      "if_standalone_auc": 0.9974,
+      "benford": {
+        "label": "noise_benford",
+        "RF": {
+          "auc": 1.0,
+          "ap": 1.0,
+          "f1": 1.0,
+          "ba": 1.0
+        },
+        "LR": {
+          "auc": 0.9995,
+          "ap": 0.9995,
+          "f1": 0.9954,
+          "ba": 0.9954
+        }
+      },
+      "cell_features": {
+        "label": "noise_cell_features",
+        "RF": {
+          "auc": 1.0,
+          "ap": 1.0,
+          "f1": 1.0,
+          "ba": 1.0
+        },
+        "LR": {
+          "auc": 1.0,
+          "ap": 1.0,
+          "f1": 1.0,
+          "ba": 1.0
+        }
+      },
+      "isolation_forest": {
+        "label": "noise_isolation_forest",
+        "RF": {
+          "auc": 1.0,
+          "ap": 1.0,
+          "f1": 0.9981,
+          "ba": 0.9981
+        },
+        "LR": {
+          "auc": 0.9963,
+          "ap": 0.9807,
+          "f1": 0.9872,
+          "ba": 0.987
+        }
+      },
+      "fusion": {
+        "label": "noise_fusion",
+        "RF": {
+          "auc": 1.0,
+          "ap": 1.0,
+          "f1": 1.0,
+          "ba": 1.0
+        },
+        "LR": {
+          "auc": 1.0,
+          "ap": 1.0,
+          "f1": 1.0,
+          "ba": 1.0
+        }
+      }
+    },
+    {
+      "method": "random_nb",
+      "if_standalone_auc": 0.7485,
+      "benford": {
+        "label": "random_nb_benford",
+        "RF": {
+          "auc": 0.9889,
+          "ap": 0.9865,
+          "f1": 0.9518,
+          "ba": 0.9509
+        },
+        "LR": {
+          "auc": 0.9395,
+          "ap": 0.8991,
+          "f1": 0.9063,
+          "ba": 0.8991
+        }
+      },
+      "cell_features": {
+        "label": "random_nb_cell_features",
+        "RF": {
+          "auc": 0.9967,
+          "ap": 0.9961,
+          "f1": 0.9789,
+          "ba": 0.9787
+        },
+        "LR": {
+          "auc": 0.9714,
+          "ap": 0.9492,
+          "f1": 0.938,
+          "ba": 0.9361
+        }
+      },
+      "isolation_forest": {
+        "label": "random_nb_isolation_forest",
+        "RF": {
+          "auc": 0.8431,
+          "ap": 0.7809,
+          "f1": 0.7579,
+          "ba": 0.7574
+        },
+        "LR": {
+          "auc": 0.749,
+          "ap": 0.6093,
+          "f1": 0.7143,
+          "ba": 0.7111
+        }
+      },
+      "fusion": {
+        "label": "random_nb_fusion",
+        "RF": {
+          "auc": 0.9993,
+          "ap": 0.9993,
+          "f1": 0.9863,
+          "ba": 0.9861
+        },
+        "LR": {
+          "auc": 0.9857,
+          "ap": 0.9792,
+          "f1": 0.9446,
+          "ba": 0.9426
+        }
+      }
+    }
+  ],
+  "elapsed_s": 22.0
+}

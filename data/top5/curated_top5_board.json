@@ -1,0 +1,42 @@
+[
+  {
+    "rank": 1,
+    "id": "H10",
+    "title": "Graph-based benchmarking for MOF synthesizability and stability proxies",
+    "status": "mvp_lead",
+    "rationale": "Still the lead because execution is far ahead of the rest of the board: mapped data, fixed split, descriptor baselines, graph artifact, graph-path baselines, true MPNN attempts, and a descriptor-plus-graph hybrid comparison now all exist. Family-specific skeptic did not produce a strong downgrade, but graph advantage is materially weakened because descriptor_hgb_v1 still leads on the primary metric even after graph and hybrid follow-ups.",
+    "next_action": "Freeze H10 as a benchmark-comparison result and shift the next exploratory push to H4 dataset verification unless a sharply justified new graph hypothesis appears."
+  },
+  {
+    "rank": 2,
+    "id": "H4",
+    "title": "TDA for early detection of resistant-state transitions in cancer single-cell data",
+    "status": "high_upside_pending_dataset",
+    "rationale": "Family-specific skeptic did not find a strong downgrade, so H4 stays high-upside. The dataset situation is now materially better: there is a fast open resistance-state benchmark route and a stronger patient-derived follow-up route. The first executable path is now clear enough to move from scouting into scaffold planning.",
+    "next_action": "Build the first H4 benchmark scaffold around GSE164897, while keeping GSE120575 / scCT-DB as patient-derived phase-2 routes."
+  },
+  {
+    "rank": 3,
+    "id": "H20",
+    "title": "Early-warning PH predictor of SOC electrode degradation trajectories",
+    "status": "narrowed_candidate",
+    "rationale": "H20 survives as a narrow longitudinal early-warning candidate. The family-specific skeptic pass did not add a new downgrade, but the earlier verification evidence still says the broad SOC+PH framing is already crowded.",
+    "next_action": "Test whether a longitudinal early-warning gap actually remains open on a defensible time-separated benchmark."
+  },
+  {
+    "rank": 4,
+    "id": "H1",
+    "title": "Koopman-style slow-mode analysis for LLPS-relevant IDP trajectory data",
+    "status": "blocked_on_data_needs_review",
+    "rationale": "Family-specific skeptic produced a real downgrade here. H1 is still conceptually interesting, but it now has both a data-route problem and stronger evidence that adjacent LLPS tooling is already well developed.",
+    "next_action": "Search for open LLPS trajectory datasets or reusable condensate simulations."
+  },
+  {
+    "rank": 5,
+    "id": "H2",
+    "title": "Benchmarking persistent-homology descriptors for metallic-glass transition and deformation proxies",
+    "status": "fallback_benchmark_needs_review",
+    "rationale": "Family-specific skeptic also downgraded H2. It remains executable, but the evidence is increasingly consistent that this is benchmark work in a crowded prior-art zone rather than a leading discovery bet.",
+    "next_action": "Confirm whether the chosen proxy target is scientifically defensible and whether the benchmark is worth carrying at all."
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "dataset": "GSE164897",
+  "route_status": "contract_locked_pending_audit",
+  "samples": [
+    {
+      "geo_accession": "GSM5022595",
+      "title": "Probe3_A_375R",
+      "treatment": "vemurafenib",
+      "cell_line": "A375",
+      "sample_group": "Probe3_A_375R"
+    },
+    {
+      "geo_accession": "GSM5022596",
+      "title": "Probe4_A_375S",
+      "treatment": "untreated",
+      "cell_line": "A375",
+      "sample_group": "Probe4_A_375S"
+    },
+    {
+      "geo_accession": "GSM5022597",
+      "title": "Probe5_A_375RR",
+      "treatment": "vemurafenib + cobimetinib",
+      "cell_line": "A375",
+      "sample_group": "Probe5_A_375RR"
+    },
+    {
+      "geo_accession": "GSM5022598",
+      "title": "Probe6_A_375RR",
+      "treatment": "vemurafenib + trametinib",
+      "cell_line": "A375",
+      "sample_group": "Probe6_A_375RR"
+    }
+  ],
+  "unique_treatments": [
+    "untreated",
+    "vemurafenib",
+    "vemurafenib + cobimetinib",
+    "vemurafenib + trametinib"
+  ],
+  "group_keys_expected": [
+    "sample_id",
+    "condition_label",
+    "replicate_id"
+  ],
+  "leakage_keys_expected": [
+    "cell_barcode",
+    "sample_id",
+    "condition_label",
+    "replicate_id",
+    "dataset_accession"
+  ],
+  "split_unit": "sample_group",
+  "label_schema": {
+    "task_type": "binary_classification",
+    "positive_label": "drug_resistant_state",
+    "negative_label": "non_resistant_state",
+    "candidate_raw_state_groups": [
+      "untreated_or_sensitive",
+      "single_drug_resistant",
+      "double_drug_resistant"
+    ],
+    "notes": [
+      "Primary benchmark framing is binary resistant vs non-resistant.",
+      "A multi-state transition task remains optional and should not be the first MVP target."
+    ]
+  },
+  "sample_count": 4
+}

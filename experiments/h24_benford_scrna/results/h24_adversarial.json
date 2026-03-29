@@ -1,0 +1,21 @@
+{
+  "results": [
+    {
+      "adversarial": "benford_aware_fd",
+      "first_digit_only_auc": 1.0,
+      "benford_full_auc": 1.0,
+      "cell_level_only_auc": 1.0,
+      "fusion_auc": 1.0,
+      "verdict": "DETECTION_HOLDS \u2014 adversary fails to evade"
+    },
+    {
+      "adversarial": "benford_aware_fd_sd",
+      "first_digit_only_auc": 1.0,
+      "benford_full_auc": 1.0,
+      "cell_level_only_auc": 1.0,
+      "fusion_auc": 1.0,
+      "verdict": "DETECTION_HOLDS \u2014 adversary fails to evade"
+    }
+  ],
+  "elapsed_s": 27.6
+}

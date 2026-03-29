@@ -1,0 +1,286 @@
+[
+  {
+    "id": "zenodo:19229428",
+    "title": "Surviving the Print Crisis: Operational Struggle Facing Tanzania Newspapers",
+    "domain": "interdisciplinary",
+    "source_type": "paper",
+    "abstract": "Abstract: This study examined the operational challenges faced by print media in Tanzania, with a focus on the Mwananchi and Habari Leo newspapers. The theories of Technological Determinism and Gatekeeping guided it. The study employed a qualitative, case-study design; data were collected through interviews with 29 media professionals, two focus groups, and 70 questionnaires completed by media staff, vendors, readers, and industry experts. The data were thematically analyzed, and the results identified five significant challenges facing print media operation in Tanzania, including: declining journalism quality due to staff layoffs and rushed stories; digital disruption leading to changing consumer behaviour from print to digital; financial constraints caused by decreased circulation, sales, and advertising revenue; an unfriendly media legal framework; and political and business pressures. The study recommends adopting digital technology to improve journalistic standards, increase flexibility, and attract digital consumers. It also advocates for a comprehensive policy review to promote a free, competitive, and sustainable media sector. Specifically, it urges the government to revise restrictive media laws to support the survival, independence, and growth of Tanzania&rsquo;s print media, striking a balance between technological advancements and robust protections for press freedom while maintaining the quality and standards of published news and information.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.55,
+    "bias_index": 0.2,
+    "novelty_factor": 0.5,
+    "citations": [
+      "doi:10.54105/ijmcj.B1159.05030326"
+    ],
+    "metadata": {
+      "zenodo_id": "19229428",
+      "doi": "10.54105/ijmcj.B1159.05030326",
+      "resource_type": "publication",
+      "keywords": "Media Sustainability, Technological Determinism, Gatekeeping, Digital Disruption, Tanzanian Print Media",
+      "creators": "Frank Elias Sanga",
+      "access_right": "open",
+      "provenance": "zenodo_api"
+    }
+  },
+  {
+    "id": "zenodo:19228195",
+    "title": "Data & Scripts for: Hydraulic resonance and adaptive decoupling dictate ecosystem resilience to compound climate extremes",
+    "domain": "interdisciplinary",
+    "source_type": "dataset",
+    "abstract": "Earth System Models (ESMs) rarely account for non-linear ecosystem tipping points, relying instead on linear and additive logic to project carbon sink responses to compound climate extremes. Here, we explore an extreme \"resilience paradox\" in the South Chinese monsoon forests (SCMFs): gross primary production (GPP) underwent catastrophic collapse during a moderate 2003 heat-dry wave but was highly resilient to a 2013 compound extreme with roughly 75% more thermodynamic energy surplus. To reconcile this disparity, we present the Ecological Amplitude Modulation (EAM) framework. By implementing spatiotemporal fast-MEEMD and Hilbert-Huang Transform (HHT) analyses, we frame the ecosystem response as a multiplicative process. We detect a quasi-40-day spectral gap, which functions as an intrinsic biophysical firewall separating high-frequency physiological carrier waves from low-frequency environmental modulators. We show that the 2003 crash was excited by &ldquo;hydraulic resonance&rdquo;&mdash;a deleterious frequency-locking amongst these cross-scale signals, which left an enduring spectral scar and determined an asymmetric, sluggish recovery. In contrast, the 2013 resistance was derived from \"adaptive decoupling,\" which insulated the physiological engine effectively from damaging sub-seasonal desiccation. These results reveal that ecosystem resilience is a frequency-dependent topological property rather than a static capacity based on magnitudes, providing a critical diagnostic measure of carbon sink dynamics under an increasingly severe Anthropocene climate.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.45,
+    "bias_index": 0.2,
+    "novelty_factor": 0.5,
+    "citations": [
+      "doi:10.5281/zenodo.19228195"
+    ],
+    "metadata": {
+      "zenodo_id": "19228195",
+      "doi": "10.5281/zenodo.19228195",
+      "resource_type": "dataset",
+      "keywords": "",
+      "creators": "Pan, Wei; Dan, Li; ... (11 creators)",
+      "access_right": "open",
+      "provenance": "zenodo_api"
+    }
+  },
+  {
+    "id": "zenodo:19229356",
+    "title": "The Arithmetic-Geometric Structure of the Riemann Zeros: An Explicit Law and Its Connections to Modular Forms and Fundamental Constants",
+    "domain": "interdisciplinary",
+    "source_type": "paper",
+    "abstract": "In a companion paper \\cite{souto2026main}, we constructed a self-adjoint operator $H$ whose spectrum coincides exactly with the imaginary parts $\\gamma_n$ of the non-trivial zeros of the Riemann zeta function. In this work, we derive the explicit arithmetic-geometric law governing these zeros:\n$$\\boxed{\\gamma_n = \\frac{D_n}{2} + \\frac{\\Phi_n}{2 D_n^* \\sqrt{m_n^2 + n_n^2}}}$$\nEach zero is determined by an even integer $D_n$ (the closest integer to $2\\gamma_n$), a pair $(m_n,n_n) \\in \\mathbb{Z}^2$ encoding a geodesic on the Enneper surface, and integers $\\Phi_n$, $D_n^*$ whose prime structure connects to Heegner numbers. The derivation combines three independent sources: the spectral construction of $H$, the geometry of the Enneper surface, and the modular structure of the Dedekind eta function at CM points.\nWe present three fundamental theorems establishing the rationality of the correction term, the special role of Heegner numbers as denominators, and an exact recurrence via the Selberg trace formula. Complete numerical verification for the first 43 zeros achieves precision exceeding $10^{-28}$, with the universal constant $366 = 8\\pi^2(\\gamma_4/\\gamma_1)^2$ appearing at $n=31$ as $\\Phi_{31}/D_{31}^* = 366/47$.\nAs corollaries, we derive exact expressions for fundamental physical constants from the first four zeros, including the fine structure constant, Planck length, and Lamb shift. The identity $8\\pi^2(\\gamma_4/\\gamma_1)^2 = 366$ connects the zeros to the Heegner numbers 163 and 43 via the Dedekind eta function, revealing a deep modular structure underlying the distribution of prime numbers.\nThis work, together with \\cite{souto2026main}, completes the spectral and arithmetic description of the Riemann zeros.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.55,
+    "bias_index": 0.2,
+    "novelty_factor": 0.5,
+    "citations": [
+      "doi:10.5281/zenodo.19229356"
+    ],
+    "metadata": {
+      "zenodo_id": "19229356",
+      "doi": "10.5281/zenodo.19229356",
+      "resource_type": "publication",
+      "keywords": "",
+      "creators": "Souto, Felipe Oliveira",
+      "access_right": "open",
+      "provenance": "zenodo_api"
+    }
+  },
+  {
+    "id": "zenodo:19229433",
+    "title": "MODERN METHODS IN PHARMACEUTICAL SYNTHESIS AND THEIR EFFICIENCY",
+    "domain": "interdisciplinary",
+    "source_type": "dataset",
+    "abstract": "&nbsp;This paper provides a scientific analysis of the modern methods employed in pharmaceutical synthesis &mdash; flow chemistry, microwave-assisted synthesis, biocatalysis, combinatorial chemistry, and green synthesis technologies. The chemical efficiency, economic advantages, environmental aspects, and industrial applicability of each method are evaluated. The paper also puts forward scientifically substantiated recommendations for the development of the pharmaceutical synthesis industry in Uzbekistan.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [
+      "catalysis"
+    ],
+    "limitations": [],
+    "authority_score": 0.45,
+    "bias_index": 0.2,
+    "novelty_factor": 0.5,
+    "citations": [
+      "doi:10.5281/zenodo.19229433"
+    ],
+    "metadata": {
+      "zenodo_id": "19229433",
+      "doi": "10.5281/zenodo.19229433",
+      "resource_type": "dataset",
+      "keywords": "",
+      "creators": "Rozikova Dilshoda Abdullajonovna",
+      "access_right": "open",
+      "provenance": "zenodo_api"
+    }
+  },
+  {
+    "id": "zenodo:19229323",
+    "title": "Supplementary Data for: Fully Softened Strength as a Substitute for Five Wet-Dry Cycles on Expansive Clay Slopes: Equivalence of System Response as a Function of Water Content and Surface Failure Conditions.",
+    "domain": "interdisciplinary",
+    "source_type": "dataset",
+    "abstract": "This dataset provides the complete numerical results and supporting technical data for the manuscript ID: water-4228638. The study evaluates the mechanical equivalence between the Fully Softened Strength (FSS) and the strength degradation after five wet-dry cycles in expansive clays, focusing on slope stability applications.\nThe data were generated from laboratory direct shear tests, strength-envelope fitting procedures, and limit equilibrium slope stability analyses conducted on expansive clay samples from the Hefei River Diversion Project (K41+600, depth 2.0-3.0 m)",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [
+      "stability"
+    ],
+    "limitations": [],
+    "authority_score": 0.45,
+    "bias_index": 0.2,
+    "novelty_factor": 0.5,
+    "citations": [
+      "doi:10.5281/zenodo.19229323"
+    ],
+    "metadata": {
+      "zenodo_id": "19229323",
+      "doi": "10.5281/zenodo.19229323",
+      "resource_type": "dataset",
+      "keywords": "",
+      "creators": "Fern\u00e1ndez Morocho, Camila Nickole",
+      "access_right": "open",
+      "provenance": "zenodo_api"
+    }
+  },
+  {
+    "id": "zenodo:19229416",
+    "title": "A CONTEMPORARY OVERVIEW OF MODERN ELECTRIC TRAINS IN UZBEKISTAN: THE CASE OF HYUNDAI ROTEM HIGH-SPEED TRAINS",
+    "domain": "interdisciplinary",
+    "source_type": "dataset",
+    "abstract": "This article provides a comprehensive analysis of the introduction and development of modern electric high-speed trains in Uzbekistan, with a particular focus on Hyundai Rotem rolling stock. The study examines technological characteristics, infrastructure adaptation, operational efficiency, and the role of high-speed rail in enhancing national and regional mobility. Special attention is given to the economic, environmental, and logistical impacts of high-speed train systems in Uzbekistan&rsquo;s transport network.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.45,
+    "bias_index": 0.2,
+    "novelty_factor": 0.5,
+    "citations": [
+      "doi:10.5281/zenodo.19229416"
+    ],
+    "metadata": {
+      "zenodo_id": "19229416",
+      "doi": "10.5281/zenodo.19229416",
+      "resource_type": "dataset",
+      "keywords": "",
+      "creators": "Sherdil Sadikov",
+      "access_right": "open",
+      "provenance": "zenodo_api"
+    }
+  },
+  {
+    "id": "zenodo:19229402",
+    "title": "THE ROLE AND ARTISTIC FEATURES OF PSYCHOLOGICAL PORTRAYAL IN THE STORIES AND TALES OF NABI JALOLIDDIN",
+    "domain": "interdisciplinary",
+    "source_type": "dataset",
+    "abstract": "&nbsp;This article provides a deep analysis of the methods of depicting human psyche in the stories and tales of Nabi Jaloliddin, a prominent representative of modern Uzbek prose and a participant of the Afghan war. Using such works as \"The Color of Death,\" \"A House with a Man,\" \"Dayus,\" \"War,\" and \"I Love You, Life,\" the study examines the characters' inner world, war trauma, conscience torment, family relationships, and spiritual quests. The article reveals the distinctive realistic and lyrical features of Nabi Jaloliddin's psychologism, as well as the artistic interpretation of the \"lost generation\" problem through internal monologue and psychological details.\n&nbsp;",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.45,
+    "bias_index": 0.2,
+    "novelty_factor": 0.5,
+    "citations": [
+      "doi:10.5281/zenodo.19229402"
+    ],
+    "metadata": {
+      "zenodo_id": "19229402",
+      "doi": "10.5281/zenodo.19229402",
+      "resource_type": "dataset",
+      "keywords": "",
+      "creators": "Safarboyeva Hilola Alisher kizi",
+      "access_right": "open",
+      "provenance": "zenodo_api"
+    }
+  },
+  {
+    "id": "zenodo:19229391",
+    "title": "DEVELOPMENT OF A SENTENCE DEPENDENCY PARSING ALGORITHM FOR THE UZBEK LANGUAGE",
+    "domain": "interdisciplinary",
+    "source_type": "dataset",
+    "abstract": "This article examines the problem of automatic syntactic analysis (parsing) of sentences in the Uzbek language. The primary focus is on creating an algorithm that accounts for the morphological specifics of agglutinative languages. A hybrid approach is proposed, combining grammatical rules with machine learning elements to determine syntactic relationships. The results demonstrate the model's effectiveness in processing both simple and complex sentences.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.45,
+    "bias_index": 0.2,
+    "novelty_factor": 0.5,
+    "citations": [
+      "doi:10.5281/zenodo.19229391"
+    ],
+    "metadata": {
+      "zenodo_id": "19229391",
+      "doi": "10.5281/zenodo.19229391",
+      "resource_type": "dataset",
+      "keywords": "",
+      "creators": "Mamura Uzakova Abdurayimovna",
+      "access_right": "open",
+      "provenance": "zenodo_api"
+    }
+  },
+  {
+    "id": "zenodo:19229381",
+    "title": "A SCIENTIFIC AND METHODOLOGICAL VIEW ON THE TRANSLATION OF WORKS FROM GERMAN INTO UZBEK : PROBLEMS AND SOLUTIONS",
+    "domain": "interdisciplinary",
+    "source_type": "dataset",
+    "abstract": "&nbsp;This article examines the theoretical and practical problems of literary translation between Uzbek and German. It provides a comparative analysis of grammatical, lexical, and stylistic differences between languages belonging to two different typological groups and proposes scholarly solutions for addressing them.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.45,
+    "bias_index": 0.2,
+    "novelty_factor": 0.5,
+    "citations": [
+      "doi:10.5281/zenodo.19229381"
+    ],
+    "metadata": {
+      "zenodo_id": "19229381",
+      "doi": "10.5281/zenodo.19229381",
+      "resource_type": "dataset",
+      "keywords": "",
+      "creators": "Igamova Dildorahon Nazirovna",
+      "access_right": "open",
+      "provenance": "zenodo_api"
+    }
+  },
+  {
+    "id": "zenodo:19229313",
+    "title": "The Quandary of Being a Male Nurse in India",
+    "domain": "interdisciplinary",
+    "source_type": "paper",
+    "abstract": "Abstract: This paper critically examines the gendered dynamics of the nursing profession in India, focusing on the systemic under-representation of male nurses. Despite India&rsquo;s acute shortage of healthcare workers&mdash;exacerbated by the COVID-19 pandemic&mdash;the nursing sector remains overwhelmingly feminised. This study interrogates the historical, sociocultural, and institutional factors that perpetuate the stigmatisation of male nurses, situating the analysis within feminist scholarship and labour market theories. Through a review of historical narratives, the paper traces how colonial and post-colonial discourses framed nursing as a &ldquo;feminine&rdquo; vocation, rooted in patriarchal norms and caste-based hierarchies. The analysis reveals how gendered stereotypes reinforced by media, policy, and societal expectations discourage male participation, despite the profession&rsquo;s critical role in public health. Institutional barriers, such as gender-based quotas and wage disparities, further entrench these inequalities, while cultural perceptions associate nursing with failure or demasculinisation. The study also explores the lived experiences of male nurses, highlighting their struggles with stigma, workplace discrimination, and societal pressure to conform to hegemonic masculinity. By synthesising theoretical insights with empirical observations, this paper advocates for a reimagined understanding of care work, one that dismantles gendered hierarchies and promotes equitable participation.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.55,
+    "bias_index": 0.2,
+    "novelty_factor": 0.5,
+    "citations": [
+      "doi:10.54105/ijmcj.A1210.05030326"
+    ],
+    "metadata": {
+      "zenodo_id": "19229313",
+      "doi": "10.54105/ijmcj.A1210.05030326",
+      "resource_type": "publication",
+      "keywords": "Feminisation, Masculinity, Gender, Labour, Male Nurses, Stigmatisation, Societal Norms",
+      "creators": "Rupankar Dey",
+      "access_right": "open",
+      "provenance": "zenodo_api"
+    }
+  }
+]

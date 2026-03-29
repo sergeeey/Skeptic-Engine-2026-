@@ -1,0 +1,373 @@
+{
+  "prior_art_count": 20,
+  "manifests_used": [
+    "biorxiv_latest.json",
+    "zenodo_latest.json"
+  ],
+  "live_fetch_queries": 12,
+  "live_records_fetched": 28,
+  "warnings": [
+    "Only 20 prior-art records were available; coverage is shallow."
+  ],
+  "reviews": [
+    {
+      "card_id": "seed-biology-001-to-seed-materials-001-1",
+      "title": "Transfer graph learning from biology into materials_science",
+      "verdict": "survives_initial_skeptic_pass",
+      "original_novelty_score": 0.86,
+      "revised_novelty_score": 0.86,
+      "original_confidence_score": 0.22,
+      "revised_confidence_score": 0.22,
+      "novelty_penalty": 0.0,
+      "confidence_penalty": 0.0,
+      "challenge_summary": "No strong prior-art hits were found in the available local or targeted sources.",
+      "live_query": "graph learning biology materials science control graph which residual information bottleneck || graph learning materials science benchmark control theory || graph learning materials property prediction control theory",
+      "live_records_scanned": 2,
+      "providers_scanned": {
+        "semantic_scholar": 0,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": []
+    },
+    {
+      "card_id": "seed-biology-001-to-seed-materials-001-2",
+      "title": "Transfer control theory from biology into materials_science",
+      "verdict": "survives_initial_skeptic_pass",
+      "original_novelty_score": 0.86,
+      "revised_novelty_score": 0.86,
+      "original_confidence_score": 0.22,
+      "revised_confidence_score": 0.22,
+      "novelty_penalty": 0.0,
+      "confidence_penalty": 0.0,
+      "challenge_summary": "No strong prior-art hits were found in the available local or targeted sources.",
+      "live_query": "control theory biology materials science graph learning control graph which residual || control theory materials science benchmark control theory || control theory materials property prediction control theory",
+      "live_records_scanned": 2,
+      "providers_scanned": {
+        "semantic_scholar": 0,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": []
+    },
+    {
+      "card_id": "seed-materials-001-to-seed-biology-001-1",
+      "title": "Transfer information bottleneck from materials_science into biology",
+      "verdict": "needs_review",
+      "original_novelty_score": 0.86,
+      "revised_novelty_score": 0.71,
+      "original_confidence_score": 0.22,
+      "revised_confidence_score": 0.13,
+      "novelty_penalty": 0.1521,
+      "confidence_penalty": 0.0932,
+      "challenge_summary": "Skeptic found 1 prior-art hits; strongest overlap score 0.29. Novelty downgraded by 0.15.",
+      "live_query": "information bottleneck materials science biology information theory graph which descriptors graph learning || information bottleneck biology benchmark information bottleneck || information bottleneck biological networks information bottleneck",
+      "live_records_scanned": 3,
+      "providers_scanned": {
+        "semantic_scholar": 1,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": [
+        {
+          "source_id": "s2:98cf00c765de7c7c985869c57bb2c41e458f773f",
+          "title": "IBPL: Information Bottleneck-based Prompt Learning for graph out-of-distribution detection",
+          "domain": "control_information_theory",
+          "source_type": "paper",
+          "match_score": 0.2883,
+          "shared_terms": [
+            "bottleneck",
+            "can",
+            "data",
+            "graph",
+            "information",
+            "information_theory",
+            "learning",
+            "methods"
+          ],
+          "rationale": [
+            "anchor overlap: bottleneck, information_theory, structure",
+            "shared bridge tags: graph, information_theory",
+            "shared terms: bottleneck, can, data, graph, information, information_theory"
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "seed-materials-001-to-seed-biology-001-2",
+      "title": "Transfer graph learning from materials_science into biology",
+      "verdict": "survives_initial_skeptic_pass",
+      "original_novelty_score": 0.86,
+      "revised_novelty_score": 0.86,
+      "original_confidence_score": 0.22,
+      "revised_confidence_score": 0.22,
+      "novelty_penalty": 0.0,
+      "confidence_penalty": 0.0,
+      "challenge_summary": "No strong prior-art hits were found in the available local or targeted sources.",
+      "live_query": "graph learning materials science biology information bottleneck information theory graph which descriptors || graph learning biology benchmark information bottleneck || graph learning biological networks information bottleneck",
+      "live_records_scanned": 2,
+      "providers_scanned": {
+        "semantic_scholar": 0,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": []
+    },
+    {
+      "card_id": "seed-biology-001-to-seed-control-001-1",
+      "title": "Transfer graph learning from biology into control_information_theory",
+      "verdict": "needs_review",
+      "original_novelty_score": 0.85,
+      "revised_novelty_score": 0.7,
+      "original_confidence_score": 0.23,
+      "revised_confidence_score": 0.14,
+      "novelty_penalty": 0.1511,
+      "confidence_penalty": 0.0926,
+      "challenge_summary": "Skeptic found 1 prior-art hits; strongest overlap score 0.28. Novelty downgraded by 0.15.",
+      "live_query": "graph learning biology control theory information theory control graph which residual feedback design || graph learning biological systems control control theory || systems biology graph learning control theory",
+      "live_records_scanned": 2,
+      "providers_scanned": {
+        "semantic_scholar": 1,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": [
+        {
+          "source_id": "s2:0dc930337cc4580436732e61dd5389aff1f0a5a5",
+          "title": "On Vanishing Gradients, Over-Smoothing, and Over-Squashing in GNNs: Bridging Recurrent and Graph Learning",
+          "domain": "control_information_theory",
+          "source_type": "paper",
+          "match_score": 0.2843,
+          "shared_terms": [
+            "analysis",
+            "bridge",
+            "control",
+            "design",
+            "graph",
+            "information",
+            "learning",
+            "network"
+          ],
+          "rationale": [
+            "domain overlap with candidate fields",
+            "anchor overlap: structure",
+            "shared bridge tags: control, graph",
+            "shared terms: analysis, bridge, control, design, graph, information"
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "seed-biology-001-to-seed-control-001-2",
+      "title": "Transfer control theory from biology into control_information_theory",
+      "verdict": "survives_initial_skeptic_pass",
+      "original_novelty_score": 0.85,
+      "revised_novelty_score": 0.85,
+      "original_confidence_score": 0.23,
+      "revised_confidence_score": 0.23,
+      "novelty_penalty": 0.0,
+      "confidence_penalty": 0.0,
+      "challenge_summary": "No strong prior-art hits were found in the available local or targeted sources.",
+      "live_query": "control theory biology control theory information theory graph learning control graph which residual || control theory biological systems control control theory || systems biology control theory control theory",
+      "live_records_scanned": 1,
+      "providers_scanned": {
+        "semantic_scholar": 0,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": []
+    },
+    {
+      "card_id": "seed-control-001-to-seed-biology-001-1",
+      "title": "Transfer feedback design from control_information_theory into biology",
+      "verdict": "survives_initial_skeptic_pass",
+      "original_novelty_score": 0.85,
+      "revised_novelty_score": 0.85,
+      "original_confidence_score": 0.23,
+      "revised_confidence_score": 0.23,
+      "novelty_penalty": 0.0,
+      "confidence_penalty": 0.0,
+      "challenge_summary": "No strong prior-art hits were found in the available local or targeted sources.",
+      "live_query": "feedback design control theory information theory biology control information theory which systems graph learning || feedback design biological systems benchmark control theory || feedback design gene regulatory network control theory",
+      "live_records_scanned": 3,
+      "providers_scanned": {
+        "semantic_scholar": 1,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": []
+    },
+    {
+      "card_id": "seed-control-001-to-seed-biology-001-2",
+      "title": "Transfer kalman-style filtering from control_information_theory into biology",
+      "verdict": "needs_review",
+      "original_novelty_score": 0.85,
+      "revised_novelty_score": 0.67,
+      "original_confidence_score": 0.23,
+      "revised_confidence_score": 0.12,
+      "novelty_penalty": 0.1818,
+      "confidence_penalty": 0.1111,
+      "challenge_summary": "Skeptic found 1 prior-art hits; strongest overlap score 0.41. Novelty downgraded by 0.18.",
+      "live_query": "kalman-style filtering control theory information theory biology feedback design control information theory which systems || kalman-style filtering biological systems benchmark control theory || kalman-style filtering gene regulatory network control theory",
+      "live_records_scanned": 2,
+      "providers_scanned": {
+        "semantic_scholar": 1,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": [
+        {
+          "source_id": "s2:86d1323815c3f642f04df9be00476d538e479044",
+          "title": "An adaptive extended Kalman filtering approach to nonlinear dynamic gene regulatory networks via short gene expression time series",
+          "domain": "control_information_theory",
+          "source_type": "paper",
+          "match_score": 0.4073,
+          "shared_terms": [
+            "analysis",
+            "become",
+            "biological",
+            "control",
+            "current",
+            "data",
+            "design",
+            "estimation"
+          ],
+          "rationale": [
+            "domain overlap with candidate fields",
+            "anchor overlap: estimation, filtering, gene, interaction",
+            "shared bridge tags: estimation",
+            "shared terms: analysis, become, biological, control, current, data"
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "seed-materials-001-to-seed-control-001-1",
+      "title": "Transfer information bottleneck from materials_science into control_information_theory",
+      "verdict": "needs_review",
+      "original_novelty_score": 0.76,
+      "revised_novelty_score": 0.6,
+      "original_confidence_score": 0.23,
+      "revised_confidence_score": 0.13,
+      "novelty_penalty": 0.1568,
+      "confidence_penalty": 0.0961,
+      "challenge_summary": "Skeptic found 1 prior-art hits; strongest overlap score 0.31. Novelty downgraded by 0.16.",
+      "live_query": "information bottleneck materials science control theory information theory information theory graph which descriptors feedback design || information bottleneck materials science control information bottleneck || information bottleneck materials dynamical systems information bottleneck",
+      "live_records_scanned": 2,
+      "providers_scanned": {
+        "semantic_scholar": 1,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": [
+        {
+          "source_id": "s2:a64fc0f679f36689195ec62a18b7bd4290efe632",
+          "title": "L\u2081 Adaptive Control-Based Formation Tracking of Multiple Quadrotors Without Linear Velocity Feedback Under Unknown Disturbances",
+          "domain": "control_information_theory",
+          "source_type": "paper",
+          "match_score": 0.3071,
+          "shared_terms": [
+            "but",
+            "can",
+            "control",
+            "feedback",
+            "graph",
+            "information",
+            "more",
+            "note"
+          ],
+          "rationale": [
+            "domain overlap with candidate fields",
+            "anchor overlap: feedback, robust, state, under",
+            "shared bridge tags: control",
+            "shared terms: but, can, control, feedback, graph, information"
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "seed-materials-001-to-seed-control-001-2",
+      "title": "Transfer graph learning from materials_science into control_information_theory",
+      "verdict": "needs_review",
+      "original_novelty_score": 0.76,
+      "revised_novelty_score": 0.6,
+      "original_confidence_score": 0.23,
+      "revised_confidence_score": 0.13,
+      "novelty_penalty": 0.1595,
+      "confidence_penalty": 0.0977,
+      "challenge_summary": "Skeptic found 1 prior-art hits; strongest overlap score 0.32. Novelty downgraded by 0.16.",
+      "live_query": "graph learning materials science control theory information theory information bottleneck information theory graph which descriptors || graph learning materials science control information bottleneck || graph learning materials dynamical systems information bottleneck",
+      "live_records_scanned": 2,
+      "providers_scanned": {
+        "semantic_scholar": 1,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": [
+        {
+          "source_id": "s2:c318e03e8fb000ed9baf6ef4675da43afd8804aa",
+          "title": "Incorporating Retrieval-based Causal Learning with Information Bottlenecks for Interpretable Molecular Graph Learning",
+          "domain": "control_information_theory",
+          "source_type": "paper",
+          "match_score": 0.3181,
+          "shared_terms": [
+            "bottleneck",
+            "bottlenecks",
+            "but",
+            "can",
+            "current",
+            "graph",
+            "information",
+            "information_theory"
+          ],
+          "rationale": [
+            "domain overlap with candidate fields",
+            "anchor overlap: bottleneck, information_theory, modeling",
+            "shared bridge tags: graph, information_theory",
+            "shared terms: bottleneck, bottlenecks, but, can, current, graph"
+          ]
+        }
+      ]
+    },
+    {
+      "card_id": "seed-control-001-to-seed-materials-001-1",
+      "title": "Transfer feedback design from control_information_theory into materials_science",
+      "verdict": "survives_initial_skeptic_pass",
+      "original_novelty_score": 0.76,
+      "revised_novelty_score": 0.76,
+      "original_confidence_score": 0.23,
+      "revised_confidence_score": 0.23,
+      "novelty_penalty": 0.0,
+      "confidence_penalty": 0.0,
+      "challenge_summary": "No strong prior-art hits were found in the available local or targeted sources.",
+      "live_query": "feedback design control theory information theory materials science control information theory which systems information bottleneck || feedback design materials science benchmark control theory || feedback design materials process control control theory",
+      "live_records_scanned": 4,
+      "providers_scanned": {
+        "semantic_scholar": 2,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": []
+    },
+    {
+      "card_id": "seed-control-001-to-seed-materials-001-2",
+      "title": "Transfer kalman-style filtering from control_information_theory into materials_science",
+      "verdict": "survives_initial_skeptic_pass",
+      "original_novelty_score": 0.76,
+      "revised_novelty_score": 0.76,
+      "original_confidence_score": 0.23,
+      "revised_confidence_score": 0.23,
+      "novelty_penalty": 0.0,
+      "confidence_penalty": 0.0,
+      "challenge_summary": "No strong prior-art hits were found in the available local or targeted sources.",
+      "live_query": "kalman-style filtering control theory information theory materials science feedback design control information theory which systems || kalman-style filtering materials science benchmark control theory || kalman-style filtering materials process control control theory",
+      "live_records_scanned": 3,
+      "providers_scanned": {
+        "semantic_scholar": 1,
+        "zenodo": 3
+      },
+      "warnings": [],
+      "top_hits": []
+    }
+  ]
+}

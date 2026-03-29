@@ -1,0 +1,37 @@
+{
+  "route_id": "mofsimplify_stability",
+  "title": "MOFSimplify stability proxy route",
+  "status": "preferred",
+  "raw_root": "data/raw/h10/mofsimplify_stability",
+  "mapped_output": "data/benchmarks/h10_mapped/mofsimplify_stability.csv",
+  "expected_files": [
+    {
+      "path": "data/raw/h10/mofsimplify_stability/README.md",
+      "required": true,
+      "purpose": "Local notes on provenance, download date, and preprocessing decisions."
+    },
+    {
+      "path": "data/raw/h10/mofsimplify_stability/structures.csv",
+      "required": false,
+      "purpose": "Optional normalized structure index linked to CoRE-MOF entries."
+    },
+    {
+      "path": "data/raw/h10/mofsimplify_stability/labels.csv",
+      "required": false,
+      "purpose": "Normalized MOFSimplify stability labels or mapped target table."
+    },
+    {
+      "path": "data/raw/h10/mofsimplify_stability/join_keys.csv",
+      "required": false,
+      "purpose": "Explicit structure-label join mapping if identifiers differ."
+    }
+  ],
+  "target_options": [
+    "solvent_removal_stability_binary",
+    "thermal_stability_ordinal"
+  ],
+  "blocking_questions": [
+    "Can the label be mapped cleanly to a benchmark target?",
+    "Is the join between structures and labels reproducible?"
+  ]
+}

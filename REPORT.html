@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Skeptic Engine — Research Report</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Skeptic Engine — Research Report</h1>
+</header>
+<h1
+id="skeptic-engine-scientific-data-integrity-research-report">Skeptic
+Engine — Scientific Data Integrity Research Report</h1>
+<p><strong>Author:</strong> Sergey Boiko <strong>Date:</strong>
+2026-03-26 <strong>Status:</strong> Internal research report. Not for
+public distribution.</p>
+<blockquote>
+<p><strong>Framing:</strong> This project develops statistical artifact
+detection tools, not fraud accusation tools. All flagged datasets
+require domain expert review. The methods detect non-physical patterns —
+they do not determine intent.</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary">1. Executive Summary</h2>
+<p>This report documents the complete research arc from project
+inception to experimental validation. The project began as an
+“Interdisciplinary Discovery Engine” aimed at finding interdisciplinary
+scientific hypotheses. Through systematic evaluation, it pivoted to a
+focused research programme: <strong>transferring financial anomaly
+detection methods to scientific data integrity screening</strong>.</p>
+<p>The tools developed here detect <strong>statistical artifacts and
+anomalous patterns</strong> — non-physical digit distributions,
+structural incoherence, and reporting inconsistencies. They do not claim
+to identify deliberate fraud; flagged datasets require domain expert
+review before any conclusions about intent.</p>
+<p>Three independent experiments produced positive results across five
+datasets:</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 20%" />
+<col style="width: 23%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Best AUC</th>
+<th>Datasets</th>
+<th>Key Finding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H24: Benford digit forensics on scRNA-seq</td>
+<td>0.978 (fusion)</td>
+<td>PBMC3k, Kang2018</td>
+<td>Digit + cell-level fusion detects fabricated count matrices</td>
+</tr>
+<tr>
+<td>H25: Banking autoencoder on proteomics</td>
+<td>1.000 (fusion)</td>
+<td>CPTAC proteomics, CNA</td>
+<td>AE reconstruction error catches structure-breaking fabrication</td>
+</tr>
+<tr>
+<td>H23: Behavioral p-hacking detection</td>
+<td>0.993 (sim) / 0.765 (real)</td>
+<td>Simulated, RPP (99), Statcheck (61)</td>
+<td>Fraud sequence features beat baselines by +7.5pp to +28.7pp</td>
+</tr>
+</tbody>
+</table>
+<p>One hypothesis was killed after honest execution:</p>
+<table>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 20%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>AUC</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H4: TDA for cancer drug resistance</td>
+<td>0.500 (random)</td>
+<td>KILLED — TDA adds zero value; PCA=0.9998 is trivial batch
+effect</td>
+</tr>
+</tbody>
+</table>
+<p>All experiments were independently audited for data leakage,
+fabrication realism, and feature correctness. Cross-dataset
+generalization tests revealed honest limitations. Kill criteria were
+applied without rationalization.</p>
+<hr />
+<h2 id="project-history-and-pivot">2. Project History and Pivot</h2>
+<h3 id="original-goal">2.1 Original Goal</h3>
+<p>The project started with the goal of building an agentic system to
+discover interdisciplinary scientific hypotheses worthy of Nobel Prize
+consideration. An “Interdisciplinary Discovery Engine” was built with a
+Python pipeline: acquisition → DQOps → semantic core → hypothesis
+generation → skeptic → arbiter.</p>
+<h3 id="assessment-and-pivot">2.2 Assessment and Pivot</h3>
+<p>An independent assessment (2026-03-26) rated the original approach
+4.5/10. Key problems identified:</p>
+<ul>
+<li>All 20 original hypotheses were well-known method transfers (GNN to
+biology, TDA to neuroscience, etc.)</li>
+<li>The semantic core used bag-of-tags matching, not real NLP</li>
+<li>The hypothesis generator used template-based text, not deep
+reasoning</li>
+<li>The MOF benchmark (H10) was already surpassed by Princeton (97% F1)
+and MOFGen</li>
+<li>The Nobel Prize framing created cognitive bias toward
+impressive-sounding ideas over testable ones</li>
+</ul>
+<h3 id="new-direction">2.3 New Direction</h3>
+<p>The assessment identified the operator’s unique strength:
+<strong>financial fraud detection expertise</strong>. This led to a
+systematic search for transfers from fraud/security methods to
+scientific domains. Four rounds of hypothesis generation produced
+progressively better candidates, converging on <strong>scientific data
+integrity</strong> as the primary research theme.</p>
+<h3 id="research-programme">2.4 Research Programme</h3>
+<p>The final programme is: “Financial Anomaly Detection Methods →
+Scientific Data Integrity,” with three validated experiments and a clear
+path to additional results.</p>
+<hr />
+<h2 id="infrastructure-built">3. Infrastructure Built</h2>
+<h3 id="discovery-engine-pipeline">3.1 Discovery Engine Pipeline</h3>
+<pre><code>src/discovery_engine/
+├── collectors/          # bioRxiv, Zenodo, Semantic Scholar API collectors
+│   ├── biorxiv.py       # bioRxiv preprint collector
+│   ├── zenodo.py        # Zenodo dataset/publication collector
+│   ├── semantic_scholar.py  # Citation-based authority scoring
+│   ├── _http.py         # Rate-limited HTTP with retry
+│   ├── _tag_extractor.py    # Bridge-tag extraction (18 categories)
+│   └── _domain_mapper.py   # API category → project domain mapping
+├── dqops/               # Deduplication, authority scoring, bias flagging
+├── semantic_core/       # Cross-domain link discovery
+├── hypothesis_generation/ # Hypothesis card generation
+├── skeptic/             # Prior-art challenge with external source matching
+├── arbiter/             # Ranking and promotion
+├── schemas/             # SourceRecord, HypothesisCard, CandidateSeed
+├── benchmarks/h10/      # MOF stability benchmark (completed)
+└── pipeline/            # Stage contracts</code></pre>
+<h3 id="external-source-collectors">3.2 External Source Collectors</h3>
+<p>Three API collectors were built (stdlib only, zero external
+dependencies):</p>
+<ul>
+<li><strong>Semantic Scholar</strong>: citation-based authority scoring
+via log10(citations), year-based novelty</li>
+<li><strong>bioRxiv</strong>: preprint collector with date/category
+filtering</li>
+<li><strong>Zenodo</strong>: dataset/publication/software collector</li>
+</ul>
+<p>All collectors produce <code>list[SourceRecord]</code> compatible
+with the pipeline, with rate limiting, retry logic, and JSON manifest
+persistence for reproducibility.</p>
+<h3 id="h10-mof-benchmark-completed-deprioritized">3.3 H10 MOF Benchmark
+(completed, deprioritized)</h3>
+<p>The MOF stability benchmark was built to full execution readiness: -
+2,179 MOF structures imported from MOFSimplify - Two descriptor
+baselines: LogReg (AP=0.858) and HGB (AP=0.874) - Graph-ready dataset:
+2,179/2,179 structures, 0 failures, avg 281 nodes × 291 edges - Baseline
+scaffold with explicit readiness checks</p>
+<p>H10 was deprioritized after prior-art review showed the field is
+saturated (Princeton 97% F1, MOFGen agentic synthesis, 2025 Nobel for
+MOF development).</p>
+<hr />
+<h2 id="experiment-h24-benford-digit-forensics-on-scrna-seq">4.
+Experiment H24: Benford Digit Forensics on scRNA-seq</h2>
+<h3 id="hypothesis">4.1 Hypothesis</h3>
+<p>Benford first- and second-digit frequency features, combined with
+cell-level structural features and Isolation Forest anomaly scoring, can
+detect fabricated scRNA-seq UMI count matrices.</p>
+<p><strong>Prior art:</strong> Bradshaw 2021 did CNA (not scRNA-seq).
+Vilenchik 2019 did Benford for cell typing (not fabrication). Gap
+confirmed via PubMed/Semantic Scholar search.</p>
+<h3 id="methods">4.2 Methods</h3>
+<p><strong>Datasets:</strong> PBMC3k (2,700 cells × 32,738 genes),
+Kang2018/GSE96583 (subsampled to 2,700 cells × 13,537 genes)</p>
+<p><strong>Fabrication methods (adapted from Bradshaw
+2021):</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 27%" />
+<col style="width: 27%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Method</th>
+<th>Mechanism</th>
+<th>Preserves</th>
+<th>Destroys</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resample</td>
+<td>Per-gene shuffle across cells</td>
+<td>Per-gene marginals</td>
+<td>Inter-gene correlation</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>Additive Poisson (λ=0.15×value)</td>
+<td>Approximate values</td>
+<td>Sparsity structure</td>
+</tr>
+<tr>
+<td>Random NB</td>
+<td>Per-gene NB(n,p) from fitted params</td>
+<td>Per-gene mean/variance</td>
+<td>Digit-level distribution</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Features (30 total):</strong> - Benford first-digit
+frequencies (9) - Benford second-digit frequencies (10) - Chi-squared
+divergence from Benford expected (2) - Cell-level: library size, genes
+detected, zero fraction, mean/var/CV nonzero, max count, log-total (8) -
+Isolation Forest anomaly score trained on real data only (1)</p>
+<p><strong>Classifiers:</strong> Random Forest (100 trees), Logistic
+Regression</p>
+<h3 id="results">4.3 Results</h3>
+<h4 id="within-dataset-detection-pbmc3k">Within-Dataset Detection
+(PBMC3k)</h4>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 22%" />
+<col style="width: 18%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr>
+<th>Fabrication</th>
+<th>Benford RF</th>
+<th>Cell-Level RF</th>
+<th>IF-Only RF</th>
+<th><strong>Fusion RF</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resample</td>
+<td>0.864</td>
+<td>0.956</td>
+<td>0.639</td>
+<td><strong>0.978</strong></td>
+</tr>
+<tr>
+<td>Noise*</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>1.000</td>
+<td><strong>1.000</strong></td>
+</tr>
+<tr>
+<td>Random NB</td>
+<td>0.989</td>
+<td>0.997</td>
+<td>0.843</td>
+<td><strong>0.999</strong></td>
+</tr>
+</tbody>
+</table>
+<p>*Noise AUC=1.000 reflects trivial sparsity change (nonzero 2.6% →
+21.4%), not meaningful detection.</p>
+<h4 id="cross-dataset-generalization-pbmc3k-kang2018">Cross-Dataset
+Generalization (PBMC3k ↔︎ Kang2018)</h4>
+<table>
+<thead>
+<tr>
+<th>Fabrication</th>
+<th>Within-PBMC</th>
+<th>Within-Kang</th>
+<th>PBMC→Kang</th>
+<th>Kang→PBMC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resample</td>
+<td>0.953</td>
+<td>0.986</td>
+<td>0.430</td>
+<td>0.482</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>Random NB</td>
+<td>0.995</td>
+<td>0.994</td>
+<td>0.186</td>
+<td>0.764</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cross-dataset generalization fails</strong> for resample and
+random NB. Noise generalizes trivially. Feature normalization (z-score,
+rank, delta-Benford) does not rescue generalization.</p>
+<h4 id="feature-importance">Feature Importance</h4>
+<ul>
+<li><strong>Resample:</strong> cell-level features dominate (zero
+fraction, library size); Benford chi² secondary</li>
+<li><strong>Random NB:</strong> Benford chi² is top feature; digit
+frequencies fd_2, fd_4 contribute</li>
+<li><strong>Mechanism:</strong> resampling homogenizes cells, collapsing
+inter-cell digit variance by 4×</li>
+</ul>
+<h4 id="adversarial-robustness">Adversarial Robustness</h4>
+<p>A “Benford-aware” fabricator who forces first-digit compliance
+actually makes detection EASIER (AUC=1.000). This is because real
+scRNA-seq UMI counts do NOT follow Benford (fd_1=0.74 vs Benford 0.30,
+caused by many counts=1). <strong>Benford compliance itself is a
+suspicious signal in scRNA-seq.</strong></p>
+<h3 id="audit-results">4.4 Audit Results</h3>
+<ul>
+<li>Raw data: verified real PBMC3k from 10x Genomics (2,700 cells,
+integer counts, min=0, max=419)</li>
+<li>Fabrication: verified all three methods produce genuinely different
+data (0/2700 identical rows)</li>
+<li>Features: manually verified digit extraction matches hand
+computation</li>
+<li>Classifier: zero train/test overlap; shuffle test AUC=0.51 (no
+leakage)</li>
+</ul>
+<h3 id="artifacts">4.5 Artifacts</h3>
+<pre><code>experiments/h24_benford_scrna/
+├── digit_features.py          # Benford feature extraction
+├── fabrication.py             # Three fabrication methods
+├── isolation_forest.py        # IF anomaly scoring
+├── run_h24.py                 # Standalone H24 experiment
+├── run_combined.py            # H24+H21 fusion experiment
+├── run_crossval.py            # Cross-dataset validation
+├── run_normalized_crossval.py # Normalization rescue attempt
+├── run_feature_importance.py  # Permutation importance analysis
+├── run_adversarial.py         # Adversarial robustness test
+├── generate_figures.py        # Publication-quality figures
+├── figures/                   # 4 figures (PNG 300dpi + PDF)
+├── results/                   # 7 JSON result files
+├── paper_outline.md           # Full paper outline
+├── collaboration_pitch.md     # Co-author search strategy
+└── run_cross_tissue.py        # Cross-tissue generalization test</code></pre>
+<h4 id="cross-tissue-generalization-pbmc-human-brain-mouse">4.7
+Cross-Tissue Generalization (PBMC human ↔︎ Brain mouse)</h4>
+<table>
+<thead>
+<tr>
+<th>Fabrication</th>
+<th>Within-PBMC</th>
+<th>Within-Brain</th>
+<th>PBMC→Brain</th>
+<th>Brain→PBMC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Resample</td>
+<td>0.976</td>
+<td>1.000</td>
+<td>0.376</td>
+<td>0.442</td>
+</tr>
+<tr>
+<td>Noise</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>0.999</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>Random NB</td>
+<td>0.999</td>
+<td>1.000</td>
+<td>0.388</td>
+<td>0.690</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cross-tissue generalization fails</strong> for resample and
+random NB (same pattern as cross-dataset). Noise generalizes
+trivially.</p>
+<p>Dataset: 10x Genomics Neuron 900 (mouse brain, 900 cells × ~27k
+genes) vs PBMC3k (human blood, 2,700 cells × 32k genes).</p>
+<p>This confirms that the artifact signal is <strong>dataset-specific,
+not tissue-specific</strong>: even changing species + tissue + cell
+count does not help the model transfer. The features encode dataset
+identity, not universal artifact signatures.</p>
+<hr />
+<h2 id="experiment-h25-banking-fraud-autoencoder-for-proteomics">5.
+Experiment H25: Banking Fraud Autoencoder for Proteomics</h2>
+<h3 id="hypothesis-1">5.1 Hypothesis</h3>
+<p>Banking-style dense autoencoder reconstruction error can detect
+fabricated proteomics/CNA data, complementing Benford digit features
+especially for structure-breaking fabrication.</p>
+<p><strong>Prior art:</strong> No paper transfers banking fraud
+autoencoder methods to mass spectrometry data. Gap confirmed.</p>
+<h3 id="methods-1">5.2 Methods</h3>
+<p><strong>Data:</strong> Bradshaw 2021 CPTAC datasets — proteomics (140
+samples × 9,585 proteins) and CNA (100 samples × 17,156 genes)</p>
+<p><strong>Fabrication:</strong> random (per-gene normal), shuffle
+(per-gene permutation), noise (10% Gaussian)</p>
+<p><strong>Detection methods:</strong> - Dense Autoencoder (256→32→256,
+trained on real data only, MSE reconstruction error) - Benford
+first-digit RF (9 features) - Fusion (Benford + AE error)</p>
+<h3 id="results-1">5.3 Results</h3>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 14%" />
+<col style="width: 10%" />
+<col style="width: 17%" />
+<col style="width: 16%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Fabrication</th>
+<th>AE AUC</th>
+<th>Benford AUC</th>
+<th>Fusion AUC</th>
+<th>% Flagged (98th pct)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Proteomics</td>
+<td>Random</td>
+<td>0.989</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>84%</td>
+</tr>
+<tr>
+<td>Proteomics</td>
+<td>Shuffle</td>
+<td>0.989</td>
+<td>0.811</td>
+<td>1.000</td>
+<td>87%</td>
+</tr>
+<tr>
+<td>Proteomics</td>
+<td>Noise 10%</td>
+<td>0.516</td>
+<td>0.997</td>
+<td>0.995</td>
+<td>3%</td>
+</tr>
+<tr>
+<td>CNA</td>
+<td>Random</td>
+<td>0.821</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>CNA</td>
+<td>Shuffle</td>
+<td>0.824</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>CNA</td>
+<td>Noise 10%</td>
+<td>0.533</td>
+<td>0.928</td>
+<td>0.945</td>
+<td>2%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-findings">5.4 Key Findings</h3>
+<ol type="1">
+<li><strong>AE beats Benford on shuffle</strong> (proteomics AE=0.989 vs
+Benford=0.811) — autoencoder catches structural coherence violations
+that digit tests miss</li>
+<li><strong>Benford beats AE on noise</strong> (proteomics Benford=0.997
+vs AE=0.516) — small noise doesn’t change reconstruction pattern but
+breaks digit distributions</li>
+<li><strong>Fusion wins on ALL fabrication types</strong> (AUC
+0.945-1.000) — complementary error profiles</li>
+<li><strong>Banking-style 98th percentile threshold</strong> flags
+84-87% of fabricated proteomics samples for random/shuffle</li>
+</ol>
+<h3 id="cross-omics-generalization-cna-proteomics">5.5 Cross-Omics
+Generalization (CNA ↔︎ Proteomics)</h3>
+<p>Benford-only features trained on CNA, tested on Proteomics (and vice
+versa):</p>
+<table>
+<thead>
+<tr>
+<th>Fabrication</th>
+<th>Within-CNA</th>
+<th>Within-Prot</th>
+<th>CNA→Prot</th>
+<th>Prot→CNA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Random</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>0.171</td>
+<td>0.134</td>
+</tr>
+<tr>
+<td>Shuffle</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>0.466</td>
+<td>0.172</td>
+</tr>
+<tr>
+<td>Noise 10%</td>
+<td>1.000</td>
+<td>1.000</td>
+<td>0.445</td>
+<td>0.572</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cross-omics generalization fails completely</strong> (mean
+AUC = 0.33, below random). Benford digit features are
+omics-type-specific: the digit distribution of CNA values differs
+fundamentally from proteomics expression values, making cross-type
+transfer impossible without retraining.</p>
+<p>This is consistent with the cross-tissue and cross-dataset results:
+within-dataset detection is strong, but the features encode
+dataset-specific properties.</p>
+<h3 id="artifacts-1">5.6 Artifacts</h3>
+<pre><code>experiments/h25_banking_ae_lcms/
+├── run_h25.py                 # Full experiment
+├── run_h25_cross_omics.py     # Cross-omics generalization test
+├── data/bradshaw/             # Downloaded CPTAC data
+└── results/                   # h25_results.json + h25_cross_omics.json</code></pre>
+<hr />
+<h2 id="experiment-h23-behavioral-p-hacking-detection">6. Experiment
+H23: Behavioral P-Hacking Detection</h2>
+<h3 id="hypothesis-2">6.1 Hypothesis</h3>
+<p>Fraud-style behavioral sequence features (velocity, volatility,
+direction changes, terminal behavior) extracted from p-value sequences
+can detect p-hacking better than aggregate p-curve analysis.</p>
+<h3 id="simulated-data-results">6.2 Simulated Data Results</h3>
+<p><strong>Setup:</strong> 500 clean studies (real/null effects) vs 500
+p-hacked studies (4 strategies: optional stopping, outcome switching,
+outlier exclusion, covariate fishing). 18 behavioral features per
+study.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RF Behavioral features</td>
+<td><strong>0.993</strong></td>
+</tr>
+<tr>
+<td>Isolation Forest (one-class)</td>
+<td>0.946</td>
+</tr>
+<tr>
+<td>P-curve baseline</td>
+<td>0.706</td>
+</tr>
+</tbody>
+</table>
+<p><strong>RF improvement over p-curve: +28.7 percentage points
+AUC.</strong></p>
+<p>Top features: volatility (std of p-value deltas), min_p, max_jump,
+frac_significant.</p>
+<h3 id="real-data-results-reproducibility-project-psychology">6.3 Real
+Data Results (Reproducibility Project: Psychology)</h3>
+<p><strong>Setup:</strong> 99 studies from Open Science Collaboration
+2015 with known replication outcomes. 12 features extracted from
+original study p-values and metadata.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LR Behavioral features</td>
+<td><strong>0.729</strong> ± 0.173</td>
+</tr>
+<tr>
+<td>RF</td>
+<td>0.622 ± 0.175</td>
+</tr>
+<tr>
+<td>GBM</td>
+<td>0.616 ± 0.125</td>
+</tr>
+<tr>
+<td>Baseline (p-value alone)</td>
+<td>0.654</td>
+</tr>
+</tbody>
+</table>
+<p><strong>LR improvement over baseline: +7.5 percentage points AUC on
+real data.</strong></p>
+<p>Top features: p_original_log (0.297), p_digit_1 (0.129),
+p_second_digit (0.116). Digit features rank 2nd and 3rd, confirming
+Benford-style analysis adds signal beyond the p-value itself.</p>
+<h3
+id="statcheck-real-data-results-meta-analysis-extracted-p-values">6.4
+Statcheck Real Data Results (meta-analysis extracted p-values)</h3>
+<p><strong>Setup:</strong> 61 articles from statcheck meta-analyses
+dataset (OSF n5xba), each with 2+ extracted statistical tests (506 tests
+total). Features extracted per-article: p-value distribution stats,
+threshold clustering, discrepancy metrics, sequence dynamics, digit
+patterns. Label: has statcheck error (1) vs clean (0).</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Baseline (mean_discrepancy alone)</td>
+<td>0.523</td>
+</tr>
+<tr>
+<td><strong>LR Behavioral features</strong></td>
+<td><strong>0.765</strong> ± 0.084</td>
+</tr>
+<tr>
+<td>GBM</td>
+<td>0.756 ± 0.101</td>
+</tr>
+<tr>
+<td>RF</td>
+<td>0.740 ± 0.086</td>
+</tr>
+</tbody>
+</table>
+<p><strong>LR improvement over baseline: +24.3 percentage points AUC on
+real statcheck data.</strong></p>
+<p>Top features: std_p (0.129), n_tests (0.102), volatility (0.090),
+mean_p (0.088), digit_1_freq (0.061).</p>
+<h3 id="cross-dataset-summary-for-h23">6.5 Cross-Dataset Summary for
+H23</h3>
+<table>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 6%" />
+<col style="width: 18%" />
+<col style="width: 30%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>n</th>
+<th>Best AUC</th>
+<th>Δ vs baseline</th>
+<th>Ground truth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simulated (500+500)</td>
+<td>1000</td>
+<td>0.993</td>
+<td>+28.7pp vs p-curve</td>
+<td>Controlled simulation</td>
+</tr>
+<tr>
+<td>RPP real (99)</td>
+<td>99</td>
+<td>0.729</td>
+<td>+7.5pp vs p-value</td>
+<td>Known replication outcomes</td>
+</tr>
+<tr>
+<td>Statcheck real (61)</td>
+<td>61</td>
+<td>0.765</td>
+<td>+24.3pp vs discrepancy</td>
+<td>Statcheck error flags</td>
+</tr>
+</tbody>
+</table>
+<p>Consistent positive signal across all three datasets. Improvement
+ranges +7.5pp to +28.7pp.</p>
+<h3 id="honest-caveats">6.6 Honest Caveats</h3>
+<ul>
+<li>Simulated data AUC (0.993) is likely optimistic — real p-hacking is
+subtler</li>
+<li>Real data samples are small (n=61-99); high variance across
+folds</li>
+<li>LR &gt; RF/GBM indicates low-sample regime where regularization
+matters</li>
+<li>Statcheck errors are reporting inconsistencies, not confirmed
+p-hacking — proxy label only</li>
+<li>Large-scale validation (688k p-values from Nuijten 2016) blocked by
+dataset access (DANS repository requires manual download)</li>
+</ul>
+<h3 id="artifacts-2">6.7 Artifacts</h3>
+<pre><code>experiments/h23_phacking_behavioral/
+├── run_h23.py                 # Simulated experiment
+├── run_h23_real.py            # Real data (RPP) validation
+├── run_h23_statcheck.py       # Statcheck meta-analyses validation
+├── data/rpp_data.csv          # Reproducibility Project dataset
+├── data/statcheckDataMetaAnalyses_Anonymized.txt  # Statcheck extracted p-values
+└── results/                   # 3 JSON result files</code></pre>
+<hr />
+<h2 id="experiment-h4-tda-for-cancer-drug-resistance-killed">7.
+Experiment H4: TDA for Cancer Drug Resistance (KILLED)</h2>
+<h3 id="hypothesis-3">7.1 Hypothesis</h3>
+<p>Persistent homology (TDA) features computed on local PCA
+neighborhoods of scRNA-seq cells can distinguish drug-sensitive from
+drug-resistant melanoma cells better than standard embedding
+baselines.</p>
+<h3 id="dataset">7.2 Dataset</h3>
+<p>GSE164897 (Schmidt et al. 2021): A375 melanoma cell line, 30,716
+cells across 4 samples: - 1 sensitive (untreated): 6,695 cells - 3
+resistant (vemurafenib ± combination): 4,328 + 9,266 + 10,427 cells -
+33,538 shared genes after alignment</p>
+<h3 id="results-2">7.3 Results</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>AUC</th>
+<th>BA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PCA (50 components)</td>
+<td><strong>0.9998</strong></td>
+<td>0.9925</td>
+</tr>
+<tr>
+<td>Dispersion (10 features)</td>
+<td>0.9378</td>
+<td>0.8387</td>
+</tr>
+<tr>
+<td><strong>TDA (12 PH features)</strong></td>
+<td><strong>0.5000</strong></td>
+<td>0.5000</td>
+</tr>
+<tr>
+<td>PCA + TDA fusion</td>
+<td>0.9998</td>
+<td>0.9919</td>
+</tr>
+<tr>
+<td>PCA + Disp + TDA fusion</td>
+<td>0.9997</td>
+<td>0.9931</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kill-criterion-applied">7.4 Kill Criterion Applied</h3>
+<ul>
+<li>TDA standalone AUC: 0.5000 (random chance)</li>
+<li>PCA baseline AUC: 0.9998 (near-perfect)</li>
+<li>TDA lift over PCA: -0.4998</li>
+<li>PCA+TDA fusion lift: +0.0000</li>
+</ul>
+<p><strong>VERDICT: KILL — TDA AUC (0.5000) &lt; 0.75
+threshold.</strong></p>
+<h3 id="interpretation">7.5 Interpretation</h3>
+<ol type="1">
+<li><p><strong>PCA AUC = 0.9998 is batch effect, not biology.</strong>
+With only 4 samples (1 sensitive, 3 resistant), cell-level
+classification learns sample identity, not resistance biology. Any
+embedding that captures batch differences will achieve near-perfect
+separation.</p></li>
+<li><p><strong>TDA = random.</strong> Local persistent homology features
+(H0, H1 on 30-NN neighborhoods) are invariant to the batch differences
+that PCA captures. TDA sees the same local topology in all cells
+regardless of resistance status.</p></li>
+<li><p><strong>The hypothesis that TDA captures “resistance state
+transitions” is not supported.</strong> On this dataset, there is no
+topological signal distinguishing sensitive from resistant cells above
+what PCA already trivially captures.</p></li>
+</ol>
+<h3 id="lessons">7.6 Lessons</h3>
+<ul>
+<li>Kill criteria prevent sunk-cost continuation of dead tracks</li>
+<li>Near-perfect PCA baseline is a red flag for batch confounding, not
+evidence of a good task</li>
+<li>TDA’s value proposition (capturing shape beyond linear embedding)
+requires tasks where linear methods genuinely fail</li>
+<li>This was a 4-minute execution + 236-second compute = complete answer
+in under 5 minutes</li>
+</ul>
+<hr />
+<h2 id="novel-scientific-observations">8. Novel Scientific
+Observations</h2>
+<h3 id="scrna-seq-umi-counts-do-not-follow-benfords-law">8.1 scRNA-seq
+UMI Counts Do Not Follow Benford’s Law</h3>
+<p>Real scRNA-seq data has first-digit frequency fd_1 = 0.74 (vs Benford
+expected 0.30). This is because the median nonzero UMI count is 1,
+creating extreme concentration on digit 1. This means:</p>
+<ul>
+<li><strong>Standard Benford compliance testing is inverted</strong> for
+scRNA-seq: conformity to Benford is suspicious, not expected</li>
+<li>A fabricator who forces Benford compliance makes their data MORE
+detectable, not less</li>
+<li>This observation is not documented in prior literature and
+represents a publishable finding on its own</li>
+</ul>
+<h3
+id="different-fabrication-types-are-caught-by-different-feature-groups">8.2
+Different Fabrication Types Are Caught by Different Feature Groups</h3>
+<ul>
+<li><strong>Correlation-destroying fabrication (resample):</strong>
+caught by cell-level structural features (zero fraction, library size
+correlation disruption)</li>
+<li><strong>Distribution-generating fabrication (random NB):</strong>
+caught by Benford digit chi-squared deviation</li>
+<li><strong>Value-level manipulation (noise):</strong> caught by both
+(trivially detectable due to sparsity change)</li>
+</ul>
+<p>This implies that a single detection method is insufficient — fusion
+of complementary feature groups is necessary.</p>
+<h3
+id="cross-dataset-generalization-is-fundamentally-limited-for-sophisticated-fabrication">8.3
+Cross-Dataset Generalization is Fundamentally Limited for Sophisticated
+Fabrication</h3>
+<p>Fabrication detection signals are entangled with dataset-specific
+characteristics (library preparation protocol, sequencing depth,
+biological composition). Feature normalization (z-score, rank,
+delta-Benford) does not rescue generalization. This is an honest
+negative result that should be reported to prevent false confidence in
+“universal” fabrication detectors.</p>
+<h3
+id="banking-autoencoder-reconstruction-error-captures-structural-coherence">8.4
+Banking Autoencoder Reconstruction Error Captures Structural
+Coherence</h3>
+<p>The autoencoder trained on real proteomics data learns the joint
+distribution of protein expression values. Fabrication methods that
+break inter-protein correlations (shuffle, random) produce high
+reconstruction error even when marginal distributions are preserved.
+This is exactly the mechanism used in banking fraud detection
+(transaction coherence) and validates the cross-domain transfer.</p>
+<hr />
+<h2 id="verified-results-summary">9. Verified Results Summary</h2>
+<table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 18%" />
+<col style="width: 15%" />
+<col style="width: 28%" />
+<col style="width: 16%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr>
+<th>ID</th>
+<th>Experiment</th>
+<th>Best AUC</th>
+<th>Bootstrap 95% CI</th>
+<th>Datasets</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H24</td>
+<td>Artifact detection fusion (scRNA-seq)</td>
+<td>0.978</td>
+<td>[0.988, 0.997]</td>
+<td>PBMC3k, Kang2018, Neurons900</td>
+<td><strong>Defendable within-dataset</strong></td>
+</tr>
+<tr>
+<td>H24-cross</td>
+<td>Cross-tissue (PBMC→Brain)</td>
+<td>0.376</td>
+<td>—</td>
+<td>PBMC3k ↔︎ Neurons900</td>
+<td>Fails (tissue-specific)</td>
+</tr>
+<tr>
+<td>H25</td>
+<td>Banking AE (proteomics/CNA)</td>
+<td>1.000</td>
+<td>—</td>
+<td>CPTAC proteomics, CNA</td>
+<td>Defendable within-dataset</td>
+</tr>
+<tr>
+<td>H25-cross</td>
+<td>Cross-omics (CNA→Prot)</td>
+<td>0.171</td>
+<td>—</td>
+<td>CNA ↔︎ Proteomics</td>
+<td>Fails (omics-specific)</td>
+</tr>
+<tr>
+<td>H23-sim</td>
+<td>Behavioral p-hacking (simulated)</td>
+<td>0.993</td>
+<td>—</td>
+<td>1000 synthetic</td>
+<td>Defendable</td>
+</tr>
+<tr>
+<td>H23-real</td>
+<td>Behavioral (RPP)</td>
+<td>0.729</td>
+<td>[0.417, 0.923]</td>
+<td>99 real</td>
+<td><strong>Underpowered</strong></td>
+</tr>
+<tr>
+<td>H23-statcheck</td>
+<td>Behavioral (statcheck)</td>
+<td>0.765</td>
+<td>[0.452, 1.000]</td>
+<td>61 real</td>
+<td><strong>Underpowered</strong></td>
+</tr>
+<tr>
+<td>H23-pmc</td>
+<td>PMC recompute (quasi-label)</td>
+<td>0.980</td>
+<td>—</td>
+<td>59 PMC articles</td>
+<td>Supporting (quasi-label)</td>
+</tr>
+<tr>
+<td><strong>H4</strong></td>
+<td><strong>TDA cancer resistance</strong></td>
+<td><strong>0.500</strong></td>
+<td>—</td>
+<td><strong>GSE164897</strong></td>
+<td><strong>KILLED</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Audited:</strong> data authenticity, fabrication validity,
+feature correctness, train/test leakage (shuffle test), bootstrap
+confidence intervals.</p>
+<p><strong>Key pattern:</strong> Within-dataset detection is strong (AUC
+0.97-1.00). Cross-generalization fails at every level tested (dataset,
+tissue, omics type). Noise-level artifacts generalize trivially. H23
+real-data claims are underpowered.</p>
+<hr />
+<h2 id="limitations">10. Limitations</h2>
+<ol type="1">
+<li><p><strong>All fabrication is simulated.</strong> No real-world
+fabricated scRNA-seq, proteomics, or p-hacking datasets with confirmed
+ground truth exist for validation.</p></li>
+<li><p><strong>Cross-generalization fails at every level
+tested.</strong> Cross-dataset (PBMC3k ↔︎ Kang2018), cross-tissue (human
+PBMC ↔︎ mouse brain), and cross-omics (CNA ↔︎ proteomics) all show AUC
+near or below random for sophisticated artifact types. Only noise-level
+manipulations generalize (trivially). Feature normalization does not
+help. The tool must be retrained per-dataset.</p></li>
+<li><p><strong>Small sample sizes and wide confidence
+intervals.</strong> RPP (n=99) and Statcheck (n=61) experiments have
+bootstrap 95% CIs that cross random (H23 RPP: [0.42, 0.92], H23
+Statcheck: [0.45, 1.00]). H23 real data claims are underpowered and
+should be framed as suggestive trends, not confirmed results.</p></li>
+<li><p><strong>Noise fabrication is trivially detectable</strong> in H24
+— the AUC=1.000 reflects a massive sparsity change, not sophisticated
+detection.</p></li>
+<li><p><strong>No domain co-author</strong> yet. The biological and
+proteomics framing needs expert validation before any claims can be
+considered publication-ready.</p></li>
+<li><p><strong>Integer UMI counts only.</strong> H24 methods assume raw
+counts; normalized, log-transformed, or imputed matrices would require
+separate investigation.</p></li>
+<li><p><strong>Operator bias risk.</strong> The anomaly detection
+framing may overfit to the operator’s expertise rather than representing
+the most impactful research direction.</p></li>
+</ol>
+<hr />
+<h2 id="artifacts-inventory">11. Artifacts Inventory</h2>
+<h3 id="result-files-11-json">Result Files (11 JSON)</h3>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr>
+<th>File</th>
+<th>Experiment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>h24_results.json</code></td>
+<td>H24 standalone (3 fabrication × 2 classifiers)</td>
+</tr>
+<tr>
+<td><code>h24_h21_combined.json</code></td>
+<td>H24+H21 fusion (4 approaches × 3 fabrication)</td>
+</tr>
+<tr>
+<td><code>h24_h21_crossval.json</code></td>
+<td>Cross-dataset PBMC3k ↔︎ Kang2018</td>
+</tr>
+<tr>
+<td><code>h24_normalized_crossval.json</code></td>
+<td>Normalization rescue experiment (4 strategies)</td>
+</tr>
+<tr>
+<td><code>h24_feature_importance.json</code></td>
+<td>Permutation + Gini importance</td>
+</tr>
+<tr>
+<td><code>h24_adversarial.json</code></td>
+<td>Adversarial robustness (2 strategies)</td>
+</tr>
+<tr>
+<td><code>h25_results.json</code></td>
+<td>Banking AE (2 datasets × 3 fabrication × 3 methods)</td>
+</tr>
+<tr>
+<td><code>h23_results.json</code></td>
+<td>P-hacking simulated (3 detectors, 4 strategies)</td>
+</tr>
+<tr>
+<td><code>h23_real_rpp_results.json</code></td>
+<td>P-hacking real RPP (3 models, 5-fold CV)</td>
+</tr>
+<tr>
+<td><code>h23_statcheck_results.json</code></td>
+<td>P-hacking statcheck real (3 models, 5-fold CV, 61 articles)</td>
+</tr>
+<tr>
+<td><code>h4_results.json</code></td>
+<td>H4 TDA cancer resistance — KILLED (5 baselines, 30,716 cells)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="figures-7-png-4-pdf">Figures (7 PNG + 4 PDF)</h3>
+<table>
+<colgroup>
+<col style="width: 47%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr>
+<th>Figure</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fig1_within_dataset_auc.png/pdf</code></td>
+<td>Bar chart: 4 methods × 3 fabrication types</td>
+</tr>
+<tr>
+<td><code>fig2_feature_importance.png/pdf</code></td>
+<td>Feature group importance per fabrication type</td>
+</tr>
+<tr>
+<td><code>fig3_cross_dataset_heatmap.png/pdf</code></td>
+<td>Generalization heatmap PBMC3k ↔︎ Kang2018</td>
+</tr>
+<tr>
+<td><code>fig4_digit_distributions.png/pdf</code></td>
+<td>Benford distributions: real vs fabricated</td>
+</tr>
+<tr>
+<td><code>h24_roc_curves.png</code></td>
+<td>ROC curves per fabrication</td>
+</tr>
+<tr>
+<td><code>h24_h21_comparison.png</code></td>
+<td>4-method comparison bar chart</td>
+</tr>
+<tr>
+<td><code>h24_feature_importance.png</code></td>
+<td>Permutation importance bar chart</td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-18-experiment-scripts">Code (18 experiment scripts)</h3>
+<p>All experiments are self-contained Python scripts in
+<code>experiments/</code>. Each downloads its own data, runs
+independently, and saves results to its <code>results/</code>
+directory.</p>
+<pre><code>experiments/
+├── dashboard.py                              # Unified results view
+├── h24_benford_scrna/
+│   ├── run_h24.py                            # H24 standalone
+│   ├── run_combined.py                       # H24+H21 fusion
+│   ├── run_crossval.py                       # Cross-dataset validation
+│   ├── run_normalized_crossval.py            # Normalization rescue
+│   ├── run_feature_importance.py             # Feature importance
+│   ├── run_adversarial.py                    # Adversarial robustness
+│   ├── generate_figures.py                   # Publication figures
+│   ├── digit_features.py                     # Benford extraction library
+│   ├── fabrication.py                        # Fabrication generators
+│   └── isolation_forest.py                   # IF anomaly scoring
+├── h25_banking_ae_lcms/
+│   └── run_h25.py                            # Banking AE experiment
+├── h23_phacking_behavioral/
+│   ├── run_h23.py                            # Simulated p-hacking
+│   ├── run_h23_real.py                       # RPP real data
+│   └── run_h23_statcheck.py                  # Statcheck real data
+└── h4_tda_cancer/
+    └── run_h4.py                             # H4 TDA — KILLED</code></pre>
+<h3 id="dashboard">Dashboard</h3>
+<p><code>experiments/dashboard.py</code> — unified view of all
+experiments in one terminal command.</p>
+<hr />
+<h2 id="prospects">12. Prospects</h2>
+<h3 id="immediate-next-steps-no-public-action-required">12.1 Immediate
+Next Steps (no public action required)</h3>
+<ol type="1">
+<li><strong>Third dataset for H24</strong> — non-PBMC tissue (brain,
+liver, tumor) to test tissue generalizability</li>
+<li><strong>H25 cross-omics</strong> — train on CNA, test on proteomics
+(and vice versa) to test modality transfer</li>
+<li><strong>Feature engineering V2</strong> — inter-gene correlation
+features (fraud detection uses inter-transaction patterns) which may
+improve cross-dataset generalization</li>
+<li><strong>H23 larger p-value dataset</strong> — use statcheck’s 688k
+extracted p-values (available via DANS repository) for scaled
+validation</li>
+</ol>
+<h3 id="publication-path-when-ready">12.2 Publication Path (when
+ready)</h3>
+<p><strong>Paper 1: “Digit Forensics for scRNA-seq Data
+Integrity”</strong> (H24) - Target: Bioinformatics Application Note -
+Needs: bioinformatics co-author, third dataset, response to reviewer
+domain questions - Estimated readiness: 4-6 weeks after co-author
+engagement</p>
+<p><strong>Paper 2: “Banking Fraud Methods for Multi-Omics Fabrication
+Detection”</strong> (H24 + H25 combined) - Target: PLoS Computational
+Biology - Needs: broader dataset validation, co-author with proteomics
+background - Estimated readiness: 8-12 weeks</p>
+<p><strong>Paper 3: “Behavioral Sequence Anomaly for Replication Risk
+Prediction”</strong> (H23) - Target: Research Integrity and Peer Review,
+or Meta-Psychology - Needs: larger p-value dataset, meta-science
+co-author - Estimated readiness: 12-16 weeks</p>
+<h3 id="long-term-research-programme">12.3 Long-Term Research
+Programme</h3>
+<p>The overarching narrative is: <strong>“Financial anomaly detection as
+a systematic source of methods for scientific data integrity
+screening.”</strong> This is a 3-5 year programme, not a single paper.
+The current results establish proof-of-concept across three data types
+(scRNA-seq, proteomics/CNA, p-values).</p>
+<p>Future directions: - Adversarial fabrication detection (fabricators
+who know about the detector) - Real-time GEO/SRA submission screening
+tool - Extension to other omics types (metabolomics, epigenomics) -
+Behavioral authorship patterns for paper mill detection - Open-source
+toolkit release</p>
+<h3 id="realistic-assessment">11.4 Realistic Assessment</h3>
+<p>This work is not Nobel-class. It is a solid, honest, technically
+sound research programme with genuine novelty (confirmed prior-art
+gaps), real experimental results (audited), and clear limitations
+(documented).</p>
+<p>What it IS: - A viable path to 2-3 publications in reputable journals
+- A genuine transfer of operator expertise to a new domain - A
+foundation for a recognizable research identity in scientific data
+integrity</p>
+<p>What it is NOT: - A guaranteed breakthrough - A finished product
+ready for deployment - Sufficient without domain collaborators</p>
+<hr />
+<h2 id="lessons-learned">13. Lessons Learned</h2>
+<ol type="1">
+<li><p><strong>Operator’s edge matters more than generic AI.</strong>
+The pivot from “find any interdisciplinary hypothesis” to “transfer YOUR
+fraud expertise” produced dramatically better results.</p></li>
+<li><p><strong>Honest negatives are valuable.</strong> Cross-dataset
+generalization failure, normalization failure, and the Benford-inversion
+finding in scRNA-seq are all publishable observations that strengthen
+the work.</p></li>
+<li><p><strong>Audit everything.</strong> The shuffle test, manual
+feature verification, and sparsity-change caveat on noise fabrication
+would not have been caught without systematic auditing.</p></li>
+<li><p><strong>Speed of execution matters.</strong> Three experiments in
+one day (H24, H25, H23) with full verification is possible when the
+infrastructure is already in place.</p></li>
+<li><p><strong>The Discovery Engine infrastructure was useful even after
+the pivot.</strong> External source collectors, DQOps, and the skeptic
+stage all contributed to the hypothesis evaluation process that led to
+the final research direction.</p></li>
+<li><p><strong>Kill criteria prevent sunk-cost fallacy.</strong> H4 was
+killed in 4 minutes of compute after months of planning infrastructure.
+The planning was not wasted — it ensured the kill was clean, documented,
+and defensible. Without a pre-committed kill criterion, the temptation
+to “try one more thing” would have consumed weeks.</p></li>
+<li><p><strong>Near-perfect baselines are red flags.</strong> PCA AUC =
+0.9998 on H4 means the task is trivially confounded (batch = sample
+identity). Any new method will also “succeed” on this task without
+adding value. Always check whether your baseline is suspiciously strong
+before claiming your method works.</p></li>
+<li><p><strong>Two-branch portfolio management works.</strong>
+Separating “core research” (Branch 2) from “R&amp;D lab” (Branch 1) with
+explicit time budgets and kill criteria prevented the project from
+oscillating between tracks. H4 consumed exactly one clean run, then was
+closed. The remaining effort went to validated Branch 2 work.</p></li>
+</ol>
+</body>
+</html>

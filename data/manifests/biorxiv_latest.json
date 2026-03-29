@@ -1,0 +1,274 @@
+[
+  {
+    "id": "biorxiv:10.1101/2023.01.16.524304",
+    "title": "Post-Transcriptional Size-Dependent Expression of the Fission Yeast Cdc13 Cyclin",
+    "domain": "biology",
+    "source_type": "preprint",
+    "abstract": "The major fission yeast cyclin, Cdc13, has been shown to increase in concentration in correlation with cell size, and has been proposed to thereby regulate cell size at division. However, the mechanism of its cell-size regulation has been unknown. Here, we show that Cdc13 is regulated post-transcriptionally. Its transcript is not expressed in a size-dependent manner, rather a size-dependent concentration of protein is expressed from a size-independent concentration of mRNA. Moreover, we show that the expression of Cdc13 is, in fact, size dependent, as opposed to simply size-correlated due to time-dependent expression. We identify a 20-amino-acid motif, which includes the APC D-box degron, as necessary and sufficient for size-dependent expression, which allowed us to construct a size-independent allele of cdc13. Using this allele, we show that size-dependent expression of Cdc13 is not required for size control in fission yeast cells.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.4,
+    "bias_index": 0.3,
+    "novelty_factor": 0.7,
+    "citations": [
+      "doi:10.1101/2023.01.16.524304"
+    ],
+    "metadata": {
+      "doi": "10.1101/2023.01.16.524304",
+      "date": "2026-03-25",
+      "category": "cell biology",
+      "authors": "Bashir, S.; Sun, X.-M.; ... (11 authors)",
+      "published_journal": "NA",
+      "provenance": "biorxiv_api"
+    }
+  },
+  {
+    "id": "biorxiv:10.1101/2023.04.17.537180",
+    "title": "Opportunistic evidence of the impact of bacterial infections on social integration in vampire bats",
+    "domain": "interdisciplinary",
+    "source_type": "preprint",
+    "abstract": "Social integration can affect an individual's susceptibility to infectious disease. Conversely, infectious disease can reduce an individual's social activity. Yet, it remains unclear to what extent short-term infections can inhibit social integration and the formation of new relationships. During a previous study on relationship formation, we captured 21 female common vampire bats (Desmodus rotundus) from different wild populations and housed them together in captivity. Upon introduction, we observed an unplanned outbreak of bacterial infections that caused cutaneous lesions. After treating infected bats with an antibiotic, five bats recovered, but four others suffered lasting injuries. Given that observations of how natural infections alter relationship formation are rare, we analyzed how allogrooming rates changed over time among familiar and new dyads consisting of the nine infected and 12 asymptomatic bats. We found that (1) infected bats demonstrated reduced activity and social behavior, (2) more severely infected bats gave and received less allogrooming than asymptomatic bats, (3) the effect of infection was larger for new dyads relative to familiar dyads, and (4) this effect decreased as infected bats recovered and new dyads became more familiar. These opportunistic observations were consistent with the hypothesis that short-term infections can impact the formation of new relationships.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.4,
+    "bias_index": 0.3,
+    "novelty_factor": 0.7,
+    "citations": [
+      "doi:10.1101/2023.04.17.537180"
+    ],
+    "metadata": {
+      "doi": "10.1101/2023.04.17.537180",
+      "date": "2026-03-25",
+      "category": "animal behavior and cognition",
+      "authors": "Razik, I.; Abou-Elias, M.; ... (4 authors)",
+      "published_journal": "NA",
+      "provenance": "biorxiv_api"
+    }
+  },
+  {
+    "id": "biorxiv:10.1101/2023.04.25.537981",
+    "title": "AI-Enhanced Adaptive Virtual Screening Platform Enabling Exploration of 69 Billion Molecules Discovers Structurally Validated FSP1 Inhibitors",
+    "domain": "biology",
+    "source_type": "preprint",
+    "abstract": "Identifying potent lead molecules for specific targets remains a major bottleneck in drug discovery. As structural information about proteins becomes increasingly available, ultra-large virtual screenings (ULVSs) which computationally evaluate billions of molecules offer a powerful way to accelerate early-stage drug discovery. Here, we introduce AdaptiveFlow, an open-source platform designed to make ULVSs more accessible, scalable, and efficient. AdaptiveFlow provides free access to a screening-ready version of the Enamine REAL Space (1), the largest library of ready-to-dock, drug-like molecules, containing 69 billion compounds that we prepared using the ligand preparation module of the platform. A key innovation of the platform is its use of a multi-dimensional grid of molecular properties, which helps researchers explore and prioritize chemical space more effectively and reduce the computational costs by a factor of approximately 1000. This grid forms the basis of a new method for identifying promising regions of chemical space, enabling systematic exploration and prioritization of compound libraries. An optional active learning component can further accelerate this process by adaptively steering the search toward molecules most likely to bind a given target. To support a broad range of applications, AdaptiveFlow is compatible with over 1,500 docking protocols. The platform achieves near-linear scaling on up to 5.6 million CPUs in the AWS Cloud, setting a new benchmark for large-scale cloud computing in drug discovery. Using this approach, we identified nanomolar inhibitors of two disease-relevant targets: ferroptosis suppressor protein 1 (FSP1) and poly(ADP-ribose) polymerase 1 (PARP-1) (2, 3). By leveraging newly solved crystal structures of FSP1 in complex with NAD+, FAD, and coenzyme Q1, we validated these hits experimentally and determined the co-crystal structures of FSP1 bound to small-molecule inhibitors, enabling insights into inhibitor binding mechanisms previously unknown. With its high scalability, flexibility, and open accessibility, AdaptiveFlow offers a powerful new resource for discovering and optimizing drug candidates at an unprecedented scale and speed.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.4,
+    "bias_index": 0.3,
+    "novelty_factor": 0.7,
+    "citations": [
+      "doi:10.1101/2023.04.25.537981"
+    ],
+    "metadata": {
+      "doi": "10.1101/2023.04.25.537981",
+      "date": "2026-03-23",
+      "category": "bioinformatics",
+      "authors": "Cecchini, D.; Nigam, A.; ... (45 authors)",
+      "published_journal": "NA",
+      "provenance": "biorxiv_api"
+    }
+  },
+  {
+    "id": "biorxiv:10.1101/2023.09.11.557269",
+    "title": "Uncoupling the TFIIH Core and Kinase Modules Leads To Misregulated RNA Polymerase II CTD Serine 5 Phosphorylation",
+    "domain": "biology",
+    "source_type": "preprint",
+    "abstract": "TFIIH is an essential transcription initiation factor for RNA polymerase II (RNApII). This multi-subunit complex comprises two modules that are physically linked in S. cerevisiae by the subunit Tfb3 (MAT1 in metazoans). The Core Module, with two DNA-dependent ATPases and several additional subunits, promotes DNA unwinding. The Kinase Module phosphorylates the C-terminal domain (CTD) of RNApII subunit Rpb1, initiating a cycle of CTD modifications that coordinate exchange of initiation and elongation factors. Why these two disparate activities are bundled into one factor is not obvious, but the connection may provide temporal coordination during early initiation. When Tfb3 is split into two parts to uncouple the TFIIH modules, the resulting cells are viable but grow very slowly. Chromatin immunoprecipitation of the split TFIIH shows that the Core Module, but not the Kinase, is properly recruited to promoters. Instead of the normal promoter-proximal peak, high CTD Serine 5 phosphorylation is seen throughout transcribed regions. Therefore, coupling the TFIIH modules is necessary to localize and limit CTD kinase activity to early stages of transcription. These results are consistent with the idea that the two TFIIH modules began as independent functional entities that later became connected by Tfb3 during early eukaryotic evolution.\n\nImpact StatementThe TFIIH subunit Tfb3/MAT1 can be split into two parts to uncouple the TFIIH kinase and DNA translocase modules, resulting in unfocused CTD phosphorylation.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.4,
+    "bias_index": 0.3,
+    "novelty_factor": 0.7,
+    "citations": [
+      "doi:10.1101/2023.09.11.557269"
+    ],
+    "metadata": {
+      "doi": "10.1101/2023.09.11.557269",
+      "date": "2026-03-23",
+      "category": "molecular biology",
+      "authors": "Giordano, G.; Buratowski, R.; ... (6 authors)",
+      "published_journal": "NA",
+      "provenance": "biorxiv_api"
+    }
+  },
+  {
+    "id": "biorxiv:10.1101/2024.01.23.576694",
+    "title": "Encoding of task regularities links grid-like signals to human timing behavior",
+    "domain": "biology",
+    "source_type": "preprint",
+    "abstract": "Grid cells have been proposed to encode task regularities that allow predicting future states. Entorhinal grid-like signals might therefore mirror behavioral biases associated with relying on task regularities, like regression-to-the-mean biases in time estimation. Here, we tested this proposal using functional magnetic resonance imaging and a rapid timing task in humans. Indeed, trial-wise entorhinal activity reflected task accuracy and the degree to which interval estimates regressed towards the mean of all tested intervals. Grid-like signals were observed exclusively for the interval closest to the mean, which was explained by differences in temporal grid stability across intervals. Finally, both behavioral and entorhinal results were explained by a Bayesian observer model that assumes the integration of current-trial sensory evidence with prior expectations. Together, we find that entorhinal activity and grid-like signals reflect behavioral performance in a timing task, supporting the proposed role of grid cells in encoding task structure for predictive processing.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.4,
+    "bias_index": 0.3,
+    "novelty_factor": 0.7,
+    "citations": [
+      "doi:10.1101/2024.01.23.576694"
+    ],
+    "metadata": {
+      "doi": "10.1101/2024.01.23.576694",
+      "date": "2026-03-20",
+      "category": "neuroscience",
+      "authors": "Polti, I.; Nau, M.; ... (5 authors)",
+      "published_journal": "NA",
+      "provenance": "biorxiv_api"
+    }
+  },
+  {
+    "id": "biorxiv:10.1101/2024.02.12.580019",
+    "title": "Pathogen and pest risks to vegetatively propagated crops in humanitarian contexts: Toward a national plant health risk analysis for Cameroon and Ethiopia",
+    "domain": "biology",
+    "source_type": "preprint",
+    "abstract": "In humanitarian contexts, supporting agricultural recovery after natural or human-driven shocks-and strengthening vulnerable communities through development interventions-is critical when crop and seed shortages threaten food security and livelihoods. Cameroon and Ethiopia face humanitarian crises that disrupt the production of key food security crops like banana and plantain, cassava, potato, and sweetpotato. In this study, we address crop pathogen and pest effects in a humanitarian context, both in general and with a focus on their effects on planting material quality through seed degeneration. We provide the foundation for a 'national plant health risk analysis' to inform regional and national surveillance and management strategies. We analyzed cropland density maps and applied network centrality metrics to identify locations that are candidates for disease and pest management and surveillance in Cameroon and Ethiopia. We used expert knowledge elicitation and global trade data to map pathogen and pest movement risks and characterize trade of crop-specific commodities and planting materials. We identified specific locations that may be important for pathogen and pest spread in Cameroon and Ethiopia, given their roles in the cropland network, and the reported presence of pathogens and pests. These results provide a baseline national plant health risk analysis for Cameroon and Ethiopia. We discuss strategies for ongoing improvement of a national plant health risk analysis, to inform decision-making in the humanitarian sector for designing on-the-ground actions to avoid unintentional spread of pathogens and pests during agricultural recovery interventions.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.4,
+    "bias_index": 0.3,
+    "novelty_factor": 0.7,
+    "citations": [
+      "doi:10.1101/2024.02.12.580019"
+    ],
+    "metadata": {
+      "doi": "10.1101/2024.02.12.580019",
+      "date": "2026-03-24",
+      "category": "ecology",
+      "authors": "Mouafo-Tchinda, R.; Etherton, B.; ... (14 authors)",
+      "published_journal": "NA",
+      "provenance": "biorxiv_api"
+    }
+  },
+  {
+    "id": "biorxiv:10.1101/2024.02.14.580219",
+    "title": "High-frequency amplitude-modulated sinusoidal stimulation desynchronizes neural activity and enhances naturalness of evoked sensations",
+    "domain": "control_information_theory",
+    "source_type": "preprint",
+    "abstract": "Regaining sensory feedback is critical for people living with limb amputation. Electrical stimulation of sensory fibers in peripheral nerves has been shown to restore focal percepts in the missing limb. However, conventional rectangular current pulses induce sensations often described as unnatural, likely due to the synchronous and periodic nature of activity they evoke. Here we introduce a fast-oscillating amplitude-modulated sinusoidal (FAMS) stimulation waveform that desynchronizes neural activity. Using computational modeling, we show that sinusoidal waveforms evoke asynchronous and irregular firing patterns, with frequency-dependent effects. Leveraging both low- and high-frequency mechanisms, FAMS exploits membrane nonlinearities to enhance neuron-specific differences. In a feline model of peripheral nerve stimulation, FAMS evoked activity that was more asynchronous than conventional rectangular pulses, while remaining easily controllable with simple stimulation parameters. Importantly, in human experiments using noninvasive stimulation of the median nerve, participants reported that FAMS evoked more natural sensations compared to rectangular biphasic pulses in a two-alternative forced-choice task. The preference for FAMS increased at higher intensities above sensory threshold, despite intensity-matched stimulation across waveform types. These findings provide evidence that reduced synchrony in afferent recruitment translates into more naturalistic and comfortable sensory percepts. Together, our results establish FAMS as a promising biomimetic stimulation strategy with potential for clinical applications in sensory feedback restoration.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.4,
+    "bias_index": 0.3,
+    "novelty_factor": 0.7,
+    "citations": [
+      "doi:10.1101/2024.02.14.580219"
+    ],
+    "metadata": {
+      "doi": "10.1101/2024.02.14.580219",
+      "date": "2026-03-25",
+      "category": "bioengineering",
+      "authors": "Barra, B.; Rose, D. S.; ... (9 authors)",
+      "published_journal": "NA",
+      "provenance": "biorxiv_api"
+    }
+  },
+  {
+    "id": "biorxiv:10.1101/2024.03.13.584921",
+    "title": "Enhancer-targeted CRISPR-A rescues haploinsufficiency and mutant phenotypes in organoid models of autism",
+    "domain": "biology",
+    "source_type": "preprint",
+    "abstract": "Autism Spectrum Disorder (ASD) is a highly heritable condition with diverse clinical presentations. Approximately 20% of ASDs genetic susceptibility is imparted by de novo mutations of major effect, most of which cause haploinsufficiency. We mapped enhancers of two high confidence autism genes - CHD8 and SCN2A and used CRISPR-based gene activation (CRISPR-A) in hPSC-derived excitatory neurons and cerebral forebrain organoids to correct the effects of haploinsufficiency, taking advantage of the presence of a wildtype allele of each gene and endogenous gene regulation. We found that CRISPR-A induced a sustained increase in CHD8 and SCN2A expression in neurons and organoids, with rescue of gene expression levels and mutation-associated phenotypes, including gene expression and physiology. These data support gene activation via targeting enhancers of haploinsufficient genes as a therapeutic intervention in ASD and other neurodevelopmental disorders.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.4,
+    "bias_index": 0.3,
+    "novelty_factor": 0.7,
+    "citations": [
+      "doi:10.1101/2024.03.13.584921"
+    ],
+    "metadata": {
+      "doi": "10.1101/2024.03.13.584921",
+      "date": "2026-03-23",
+      "category": "neuroscience",
+      "authors": "Chen, G. T.; Nair, G.; ... (12 authors)",
+      "published_journal": "NA",
+      "provenance": "biorxiv_api"
+    }
+  },
+  {
+    "id": "biorxiv:10.1101/2024.03.27.583720",
+    "title": "Identification of letters distorted by physiologically-inspired spatial scrambling",
+    "domain": "biology",
+    "source_type": "preprint",
+    "abstract": "In the geniculostriate pathway of the human visual system, neuronal projections carry signals from a particular retinal locus in parallel from one anatomical area to the next. Imprecision in the fidelity of these projections would place constraints on the ability of the system to perform tasks requiring positional information. We investigated the impact that \"spatial scrambling'\" between stages would have on visual performance. We consider two stages in a simple canonical model of the early visual cortex where scrambling might occur: either the input to the first orientation-tuned mechanisms (analogous to V1 simple cells), or the output from those mechanisms. These are referred as \"subcortical\" (SCS) and \"cortical scrambling\" (CS). We developed a wavelet decomposition and resynthesis algorithm to mimic these effects, and measured human performance in letter identification affected by the two types of scrambling. Our results showed SCS and CS have distinguishable effects on both perceived noisiness of letters and letter identification threshold. Comparing human performance against a suite of pre-trained and custom convolutional neural networks (CNNs) that were trained on the scrambled stimuli, relative efficiency (calculated from the ratio of human:CNN thresholds) is higher for CS than SCS. However, in modelling human inefficiency by reducing the proportion of wavelets available to the CNNs, humans are less efficient in CS than SCS. These differences in efficiencies show humans are better at processing orientation redundant stimuli (CS) than orientation noisy stimuli (SCS). We hypothesize this reflects differences in integration properties at the input and output stages of simple cells in the cortex.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [],
+    "limitations": [],
+    "authority_score": 0.4,
+    "bias_index": 0.3,
+    "novelty_factor": 0.7,
+    "citations": [
+      "doi:10.1101/2024.03.27.583720"
+    ],
+    "metadata": {
+      "doi": "10.1101/2024.03.27.583720",
+      "date": "2026-03-25",
+      "category": "neuroscience",
+      "authors": "Zhu, R. X.; Baldwin, A. S.",
+      "published_journal": "NA",
+      "provenance": "biorxiv_api"
+    }
+  },
+  {
+    "id": "biorxiv:10.1101/2024.04.21.590479",
+    "title": "Tumor suppressor p73 transcriptionally regulates c-FLIP to impede its priming of extrinsic apoptosis while a switcher compound degrades c-FLIP protein",
+    "domain": "biology",
+    "source_type": "preprint",
+    "abstract": "The tumor suppressor p73 is a member of the p53 family and transcriptionally activates multiple p53-targets involved in cell cycle regulation and apoptosis. In addition to pro- apoptotic signaling, outcomes of p73 activation include cell survival signals. Thus, p73 activity and targets may provide insight in cell fate outcomes between cell survival and apoptosis following cellular stress. We report that cellular FLICE inhibitory protein (c- FLIP), a master antiapoptotic factor, is a transcriptional target of p73. The activation of p73 ( and {beta} isoforms) transcriptionally upregulates c-FLIP-L/S expression in cancer cells. The cell fate decision following p73 activation is determined by the adjustment of the balance of outcomes of p73 activation between p73-induced pro-apoptotic signaling and c-FLIP-L/S expression in cancer cells. p73 primes extrinsic apoptosis via an autocrine death ligand-DR5 axis, and the priming appears to be titrated at the level of c-FLIP-L/S. The p73-upregulation of c-FLIP-L/S increases the threshold of extrinsic apoptosis. Cells with poor priming levels convert to cell cycle arrest and survival. Depletion of c-FLIP-L/S increases the p73-priming levels towards extrinsic apoptosis and sensitizes cancer cells to p73-primed extrinsic apoptosis. We further identified a small-molecule CB-7587351 (\"switcher compound\") that alters p73 activation outcomes through c-FLIP-L/S protein degradation. Therapeutic activation of p73 can restore p53- signaling in mutant p53-expressing cancer cells effectively bypassing the p53 deficiency in cancer cells. Our discovery of p73 transcriptional upregulation of c-FLIP provides a promising strategy for depleting c-FLIP to improve antitumor efficacy of p73-targeting cancer therapy for p53-mutant tumors.",
+    "claims": [],
+    "methods": [],
+    "mechanisms": [],
+    "open_questions": [],
+    "bridge_tags": [
+      "stability"
+    ],
+    "limitations": [],
+    "authority_score": 0.4,
+    "bias_index": 0.3,
+    "novelty_factor": 0.7,
+    "citations": [
+      "doi:10.1101/2024.04.21.590479"
+    ],
+    "metadata": {
+      "doi": "10.1101/2024.04.21.590479",
+      "date": "2026-03-23",
+      "category": "cancer biology",
+      "authors": "Zhang, S.; Zhou, L.; El-Deiry, W. S.",
+      "published_journal": "NA",
+      "provenance": "biorxiv_api"
+    }
+  }
+]

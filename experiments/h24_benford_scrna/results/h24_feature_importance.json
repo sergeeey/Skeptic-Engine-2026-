@@ -1,0 +1,377 @@
+{
+  "results": [
+    {
+      "method": "resample",
+      "permutation_top10": [
+        {
+          "rank": 1,
+          "feature": "frac_zeros",
+          "importance_mean": 0.0219,
+          "importance_std": 0.003
+        },
+        {
+          "rank": 2,
+          "feature": "log1p_total",
+          "importance_mean": 0.0127,
+          "importance_std": 0.0026
+        },
+        {
+          "rank": 3,
+          "feature": "chi2_first_digit",
+          "importance_mean": 0.0126,
+          "importance_std": 0.0014
+        },
+        {
+          "rank": 4,
+          "feature": "n_genes",
+          "importance_mean": 0.0122,
+          "importance_std": 0.0024
+        },
+        {
+          "rank": 5,
+          "feature": "total_counts",
+          "importance_mean": 0.0103,
+          "importance_std": 0.0021
+        },
+        {
+          "rank": 6,
+          "feature": "mean_nonzero",
+          "importance_mean": 0.0084,
+          "importance_std": 0.0026
+        },
+        {
+          "rank": 7,
+          "feature": "cv_nonzero",
+          "importance_mean": 0.0076,
+          "importance_std": 0.0011
+        },
+        {
+          "rank": 8,
+          "feature": "fd_1",
+          "importance_mean": 0.0042,
+          "importance_std": 0.0011
+        },
+        {
+          "rank": 9,
+          "feature": "var_nonzero",
+          "importance_mean": 0.0038,
+          "importance_std": 0.0008
+        },
+        {
+          "rank": 10,
+          "feature": "fd_9",
+          "importance_mean": 0.0015,
+          "importance_std": 0.0006
+        }
+      ],
+      "gini_top10": [
+        {
+          "rank": 1,
+          "feature": "frac_zeros",
+          "gini_importance": 0.1937
+        },
+        {
+          "rank": 2,
+          "feature": "n_genes",
+          "gini_importance": 0.1432
+        },
+        {
+          "rank": 3,
+          "feature": "log1p_total",
+          "gini_importance": 0.1419
+        },
+        {
+          "rank": 4,
+          "feature": "total_counts",
+          "gini_importance": 0.1023
+        },
+        {
+          "rank": 5,
+          "feature": "mean_nonzero",
+          "gini_importance": 0.0682
+        },
+        {
+          "rank": 6,
+          "feature": "chi2_first_digit",
+          "gini_importance": 0.0631
+        },
+        {
+          "rank": 7,
+          "feature": "fd_1",
+          "gini_importance": 0.049
+        },
+        {
+          "rank": 8,
+          "feature": "if_anomaly_score",
+          "gini_importance": 0.034
+        },
+        {
+          "rank": 9,
+          "feature": "cv_nonzero",
+          "gini_importance": 0.0262
+        },
+        {
+          "rank": 10,
+          "feature": "var_nonzero",
+          "gini_importance": 0.0213
+        }
+      ],
+      "group_importance": {
+        "benford_first_digit": 0.0104,
+        "benford_second_digit": 0.0024,
+        "benford_chi2": 0.0128,
+        "cell_level": 0.078,
+        "if_score": 0.0013
+      }
+    },
+    {
+      "method": "noise",
+      "permutation_top10": [
+        {
+          "rank": 1,
+          "feature": "fd_5",
+          "importance_mean": 0.0,
+          "importance_std": 0.0
+        },
+        {
+          "rank": 2,
+          "feature": "frac_zeros",
+          "importance_mean": 0.0,
+          "importance_std": 0.0
+        },
+        {
+          "rank": 3,
+          "feature": "total_counts",
+          "importance_mean": 0.0,
+          "importance_std": 0.0
+        },
+        {
+          "rank": 4,
+          "feature": "if_anomaly_score",
+          "importance_mean": 0.0,
+          "importance_std": 0.0
+        },
+        {
+          "rank": 5,
+          "feature": "sd_4",
+          "importance_mean": 0.0,
+          "importance_std": 0.0
+        },
+        {
+          "rank": 6,
+          "feature": "fd_2",
+          "importance_mean": 0.0,
+          "importance_std": 0.0
+        },
+        {
+          "rank": 7,
+          "feature": "fd_3",
+          "importance_mean": 0.0,
+          "importance_std": 0.0
+        },
+        {
+          "rank": 8,
+          "feature": "fd_4",
+          "importance_mean": 0.0,
+          "importance_std": 0.0
+        },
+        {
+          "rank": 9,
+          "feature": "fd_6",
+          "importance_mean": 0.0,
+          "importance_std": 0.0
+        },
+        {
+          "rank": 10,
+          "feature": "fd_7",
+          "importance_mean": 0.0,
+          "importance_std": 0.0
+        }
+      ],
+      "gini_top10": [
+        {
+          "rank": 1,
+          "feature": "frac_zeros",
+          "gini_importance": 0.2215
+        },
+        {
+          "rank": 2,
+          "feature": "log1p_total",
+          "gini_importance": 0.1317
+        },
+        {
+          "rank": 3,
+          "feature": "fd_2",
+          "gini_importance": 0.1296
+        },
+        {
+          "rank": 4,
+          "feature": "if_anomaly_score",
+          "gini_importance": 0.0996
+        },
+        {
+          "rank": 5,
+          "feature": "total_counts",
+          "gini_importance": 0.0921
+        },
+        {
+          "rank": 6,
+          "feature": "n_genes",
+          "gini_importance": 0.0916
+        },
+        {
+          "rank": 7,
+          "feature": "fd_5",
+          "gini_importance": 0.05
+        },
+        {
+          "rank": 8,
+          "feature": "mean_nonzero",
+          "gini_importance": 0.0493
+        },
+        {
+          "rank": 9,
+          "feature": "fd_6",
+          "gini_importance": 0.0293
+        },
+        {
+          "rank": 10,
+          "feature": "fd_8",
+          "gini_importance": 0.0292
+        }
+      ],
+      "group_importance": {
+        "benford_first_digit": 0.0,
+        "benford_second_digit": 0.0,
+        "benford_chi2": 0.0,
+        "cell_level": 0.0,
+        "if_score": 0.0
+      }
+    },
+    {
+      "method": "random_nb",
+      "permutation_top10": [
+        {
+          "rank": 1,
+          "feature": "chi2_first_digit",
+          "importance_mean": 0.0049,
+          "importance_std": 0.0015
+        },
+        {
+          "rank": 2,
+          "feature": "frac_zeros",
+          "importance_mean": 0.0039,
+          "importance_std": 0.0013
+        },
+        {
+          "rank": 3,
+          "feature": "log1p_total",
+          "importance_mean": 0.0026,
+          "importance_std": 0.0009
+        },
+        {
+          "rank": 4,
+          "feature": "fd_2",
+          "importance_mean": 0.0024,
+          "importance_std": 0.0005
+        },
+        {
+          "rank": 5,
+          "feature": "n_genes",
+          "importance_mean": 0.0021,
+          "importance_std": 0.0008
+        },
+        {
+          "rank": 6,
+          "feature": "total_counts",
+          "importance_mean": 0.002,
+          "importance_std": 0.0008
+        },
+        {
+          "rank": 7,
+          "feature": "mean_nonzero",
+          "importance_mean": 0.0016,
+          "importance_std": 0.0002
+        },
+        {
+          "rank": 8,
+          "feature": "fd_4",
+          "importance_mean": 0.0013,
+          "importance_std": 0.0005
+        },
+        {
+          "rank": 9,
+          "feature": "fd_1",
+          "importance_mean": 0.0012,
+          "importance_std": 0.0006
+        },
+        {
+          "rank": 10,
+          "feature": "cv_nonzero",
+          "importance_mean": 0.0008,
+          "importance_std": 0.0002
+        }
+      ],
+      "gini_top10": [
+        {
+          "rank": 1,
+          "feature": "frac_zeros",
+          "gini_importance": 0.2223
+        },
+        {
+          "rank": 2,
+          "feature": "log1p_total",
+          "gini_importance": 0.1366
+        },
+        {
+          "rank": 3,
+          "feature": "n_genes",
+          "gini_importance": 0.1212
+        },
+        {
+          "rank": 4,
+          "feature": "total_counts",
+          "gini_importance": 0.107
+        },
+        {
+          "rank": 5,
+          "feature": "chi2_first_digit",
+          "gini_importance": 0.0954
+        },
+        {
+          "rank": 6,
+          "feature": "fd_1",
+          "gini_importance": 0.0902
+        },
+        {
+          "rank": 7,
+          "feature": "fd_3",
+          "gini_importance": 0.0511
+        },
+        {
+          "rank": 8,
+          "feature": "fd_4",
+          "gini_importance": 0.0312
+        },
+        {
+          "rank": 9,
+          "feature": "if_anomaly_score",
+          "gini_importance": 0.0265
+        },
+        {
+          "rank": 10,
+          "feature": "fd_2",
+          "gini_importance": 0.0257
+        }
+      ],
+      "group_importance": {
+        "benford_first_digit": 0.0055,
+        "benford_second_digit": 0.0002,
+        "benford_chi2": 0.0049,
+        "cell_level": 0.0131,
+        "if_score": 0.0004
+      }
+    }
+  ],
+  "elapsed_s": 41.1
+}

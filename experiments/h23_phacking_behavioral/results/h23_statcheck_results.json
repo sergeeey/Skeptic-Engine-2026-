@@ -1,0 +1,78 @@
+{
+  "experiment": "H23_statcheck_real",
+  "n_articles": 61,
+  "n_clean": 31,
+  "n_error": 30,
+  "best_baseline_auc": 0.5226,
+  "results": {
+    "RF": {
+      "mean_auc": 0.7397,
+      "std_auc": 0.0862,
+      "delta": 0.2171
+    },
+    "GBM": {
+      "mean_auc": 0.7563,
+      "std_auc": 0.1006,
+      "delta": 0.2338
+    },
+    "LR": {
+      "mean_auc": 0.7651,
+      "std_auc": 0.0844,
+      "delta": 0.2425
+    }
+  },
+  "verdict": "POSITIVE \u2014 LR beats baseline by +0.2425 on real statcheck data",
+  "feature_ranking": [
+    {
+      "rank": 1,
+      "feature": "std_p",
+      "importance": 0.129
+    },
+    {
+      "rank": 2,
+      "feature": "n_tests",
+      "importance": 0.1016
+    },
+    {
+      "rank": 3,
+      "feature": "log_n_tests",
+      "importance": 0.0959
+    },
+    {
+      "rank": 4,
+      "feature": "volatility",
+      "importance": 0.0904
+    },
+    {
+      "rank": 5,
+      "feature": "mean_p",
+      "importance": 0.0878
+    },
+    {
+      "rank": 6,
+      "feature": "trend",
+      "importance": 0.0649
+    },
+    {
+      "rank": 7,
+      "feature": "digit_1_freq",
+      "importance": 0.0613
+    },
+    {
+      "rank": 8,
+      "feature": "frac_decreasing",
+      "importance": 0.0592
+    },
+    {
+      "rank": 9,
+      "feature": "max_discrepancy",
+      "importance": 0.0436
+    },
+    {
+      "rank": 10,
+      "feature": "frac_sig",
+      "importance": 0.0389
+    }
+  ],
+  "elapsed_s": 0.7
+}

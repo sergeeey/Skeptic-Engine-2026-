@@ -1,0 +1,32 @@
+{
+  "model_id": "hybrid_hgb_v1",
+  "target_name": "solvent_removal_stability_binary",
+  "descriptor_input_artifact": "data\\benchmarks\\h10_features\\mofsimplify_descriptor_features.csv",
+  "graph_input_artifact": "data\\benchmarks\\h10_graphs\\mofsimplify_asr_graphs.jsonl.gz",
+  "train_rows": 1394,
+  "val_rows": 349,
+  "test_rows": 436,
+  "descriptor_feature_count": 174,
+  "graph_feature_count": 41,
+  "total_feature_count": 215,
+  "selected_params": {
+    "learning_rate": 0.08,
+    "max_depth": 8,
+    "max_iter": 500,
+    "min_samples_leaf": 10
+  },
+  "val_metrics": {
+    "average_precision": 0.8772906041082942,
+    "roc_auc": 0.8525503355704698,
+    "balanced_accuracy": 0.7707718120805369,
+    "threshold": 0.852836
+  },
+  "test_metrics": {
+    "average_precision": 0.8622359846114278,
+    "roc_auc": 0.8346337282138069,
+    "balanced_accuracy": 0.7519176245631771,
+    "threshold": 0.852836
+  },
+  "output_predictions_path": "data\\benchmarks\\h10_results\\hybrid_hgb_v1_test_predictions.csv",
+  "output_report_path": "data\\benchmarks\\h10_results\\hybrid_hgb_v1.json"
+}

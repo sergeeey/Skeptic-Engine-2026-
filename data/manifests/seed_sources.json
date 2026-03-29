@@ -1,0 +1,205 @@
+[
+  {
+    "id": "seed-project-brief-001",
+    "title": "Interdisciplinary Discovery Engine Project Brief",
+    "domain": "interdisciplinary",
+    "source_type": "report",
+    "abstract": "Internal seed brief describing the mission, constraints, and MVP scope of the project.",
+    "claims": [
+      "The project should optimize for testable interdisciplinary hypotheses rather than rhetorical novelty.",
+      "The first operational target is a defensible top-5 shortlist with computational validation paths."
+    ],
+    "methods": [
+      "agentic hypothesis discovery",
+      "evidence-backed ranking",
+      "Python-first falsification"
+    ],
+    "mechanisms": [
+      "rank hypotheses by novelty, feasibility, falsifiability, impact, and validation cost"
+    ],
+    "open_questions": [
+      "How should the engine promote only defensible hypotheses into the top-5 board?"
+    ],
+    "bridge_tags": [
+      "hypothesis_ranking",
+      "falsification",
+      "interdisciplinary_search"
+    ],
+    "limitations": [
+      "Internal planning note rather than external scientific evidence."
+    ],
+    "authority_score": 0.35,
+    "bias_index": 0.45,
+    "novelty_factor": 0.4,
+    "citations": [],
+    "metadata": {
+      "local_path": "docs/project-brief.md",
+      "provenance": "user_requirements"
+    }
+  },
+  {
+    "id": "seed-methodology-001",
+    "title": "Agentic Search for Interdisciplinary Hypotheses",
+    "domain": "interdisciplinary",
+    "source_type": "report",
+    "abstract": "Local methodology note describing KDS architecture, Reason-Act-Observe cycle, and ranked hypothesis framing.",
+    "claims": [
+      "The system should separate acquisition, quality control, semantic core, and synthesis.",
+      "Hypothesis output should include evidence trail, novelty framing, and cheap validation routes."
+    ],
+    "methods": [
+      "knowledge discovery system",
+      "reason-act-observe",
+      "hypothesis ranking"
+    ],
+    "mechanisms": [
+      "separate acquisition, quality control, semantic core, and synthesis",
+      "use semantic distance and cheap validation to prioritize hypotheses"
+    ],
+    "open_questions": [
+      "Which domain transfers produce the strongest low-cost experimental routes?"
+    ],
+    "bridge_tags": [
+      "semantic_core",
+      "hypothesis_ranking",
+      "interdisciplinary_search"
+    ],
+    "limitations": [
+      "Contains a mix of conceptual framing and unverified external references that require later source-level checking."
+    ],
+    "authority_score": 0.4,
+    "bias_index": 0.5,
+    "novelty_factor": 0.55,
+    "citations": [],
+    "metadata": {
+      "local_path": "Агентный поиск междисциплинарных гипотез.md",
+      "provenance": "local_seed_document"
+    }
+  },
+  {
+    "id": "seed-biology-001",
+    "title": "Biology Domain Seed Note",
+    "domain": "biology",
+    "source_type": "report",
+    "abstract": "Internal note summarizing unresolved biology problems and candidate transfer methods for the MVP.",
+    "claims": [
+      "Aging, gene regulation, regeneration, and noisy high-dimensional measurements remain useful target areas for computational discovery.",
+      "Biology can benefit from imported methods when mechanisms are partially known but data is abundant."
+    ],
+    "methods": [
+      "graph learning",
+      "control theory",
+      "information-theoretic feature selection",
+      "topological data analysis"
+    ],
+    "mechanisms": [
+      "feedback regulation in cellular systems",
+      "network structure in gene and protein interaction systems"
+    ],
+    "open_questions": [
+      "Which residual structure in biological data reflects control rather than noise?",
+      "Which under-characterized biological components can be inferred from network structure?"
+    ],
+    "bridge_tags": [
+      "control",
+      "graph",
+      "information_theory",
+      "topology"
+    ],
+    "limitations": [
+      "Planning note only; not a substitute for literature review."
+    ],
+    "authority_score": 0.32,
+    "bias_index": 0.5,
+    "novelty_factor": 0.48,
+    "citations": [],
+    "metadata": {
+      "local_path": "docs/domain-seed-notes.md",
+      "provenance": "seed_domain_note"
+    }
+  },
+  {
+    "id": "seed-materials-001",
+    "title": "Materials Science Domain Seed Note",
+    "domain": "materials_science",
+    "source_type": "report",
+    "abstract": "Internal note summarizing unresolved materials-science bottlenecks and candidate transfer methods for the MVP.",
+    "claims": [
+      "Multiscale modeling, phase stability, defect prediction, and rapid design-space screening are promising computational targets.",
+      "Materials problems often have rich structured data but expensive direct validation."
+    ],
+    "methods": [
+      "information bottleneck",
+      "graph learning",
+      "active learning",
+      "surrogate modeling"
+    ],
+    "mechanisms": [
+      "phase selection under compositional constraints",
+      "defect-sensitive structure-property relationships"
+    ],
+    "open_questions": [
+      "Which descriptors carry the minimum information needed to preserve target properties?",
+      "Which low-cost models best approximate expensive simulations?"
+    ],
+    "bridge_tags": [
+      "information_theory",
+      "graph",
+      "optimization",
+      "surrogates"
+    ],
+    "limitations": [
+      "Planning note only; not a substitute for materials-specific prior-art review."
+    ],
+    "authority_score": 0.32,
+    "bias_index": 0.5,
+    "novelty_factor": 0.5,
+    "citations": [],
+    "metadata": {
+      "local_path": "docs/domain-seed-notes.md",
+      "provenance": "seed_domain_note"
+    }
+  },
+  {
+    "id": "seed-control-001",
+    "title": "Control And Information Theory Domain Seed Note",
+    "domain": "control_information_theory",
+    "source_type": "report",
+    "abstract": "Internal note summarizing unresolved control-theory and information-theory bottlenecks and candidate transfer methods for the MVP.",
+    "claims": [
+      "Feedback design, filtering, compression, and robust control provide strong transferable abstractions for other sciences.",
+      "Many hard control settings involve uncertainty, delay, partial observability, or limited representations."
+    ],
+    "methods": [
+      "feedback design",
+      "kalman-style filtering",
+      "robust control",
+      "information-theoretic compression"
+    ],
+    "mechanisms": [
+      "state estimation under partial observability",
+      "stabilization under uncertainty and delay"
+    ],
+    "open_questions": [
+      "Which systems outside engineering can be reframed as control problems with measurable residuals?",
+      "Which scientific datasets benefit from compressed but mechanistically useful representations?"
+    ],
+    "bridge_tags": [
+      "control",
+      "information_theory",
+      "feedback",
+      "estimation"
+    ],
+    "limitations": [
+      "Planning note only; not a substitute for formal control-theory sourcing."
+    ],
+    "authority_score": 0.33,
+    "bias_index": 0.48,
+    "novelty_factor": 0.46,
+    "citations": [],
+    "metadata": {
+      "local_path": "docs/domain-seed-notes.md",
+      "provenance": "seed_domain_note"
+    }
+  }
+]

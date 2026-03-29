@@ -1,0 +1,13 @@
+{
+  "dataset": "2019-ASR",
+  "rows_requested": 2179,
+  "rows_built": 2179,
+  "failures": 0,
+  "graph_artifact_path": "data\\benchmarks\\h10_graphs\\mofsimplify_asr_graphs.jsonl.gz",
+  "summary_path": "data\\benchmarks\\h10_graphs\\mofsimplify_asr_graph_summary.json",
+  "avg_nodes": 281.4300137677834,
+  "avg_edges": 291.1803579623681,
+  "max_nodes": 5576,
+  "max_edges": 5440,
+  "failure_examples": []
+}

@@ -1,0 +1,159 @@
+{
+  "candidate_id": "H4",
+  "title": "TDA for early detection of resistant-state transitions in cancer single-cell data",
+  "benchmark_goal": "Test whether TDA-derived features improve early resistant-state detection beyond standard single-cell baselines on a concrete resistance-labeled benchmark.",
+  "metrics": [
+    "average_precision",
+    "roc_auc",
+    "balanced_accuracy"
+  ],
+  "falsification_rule": "Reject the H4 claim if TDA features provide no measurable lift over standard single-cell trajectory or embedding baselines on the chosen resistance-related label.",
+  "dataset_routes": [
+    {
+      "id": "gse164897_melanoma_resistance",
+      "title": "Melanoma targeted-therapy resistance-state benchmark",
+      "accession": "GSE164897",
+      "default_route": true,
+      "route_status": "contract_locked_pending_audit",
+      "disease": "melanoma",
+      "unit_of_analysis": "single_cell",
+      "evaluation_level": "sample_group_primary_cell_level_secondary",
+      "label_type": "resistance_state_classification",
+      "label_schema": {
+        "task_type": "binary_classification",
+        "positive_label": "drug_resistant_state",
+        "negative_label": "non_resistant_state",
+        "candidate_raw_state_groups": [
+          "untreated_or_sensitive",
+          "single_drug_resistant",
+          "double_drug_resistant"
+        ],
+        "notes": [
+          "Primary benchmark framing is binary resistant vs non-resistant.",
+          "A multi-state transition task remains optional and should not be the first MVP target."
+        ]
+      },
+      "split_unit": "sample_group",
+      "group_keys_for_split": [
+        "sample_id",
+        "condition_label",
+        "replicate_id"
+      ],
+      "leakage_keys": [
+        "cell_barcode",
+        "sample_id",
+        "condition_label",
+        "replicate_id",
+        "dataset_accession"
+      ],
+      "sample_count": 4,
+      "cell_count": 26979,
+      "blocking_issues": [
+        "Verify which metadata columns in the raw files actually instantiate sample_id, condition_label, and replicate_id.",
+        "Confirm whether sample-group-level splitting is feasible without collapsing the benchmark to too few train/test groups.",
+        "Confirm whether the benchmark should be evaluated primarily at the sample-group level or only as a cell-level classification task."
+      ],
+      "notes": [
+        "Fast executable benchmark route for H4.",
+        "Contains untreated or sensitive and single- or double-drug-resistant A375 melanoma states.",
+        "Best first route for testing resistant-state detection rather than broad clinical response."
+      ]
+    },
+    {
+      "id": "gse120575_melanoma_immunotherapy_response",
+      "title": "Melanoma checkpoint-immunotherapy response benchmark",
+      "accession": "GSE120575",
+      "default_route": false,
+      "route_status": "scouting",
+      "disease": "melanoma",
+      "unit_of_analysis": "single_cell",
+      "evaluation_level": "patient_primary_sample_secondary",
+      "label_type": "patient_response_classification",
+      "label_schema": {
+        "task_type": "binary_classification",
+        "positive_label": "non_responder_or_resistance_program",
+        "negative_label": "responder_or_non_resistance_program",
+        "notes": [
+          "Patient-derived follow-up route.",
+          "Response classification is clinically meaningful but not identical to an explicit resistant-state transition benchmark."
+        ]
+      },
+      "split_unit": "patient",
+      "group_keys_for_split": [
+        "patient_id"
+      ],
+      "leakage_keys": [
+        "cell_barcode",
+        "sample_id",
+        "patient_id",
+        "biopsy_id",
+        "dataset_accession"
+      ],
+      "sample_count": 48,
+      "cell_count": 16291,
+      "blocking_issues": [
+        "Decide whether the target is patient response, cell-state program enrichment, or another resistance-adjacent label.",
+        "Verify that patient-level partitioning is sufficient to avoid leakage.",
+        "Verify whether this route should stay phase-2 or replace the default route after audit."
+      ],
+      "notes": [
+        "Patient-derived follow-up route with clinically meaningful responder or non-responder labels.",
+        "Useful phase-2 benchmark after the fast GSE164897 scaffold."
+      ]
+    },
+    {
+      "id": "scctdb_patient_routes",
+      "title": "scCT-DB patient-derived longitudinal search layer",
+      "accession": "scCT-DB",
+      "default_route": false,
+      "route_status": "scouting",
+      "disease": "multi_cancer",
+      "unit_of_analysis": "single_cell",
+      "evaluation_level": "dataset_selection_layer",
+      "label_type": "dataset_search_layer",
+      "label_schema": {
+        "task_type": "dataset_selection",
+        "positive_label": "treatment_resistant_or_non_responder",
+        "notes": [
+          "This is a search layer, not a benchmark by itself."
+        ]
+      },
+      "split_unit": "dataset_then_patient",
+      "group_keys_for_split": [
+        "dataset_id",
+        "patient_id"
+      ],
+      "leakage_keys": [
+        "dataset_id",
+        "patient_id",
+        "sample_id",
+        "cell_barcode"
+      ],
+      "blocking_issues": [
+        "Choose one concrete patient-derived dataset with usable treatment and response metadata.",
+        "Verify whether a longitudinal transition benchmark with at least three timepoints is available and open."
+      ],
+      "notes": [
+        "Phase-3 route for finding stronger patient-derived longitudinal benchmarks.",
+        "Not a single benchmark by itself; requires selecting one concrete dataset."
+      ]
+    }
+  ],
+  "baselines": [
+    {
+      "id": "embedding_cluster_baseline",
+      "family": "single_cell_standard",
+      "description": "PCA or UMAP embeddings with clustering or simple state classifiers."
+    },
+    {
+      "id": "pseudotime_baseline",
+      "family": "trajectory",
+      "description": "Pseudotime or transition-score baselines from standard single-cell workflows."
+    },
+    {
+      "id": "tda_baseline",
+      "family": "topological",
+      "description": "Persistence or related TDA-derived features over single-cell state geometry."
+    }
+  ]
+}

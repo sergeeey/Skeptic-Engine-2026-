@@ -1,0 +1,26 @@
+{
+  "H24_resample_fusion": {
+    "mean": 0.993,
+    "std": 0.0024,
+    "ci_lower": 0.9878,
+    "ci_upper": 0.9966,
+    "n_valid": 1000,
+    "above_random": true
+  },
+  "H23_RPP_LR": {
+    "mean": 0.7104,
+    "std": 0.1269,
+    "ci_lower": 0.4167,
+    "ci_upper": 0.9231,
+    "n_valid": 1000,
+    "above_random": false
+  },
+  "H23_Statcheck_LR": {
+    "mean": 0.7732,
+    "std": 0.1432,
+    "ci_lower": 0.4524,
+    "ci_upper": 1.0,
+    "n_valid": 1000,
+    "above_random": false
+  }
+}

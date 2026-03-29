@@ -1,0 +1,69 @@
+{
+  "experiment": "H23_phacking_behavioral",
+  "n_studies_per_class": 500,
+  "phack_strategies": [
+    "optional_stopping",
+    "outcome_switching",
+    "outlier_exclusion",
+    "covariate_fishing"
+  ],
+  "rf_behavioral_auc": 0.9931,
+  "rf_behavioral_ap": 0.9924,
+  "if_anomaly_auc": 0.9458,
+  "pcurve_baseline_auc": 0.7063,
+  "rf_vs_pcurve_delta": 0.2868,
+  "verdict": "POSITIVE \u2014 behavioral features beat p-curve by 0.2868 AUC",
+  "feature_ranking": [
+    {
+      "rank": 1,
+      "feature": "volatility",
+      "importance": 0.0409
+    },
+    {
+      "rank": 2,
+      "feature": "min_p",
+      "importance": 0.0287
+    },
+    {
+      "rank": 3,
+      "feature": "max_jump",
+      "importance": 0.0115
+    },
+    {
+      "rank": 4,
+      "feature": "frac_sig",
+      "importance": 0.0091
+    },
+    {
+      "rank": 5,
+      "feature": "log_seq_length",
+      "importance": 0.0046
+    },
+    {
+      "rank": 6,
+      "feature": "seq_length",
+      "importance": 0.0037
+    },
+    {
+      "rank": 7,
+      "feature": "final_p",
+      "importance": 0.0036
+    },
+    {
+      "rank": 8,
+      "feature": "mean_p",
+      "importance": 0.002
+    },
+    {
+      "rank": 9,
+      "feature": "std_p",
+      "importance": 0.0013
+    },
+    {
+      "rank": 10,
+      "feature": "direction_change_rate",
+      "importance": 0.0011
+    }
+  ],
+  "elapsed_s": 6.6
+}

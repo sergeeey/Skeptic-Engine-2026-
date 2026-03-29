@@ -1,0 +1,95 @@
+{
+  "experiment": "H23_real_rpp",
+  "n_studies": 99,
+  "n_replicated": 38,
+  "n_failed": 61,
+  "baseline_pvalue_auc": 0.6544,
+  "results": {
+    "RF": {
+      "mean_auc": 0.622,
+      "std_auc": 0.1748,
+      "mean_ap": 0.7396,
+      "fold_aucs": [
+        0.4725,
+        0.8958,
+        0.4115,
+        0.6042,
+        0.7262
+      ],
+      "delta_vs_baseline": -0.0324
+    },
+    "GBM": {
+      "mean_auc": 0.6163,
+      "std_auc": 0.1254,
+      "mean_ap": 0.7286,
+      "fold_aucs": [
+        0.5385,
+        0.7292,
+        0.5,
+        0.5104,
+        0.8036
+      ],
+      "delta_vs_baseline": -0.0381
+    },
+    "LR": {
+      "mean_auc": 0.7291,
+      "std_auc": 0.1729,
+      "mean_ap": 0.8332,
+      "fold_aucs": [
+        0.6374,
+        0.9688,
+        0.4635,
+        0.8438,
+        0.7321
+      ],
+      "delta_vs_baseline": 0.0747
+    }
+  },
+  "best_model": "LR",
+  "best_auc": 0.7291,
+  "delta_vs_baseline": 0.0747,
+  "verdict": "POSITIVE \u2014 LR beats p-value baseline by +0.0747 AUC on REAL replication data",
+  "feature_importance": [
+    {
+      "feature": "p_original_log",
+      "importance": 0.2966
+    },
+    {
+      "feature": "p_original",
+      "importance": 0.2871
+    },
+    {
+      "feature": "p_digit_1",
+      "importance": 0.1289
+    },
+    {
+      "feature": "p_second_digit",
+      "importance": 0.1161
+    },
+    {
+      "feature": "p_is_very_sig",
+      "importance": 0.0565
+    },
+    {
+      "feature": "power_original",
+      "importance": 0.0367
+    },
+    {
+      "feature": "power_deficit",
+      "importance": 0.0276
+    },
+    {
+      "feature": "p_round_01",
+      "importance": 0.023
+    },
+    {
+      "feature": "p_is_marginal",
+      "importance": 0.0142
+    },
+    {
+      "feature": "p_round_05",
+      "importance": 0.0048
+    }
+  ],
+  "elapsed_s": 0.7
+}

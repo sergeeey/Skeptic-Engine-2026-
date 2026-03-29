@@ -1,0 +1,70 @@
+{
+  "candidate_id": "H10",
+  "title": "Graph-based benchmarking for MOF synthesizability and stability proxies",
+  "status": "draft_mvp_spec",
+  "dataset_routes": [
+    {
+      "id": "mofsimplify_stability",
+      "label_type": "stability_proxy",
+      "priority": 1,
+      "default_route": true,
+      "rationale": "Most defensible open starting point because it provides experimentally extracted MOF stability labels linked to CoRE-MOF structures.",
+      "blocking_questions": [
+        "Can the label set be mapped cleanly into a binary or ordinal benchmark task?",
+        "What class balance and coverage remain after filtering?"
+      ]
+    },
+    {
+      "id": "free_energy_threshold",
+      "label_type": "synthesizability_proxy",
+      "priority": 2,
+      "default_route": false,
+      "rationale": "Closer to synthesizability framing, but may be harder to reproduce and may rely on threshold assumptions.",
+      "blocking_questions": [
+        "Is the dataset openly reusable?",
+        "Is the threshold scientifically defensible for an MVP benchmark?"
+      ]
+    }
+  ],
+  "baselines": [
+    {
+      "id": "descriptor_baseline",
+      "family": "tabular",
+      "examples": [
+        "composition statistics",
+        "geometric or porosity summaries",
+        "simple handcrafted structural descriptors"
+      ]
+    },
+    {
+      "id": "token_baseline",
+      "family": "sequence_like",
+      "examples": [
+        "formula tokens",
+        "linker or metal tokenization",
+        "bag-of-tokens features"
+      ]
+    },
+    {
+      "id": "graph_baseline",
+      "family": "graph",
+      "examples": [
+        "structure graph classifier",
+        "message-passing baseline"
+      ]
+    }
+  ],
+  "metrics": [
+    "roc_auc",
+    "average_precision",
+    "balanced_accuracy"
+  ],
+  "falsification_rule": "Reject the H10 claim if graph models fail to outperform simpler baselines on a defensible proxy target or if the target labels cannot be justified scientifically.",
+  "implementation_phases": [
+    "spec_and_label_selection",
+    "dataset_mapping",
+    "baseline_scaffold",
+    "graph_input_scaffold",
+    "evaluation"
+  ]
+}

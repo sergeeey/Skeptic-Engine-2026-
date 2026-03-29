@@ -1,0 +1,30 @@
+{
+  "model_id": "graph_mpnn_v2",
+  "target_name": "solvent_removal_stability_binary",
+  "input_artifact": "data\\benchmarks\\h10_graphs\\mofsimplify_asr_graphs.jsonl.gz",
+  "train_rows": 1394,
+  "val_rows": 349,
+  "test_rows": 436,
+  "hidden_dim": 64,
+  "selected_params": {
+    "hidden_dim": 64,
+    "num_layers": 2,
+    "dropout": 0.15,
+    "lr": 0.0008,
+    "batch_size": 8
+  },
+  "val_metrics": {
+    "average_precision": 0.7655375402104438,
+    "roc_auc": 0.734496644295302,
+    "balanced_accuracy": 0.6809563758389261,
+    "threshold": 0.588928
+  },
+  "test_metrics": {
+    "average_precision": 0.7369027138611606,
+    "roc_auc": 0.6729598452713247,
+    "balanced_accuracy": 0.6194311962900283,
+    "threshold": 0.588928
+  },
+  "output_predictions_path": "data\\benchmarks\\h10_results\\graph_mpnn_v1_test_predictions.csv",
+  "output_report_path": "data\\benchmarks\\h10_results\\graph_mpnn_v1.json"
+}

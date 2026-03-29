@@ -1,0 +1,67 @@
+{
+  "experiment": "H24_benford_scrna",
+  "dataset": "PBMC3k_10x",
+  "n_cells": 2700,
+  "n_genes": 32738,
+  "nonzero_fraction": 0.0259,
+  "feature_count": 21,
+  "kill_threshold": 0.8,
+  "reject_threshold": 0.65,
+  "best_auc": 1.0,
+  "worst_auc": 0.6127,
+  "verdict": "PARTIAL_SIGNAL \u2014 some methods detected. Investigate which fabrications are harder.",
+  "elapsed_seconds": 25.2,
+  "results": [
+    {
+      "method": "resample",
+      "n_real": 2700,
+      "n_fake": 2700,
+      "random_forest": {
+        "auc_roc": 0.8637,
+        "average_precision": 0.8438,
+        "f1": 0.7876,
+        "balanced_accuracy": 0.7778
+      },
+      "logistic_regression": {
+        "auc_roc": 0.6127,
+        "average_precision": 0.5267,
+        "f1": 0.6425,
+        "balanced_accuracy": 0.6074
+      }
+    },
+    {
+      "method": "noise",
+      "n_real": 2700,
+      "n_fake": 2700,
+      "random_forest": {
+        "auc_roc": 1.0,
+        "average_precision": 1.0,
+        "f1": 1.0,
+        "balanced_accuracy": 1.0
+      },
+      "logistic_regression": {
+        "auc_roc": 0.9996,
+        "average_precision": 0.9995,
+        "f1": 0.9926,
+        "balanced_accuracy": 0.9926
+      }
+    },
+    {
+      "method": "random_nb",
+      "n_real": 2700,
+      "n_fake": 2700,
+      "random_forest": {
+        "auc_roc": 0.9899,
+        "average_precision": 0.9836,
+        "f1": 0.9628,
+        "balanced_accuracy": 0.962
+      },
+      "logistic_regression": {
+        "auc_roc": 0.9391,
+        "average_precision": 0.8963,
+        "f1": 0.9082,
+        "balanced_accuracy": 0.9009
+      }
+    }
+  ]
+}

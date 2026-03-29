@@ -1,0 +1,36 @@
+{
+  "route_id": "free_energy_threshold",
+  "title": "Free-energy threshold synthesizability proxy route",
+  "status": "secondary",
+  "raw_root": "data/raw/h10/free_energy_threshold",
+  "mapped_output": "data/benchmarks/h10_mapped/free_energy_threshold.csv",
+  "expected_files": [
+    {
+      "path": "data/raw/h10/free_energy_threshold/README.md",
+      "required": true,
+      "purpose": "Local notes on provenance, download date, and threshold definition."
+    },
+    {
+      "path": "data/raw/h10/free_energy_threshold/structures.csv",
+      "required": false,
+      "purpose": "Structure list with identifiers."
+    },
+    {
+      "path": "data/raw/h10/free_energy_threshold/labels.csv",
+      "required": false,
+      "purpose": "Free-energy-derived proxy labels or values."
+    },
+    {
+      "path": "data/raw/h10/free_energy_threshold/threshold_notes.md",
+      "required": false,
+      "purpose": "Documentation for threshold assumptions."
+    }
+  ],
+  "target_options": [
+    "free_energy_threshold_binary"
+  ],
+  "blocking_questions": [
+    "Is the threshold openly reproducible?",
+    "Is the threshold scientifically defensible for an MVP benchmark?"
+  ]
+}

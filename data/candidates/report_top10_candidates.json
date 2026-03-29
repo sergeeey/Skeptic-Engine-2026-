@@ -1,0 +1,218 @@
+[
+  {
+    "id": "H20",
+    "title": "Early-warning PH predictor of SOC electrode degradation trajectories",
+    "fields_bridged": ["materials_science", "topological_data_analysis"],
+    "source_document": "Прорывные Гипотезы  Трансдисциплинарный Анализ Биологии, Материаловедения и Теории Управления.md",
+    "claimed_discovery_score": 8.9,
+    "priority_rank": 1,
+    "verification_status": "partially_verified",
+    "why_promising": "Strong Python-first path remains, but the candidate is now narrower: early-warning degradation prediction rather than generic PH use in SOCs.",
+    "claimed_datasets": [
+      "SOFC PH Dataset",
+      "solid oxide cell microstructure evolution datasets"
+    ],
+    "claimed_tools": [
+      "gudhi",
+      "ripser",
+      "persim",
+      "scikit-learn"
+    ],
+    "minimal_python_route": "Compute persistence features from initial or early-stage electrode microstructure data and test whether they predict later degradation metrics or trajectories.",
+    "first_falsification_test": "Reject if persistence-derived early features fail to improve prediction of later degradation against a simple morphology or microstructural-parameter baseline.",
+    "next_verification_step": "Verify whether longitudinal early-warning prediction from PH descriptors is still open after the 2023, 2025, and 2026 SOC topology papers."
+  },
+  {
+    "id": "H4",
+    "title": "TDA for early detection of resistant-state transitions in cancer single-cell data",
+    "fields_bridged": ["oncology", "topological_data_analysis"],
+    "source_document": "Прорывные Гипотезы  Трансдисциплинарный Анализ Биологии, Материаловедения и Теории Управления.md",
+    "claimed_discovery_score": 8.7,
+    "priority_rank": 2,
+    "verification_status": "partially_verified",
+    "why_promising": "Still promising if narrowed to early resistant-state transition detection and benchmarked against standard single-cell trajectory baselines.",
+    "claimed_datasets": [
+      "OpenScPCA",
+      "single-cell pediatric cancer datasets"
+    ],
+    "claimed_tools": [
+      "scanpy",
+      "ripser",
+      "persim"
+    ],
+    "minimal_python_route": "Build TDA features over resistance-labeled single-cell state spaces and test whether they improve early resistant-state detection beyond standard embedding, clustering, pseudotime, or velocity baselines.",
+    "first_falsification_test": "Reject if TDA features provide no measurable lift over standard single-cell trajectory or clustering baselines for resistance stratification.",
+    "next_verification_step": "Verify a concrete resistance-labeled benchmark dataset and determine whether TDA adds real value beyond existing single-cell methods."
+  },
+  {
+    "id": "H10",
+    "title": "Graph-based benchmarking for MOF synthesizability and stability proxies",
+    "fields_bridged": ["materials_science", "graph_machine_learning"],
+    "source_document": "Прорывные Гипотезы  Трансдисциплинарный Анализ Биологии, Материаловедения и Теории Управления.md",
+    "claimed_discovery_score": 8.4,
+    "priority_rank": 3,
+    "verification_status": "partially_verified",
+    "why_promising": "Still strong because datasets and structure resources are real, but the honest version is now a benchmark question rather than a raw novelty claim.",
+    "claimed_datasets": [
+      "CoRE-MOF 2019",
+      "MOF topological learning resources"
+    ],
+    "claimed_tools": [
+      "torch_geometric",
+      "pymatgen",
+      "MOFormer or sequence baselines"
+    ],
+    "minimal_python_route": "Train a graph model on a defensible MOF synthesizability or stability-proxy task and compare against descriptor-based and sequence-based baselines.",
+    "first_falsification_test": "Reject if graph models do not outperform simpler baselines or if the target label cannot be defended as a meaningful synthesizability proxy.",
+    "next_verification_step": "Verify target-label quality and determine whether MOFSimplify or a free-energy threshold benchmark is the best open MVP route."
+  },
+  {
+    "id": "H2",
+    "title": "Benchmarking persistent-homology descriptors for metallic-glass transition and deformation proxies",
+    "fields_bridged": ["materials_science", "topological_data_analysis"],
+    "source_document": "Прорывные Гипотезы  Трансдисциплинарный Анализ Биологии, Материаловедения и Теории Управления.md",
+    "claimed_discovery_score": 8.2,
+    "priority_rank": 4,
+    "verification_status": "partially_verified",
+    "why_promising": "Good open-data route remains, but the honest version is now a benchmark problem on transition-adjacent proxies rather than a fresh PH-for-glass novelty claim.",
+    "claimed_datasets": [
+      "Cu-Zr metallic-glass dataset"
+    ],
+    "claimed_tools": [
+      "gudhi",
+      "HomCloud",
+      "scikit-learn"
+    ],
+    "minimal_python_route": "Derive persistence signatures from metallic-glass structures and test whether they predict cooling-rate- or deformation-related proxies better than simple structural descriptors.",
+    "first_falsification_test": "Reject if topological descriptors fail to explain or predict chosen transition-adjacent proxies beyond standard handcrafted features.",
+    "next_verification_step": "Verify whether a defensible open benchmark target exists beyond generic cooling-rate or mechanical-response proxies."
+  },
+  {
+    "id": "H1",
+    "title": "Koopman-style slow-mode analysis for LLPS-relevant IDP trajectory data",
+    "fields_bridged": ["biology", "koopman_dynamics"],
+    "source_document": "Прорывные Гипотезы  Трансдисциплинарный Анализ Биологии, Материаловедения и Теории Управления.md",
+    "claimed_discovery_score": 8.5,
+    "priority_rank": 5,
+    "verification_status": "partially_verified",
+    "why_promising": "The conceptual bridge remains interesting, but readiness is limited until a real LLPS-trajectory benchmark is found.",
+    "claimed_datasets": [
+      "MISATO protein-ligand MD",
+      "OpenProteinSet",
+      "AlphaFold DB"
+    ],
+    "claimed_tools": [
+      "deeptime",
+      "pyemma"
+    ],
+    "minimal_python_route": "Apply Koopman or VAMP-style analysis to genuine LLPS-relevant IDP trajectories and test whether the extracted slow modes improve on simpler kinetic summaries.",
+    "first_falsification_test": "Reject if no defensible LLPS trajectory benchmark can be assembled or if Koopman-derived slow modes show no advantage over simpler kinetic analyses.",
+    "next_verification_step": "Find an open LLPS-relevant trajectory dataset; the current seed datasets are not a good fit for this task."
+  },
+  {
+    "id": "H3",
+    "title": "Optimal-transport inference of rejuvenation driver genes",
+    "fields_bridged": ["aging_biology", "optimal_transport"],
+    "source_document": "Прорывные Гипотезы  Трансдисциплинарный Анализ Биологии, Материаловедения и Теории Управления.md",
+    "claimed_discovery_score": 8.0,
+    "priority_rank": 6,
+    "verification_status": "unverified",
+    "why_promising": "Fits the project's biology-control-information triangle and has a clean single-cell computational route.",
+    "claimed_datasets": [
+      "BEELINE scRNA-seq",
+      "single-cell trajectory datasets"
+    ],
+    "claimed_tools": [
+      "POT",
+      "scanpy",
+      "scvelo"
+    ],
+    "minimal_python_route": "Use transport-based trajectory inference to test whether candidate interventions move cell-state distributions toward younger attractors.",
+    "first_falsification_test": "Reject if transport-derived driver rankings are unstable or do not align with held-out perturbation evidence.",
+    "next_verification_step": "Verify whether rejuvenation-focused OT workflows already exist and identify a tractable benchmark dataset."
+  },
+  {
+    "id": "H6",
+    "title": "Informational aging clocks from chromatin topology",
+    "fields_bridged": ["aging_biology", "information_theory", "topological_data_analysis"],
+    "source_document": "Прорывные Гипотезы  Трансдисциплинарный Анализ Биологии, Материаловедения и Теории Управления.md",
+    "claimed_discovery_score": 7.9,
+    "priority_rank": 7,
+    "verification_status": "unverified",
+    "why_promising": "Potentially high impact, but depends on hard-to-harmonize omics and topology data.",
+    "claimed_datasets": [
+      "Hi-C or chromatin topology resources",
+      "aging epigenetic datasets"
+    ],
+    "claimed_tools": [
+      "gudhi",
+      "scanpy",
+      "custom entropy metrics"
+    ],
+    "minimal_python_route": "Map topology-derived chromatin features to age-related information loss proxies and test predictive value against simpler clock models.",
+    "first_falsification_test": "Reject if topological features fail to add signal beyond existing age-clock baselines.",
+    "next_verification_step": "Verify the availability of paired chromatin-topology and aging datasets with sufficient sample quality."
+  },
+  {
+    "id": "H7",
+    "title": "Mean-field theory for morphogenetic patterning in dynamic tissues",
+    "fields_bridged": ["developmental_biology", "statistical_physics"],
+    "source_document": "Прорывные Гипотезы  Трансдисциплинарный Анализ Биологии, Материаловедения и Теории Управления.md",
+    "claimed_discovery_score": 7.7,
+    "priority_rank": 8,
+    "verification_status": "unverified",
+    "why_promising": "Conceptually strong but likely less immediate than the pure data-driven candidates.",
+    "claimed_datasets": [
+      "dynamic tissue imaging or morphogen transport datasets"
+    ],
+    "claimed_tools": [
+      "scipy",
+      "numpy",
+      "PDE or reaction-diffusion solvers"
+    ],
+    "minimal_python_route": "Build a reduced dynamic-tissue transport model and test whether mean-field corrections improve fit to observed morphogen behavior.",
+    "first_falsification_test": "Reject if the reduced model offers no explanatory gain over simpler static-tissue baselines.",
+    "next_verification_step": "Verify the cited dynamic tissue literature and identify an openly reusable benchmark dataset."
+  },
+  {
+    "id": "H11",
+    "title": "TDA of topological targets in LLPS condensates",
+    "fields_bridged": ["biochemistry", "topological_data_analysis"],
+    "source_document": "Прорывные Гипотезы  Трансдисциплинарный Анализ Биологии, Материаловедения и Теории Управления.md",
+    "claimed_discovery_score": 7.6,
+    "priority_rank": 9,
+    "verification_status": "unverified",
+    "why_promising": "Related to H1 but more target-discovery oriented; promising if suitable structural data can be assembled.",
+    "claimed_datasets": [
+      "protein structural datasets",
+      "LLPS-related molecular datasets"
+    ],
+    "claimed_tools": [
+      "gudhi",
+      "ripser"
+    ],
+    "minimal_python_route": "Extract topology features from candidate condensate-related molecular structures and test association with target-relevant behavior.",
+    "first_falsification_test": "Reject if topology features fail to separate biologically relevant condensate classes from controls.",
+    "next_verification_step": "Verify whether appropriate LLPS-structure datasets exist and whether this idea overlaps too strongly with current literature."
+  },
+  {
+    "id": "H5",
+    "title": "Network control of defects in 2D materials",
+    "fields_bridged": ["materials_science", "network_control"],
+    "source_document": "Прорывные Гипотезы  Трансдисциплинарный Анализ Биологии, Материаловедения и Теории Управления.md",
+    "claimed_discovery_score": 7.5,
+    "priority_rank": 10,
+    "verification_status": "unverified",
+    "why_promising": "Good transdisciplinary transfer candidate, but may be harder to ground in directly available data.",
+    "claimed_datasets": [
+      "grain-boundary defect resources for h-BN and MoS2"
+    ],
+    "claimed_tools": [
+      "networkx",
+      "pymatgen"
+    ],
+    "minimal_python_route": "Represent defect propagation or controllability over a graph abstraction of a 2D material and test whether control metrics explain macroscopic defect outcomes.",
+    "first_falsification_test": "Reject if network-control metrics show no relation to measured defect evolution or material properties.",
+    "next_verification_step": "Verify that the graph abstraction is scientifically defensible and that suitable benchmark data exists."
+  }
+]

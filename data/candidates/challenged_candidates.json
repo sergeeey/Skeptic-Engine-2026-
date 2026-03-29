@@ -1,0 +1,463 @@
+[
+  {
+    "id": "seed-biology-001-to-seed-materials-001-1",
+    "title": "Transfer graph learning from biology into materials_science",
+    "fields_bridged": [
+      "biology",
+      "materials_science"
+    ],
+    "core_mechanism": "Use graph learning to probe whether feedback regulation in cellular systems helps explain or model Which descriptors carry the minimum information needed to preserve target properties?.",
+    "known_facts": [
+      "Biology Domain Seed Note identifies graph learning as relevant within biology.",
+      "Materials Science Domain Seed Note identifies unresolved problems in materials_science that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags graph, information_theory suggest that graph learning may connect biology methods to materials_science bottlenecks.",
+    "speculative_hypothesis": "If graph learning captures structure that current materials_science workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-biology-001",
+      "seed-materials-001"
+    ],
+    "novelty_score": 0.86,
+    "feasibility_score": 0.83,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.45,
+    "evidence_quality_score": 0.32,
+    "confidence_score": 0.22,
+    "python_mvp": "Build a narrow Python prototype applying graph learning to a curated materials_science dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated materials_science seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if graph learning fails to beat or complement a simple baseline on a well-scoped materials_science task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: No strong prior-art hits were found in the available local or targeted sources.",
+      "Skeptic targeted query: graph learning biology materials science control graph which residual information bottleneck || graph learning materials science benchmark control theory || graph learning materials property prediction control theory (records=2)."
+    ],
+    "risk_tier": "low_hanging",
+    "discovery_score": 0.3362,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-biology-001-to-seed-materials-001-2",
+    "title": "Transfer control theory from biology into materials_science",
+    "fields_bridged": [
+      "biology",
+      "materials_science"
+    ],
+    "core_mechanism": "Use control theory to probe whether feedback regulation in cellular systems helps explain or model Which descriptors carry the minimum information needed to preserve target properties?.",
+    "known_facts": [
+      "Biology Domain Seed Note identifies control theory as relevant within biology.",
+      "Materials Science Domain Seed Note identifies unresolved problems in materials_science that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags graph, information_theory suggest that control theory may connect biology methods to materials_science bottlenecks.",
+    "speculative_hypothesis": "If control theory captures structure that current materials_science workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-biology-001",
+      "seed-materials-001"
+    ],
+    "novelty_score": 0.86,
+    "feasibility_score": 0.83,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.45,
+    "evidence_quality_score": 0.32,
+    "confidence_score": 0.22,
+    "python_mvp": "Build a narrow Python prototype applying control theory to a curated materials_science dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated materials_science seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if control theory fails to beat or complement a simple baseline on a well-scoped materials_science task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: No strong prior-art hits were found in the available local or targeted sources.",
+      "Skeptic targeted query: control theory biology materials science graph learning control graph which residual || control theory materials science benchmark control theory || control theory materials property prediction control theory (records=2)."
+    ],
+    "risk_tier": "low_hanging",
+    "discovery_score": 0.3362,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-materials-001-to-seed-biology-001-1",
+    "title": "Transfer information bottleneck from materials_science into biology",
+    "fields_bridged": [
+      "materials_science",
+      "biology"
+    ],
+    "core_mechanism": "Use information bottleneck to probe whether phase selection under compositional constraints helps explain or model Which residual structure in biological data reflects control rather than noise?.",
+    "known_facts": [
+      "Materials Science Domain Seed Note identifies information bottleneck as relevant within materials_science.",
+      "Biology Domain Seed Note identifies unresolved problems in biology that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags graph, information_theory suggest that information bottleneck may connect materials_science methods to biology bottlenecks.",
+    "speculative_hypothesis": "If information bottleneck captures structure that current biology workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-materials-001",
+      "seed-biology-001"
+    ],
+    "novelty_score": 0.71,
+    "feasibility_score": 0.83,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.46,
+    "evidence_quality_score": 0.32,
+    "confidence_score": 0.13,
+    "python_mvp": "Build a narrow Python prototype applying information bottleneck to a curated biology dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated biology seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if information bottleneck fails to beat or complement a simple baseline on a well-scoped biology task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: Skeptic found 1 prior-art hits; strongest overlap score 0.29. Novelty downgraded by 0.15.",
+      "Skeptic targeted query: information bottleneck materials science biology information theory graph which descriptors graph learning || information bottleneck biology benchmark information bottleneck || information bottleneck biological networks information bottleneck (records=3).",
+      "Potential prior art: IBPL: Information Bottleneck-based Prompt Learning for graph out-of-distribution detection (s2:98cf00c765de7c7c985869c57bb2c41e458f773f, score=0.29)."
+    ],
+    "risk_tier": "medium_risk",
+    "discovery_score": 0.2715,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-materials-001-to-seed-biology-001-2",
+    "title": "Transfer graph learning from materials_science into biology",
+    "fields_bridged": [
+      "materials_science",
+      "biology"
+    ],
+    "core_mechanism": "Use graph learning to probe whether phase selection under compositional constraints helps explain or model Which residual structure in biological data reflects control rather than noise?.",
+    "known_facts": [
+      "Materials Science Domain Seed Note identifies graph learning as relevant within materials_science.",
+      "Biology Domain Seed Note identifies unresolved problems in biology that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags graph, information_theory suggest that graph learning may connect materials_science methods to biology bottlenecks.",
+    "speculative_hypothesis": "If graph learning captures structure that current biology workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-materials-001",
+      "seed-biology-001"
+    ],
+    "novelty_score": 0.86,
+    "feasibility_score": 0.83,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.46,
+    "evidence_quality_score": 0.32,
+    "confidence_score": 0.22,
+    "python_mvp": "Build a narrow Python prototype applying graph learning to a curated biology dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated biology seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if graph learning fails to beat or complement a simple baseline on a well-scoped biology task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: No strong prior-art hits were found in the available local or targeted sources.",
+      "Skeptic targeted query: graph learning materials science biology information bottleneck information theory graph which descriptors || graph learning biology benchmark information bottleneck || graph learning biological networks information bottleneck (records=2)."
+    ],
+    "risk_tier": "medium_risk",
+    "discovery_score": 0.3289,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-biology-001-to-seed-control-001-1",
+    "title": "Transfer graph learning from biology into control_information_theory",
+    "fields_bridged": [
+      "biology",
+      "control_information_theory"
+    ],
+    "core_mechanism": "Use graph learning to probe whether feedback regulation in cellular systems helps explain or model Which systems outside engineering can be reframed as control problems with measurable residuals?.",
+    "known_facts": [
+      "Biology Domain Seed Note identifies graph learning as relevant within biology.",
+      "Control And Information Theory Domain Seed Note identifies unresolved problems in control_information_theory that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags control, information_theory suggest that graph learning may connect biology methods to control_information_theory bottlenecks.",
+    "speculative_hypothesis": "If graph learning captures structure that current control_information_theory workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-biology-001",
+      "seed-control-001"
+    ],
+    "novelty_score": 0.7,
+    "feasibility_score": 0.83,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.47,
+    "evidence_quality_score": 0.33,
+    "confidence_score": 0.14,
+    "python_mvp": "Build a narrow Python prototype applying graph learning to a curated control_information_theory dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated control_information_theory seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if graph learning fails to beat or complement a simple baseline on a well-scoped control_information_theory task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: Skeptic found 1 prior-art hits; strongest overlap score 0.28. Novelty downgraded by 0.15.",
+      "Skeptic targeted query: graph learning biology control theory information theory control graph which residual feedback design || graph learning biological systems control control theory || systems biology graph learning control theory (records=2).",
+      "Potential prior art: On Vanishing Gradients, Over-Smoothing, and Over-Squashing in GNNs: Bridging Recurrent and Graph Learning (s2:0dc930337cc4580436732e61dd5389aff1f0a5a5, score=0.28)."
+    ],
+    "risk_tier": "medium_risk",
+    "discovery_score": 0.2702,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-biology-001-to-seed-control-001-2",
+    "title": "Transfer control theory from biology into control_information_theory",
+    "fields_bridged": [
+      "biology",
+      "control_information_theory"
+    ],
+    "core_mechanism": "Use control theory to probe whether feedback regulation in cellular systems helps explain or model Which systems outside engineering can be reframed as control problems with measurable residuals?.",
+    "known_facts": [
+      "Biology Domain Seed Note identifies control theory as relevant within biology.",
+      "Control And Information Theory Domain Seed Note identifies unresolved problems in control_information_theory that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags control, information_theory suggest that control theory may connect biology methods to control_information_theory bottlenecks.",
+    "speculative_hypothesis": "If control theory captures structure that current control_information_theory workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-biology-001",
+      "seed-control-001"
+    ],
+    "novelty_score": 0.85,
+    "feasibility_score": 0.83,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.47,
+    "evidence_quality_score": 0.33,
+    "confidence_score": 0.23,
+    "python_mvp": "Build a narrow Python prototype applying control theory to a curated control_information_theory dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated control_information_theory seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if control theory fails to beat or complement a simple baseline on a well-scoped control_information_theory task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: No strong prior-art hits were found in the available local or targeted sources.",
+      "Skeptic targeted query: control theory biology control theory information theory graph learning control graph which residual || control theory biological systems control control theory || systems biology control theory control theory (records=1)."
+    ],
+    "risk_tier": "medium_risk",
+    "discovery_score": 0.3281,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-control-001-to-seed-biology-001-1",
+    "title": "Transfer feedback design from control_information_theory into biology",
+    "fields_bridged": [
+      "control_information_theory",
+      "biology"
+    ],
+    "core_mechanism": "Use feedback design to probe whether state estimation under partial observability helps explain or model Which residual structure in biological data reflects control rather than noise?.",
+    "known_facts": [
+      "Control And Information Theory Domain Seed Note identifies feedback design as relevant within control_information_theory.",
+      "Biology Domain Seed Note identifies unresolved problems in biology that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags control, information_theory suggest that feedback design may connect control_information_theory methods to biology bottlenecks.",
+    "speculative_hypothesis": "If feedback design captures structure that current biology workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-control-001",
+      "seed-biology-001"
+    ],
+    "novelty_score": 0.85,
+    "feasibility_score": 0.84,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.46,
+    "evidence_quality_score": 0.33,
+    "confidence_score": 0.23,
+    "python_mvp": "Build a narrow Python prototype applying feedback design to a curated biology dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated biology seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if feedback design fails to beat or complement a simple baseline on a well-scoped biology task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: No strong prior-art hits were found in the available local or targeted sources.",
+      "Skeptic targeted query: feedback design control theory information theory biology control information theory which systems graph learning || feedback design biological systems benchmark control theory || feedback design gene regulatory network control theory (records=3)."
+    ],
+    "risk_tier": "medium_risk",
+    "discovery_score": 0.3393,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-control-001-to-seed-biology-001-2",
+    "title": "Transfer kalman-style filtering from control_information_theory into biology",
+    "fields_bridged": [
+      "control_information_theory",
+      "biology"
+    ],
+    "core_mechanism": "Use kalman-style filtering to probe whether state estimation under partial observability helps explain or model Which residual structure in biological data reflects control rather than noise?.",
+    "known_facts": [
+      "Control And Information Theory Domain Seed Note identifies kalman-style filtering as relevant within control_information_theory.",
+      "Biology Domain Seed Note identifies unresolved problems in biology that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags control, information_theory suggest that kalman-style filtering may connect control_information_theory methods to biology bottlenecks.",
+    "speculative_hypothesis": "If kalman-style filtering captures structure that current biology workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-control-001",
+      "seed-biology-001"
+    ],
+    "novelty_score": 0.67,
+    "feasibility_score": 0.84,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.46,
+    "evidence_quality_score": 0.33,
+    "confidence_score": 0.12,
+    "python_mvp": "Build a narrow Python prototype applying kalman-style filtering to a curated biology dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated biology seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if kalman-style filtering fails to beat or complement a simple baseline on a well-scoped biology task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: Skeptic found 1 prior-art hits; strongest overlap score 0.41. Novelty downgraded by 0.18.",
+      "Skeptic targeted query: kalman-style filtering control theory information theory biology feedback design control information theory which systems || kalman-style filtering biological systems benchmark control theory || kalman-style filtering gene regulatory network control theory (records=2).",
+      "Potential prior art: An adaptive extended Kalman filtering approach to nonlinear dynamic gene regulatory networks via short gene expression time series (s2:86d1323815c3f642f04df9be00476d538e479044, score=0.41)."
+    ],
+    "risk_tier": "medium_risk",
+    "discovery_score": 0.2674,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-materials-001-to-seed-control-001-1",
+    "title": "Transfer information bottleneck from materials_science into control_information_theory",
+    "fields_bridged": [
+      "materials_science",
+      "control_information_theory"
+    ],
+    "core_mechanism": "Use information bottleneck to probe whether phase selection under compositional constraints helps explain or model Which systems outside engineering can be reframed as control problems with measurable residuals?.",
+    "known_facts": [
+      "Materials Science Domain Seed Note identifies information bottleneck as relevant within materials_science.",
+      "Control And Information Theory Domain Seed Note identifies unresolved problems in control_information_theory that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags information_theory suggest that information bottleneck may connect materials_science methods to control_information_theory bottlenecks.",
+    "speculative_hypothesis": "If information bottleneck captures structure that current control_information_theory workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-materials-001",
+      "seed-control-001"
+    ],
+    "novelty_score": 0.6,
+    "feasibility_score": 0.83,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.47,
+    "evidence_quality_score": 0.33,
+    "confidence_score": 0.13,
+    "python_mvp": "Build a narrow Python prototype applying information bottleneck to a curated control_information_theory dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated control_information_theory seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if information bottleneck fails to beat or complement a simple baseline on a well-scoped control_information_theory task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: Skeptic found 1 prior-art hits; strongest overlap score 0.31. Novelty downgraded by 0.16.",
+      "Skeptic targeted query: information bottleneck materials science control theory information theory information theory graph which descriptors feedback design || information bottleneck materials science control information bottleneck || information bottleneck materials dynamical systems information bottleneck (records=2).",
+      "Potential prior art: L\u2081 Adaptive Control-Based Formation Tracking of Multiple Quadrotors Without Linear Velocity Feedback Under Unknown Disturbances (s2:a64fc0f679f36689195ec62a18b7bd4290efe632, score=0.31)."
+    ],
+    "risk_tier": "medium_risk",
+    "discovery_score": 0.2316,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-materials-001-to-seed-control-001-2",
+    "title": "Transfer graph learning from materials_science into control_information_theory",
+    "fields_bridged": [
+      "materials_science",
+      "control_information_theory"
+    ],
+    "core_mechanism": "Use graph learning to probe whether phase selection under compositional constraints helps explain or model Which systems outside engineering can be reframed as control problems with measurable residuals?.",
+    "known_facts": [
+      "Materials Science Domain Seed Note identifies graph learning as relevant within materials_science.",
+      "Control And Information Theory Domain Seed Note identifies unresolved problems in control_information_theory that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags information_theory suggest that graph learning may connect materials_science methods to control_information_theory bottlenecks.",
+    "speculative_hypothesis": "If graph learning captures structure that current control_information_theory workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-materials-001",
+      "seed-control-001"
+    ],
+    "novelty_score": 0.6,
+    "feasibility_score": 0.83,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.47,
+    "evidence_quality_score": 0.33,
+    "confidence_score": 0.13,
+    "python_mvp": "Build a narrow Python prototype applying graph learning to a curated control_information_theory dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated control_information_theory seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if graph learning fails to beat or complement a simple baseline on a well-scoped control_information_theory task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: Skeptic found 1 prior-art hits; strongest overlap score 0.32. Novelty downgraded by 0.16.",
+      "Skeptic targeted query: graph learning materials science control theory information theory information bottleneck information theory graph which descriptors || graph learning materials science control information bottleneck || graph learning materials dynamical systems information bottleneck (records=2).",
+      "Potential prior art: Incorporating Retrieval-based Causal Learning with Information Bottlenecks for Interpretable Molecular Graph Learning (s2:c318e03e8fb000ed9baf6ef4675da43afd8804aa, score=0.32)."
+    ],
+    "risk_tier": "medium_risk",
+    "discovery_score": 0.2316,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-control-001-to-seed-materials-001-1",
+    "title": "Transfer feedback design from control_information_theory into materials_science",
+    "fields_bridged": [
+      "control_information_theory",
+      "materials_science"
+    ],
+    "core_mechanism": "Use feedback design to probe whether state estimation under partial observability helps explain or model Which descriptors carry the minimum information needed to preserve target properties?.",
+    "known_facts": [
+      "Control And Information Theory Domain Seed Note identifies feedback design as relevant within control_information_theory.",
+      "Materials Science Domain Seed Note identifies unresolved problems in materials_science that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags information_theory suggest that feedback design may connect control_information_theory methods to materials_science bottlenecks.",
+    "speculative_hypothesis": "If feedback design captures structure that current materials_science workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-control-001",
+      "seed-materials-001"
+    ],
+    "novelty_score": 0.76,
+    "feasibility_score": 0.84,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.45,
+    "evidence_quality_score": 0.33,
+    "confidence_score": 0.23,
+    "python_mvp": "Build a narrow Python prototype applying feedback design to a curated materials_science dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated materials_science seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if feedback design fails to beat or complement a simple baseline on a well-scoped materials_science task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: No strong prior-art hits were found in the available local or targeted sources.",
+      "Skeptic targeted query: feedback design control theory information theory materials science control information theory which systems information bottleneck || feedback design materials science benchmark control theory || feedback design materials process control control theory (records=4)."
+    ],
+    "risk_tier": "low_hanging",
+    "discovery_score": 0.3101,
+    "promotion_ready": false
+  },
+  {
+    "id": "seed-control-001-to-seed-materials-001-2",
+    "title": "Transfer kalman-style filtering from control_information_theory into materials_science",
+    "fields_bridged": [
+      "control_information_theory",
+      "materials_science"
+    ],
+    "core_mechanism": "Use kalman-style filtering to probe whether state estimation under partial observability helps explain or model Which descriptors carry the minimum information needed to preserve target properties?.",
+    "known_facts": [
+      "Control And Information Theory Domain Seed Note identifies kalman-style filtering as relevant within control_information_theory.",
+      "Materials Science Domain Seed Note identifies unresolved problems in materials_science that may admit a transfer approach."
+    ],
+    "inferred_bridge": "Shared bridge tags information_theory suggest that kalman-style filtering may connect control_information_theory methods to materials_science bottlenecks.",
+    "speculative_hypothesis": "If kalman-style filtering captures structure that current materials_science workflows miss, then the target problem may become more predictable or more falsifiable.",
+    "evidence_source_ids": [
+      "seed-control-001",
+      "seed-materials-001"
+    ],
+    "novelty_score": 0.76,
+    "feasibility_score": 0.84,
+    "falsifiability_score": 0.72,
+    "impact_score": 0.92,
+    "validation_cost": 0.45,
+    "evidence_quality_score": 0.33,
+    "confidence_score": 0.23,
+    "python_mvp": "Build a narrow Python prototype applying kalman-style filtering to a curated materials_science dataset or surrogate simulation and compare against a simple baseline.",
+    "open_data_route": "Start with manually curated materials_science seed data, then replace it with verified open datasets once acquisition is upgraded.",
+    "first_falsification_test": "Reject the hypothesis if kalman-style filtering fails to beat or complement a simple baseline on a well-scoped materials_science task.",
+    "objections": [
+      "Current evidence comes from internal seed notes rather than external verified literature.",
+      "The transfer may be only analogical unless later source-level evidence supports a real mechanism.",
+      "Skeptic review: No strong prior-art hits were found in the available local or targeted sources.",
+      "Skeptic targeted query: kalman-style filtering control theory information theory materials science feedback design control information theory which systems || kalman-style filtering materials science benchmark control theory || kalman-style filtering materials process control control theory (records=3)."
+    ],
+    "risk_tier": "low_hanging",
+    "discovery_score": 0.3101,
+    "promotion_ready": false
+  }
+]

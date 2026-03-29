@@ -1,0 +1,27 @@
+{
+  "model_id": "descriptor_logreg_v1",
+  "target_name": "solvent_removal_stability_binary",
+  "input_artifact": "data\\benchmarks\\h10_features\\mofsimplify_descriptor_features.csv",
+  "train_rows": 1394,
+  "val_rows": 349,
+  "test_rows": 436,
+  "feature_count": 174,
+  "selected_params": {
+    "C": 3.0,
+    "class_weight": "balanced"
+  },
+  "val_metrics": {
+    "average_precision": 0.722658466088595,
+    "roc_auc": 0.6693624161073827,
+    "balanced_accuracy": 0.6284731543624161,
+    "threshold": 0.606261
+  },
+  "test_metrics": {
+    "average_precision": 0.7521564993980688,
+    "roc_auc": 0.6741906415525616,
+    "balanced_accuracy": 0.6047715334402954,
+    "threshold": 0.606261
+  },
+  "output_predictions_path": "data\\benchmarks\\h10_results\\descriptor_logreg_v1_test_predictions.csv",
+  "output_report_path": "data\\benchmarks\\h10_results\\descriptor_logreg_v1.json"
+}

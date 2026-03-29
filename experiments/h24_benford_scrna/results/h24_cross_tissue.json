@@ -1,0 +1,32 @@
+{
+  "experiment": "H24_cross_tissue",
+  "tissue_a": "PBMC3k_human",
+  "tissue_b": "neurons_900_mouse",
+  "results": [
+    {
+      "method": "resample",
+      "within_pbmc": 0.9755,
+      "within_brain": 0.9998,
+      "cross_pbmc_to_brain": 0.3759,
+      "cross_brain_to_pbmc": 0.442
+    },
+    {
+      "method": "noise",
+      "within_pbmc": 1.0,
+      "within_brain": 1.0,
+      "cross_pbmc_to_brain": 0.9987,
+      "cross_brain_to_pbmc": 1.0
+    },
+    {
+      "method": "random_nb",
+      "within_pbmc": 0.9992,
+      "within_brain": 0.9998,
+      "cross_pbmc_to_brain": 0.3876,
+      "cross_brain_to_pbmc": 0.6898
+    }
+  ],
+  "min_cross_auc": 0.3759,
+  "mean_cross_auc": 0.649,
+  "verdict": "NO CROSS-TISSUE GENERALIZATION \u2014 artifact signal is tissue-specific",
+  "elapsed_s": 44.6
+}

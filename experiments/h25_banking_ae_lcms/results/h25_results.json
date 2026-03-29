@@ -1,0 +1,95 @@
+{
+  "results": [
+    {
+      "dataset": "proteomics",
+      "fabrication": "random",
+      "ae_metrics": {
+        "auc": 0.9885,
+        "ap": 0.9631,
+        "f1": 0.9643
+      },
+      "benford_rf_auc": 1.0,
+      "fusion_auc": 1.0,
+      "real_recon_mean": 0.48,
+      "fake_recon_mean": 1.275,
+      "threshold_98": 1.0998,
+      "frac_above_threshold": 0.8429
+    },
+    {
+      "dataset": "proteomics",
+      "fabrication": "shuffle",
+      "ae_metrics": {
+        "auc": 0.9888,
+        "ap": 0.9634,
+        "f1": 0.9643
+      },
+      "benford_rf_auc": 0.8106,
+      "fusion_auc": 1.0,
+      "real_recon_mean": 0.48,
+      "fake_recon_mean": 1.2699,
+      "threshold_98": 1.0998,
+      "frac_above_threshold": 0.8714
+    },
+    {
+      "dataset": "proteomics",
+      "fabrication": "noise_10pct",
+      "ae_metrics": {
+        "auc": 0.5157,
+        "ap": 0.52,
+        "f1": 0.5214
+      },
+      "benford_rf_auc": 0.9974,
+      "fusion_auc": 0.9949,
+      "real_recon_mean": 0.48,
+      "fake_recon_mean": 0.4898,
+      "threshold_98": 1.0998,
+      "frac_above_threshold": 0.0286
+    },
+    {
+      "dataset": "CNA",
+      "fabrication": "random",
+      "ae_metrics": {
+        "auc": 0.8212,
+        "ap": 0.667,
+        "f1": 0.82
+      },
+      "benford_rf_auc": 1.0,
+      "fusion_auc": 1.0,
+      "real_recon_mean": 0.6382,
+      "fake_recon_mean": 1.0149,
+      "threshold_98": 5.6952,
+      "frac_above_threshold": 0.0
+    },
+    {
+      "dataset": "CNA",
+      "fabrication": "shuffle",
+      "ae_metrics": {
+        "auc": 0.8238,
+        "ap": 0.6702,
+        "f1": 0.82
+      },
+      "benford_rf_auc": 1.0,
+      "fusion_auc": 1.0,
+      "real_recon_mean": 0.6382,
+      "fake_recon_mean": 1.0144,
+      "threshold_98": 5.6952,
+      "frac_above_threshold": 0.0
+    },
+    {
+      "dataset": "CNA",
+      "fabrication": "noise_10pct",
+      "ae_metrics": {
+        "auc": 0.5329,
+        "ap": 0.5259,
+        "f1": 0.51
+      },
+      "benford_rf_auc": 0.9275,
+      "fusion_auc": 0.945,
+      "real_recon_mean": 0.6382,
+      "fake_recon_mean": 0.6481,
+      "threshold_98": 5.6952,
+      "frac_above_threshold": 0.02
+    }
+  ],
+  "elapsed_s": 28.5
+}

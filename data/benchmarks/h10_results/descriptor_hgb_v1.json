@@ -1,0 +1,29 @@
+{
+  "model_id": "descriptor_hgb_v1",
+  "target_name": "solvent_removal_stability_binary",
+  "input_artifact": "data\\benchmarks\\h10_features\\mofsimplify_descriptor_features.csv",
+  "train_rows": 1394,
+  "val_rows": 349,
+  "test_rows": 436,
+  "feature_count": 174,
+  "selected_params": {
+    "learning_rate": 0.1,
+    "max_depth": 8,
+    "max_iter": 400,
+    "min_samples_leaf": 10
+  },
+  "val_metrics": {
+    "average_precision": 0.877886123285613,
+    "roc_auc": 0.8429194630872483,
+    "balanced_accuracy": 0.7562919463087248,
+    "threshold": 0.460251
+  },
+  "test_metrics": {
+    "average_precision": 0.8739031787466864,
+    "roc_auc": 0.8262379392953692,
+    "balanced_accuracy": 0.7397415327809402,
+    "threshold": 0.460251
+  },
+  "output_predictions_path": "data\\benchmarks\\h10_results\\descriptor_hgb_v1_test_predictions.csv",
+  "output_report_path": "data\\benchmarks\\h10_results\\descriptor_hgb_v1.json"
+}

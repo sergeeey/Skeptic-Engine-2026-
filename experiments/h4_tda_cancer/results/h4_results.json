@@ -1,0 +1,51 @@
+{
+  "experiment": "H4_tda_cancer_resistance",
+  "dataset": "GSE164897",
+  "n_cells": 30716,
+  "n_genes": 32991,
+  "n_hvg": 2000,
+  "class_balance": 0.782,
+  "results": [
+    {
+      "name": "PCA (50 components)",
+      "auc_mean": 0.9998,
+      "auc_std": 0.0,
+      "ap_mean": 1.0,
+      "ba_mean": 0.9925
+    },
+    {
+      "name": "Dispersion (10 features)",
+      "auc_mean": 0.9378,
+      "auc_std": 0.002,
+      "ap_mean": 0.9829,
+      "ba_mean": 0.8387
+    },
+    {
+      "name": "TDA (12 PH features)",
+      "auc_mean": 0.5,
+      "auc_std": 0.0,
+      "ap_mean": 0.782,
+      "ba_mean": 0.5
+    },
+    {
+      "name": "PCA + TDA fusion",
+      "auc_mean": 0.9998,
+      "auc_std": 0.0,
+      "ap_mean": 1.0,
+      "ba_mean": 0.9919
+    },
+    {
+      "name": "PCA + Disp + TDA fusion",
+      "auc_mean": 0.9997,
+      "auc_std": 0.0,
+      "ap_mean": 0.9999,
+      "ba_mean": 0.9931
+    }
+  ],
+  "tda_standalone_auc": 0.5,
+  "pca_baseline_auc": 0.9998,
+  "tda_lift": -0.4998,
+  "fusion_lift": 0.0,
+  "verdict": "KILL \u2014 TDA AUC (0.5000) < 0.75 threshold. Close H4 track.",
+  "elapsed_s": 236.3
+}

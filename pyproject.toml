@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skeptic-engine"
+version = "0.1.1"
+description = "Statistical artifact detection for scientific data integrity."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "Serge + Codex" }
+]
+dependencies = [
+  "numpy",
+  "scipy",
+  "scikit-learn",
+]
+
+[project.optional-dependencies]
+h24 = ["matplotlib", "h5py"]
+h25 = ["torch", "pandas", "matplotlib"]
+h4 = ["ripser"]
+all = ["torch", "pandas", "matplotlib", "h5py", "ripser"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+skeptic-toolkit = "skeptic_toolkit.cli:main"

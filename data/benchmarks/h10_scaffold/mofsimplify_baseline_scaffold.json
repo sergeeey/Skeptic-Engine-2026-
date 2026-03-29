@@ -1,0 +1,95 @@
+{
+  "route_id": "mofsimplify_stability",
+  "target_name": "solvent_removal_stability_binary",
+  "mapped_dataset_path": "data\\benchmarks\\h10_mapped\\mofsimplify_stability.csv",
+  "total_rows": 2179,
+  "split_summaries": [
+    {
+      "split": "train",
+      "row_count": 1394,
+      "class_balance": [
+        "0=561",
+        "1=833"
+      ]
+    },
+    {
+      "split": "val",
+      "row_count": 349,
+      "class_balance": [
+        "0=149",
+        "1=200"
+      ]
+    },
+    {
+      "split": "test",
+      "row_count": 436,
+      "class_balance": [
+        "0=173",
+        "1=263"
+      ]
+    }
+  ],
+  "baselines": [
+    {
+      "baseline_id": "descriptor_baseline",
+      "family": "tabular",
+      "status": "ready",
+      "input_artifact": "data\\benchmarks\\h10_features\\mofsimplify_descriptor_features.csv",
+      "row_count": 2179,
+      "feature_count": 174,
+      "ready_for_training": true,
+      "notes": [
+        "Uses RAC and geometric descriptors extracted from MOFSimplify full_SSD_data.csv.",
+        "Run descriptor baselines only on the fixed MOFSimplify train/val/test split."
+      ],
+      "blockers": []
+    },
+    {
+      "baseline_id": "token_baseline",
+      "family": "sequence_like",
+      "status": "blocked",
+      "input_artifact": null,
+      "row_count": 0,
+      "feature_count": 0,
+      "ready_for_training": false,
+      "notes": [
+        "Preferred token route is formula or linker/metal tokenization from a structure-derived representation.",
+        "Do not use CoRE refcodes as a proxy tokenization baseline; that would be identifier leakage, not chemistry."
+      ],
+      "blockers": [
+        "Mapped route does not yet provide reliable formula or linker token fields."
+      ]
+    },
+    {
+      "baseline_id": "graph_baseline",
+      "family": "graph",
+      "status": "input_ready",
+      "input_artifact": "data\\benchmarks\\h10_graphs\\mofsimplify_asr_graphs.jsonl.gz",
+      "row_count": 2179,
+      "feature_count": 0,
+      "ready_for_training": true,
+      "notes": [
+        "core_mof_id coverage is 2179/2179; schema is ready for later CoRE-MOF structure fetch.",
+        "Graph baseline should only start after a reproducible CIF-to-graph extraction path is added.",
+        "Graph artifact is available at data\\benchmarks\\h10_graphs\\mofsimplify_asr_graphs.jsonl.gz."
+      ],
+      "blockers": []
+    }
+  ],
+  "evaluation_protocol": {
+    "split_policy": "Use the fixed MOFSimplify train/val/test partition shipped with the source dataset.",
+    "primary_metric": "average_precision",
+    "metrics": [
+      "roc_auc",
+      "average_precision",
+      "balanced_accuracy"
+    ],
+    "positives_label": "1",
+    "falsification_rule": "Reject the H10 claim if graph models fail to outperform simpler baselines on a defensible proxy target or if the target labels cannot be justified scientifically."
+  },
+  "warnings": [
+    "Token baseline remains blocked until chemistry-derived token fields are added.",
+    "Do not compare graph models against descriptor baselines on different splits."
+  ],
+  "blockers": []
+}

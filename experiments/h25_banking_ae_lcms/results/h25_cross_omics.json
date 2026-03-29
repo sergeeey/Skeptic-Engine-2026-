@@ -1,0 +1,30 @@
+{
+  "experiment": "H25_cross_omics",
+  "results": [
+    {
+      "method": "random",
+      "within_cna": 1.0,
+      "within_prot": 1.0,
+      "cross_cna_to_prot": 0.1709,
+      "cross_prot_to_cna": 0.1337
+    },
+    {
+      "method": "shuffle",
+      "within_cna": 1.0,
+      "within_prot": 1.0,
+      "cross_cna_to_prot": 0.4664,
+      "cross_prot_to_cna": 0.1719
+    },
+    {
+      "method": "noise_10pct",
+      "within_cna": 1.0,
+      "within_prot": 1.0,
+      "cross_cna_to_prot": 0.4453,
+      "cross_prot_to_cna": 0.5721
+    }
+  ],
+  "min_cross_auc": 0.1337,
+  "mean_cross_auc": 0.3267,
+  "verdict": "NO CROSS-OMICS GENERALIZATION \u2014 Benford signal is omics-specific",
+  "elapsed_s": 57.5
+}
