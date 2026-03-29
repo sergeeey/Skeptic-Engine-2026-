@@ -27,3 +27,6 @@ _external/
 
 # Zenodo release archives
 *.zip
+
+# Claude Code local memory
+.claude/
