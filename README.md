@@ -2,6 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19238786.svg)](https://doi.org/10.5281/zenodo.19238786)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
 Two-branch research portfolio: scientific data integrity screening (primary) + interdisciplinary discovery (supporting).
 
@@ -50,6 +51,29 @@ experiments/              # Standalone experiments with results
 src/discovery_engine/     # Shared pipeline infrastructure
 docs/                     # Project rules, roadmap, research contract
 REPORT.md                 # Full research report
+```
+
+## Installation
+
+```bash
+# From source
+pip install .
+
+# With experiment dependencies
+pip install ".[all]"
+```
+
+### CLI Usage
+
+```bash
+# Scan a count matrix for statistical artifacts
+skeptic-toolkit matrix.mtx
+
+# Compare against a custom reference
+skeptic-toolkit candidate.mtx --reference reference.mtx
+
+# Set custom threshold
+skeptic-toolkit matrix.mtx --threshold 0.6
 ```
 
 ## Quick Start
