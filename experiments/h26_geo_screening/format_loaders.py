@@ -67,11 +67,11 @@ def _load_mtx(path: Path) -> np.ndarray | None:
             import tempfile
             import shutil
 
-            # Decompress to temp file for mmread
-            with gzip.open(path, "rb") as gz_in:
-                tmp = Path(tempfile.mktemp(suffix=".mtx"))
-                with open(tmp, "wb") as f_out:
-                    shutil.copyfileobj(gz_in, f_out)
+            # WHY: NamedTemporaryFile (not mktemp) avoids TOCTOU race condition
+            with tempfile.NamedTemporaryFile(suffix=".mtx", delete=False) as tmp_f:
+                tmp = Path(tmp_f.name)
+                with gzip.open(path, "rb") as gz_in:
+                    shutil.copyfileobj(gz_in, tmp_f)
             sparse = mmread(str(tmp))
             tmp.unlink(missing_ok=True)
         else:

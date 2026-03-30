@@ -204,7 +204,9 @@ def main() -> None:
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
 
-    iso = IsolationForest(n_estimators=200, contamination=0.10, random_state=42, n_jobs=-1)
+    # WHY: "auto" uses Liu et al. (2008) threshold — lets data determine anomaly count.
+    # Fixed contamination (e.g. 0.10) on small n forces a predetermined flag count.
+    iso = IsolationForest(n_estimators=200, contamination="auto", random_state=42, n_jobs=-1)
     iso.fit(X_scaled)
     anomaly_scores = iso.decision_function(X_scaled)
     anomaly_labels = iso.predict(X_scaled)

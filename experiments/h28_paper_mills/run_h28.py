@@ -111,14 +111,20 @@ def extract_behavioral_features(p_values: list[float]) -> np.ndarray:
 
 
 def _cv_evaluate(X: np.ndarray, y: np.ndarray, model_factory, n_splits: int = 5) -> dict:
-    """Run stratified k-fold CV and return mean AUC/AP."""
+    """Run stratified k-fold CV and return mean AUC/AP.
+
+    WHY: scaling is done inside each fold to prevent test-set leakage.
+    """
     kf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
     aucs, aps = [], []
 
     for train_idx, test_idx in kf.split(X, y):
+        scaler = StandardScaler()
+        X_train = scaler.fit_transform(X[train_idx])
+        X_test = scaler.transform(X[test_idx])
         model = model_factory()
-        model.fit(X[train_idx], y[train_idx])
-        y_prob = model.predict_proba(X[test_idx])[:, 1]
+        model.fit(X_train, y[train_idx])
+        y_prob = model.predict_proba(X_test)[:, 1]
         try:
             aucs.append(roc_auc_score(y[test_idx], y_prob))
             aps.append(average_precision_score(y[test_idx], y_prob))
@@ -220,6 +226,7 @@ def main() -> None:
 
             # P-value features (try to get full text)
             pval_vec = np.zeros(18)
+            pvals: list[float] = []
             fulltext = fetch_pmc_fulltext(art["pmid"])
             if fulltext:
                 pvals = extract_pvalues_regex(fulltext)
@@ -235,7 +242,7 @@ def main() -> None:
                     "pmid": art["pmid"],
                     "title": art["title"][:80],
                     "label": "retracted" if label == 1 else "control",
-                    "n_pvalues": len(pvals) if fulltext else 0,
+                    "n_pvalues": len(pvals),
                 }
             )
 
@@ -278,13 +285,7 @@ def main() -> None:
     # Step 5: Classification with ablation
     print("\n[5/6] Running 5-fold CV with ablation...")
 
-    scaler_p = StandardScaler()
-    scaler_m = StandardScaler()
-    scaler_c = StandardScaler()
-    X_p_scaled = scaler_p.fit_transform(X_pval)
-    X_m_scaled = scaler_m.fit_transform(X_meta)
-    X_c_scaled = scaler_c.fit_transform(X_combined)
-
+    # WHY: scaling moved inside _cv_evaluate to prevent test-set leakage
     models = {
         "RF": lambda: RandomForestClassifier(
             n_estimators=200, max_depth=10, random_state=42, n_jobs=-1
@@ -295,9 +296,9 @@ def main() -> None:
 
     ablation = {}
     for track_name, X_track in [
-        ("pvalue_only", X_p_scaled),
-        ("metadata_only", X_m_scaled),
-        ("combined", X_c_scaled),
+        ("pvalue_only", X_pval),
+        ("metadata_only", X_meta),
+        ("combined", X_combined),
     ]:
         print(f"\n  --- {track_name} ---")
         track_results = {}
@@ -309,8 +310,10 @@ def main() -> None:
             )
         ablation[track_name] = track_results
 
-    # Step 6: Feature importance (combined RF)
+    # Step 6: Feature importance (combined RF on full dataset — for ranking only, not evaluation)
     print("\n[6/6] Computing feature importance...")
+    scaler_full = StandardScaler()
+    X_c_scaled = scaler_full.fit_transform(X_combined)
     rf_full = RandomForestClassifier(n_estimators=200, max_depth=10, random_state=42, n_jobs=-1)
     rf_full.fit(X_c_scaled, y)
 
