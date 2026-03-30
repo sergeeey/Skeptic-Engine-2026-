@@ -1,0 +1,200 @@
+{
+  "experiment": "H27_clinical_trials",
+  "n_trials_fetched": 200,
+  "n_trials_with_pvalues": 42,
+  "min_pvalues": 3,
+  "median_pvalues_per_trial": 6.5,
+  "mean_frac_significant": 0.5464,
+  "mean_frac_just_below_05": 0.0029,
+  "unsupervised": {
+    "method": "IsolationForest",
+    "contamination": 0.1,
+    "n_flagged": 5,
+    "frac_flagged": 0.119,
+    "top20_anomalous": [
+      {
+        "rank": 1,
+        "nct_id": "NCT02504671",
+        "title": "Study to Evaluate the Efficacy and Safety of GSK3196165 Plus Methotrexate in Sub",
+        "status": "COMPLETED",
+        "n_pvalues": 441,
+        "anomaly_score": -0.0314,
+        "frac_significant": 0.317
+      },
+      {
+        "rank": 2,
+        "nct_id": "NCT01505634",
+        "title": "Safety, Tolerability, and Efficacy of MK-7655 (Relebactam) + Imipenem/Cilastatin",
+        "status": "COMPLETED",
+        "n_pvalues": 6,
+        "anomaly_score": -0.0285,
+        "frac_significant": 0.333
+      },
+      {
+        "rank": 3,
+        "nct_id": "NCT03524664",
+        "title": "A Study of Parent and Child Emotions in Fetal Alcohol Spectrum Disorder (FASD)",
+        "status": "COMPLETED",
+        "n_pvalues": 19,
+        "anomaly_score": -0.0062,
+        "frac_significant": 0.0
+      },
+      {
+        "rank": 4,
+        "nct_id": "NCT01617187",
+        "title": "A Study of the Efficacy and Safety of Asenapine in Participants With an Acute Ex",
+        "status": "COMPLETED",
+        "n_pvalues": 257,
+        "anomaly_score": -0.0048,
+        "frac_significant": 0.058
+      },
+      {
+        "rank": 5,
+        "nct_id": "NCT01868334",
+        "title": "SOP Toolkit in Diverse Practices Implemented & Tested With RE-AIM",
+        "status": "COMPLETED",
+        "n_pvalues": 4,
+        "anomaly_score": -0.0004,
+        "frac_significant": 0.0
+      },
+      {
+        "rank": 6,
+        "nct_id": "NCT00758498",
+        "title": "Study of the Effect of Armodafinil Treatment in Healthy Subjects With Excessive ",
+        "status": "COMPLETED",
+        "n_pvalues": 24,
+        "anomaly_score": 0.004,
+        "frac_significant": 0.75
+      },
+      {
+        "rank": 7,
+        "nct_id": "NCT01474109",
+        "title": "Macitentan for the Treatment of Digital Ulcers in Systemic Sclerosis Patients",
+        "status": "COMPLETED",
+        "n_pvalues": 12,
+        "anomaly_score": 0.0062,
+        "frac_significant": 0.0
+      },
+      {
+        "rank": 8,
+        "nct_id": "NCT00478192",
+        "title": "Study of Efficacy & Safety for 3 Infusion Regimens of IV Conivaptan in Subjects ",
+        "status": "COMPLETED",
+        "n_pvalues": 4,
+        "anomaly_score": 0.0105,
+        "frac_significant": 0.75
+      },
+      {
+        "rank": 9,
+        "nct_id": "NCT01985334",
+        "title": "Study to Evaluate the Efficacy and Safety of Glycopyrronium or Indacaterol Malea",
+        "status": "COMPLETED",
+        "n_pvalues": 8,
+        "anomaly_score": 0.0132,
+        "frac_significant": 1.0
+      },
+      {
+        "rank": 10,
+        "nct_id": "NCT03802864",
+        "title": "Post-operative Pain Control of Testicular Sperm Extraction Using Liposomal Bupiv",
+        "status": "COMPLETED",
+        "n_pvalues": 7,
+        "anomaly_score": 0.0157,
+        "frac_significant": 0.0
+      },
+      {
+        "rank": 11,
+        "nct_id": "NCT00428584",
+        "title": "RNF and Betaseron\u00ae Tolerability Study",
+        "status": "COMPLETED",
+        "n_pvalues": 5,
+        "anomaly_score": 0.0192,
+        "frac_significant": 0.0
+      },
+      {
+        "rank": 12,
+        "nct_id": "NCT01207934",
+        "title": "Recombinant Human Leptin Therapy Effects on Insulin Action",
+        "status": "COMPLETED",
+        "n_pvalues": 3,
+        "anomaly_score": 0.0236,
+        "frac_significant": 0.667
+      },
+      {
+        "rank": 13,
+        "nct_id": "NCT05226884",
+        "title": "Intermediate Vision in Patients With Clareon IOLs Compared to Eyhance IOLs",
+        "status": "COMPLETED",
+        "n_pvalues": 4,
+        "anomaly_score": 0.0238,
+        "frac_significant": 1.0
+      },
+      {
+        "rank": 14,
+        "nct_id": "NCT03041311",
+        "title": "Carboplatin, Etoposide, and Atezolizumab With or Without Trilaciclib (G1T28), a ",
+        "status": "COMPLETED",
+        "n_pvalues": 6,
+        "anomaly_score": 0.0239,
+        "frac_significant": 0.5
+      },
+      {
+        "rank": 15,
+        "nct_id": "NCT00776984",
+        "title": "Evaluation of Tiotropium 5 \u00b5g/Day Delivered Via the Respimat\u00ae Inhaler Over 48 We",
+        "status": "COMPLETED",
+        "n_pvalues": 34,
+        "anomaly_score": 0.0259,
+        "frac_significant": 0.618
+      },
+      {
+        "rank": 16,
+        "nct_id": "NCT00720434",
+        "title": "A Dose Ranging Study Of PF-00868554 In Combination With PEGASYS And COPEGUS In P",
+        "status": "COMPLETED",
+        "n_pvalues": 12,
+        "anomaly_score": 0.0272,
+        "frac_significant": 0.333
+      },
+      {
+        "rank": 17,
+        "nct_id": "NCT00432809",
+        "title": "Advanced Medical Therapy Versus Advanced Medical Therapy Plus Bariatric Surgery ",
+        "status": "COMPLETED",
+        "n_pvalues": 65,
+        "anomaly_score": 0.0298,
+        "frac_significant": 0.646
+      },
+      {
+        "rank": 18,
+        "nct_id": "NCT03346434",
+        "title": "Safety, Pharmacokinetics and Efficacy of Dupilumab in Patients \u22656 Months to <6 Y",
+        "status": "COMPLETED",
+        "n_pvalues": 15,
+        "anomaly_score": 0.0358,
+        "frac_significant": 1.0
+      },
+      {
+        "rank": 19,
+        "nct_id": "NCT00614393",
+        "title": "Study of Dalotuzumab (MK-0646) in Combination With Cetuximab and Irinotecan in M",
+        "status": "COMPLETED",
+        "n_pvalues": 4,
+        "anomaly_score": 0.037,
+        "frac_significant": 0.0
+      },
+      {
+        "rank": 20,
+        "nct_id": "NCT02138214",
+        "title": "Central Neck Dissection in Patients With Clinical Node Negative Thyroid Cancer",
+        "status": "COMPLETED",
+        "n_pvalues": 6,
+        "anomaly_score": 0.0401,
+        "frac_significant": 0.0
+      }
+    ]
+  },
+  "supervised": null,
+  "verdict": "SCREENING \u2014 5 trials flagged as anomalous by IsolationForest (11.9%)",
+  "elapsed_s": 16.4
+}
