@@ -30,3 +30,4 @@ _external/
 
 # Claude Code local memory
 .claude/
+experiments/h26_geo_screening/data/geo_cache/

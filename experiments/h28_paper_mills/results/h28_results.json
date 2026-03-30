@@ -1,0 +1,172 @@
+{
+  "experiment": "H28_paper_mills",
+  "n_retracted": 50,
+  "n_control": 51,
+  "n_with_pvalues": 8,
+  "feature_groups": {
+    "pvalue_behavioral": 18,
+    "metadata": 8,
+    "total": 26
+  },
+  "ablation": {
+    "pvalue_only": {
+      "RF": {
+        "mean_auc": 0.5012,
+        "std_auc": 0.0498,
+        "mean_ap": 0.5163
+      },
+      "GBM": {
+        "mean_auc": 0.482,
+        "std_auc": 0.0242,
+        "mean_ap": 0.492
+      },
+      "LR": {
+        "mean_auc": 0.4848,
+        "std_auc": 0.0247,
+        "mean_ap": 0.5215
+      }
+    },
+    "metadata_only": {
+      "RF": {
+        "mean_auc": 0.5237,
+        "std_auc": 0.1599,
+        "mean_ap": 0.5913
+      },
+      "GBM": {
+        "mean_auc": 0.5998,
+        "std_auc": 0.1538,
+        "mean_ap": 0.6346
+      },
+      "LR": {
+        "mean_auc": 0.5318,
+        "std_auc": 0.1718,
+        "mean_ap": 0.5879
+      }
+    },
+    "combined": {
+      "RF": {
+        "mean_auc": 0.5255,
+        "std_auc": 0.148,
+        "mean_ap": 0.5942
+      },
+      "GBM": {
+        "mean_auc": 0.5909,
+        "std_auc": 0.1492,
+        "mean_ap": 0.6514
+      },
+      "LR": {
+        "mean_auc": 0.5411,
+        "std_auc": 0.1729,
+        "mean_ap": 0.5959
+      }
+    }
+  },
+  "feature_ranking": [
+    {
+      "feature": "abstract_length",
+      "importance": 0.1812
+    },
+    {
+      "feature": "affiliation_diversity",
+      "importance": 0.1508
+    },
+    {
+      "feature": "author_per_reference",
+      "importance": 0.1493
+    },
+    {
+      "feature": "n_affiliations",
+      "importance": 0.1295
+    },
+    {
+      "feature": "n_authors",
+      "importance": 0.1181
+    },
+    {
+      "feature": "n_references",
+      "importance": 0.1077
+    },
+    {
+      "feature": "self_citation_rate",
+      "importance": 0.1008
+    },
+    {
+      "feature": "mean_diff",
+      "importance": 0.0064
+    },
+    {
+      "feature": "last_minus_first",
+      "importance": 0.0064
+    },
+    {
+      "feature": "frac_sig",
+      "importance": 0.0062
+    },
+    {
+      "feature": "frac_decreasing",
+      "importance": 0.0051
+    },
+    {
+      "feature": "last_p",
+      "importance": 0.0051
+    },
+    {
+      "feature": "mean_p",
+      "importance": 0.005
+    },
+    {
+      "feature": "min_p",
+      "importance": 0.0041
+    },
+    {
+      "feature": "correlation",
+      "importance": 0.0037
+    },
+    {
+      "feature": "std_p",
+      "importance": 0.0034
+    },
+    {
+      "feature": "frac_01_05",
+      "importance": 0.0033
+    },
+    {
+      "feature": "n_pvalues",
+      "importance": 0.0031
+    },
+    {
+      "feature": "log_n",
+      "importance": 0.0028
+    },
+    {
+      "feature": "reversals",
+      "importance": 0.0025
+    },
+    {
+      "feature": "max_jump",
+      "importance": 0.0024
+    },
+    {
+      "feature": "last_sig",
+      "importance": 0.0016
+    },
+    {
+      "feature": "std_diff",
+      "importance": 0.0011
+    },
+    {
+      "feature": "entropy",
+      "importance": 0.0005
+    },
+    {
+      "feature": "frac_just_below_05",
+      "importance": 0.0
+    },
+    {
+      "feature": "submission_to_acceptance_days",
+      "importance": 0.0
+    }
+  ],
+  "verdict": "REJECT \u2014 insufficient signal (AUC=0.591) | metadata dominates over p-value features",
+  "elapsed_s": 251.4
+}
