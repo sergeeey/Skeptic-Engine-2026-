@@ -17,7 +17,7 @@ def extract_metadata_features(meta: dict) -> dict[str, float]:
       3. affiliation_diversity — n_affiliations / n_authors
       4. submission_to_acceptance_days — days from received to accepted
       5. n_references — total reference count
-      6. self_citation_rate — fraction of references sharing author last names
+      6. ref_pmid_coverage — fraction of references sharing author last names
       7. abstract_length — word count of abstract
       8. author_per_reference — n_authors / n_references (normalized authorship)
     """
@@ -50,7 +50,7 @@ def extract_metadata_features(meta: dict) -> dict[str, float]:
         "affiliation_diversity": round(affiliation_diversity, 4),
         "submission_to_acceptance_days": float(days),
         "n_references": float(n_references),
-        "self_citation_rate": round(self_cite_rate, 4),
+        "ref_pmid_coverage": round(self_cite_rate, 4),
         "abstract_length": float(abstract_wc),
         "author_per_reference": round(author_per_ref, 4),
     }
@@ -90,7 +90,7 @@ METADATA_FEATURE_NAMES = [
     "affiliation_diversity",
     "submission_to_acceptance_days",
     "n_references",
-    "self_citation_rate",
+    "ref_pmid_coverage",
     "abstract_length",
     "author_per_reference",
 ]

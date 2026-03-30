@@ -167,7 +167,7 @@ def _try_float(s: str) -> float | None:
     """Try to parse string as float, return None on failure."""
     try:
         val = float(s)
-        if 0 <= val <= 1:
+        if 0 < val <= 1:
             return val
         return None
     except (ValueError, TypeError):
