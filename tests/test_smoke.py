@@ -193,7 +193,183 @@ class TestResultsIntegrity:
 
 
 # ===========================================================================
-# 6. Package metadata
+# 6. Three-level verdict system
+# ===========================================================================
+class TestVerdict:
+    """Test the CLEAN / UNCERTAIN / FLAGGED verdict system."""
+
+    def test_clean_verdict(self) -> None:
+        from skeptic_toolkit.verdict import VerdictLevel, make_verdict
+
+        v = make_verdict(0.30, threshold=0.55, uncertainty_band=0.10)
+        assert v.level == VerdictLevel.CLEAN
+        assert v.score == 0.30
+
+    def test_flagged_verdict(self) -> None:
+        from skeptic_toolkit.verdict import VerdictLevel, make_verdict
+
+        v = make_verdict(0.80, threshold=0.55, uncertainty_band=0.10)
+        assert v.level == VerdictLevel.FLAGGED
+
+    def test_uncertain_verdict(self) -> None:
+        from skeptic_toolkit.verdict import VerdictLevel, make_verdict
+
+        # Score right at the threshold center → UNCERTAIN
+        v = make_verdict(0.55, threshold=0.55, uncertainty_band=0.10)
+        assert v.level == VerdictLevel.UNCERTAIN
+
+    def test_uncertain_band_edges(self) -> None:
+        from skeptic_toolkit.verdict import VerdictLevel, make_verdict
+
+        # threshold=0.55, band=0.10 → UNCERTAIN zone is [0.50, 0.60]
+        v_low_edge = make_verdict(0.51, threshold=0.55, uncertainty_band=0.10)
+        assert v_low_edge.level == VerdictLevel.UNCERTAIN
+
+        v_high_edge = make_verdict(0.59, threshold=0.55, uncertainty_band=0.10)
+        assert v_high_edge.level == VerdictLevel.UNCERTAIN
+
+    def test_boundary_clean(self) -> None:
+        from skeptic_toolkit.verdict import VerdictLevel, make_verdict
+
+        # Exactly at low boundary → CLEAN (<=)
+        v = make_verdict(0.50, threshold=0.55, uncertainty_band=0.10)
+        assert v.level == VerdictLevel.CLEAN
+
+    def test_boundary_flagged(self) -> None:
+        from skeptic_toolkit.verdict import VerdictLevel, make_verdict
+
+        # Just above high boundary → FLAGGED
+        v = make_verdict(0.61, threshold=0.55, uncertainty_band=0.10)
+        assert v.level == VerdictLevel.FLAGGED
+
+    def test_verdict_str(self) -> None:
+        from skeptic_toolkit.verdict import make_verdict
+
+        v = make_verdict(0.55)
+        s = str(v)
+        assert "UNCERTAIN" in s
+        assert "0.550" in s
+
+    def test_verdict_immutable(self) -> None:
+        from skeptic_toolkit.verdict import make_verdict
+
+        v = make_verdict(0.55)
+        with pytest.raises(AttributeError):
+            v.score = 0.99  # type: ignore[misc]
+
+
+# ===========================================================================
+# 7. VerifiedResult dataclass
+# ===========================================================================
+class TestVerifiedResult:
+    """Test the immutable, auditable result wrapper."""
+
+    def test_create_verified_result(self) -> None:
+        from skeptic_toolkit.verified_result import VerifiedResult
+
+        vr = VerifiedResult(
+            experiment_id="H24_test",
+            metrics={"auc": 0.978, "ap": 0.965},
+            verdict="FLAGGED",
+            code_hash="abc123",
+            data_hash="def456",
+            random_seed=42,
+        )
+        assert vr.experiment_id == "H24_test"
+        assert vr.metrics["auc"] == 0.978
+        assert vr.result_hash != ""
+        assert len(vr.result_hash) == 16
+
+    def test_result_hash_deterministic(self) -> None:
+        from skeptic_toolkit.verified_result import VerifiedResult
+
+        kwargs = dict(
+            experiment_id="H24",
+            metrics={"auc": 0.978},
+            verdict="CLEAN",
+            code_hash="abc",
+            data_hash="def",
+        )
+        vr1 = VerifiedResult(**kwargs)
+        vr2 = VerifiedResult(**kwargs)
+        assert vr1.result_hash == vr2.result_hash
+
+    def test_result_hash_changes_with_metrics(self) -> None:
+        from skeptic_toolkit.verified_result import VerifiedResult
+
+        vr1 = VerifiedResult(
+            experiment_id="H24",
+            metrics={"auc": 0.978},
+            verdict="CLEAN",
+            code_hash="abc",
+            data_hash="def",
+        )
+        vr2 = VerifiedResult(
+            experiment_id="H24",
+            metrics={"auc": 0.500},
+            verdict="CLEAN",
+            code_hash="abc",
+            data_hash="def",
+        )
+        assert vr1.result_hash != vr2.result_hash
+
+    def test_immutability(self) -> None:
+        from skeptic_toolkit.verified_result import VerifiedResult
+
+        vr = VerifiedResult(
+            experiment_id="H24",
+            metrics={"auc": 0.978},
+            verdict="CLEAN",
+            code_hash="abc",
+            data_hash="def",
+        )
+        with pytest.raises(AttributeError):
+            vr.metrics = {"auc": 0.5}  # type: ignore[misc]
+
+    def test_to_dict(self) -> None:
+        from skeptic_toolkit.verified_result import VerifiedResult
+
+        vr = VerifiedResult(
+            experiment_id="H24",
+            metrics={"auc": 0.978},
+            verdict="CLEAN",
+            code_hash="abc",
+            data_hash="def",
+            random_seed=42,
+        )
+        d = vr.to_dict()
+        assert d["experiment_id"] == "H24"
+        assert d["result_hash"] == vr.result_hash
+        assert d["package_version"] == "0.1.1"
+
+    def test_save_and_read(self, tmp_path: Path) -> None:
+        from skeptic_toolkit.verified_result import VerifiedResult
+
+        vr = VerifiedResult(
+            experiment_id="H24",
+            metrics={"auc": 0.978},
+            verdict="CLEAN",
+            code_hash="abc",
+            data_hash="def",
+        )
+        out = tmp_path / "result.json"
+        vr.save(out)
+        data = json.loads(out.read_text())
+        assert data["result_hash"] == vr.result_hash
+        assert data["experiment_id"] == "H24"
+
+    def test_hash_file(self, tmp_path: Path) -> None:
+        from skeptic_toolkit.verified_result import VerifiedResult
+
+        f = tmp_path / "test.txt"
+        f.write_text("hello world")
+        h = VerifiedResult.hash_file(f)
+        assert len(h) == 16
+        assert h == VerifiedResult.hash_file(f)  # deterministic
+
+
+# ===========================================================================
+# 8. Package metadata
 # ===========================================================================
 class TestPackageMetadata:
     """Verify pyproject.toml consistency."""
