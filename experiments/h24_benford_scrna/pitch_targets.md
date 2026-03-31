@@ -25,7 +25,7 @@
 ### Target 2: Michèle Nuijten (statcheck creator)
 
 **Why:** H23 p-hacking behavioral detection uses her framework. Co-author for meta-science paper.
-**Email:** m.b.nuijten@tilburguniversity.edu (from her website mbnuijten.com)
+**Email:** [see private contacts — redacted from public repo]
 **Customize:** This is for H23, not H24. Separate pitch.
 
 **Subject:** Behavioral anomaly detection for statistical reporting – Building on statcheck
@@ -42,7 +42,7 @@
 ### Target 3: Elisabeth Bik (scientific integrity researcher)
 
 **Why:** World's leading expert on image manipulation in science. Scientific integrity framing.
-**Email:** elisabeth.bik@gmail.com (from her website / Science Integrity Digest)
+**Email:** [see private contacts — redacted from public repo]
 **Customize:** Frame around the DATA integrity angle, not image integrity.
 
 **Subject:** Statistical artifact detection toolkit for scientific data integrity

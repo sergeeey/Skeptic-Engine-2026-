@@ -8,7 +8,7 @@
   "mean_frac_just_below_05": 0.0029,
   "unsupervised": {
     "method": "IsolationForest",
-    "contamination": 0.1,
+    "contamination": "auto",
     "n_flagged": 5,
     "frac_flagged": 0.119,
     "top20_anomalous": [

@@ -355,7 +355,7 @@ def main() -> None:
         else 0,
         "unsupervised": {
             "method": "IsolationForest",
-            "contamination": 0.10,
+            "contamination": "auto",
             "n_flagged": n_flagged,
             "frac_flagged": round(n_flagged / max(len(trial_data), 1), 4),
             "top20_anomalous": top20,

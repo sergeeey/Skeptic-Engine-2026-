@@ -172,13 +172,11 @@ def main() -> None:
     else:
         print("- Fusion logistic-reg probability (no candidate cells)")
 
-    print(
-        f"\nFinal fabrication risk score: {scores['final_score']:.3f} (threshold {args.threshold:.2f})"
-    )
-    if scores["final_score"] >= args.threshold:
-        print("Verdict: fabrication risk appears elevated; escalate for further review.")
-    else:
-        print("Verdict: signals are within expected bounds but still watchful.")
+    from skeptic_toolkit.verdict import make_verdict
+
+    verdict = make_verdict(scores["final_score"], threshold=args.threshold)
+    print(f"\nFinal fabrication risk score: {scores['final_score']:.3f}")
+    print(f"Verdict: {verdict}")
 
 
 if __name__ == "__main__":

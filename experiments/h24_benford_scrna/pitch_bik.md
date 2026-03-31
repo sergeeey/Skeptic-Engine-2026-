@@ -1,6 +1,6 @@
 # Pitch: Elisabeth Bik — Scientific data integrity (raw data, not images)
 
-**To:** Elisabeth Bik (elisabeth.bik@gmail.com)
+**To:** Elisabeth Bik ([email redacted from public repo])
 **Re:** Automated statistical artifact detection for raw scientific data
 
 ---
