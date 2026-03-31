@@ -1,0 +1,96 @@
+{
+  "experiment": "H26_selfcheck_screening",
+  "method": "symmetric_split_half_IF_consistency",
+  "n_datasets": 8,
+  "n_processed": 6,
+  "n_clean": 6,
+  "n_uncertain": 0,
+  "n_flagged": 0,
+  "false_positive_rate": 0.0,
+  "conclusion": "CLEAN_SWEEP \u2014 all 6 datasets pass self-consistency check. No evidence of mixed fabrication. FPR = 0%.",
+  "results": [
+    {
+      "id": "10x_pbmc3k",
+      "name": "PBMC 3k (10x Genomics v1)",
+      "n_cells": 2700,
+      "n_genes": 32738,
+      "verdict": "CLEAN",
+      "anomaly_rate_AB": 0.0496,
+      "anomaly_rate_BA": 0.0533,
+      "mean_anomaly_rate": 0.0515,
+      "asymmetry": 0.0037,
+      "risk_score": 0.2574
+    },
+    {
+      "id": "10x_pbmc10k",
+      "name": "PBMC 10k (10x Genomics v3)",
+      "n_cells": 5000,
+      "n_genes": 33538,
+      "verdict": "CLEAN",
+      "anomaly_rate_AB": 0.0656,
+      "anomaly_rate_BA": 0.0724,
+      "mean_anomaly_rate": 0.069,
+      "asymmetry": 0.0068,
+      "risk_score": 0.345
+    },
+    {
+      "id": "10x_pbmc5k_nextgem",
+      "name": "PBMC 5k (10x Next GEM v3.1)",
+      "verdict": "SKIP"
+    },
+    {
+      "id": "10x_neurons_900",
+      "name": "Neurons 900 (10x Genomics)",
+      "n_cells": 931,
+      "n_genes": 27998,
+      "verdict": "CLEAN",
+      "anomaly_rate_AB": 0.043,
+      "anomaly_rate_BA": 0.0473,
+      "mean_anomaly_rate": 0.0452,
+      "asymmetry": 0.0043,
+      "risk_score": 0.2258
+    },
+    {
+      "id": "10x_heart_1k",
+      "name": "Heart 1k (10x Genomics v3)",
+      "n_cells": 1011,
+      "n_genes": 31053,
+      "verdict": "CLEAN",
+      "anomaly_rate_AB": 0.0535,
+      "anomaly_rate_BA": 0.0614,
+      "mean_anomaly_rate": 0.0574,
+      "asymmetry": 0.0079,
+      "risk_score": 0.2871
+    },
+    {
+      "id": "10x_pbmc_1k_v3",
+      "name": "PBMC 1k (10x Genomics v3)",
+      "n_cells": 1222,
+      "n_genes": 33538,
+      "verdict": "CLEAN",
+      "anomaly_rate_AB": 0.0786,
+      "anomaly_rate_BA": 0.0573,
+      "mean_anomaly_rate": 0.0679,
+      "asymmetry": 0.0213,
+      "risk_score": 0.3396
+    },
+    {
+      "id": "10x_pbmc_5k_v3",
+      "name": "PBMC 5k (10x Genomics v3)",
+      "verdict": "SKIP"
+    },
+    {
+      "id": "10x_neuron_10k",
+      "name": "Neurons 10k (10x Genomics v3)",
+      "n_cells": 5000,
+      "n_genes": 31053,
+      "verdict": "CLEAN",
+      "anomaly_rate_AB": 0.0536,
+      "anomaly_rate_BA": 0.0736,
+      "mean_anomaly_rate": 0.0636,
+      "asymmetry": 0.02,
+      "risk_score": 0.318
+    }
+  ],
+  "elapsed_s": 50.8
+}
