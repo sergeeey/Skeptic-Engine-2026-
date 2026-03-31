@@ -1,0 +1,546 @@
+{
+  "experiment": "H29",
+  "n_samples": 140,
+  "n_features": 9585,
+  "n_constraints": 200,
+  "separation": 0.0045,
+  "conclusion": "Syndrome layer detects structure-breaking fabrication (random: 0.595, shuffle: 0.595) with biologically interpretable violations (HBA2-HBB, MYH11-MYLK, SPTA1-SPTB). Does NOT detect subtle noise injection (0.005 vs 0.001 real) -- same as H25 AE baseline. Key value: provides WHICH dependencies are violated, not just overall anomaly score.",
+  "results": [
+    {
+      "label": "real",
+      "fabrication": "none",
+      "global_anomaly_score": 0.0014,
+      "syndrome_score": 0.0009,
+      "pairwise_violation_score": 0.0014,
+      "residual_violation_score": 0.0,
+      "stability_score": 1.0,
+      "top_violated_pairs": [
+        {
+          "feature_i": 4659,
+          "feature_j": 4663,
+          "expected_rho": 0.9579,
+          "actual_rho": 0.9624,
+          "delta": 0.0045,
+          "stability": 1.0,
+          "violation_score": 0.0045
+        },
+        {
+          "feature_i": 2989,
+          "feature_j": 4403,
+          "expected_rho": 0.9569,
+          "actual_rho": 0.961,
+          "delta": 0.0041,
+          "stability": 1.0,
+          "violation_score": 0.0041
+        },
+        {
+          "feature_i": 1200,
+          "feature_j": 2957,
+          "expected_rho": 0.9547,
+          "actual_rho": 0.9588,
+          "delta": 0.0041,
+          "stability": 1.0,
+          "violation_score": 0.0041
+        },
+        {
+          "feature_i": 2957,
+          "feature_j": 8140,
+          "expected_rho": 0.966,
+          "actual_rho": 0.9699,
+          "delta": 0.0039,
+          "stability": 1.0,
+          "violation_score": 0.0039
+        },
+        {
+          "feature_i": 4043,
+          "feature_j": 4377,
+          "expected_rho": 0.9565,
+          "actual_rho": 0.96,
+          "delta": 0.0036,
+          "stability": 1.0,
+          "violation_score": 0.0036
+        },
+        {
+          "feature_i": 1200,
+          "feature_j": 8140,
+          "expected_rho": 0.9619,
+          "actual_rho": 0.9651,
+          "delta": 0.0033,
+          "stability": 1.0,
+          "violation_score": 0.0033
+        },
+        {
+          "feature_i": 121,
+          "feature_j": 2987,
+          "expected_rho": 0.9564,
+          "actual_rho": 0.9592,
+          "delta": 0.0029,
+          "stability": 1.0,
+          "violation_score": 0.0029
+        },
+        {
+          "feature_i": 2989,
+          "feature_j": 5941,
+          "expected_rho": 0.9704,
+          "actual_rho": 0.9732,
+          "delta": 0.0028,
+          "stability": 1.0,
+          "violation_score": 0.0028
+        },
+        {
+          "feature_i": 1124,
+          "feature_j": 8140,
+          "expected_rho": 0.9645,
+          "actual_rho": 0.9673,
+          "delta": 0.0028,
+          "stability": 1.0,
+          "violation_score": 0.0028
+        },
+        {
+          "feature_i": 6288,
+          "feature_j": 8332,
+          "expected_rho": 0.9643,
+          "actual_rho": 0.9671,
+          "delta": 0.0028,
+          "stability": 1.0,
+          "violation_score": 0.0028
+        }
+      ],
+      "noise_sensitivity": "low"
+    },
+    {
+      "label": "fab_random",
+      "fabrication": "random",
+      "global_anomaly_score": 0.9653,
+      "syndrome_score": 0.5954,
+      "pairwise_violation_score": 0.9653,
+      "residual_violation_score": 0.0407,
+      "stability_score": 1.0,
+      "top_violated_pairs": [
+        {
+          "feature_i": 1200,
+          "feature_j": 2464,
+          "expected_rho": 0.9798,
+          "actual_rho": -0.1595,
+          "delta": 1.1392,
+          "stability": 1.0,
+          "violation_score": 1.1392
+        },
+        {
+          "feature_i": 1064,
+          "feature_j": 3997,
+          "expected_rho": 0.9571,
+          "actual_rho": -0.1672,
+          "delta": 1.1243,
+          "stability": 1.0,
+          "violation_score": 1.1243
+        },
+        {
+          "feature_i": 4662,
+          "feature_j": 4664,
+          "expected_rho": 0.9708,
+          "actual_rho": -0.153,
+          "delta": 1.1238,
+          "stability": 1.0,
+          "violation_score": 1.1238
+        },
+        {
+          "feature_i": 5342,
+          "feature_j": 5866,
+          "expected_rho": 0.9645,
+          "actual_rho": -0.1557,
+          "delta": 1.1202,
+          "stability": 1.0,
+          "violation_score": 1.1202
+        },
+        {
+          "feature_i": 5121,
+          "feature_j": 8572,
+          "expected_rho": 0.9754,
+          "actual_rho": -0.1349,
+          "delta": 1.1103,
+          "stability": 1.0,
+          "violation_score": 1.1103
+        },
+        {
+          "feature_i": 1668,
+          "feature_j": 1897,
+          "expected_rho": 0.9597,
+          "actual_rho": -0.1478,
+          "delta": 1.1075,
+          "stability": 1.0,
+          "violation_score": 1.1075
+        },
+        {
+          "feature_i": 5118,
+          "feature_j": 8177,
+          "expected_rho": 0.9605,
+          "actual_rho": -0.1451,
+          "delta": 1.1056,
+          "stability": 1.0,
+          "violation_score": 1.1056
+        },
+        {
+          "feature_i": 121,
+          "feature_j": 5111,
+          "expected_rho": 0.9552,
+          "actual_rho": -0.1489,
+          "delta": 1.1041,
+          "stability": 1.0,
+          "violation_score": 1.1041
+        },
+        {
+          "feature_i": 5342,
+          "feature_j": 8332,
+          "expected_rho": 0.9599,
+          "actual_rho": -0.1432,
+          "delta": 1.1031,
+          "stability": 1.0,
+          "violation_score": 1.1031
+        },
+        {
+          "feature_i": 5727,
+          "feature_j": 5864,
+          "expected_rho": 0.9546,
+          "actual_rho": -0.1465,
+          "delta": 1.1011,
+          "stability": 1.0,
+          "violation_score": 1.1011
+        }
+      ],
+      "noise_sensitivity": "low"
+    },
+    {
+      "label": "fab_shuffle",
+      "fabrication": "shuffle",
+      "global_anomaly_score": 0.9695,
+      "syndrome_score": 0.5952,
+      "pairwise_violation_score": 0.9695,
+      "residual_violation_score": 0.0337,
+      "stability_score": 1.0,
+      "top_violated_pairs": [
+        {
+          "feature_i": 4659,
+          "feature_j": 4662,
+          "expected_rho": 0.9572,
+          "actual_rho": -0.1708,
+          "delta": 1.128,
+          "stability": 1.0,
+          "violation_score": 1.128
+        },
+        {
+          "feature_i": 5342,
+          "feature_j": 8140,
+          "expected_rho": 0.9601,
+          "actual_rho": -0.1665,
+          "delta": 1.1266,
+          "stability": 1.0,
+          "violation_score": 1.1266
+        },
+        {
+          "feature_i": 5111,
+          "feature_j": 8177,
+          "expected_rho": 0.9649,
+          "actual_rho": -0.1611,
+          "delta": 1.126,
+          "stability": 1.0,
+          "violation_score": 1.126
+        },
+        {
+          "feature_i": 1200,
+          "feature_j": 2957,
+          "expected_rho": 0.9547,
+          "actual_rho": -0.171,
+          "delta": 1.1257,
+          "stability": 1.0,
+          "violation_score": 1.1257
+        },
+        {
+          "feature_i": 362,
+          "feature_j": 7904,
+          "expected_rho": 0.969,
+          "actual_rho": -0.1564,
+          "delta": 1.1254,
+          "stability": 1.0,
+          "violation_score": 1.1254
+        },
+        {
+          "feature_i": 1124,
+          "feature_j": 1897,
+          "expected_rho": 0.9748,
+          "actual_rho": -0.1477,
+          "delta": 1.1225,
+          "stability": 1.0,
+          "violation_score": 1.1225
+        },
+        {
+          "feature_i": 1897,
+          "feature_j": 5866,
+          "expected_rho": 0.9583,
+          "actual_rho": -0.1617,
+          "delta": 1.12,
+          "stability": 1.0,
+          "violation_score": 1.12
+        },
+        {
+          "feature_i": 1200,
+          "feature_j": 4377,
+          "expected_rho": 0.9636,
+          "actual_rho": -0.1418,
+          "delta": 1.1054,
+          "stability": 1.0,
+          "violation_score": 1.1054
+        },
+        {
+          "feature_i": 5118,
+          "feature_j": 8177,
+          "expected_rho": 0.9605,
+          "actual_rho": -0.1423,
+          "delta": 1.1028,
+          "stability": 1.0,
+          "violation_score": 1.1028
+        },
+        {
+          "feature_i": 4377,
+          "feature_j": 5121,
+          "expected_rho": 0.976,
+          "actual_rho": -0.1224,
+          "delta": 1.0984,
+          "stability": 1.0,
+          "violation_score": 1.0984
+        }
+      ],
+      "noise_sensitivity": "low"
+    },
+    {
+      "label": "fab_noise_10pct",
+      "fabrication": "noise_10pct",
+      "global_anomaly_score": 0.009,
+      "syndrome_score": 0.0054,
+      "pairwise_violation_score": 0.009,
+      "residual_violation_score": 0.0,
+      "stability_score": 1.0,
+      "top_violated_pairs": [
+        {
+          "feature_i": 1079,
+          "feature_j": 1080,
+          "expected_rho": 0.9583,
+          "actual_rho": 0.9377,
+          "delta": 0.0206,
+          "stability": 1.0,
+          "violation_score": 0.0206
+        },
+        {
+          "feature_i": 5111,
+          "feature_j": 5342,
+          "expected_rho": 0.9614,
+          "actual_rho": 0.9409,
+          "delta": 0.0205,
+          "stability": 1.0,
+          "violation_score": 0.0205
+        },
+        {
+          "feature_i": 5111,
+          "feature_j": 5866,
+          "expected_rho": 0.9564,
+          "actual_rho": 0.9373,
+          "delta": 0.0191,
+          "stability": 1.0,
+          "violation_score": 0.0191
+        },
+        {
+          "feature_i": 1124,
+          "feature_j": 5111,
+          "expected_rho": 0.9645,
+          "actual_rho": 0.946,
+          "delta": 0.0185,
+          "stability": 1.0,
+          "violation_score": 0.0185
+        },
+        {
+          "feature_i": 5111,
+          "feature_j": 8332,
+          "expected_rho": 0.9553,
+          "actual_rho": 0.9368,
+          "delta": 0.0185,
+          "stability": 1.0,
+          "violation_score": 0.0185
+        },
+        {
+          "feature_i": 5121,
+          "feature_j": 9110,
+          "expected_rho": 0.957,
+          "actual_rho": 0.9388,
+          "delta": 0.0183,
+          "stability": 1.0,
+          "violation_score": 0.0183
+        },
+        {
+          "feature_i": 6639,
+          "feature_j": 6660,
+          "expected_rho": 0.9736,
+          "actual_rho": 0.9555,
+          "delta": 0.0181,
+          "stability": 1.0,
+          "violation_score": 0.0181
+        },
+        {
+          "feature_i": 2987,
+          "feature_j": 5866,
+          "expected_rho": 0.9567,
+          "actual_rho": 0.9392,
+          "delta": 0.0176,
+          "stability": 1.0,
+          "violation_score": 0.0176
+        },
+        {
+          "feature_i": 121,
+          "feature_j": 5111,
+          "expected_rho": 0.9552,
+          "actual_rho": 0.9383,
+          "delta": 0.017,
+          "stability": 1.0,
+          "violation_score": 0.017
+        },
+        {
+          "feature_i": 2987,
+          "feature_j": 5121,
+          "expected_rho": 0.9605,
+          "actual_rho": 0.9437,
+          "delta": 0.0169,
+          "stability": 1.0,
+          "violation_score": 0.0169
+        }
+      ],
+      "noise_sensitivity": "low"
+    }
+  ],
+  "top_constraints": [
+    {
+      "g_i": "SPTA1",
+      "g_j": "SPTB",
+      "rho": 0.9899,
+      "stab": 1.0
+    },
+    {
+      "g_i": "HBA2",
+      "g_j": "HBB",
+      "rho": 0.9899,
+      "stab": 1.0
+    },
+    {
+      "g_i": "MYLK",
+      "g_j": "SYNPO2",
+      "rho": 0.9849,
+      "stab": 1.0
+    },
+    {
+      "g_i": "LMOD1",
+      "g_j": "SYNPO2",
+      "rho": 0.982,
+      "stab": 1.0
+    },
+    {
+      "g_i": "CAVIN1",
+      "g_j": "EHD2",
+      "rho": 0.9798,
+      "stab": 1.0
+    },
+    {
+      "g_i": "FLNC",
+      "g_j": "SMTN",
+      "rho": 0.9791,
+      "stab": 1.0
+    },
+    {
+      "g_i": "TAGLN",
+      "g_j": "TPM2",
+      "rho": 0.9787,
+      "stab": 1.0
+    },
+    {
+      "g_i": "FHL1",
+      "g_j": "TGFB1I1",
+      "rho": 0.9776,
+      "stab": 1.0
+    },
+    {
+      "g_i": "MYH11",
+      "g_j": "MYLK",
+      "rho": 0.9776,
+      "stab": 1.0
+    },
+    {
+      "g_i": "MYLK",
+      "g_j": "PPP1R12B",
+      "rho": 0.9774,
+      "stab": 1.0
+    },
+    {
+      "g_i": "CSRP1",
+      "g_j": "TAGLN",
+      "rho": 0.9772,
+      "stab": 1.0
+    },
+    {
+      "g_i": "LMOD1",
+      "g_j": "MYLK",
+      "rho": 0.976,
+      "stab": 1.0
+    },
+    {
+      "g_i": "MYLK",
+      "g_j": "TNS1",
+      "rho": 0.9754,
+      "stab": 1.0
+    },
+    {
+      "g_i": "SYNPO2",
+      "g_j": "TGFB1I1",
+      "rho": 0.9753,
+      "stab": 1.0
+    },
+    {
+      "g_i": "CALD1",
+      "g_j": "CSRP1",
+      "rho": 0.9748,
+      "stab": 1.0
+    },
+    {
+      "g_i": "MYLK",
+      "g_j": "SMTN",
+      "rho": 0.9741,
+      "stab": 1.0
+    },
+    {
+      "g_i": "MYLK",
+      "g_j": "TGFB1I1",
+      "rho": 0.9737,
+      "stab": 1.0
+    },
+    {
+      "g_i": "RAB15",
+      "g_j": "RAB33B",
+      "rho": 0.9736,
+      "stab": 1.0
+    },
+    {
+      "g_i": "SYNPO2",
+      "g_j": "TNS1",
+      "rho": 0.9729,
+      "stab": 1.0
+    },
+    {
+      "g_i": "LMOD1",
+      "g_j": "TGFB1I1",
+      "rho": 0.9725,
+      "stab": 1.0
+    }
+  ],
+  "elapsed_s": 57.9,
+  "per_method_separation": {
+    "random": 0.5945,
+    "shuffle": 0.5943,
+    "noise_10pct": 0.0045
+  }
+}
