@@ -133,32 +133,84 @@ def download_file(url: str, dest: Path) -> bool:
 def find_count_matrix_file(files: list[dict]) -> dict | None:
     """Find the most likely count matrix file from supplementary listing.
 
-    Priority: matrix.mtx > *filtered*matrix* > *.h5 > *counts*.csv
+    Prefer processed count matrices and avoid metadata / DE / expression-summary files.
     """
-    priority_patterns = [
-        "matrix.mtx",
-        "filtered_gene_bc_matrices",
-        "filtered_feature_bc_matrix",
-        ".h5",
-        "counts",
-        "raw_count",
-        "umi_count",
+    excluded_substrings = [
+        "metadata",
+        "cellmeta",
+        "genemeta",
+        "differential",
+        "_de_",
+        "_de-",
+        "marker",
+        "annotation",
+        ".rds",
+        ".rdata",
+        "log2tpm",
+        "tpm",
+        "fpkm",
+        "cpm",
+        "_tcr",
+        "tcr_",
+        "vdj",
+        "atac",
+        "peak",
+    ]
+    suffix_weights = [
+        (".mtx.gz", 140),
+        (".mtx", 130),
+        (".h5", 110),
+        (".hdf5", 110),
+        (".csv.gz", 90),
+        (".tsv.gz", 85),
+        (".txt.gz", 80),
+        (".csv", 75),
+        (".tsv", 70),
+        (".txt", 65),
+    ]
+    signal_weights = [
+        ("filtered_feature_bc_matrix", 60),
+        ("filtered_gene_bc_matrices", 60),
+        ("rawcounts", 55),
+        ("raw_count", 55),
+        ("count_matrix", 50),
+        ("counts_matrix", 50),
+        ("counts", 40),
+        ("count", 35),
+        ("umi", 25),
+        ("matrix", 20),
     ]
 
-    for pattern in priority_patterns:
-        for f in files:
-            if pattern in f["name"].lower():
-                return f
-
-    # Fallback: first file that looks like data (prefer non-tar)
+    ranked: list[tuple[int, dict]] = []
     for f in files:
         name_lower = f["name"].lower()
-        if any(ext in name_lower for ext in [".mtx", ".h5", ".csv"]) and ".tar" not in name_lower:
-            return f
+        if any(token in name_lower for token in excluded_substrings):
+            continue
 
-    # Last resort: RAW.tar (large, will need extraction)
+        score = 0
+        for suffix, weight in suffix_weights:
+            if name_lower.endswith(suffix):
+                score += weight
+                break
+        for token, weight in signal_weights:
+            if token in name_lower:
+                score += weight
+        if "_raw.tar" in name_lower:
+            score -= 200
+        elif name_lower.endswith(".tar") or name_lower.endswith(".tar.gz"):
+            score -= 80
+
+        if score > 0:
+            ranked.append((score, f))
+
+    if ranked:
+        ranked.sort(key=lambda item: (-item[0], len(item[1]["name"])))
+        return ranked[0][1]
+
+    # Last resort: RAW.tar (large, likely to be skipped by caller)
     for f in files:
-        if "_raw.tar" in f["name"].lower():
+        name_lower = f["name"].lower()
+        if "_raw.tar" in name_lower or name_lower.endswith(".tar") or name_lower.endswith(".tar.gz"):
             return f
 
     return None

@@ -1,0 +1,93 @@
+{
+  "experiment": "H26_mass_screening",
+  "target_processed": 3,
+  "search_budget": 6,
+  "n_searched": 6,
+  "n_considered": 6,
+  "n_downloaded": 2,
+  "n_processed": 0,
+  "n_clean": 0,
+  "n_uncertain": 0,
+  "n_flagged": 0,
+  "flag_rate": 0.0,
+  "reference_bank": [
+    "PBMC3k_10x",
+    "Kang2018_GSE96583",
+    "Neurons900_10x"
+  ],
+  "scoring_method": "Per-reference IsolationForest + Benford divergence, aggregated by conservative best-match clean-bank calibration",
+  "supported_scope": "UMI-like sparse scRNA-seq count matrices",
+  "domain_bounds": {
+    "max_mean_library_size": 57657.5,
+    "max_mean_genes_detected": 9189.6,
+    "min_zero_fraction": 0.8406
+  },
+  "clean_bank_max": {
+    "best_match_frac_anomalous": 0.7809,
+    "best_match_chi2_vs_reference": 0.064934,
+    "best_match_negative_median_if": 0.0612
+  },
+  "clean_reference_profiles": [
+    {
+      "dataset": "PBMC3k_10x",
+      "best_overall_reference": "Kang2018_GSE96583",
+      "best_match_frac_reference": "Kang2018_GSE96583",
+      "best_match_frac_anomalous": 0.0267,
+      "best_match_chi2_reference": "Kang2018_GSE96583",
+      "best_match_chi2_vs_reference": 0.003246,
+      "best_match_if_reference": "Kang2018_GSE96583",
+      "best_match_median_if_score": 0.0762,
+      "best_match_negative_median_if": -0.0762
+    },
+    {
+      "dataset": "Kang2018_GSE96583",
+      "best_overall_reference": "PBMC3k_10x",
+      "best_match_frac_reference": "PBMC3k_10x",
+      "best_match_frac_anomalous": 0.4374,
+      "best_match_chi2_reference": "PBMC3k_10x",
+      "best_match_chi2_vs_reference": 0.003481,
+      "best_match_if_reference": "PBMC3k_10x",
+      "best_match_median_if_score": -0.0038,
+      "best_match_negative_median_if": 0.0038
+    },
+    {
+      "dataset": "Neurons900_10x",
+      "best_overall_reference": "Kang2018_GSE96583",
+      "best_match_frac_reference": "Kang2018_GSE96583",
+      "best_match_frac_anomalous": 0.7809,
+      "best_match_chi2_reference": "Kang2018_GSE96583",
+      "best_match_chi2_vs_reference": 0.064934,
+      "best_match_if_reference": "Kang2018_GSE96583",
+      "best_match_median_if_score": -0.0612,
+      "best_match_negative_median_if": 0.0612
+    }
+  ],
+  "conclusion": "NO_SUPPORTED_DATA \u2014 downloadable matrices were outside the supported UMI-like scRNA-seq screening scope.",
+  "datasets": [],
+  "out_of_scope_datasets": [
+    {
+      "gse": "GSE201443",
+      "file": "GSE201443_STAR_raw_counts.csv.gz",
+      "candidate_summary": {
+        "n_cells": 192,
+        "n_genes": 38366,
+        "mean_library_size": 1160856.0,
+        "mean_genes_detected": 6841.0,
+        "zero_fraction": 0.8217
+      },
+      "scope_reasons": [
+        "mean_library_size above UMI-like clean-bank range (1160856.0 > 57657.5)",
+        "zero_fraction too low for sparse UMI-like matrix (0.8217 < 0.8406)"
+      ]
+    }
+  ],
+  "skipped": {
+    "no_files": 1,
+    "raw_archive_only": 3,
+    "too_large": 0,
+    "load_error": 0,
+    "too_few_cells": 1,
+    "out_of_scope": 1
+  },
+  "elapsed_s": 24.3
+}

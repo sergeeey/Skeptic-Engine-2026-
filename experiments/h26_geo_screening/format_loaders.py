@@ -5,6 +5,7 @@ Handles MTX, H5, CSV/TSV formats commonly found in GEO supplementary files.
 
 from __future__ import annotations
 
+import csv
 import gzip
 from pathlib import Path
 
@@ -127,40 +128,85 @@ def _load_h5(path: Path) -> np.ndarray | None:
 
 def _load_delimited(path: Path, fmt: str) -> np.ndarray | None:
     """Load CSV or TSV count matrix."""
-    delimiter = "," if fmt == "csv" else "\t"
+    preview = _read_preview_lines(path)
+    if not preview:
+        return None
+
+    delimiter = _sniff_delimiter(preview[0], fmt)
+    header_tokens = _parse_delimited_line(preview[0], delimiter)
+    data_tokens = _parse_delimited_line(preview[1], delimiter) if len(preview) > 1 else []
+
+    has_header = bool(header_tokens) and (
+        header_tokens[0] == "" or not _is_numeric_token(header_tokens[0])
+    )
+    first_data_tokens = data_tokens if has_header else header_tokens
+    has_row_labels = bool(first_data_tokens) and not _is_numeric_token(first_data_tokens[0])
+
+    n_cols = len(first_data_tokens)
+    if n_cols <= (1 if has_row_labels else 0):
+        return None
+
+    usecols = tuple(range(1 if has_row_labels else 0, n_cols))
 
     try:
         if path.suffix == ".gz":
-            import io
-
-            with gzip.open(path, "rt") as f:
-                # Read first line to check for header
-                first_line = f.readline()
-                f.seek(0)
-                has_header = (
-                    not first_line.strip()
-                    .replace(delimiter, "")
-                    .replace(".", "")
-                    .replace("-", "")
-                    .isdigit()
+            with gzip.open(path, "rt", newline="") as f:
+                data = np.loadtxt(
+                    f,
+                    delimiter=delimiter,
+                    skiprows=1 if has_header else 0,
+                    usecols=usecols,
+                    ndmin=2,
                 )
-                skiprows = 1 if has_header else 0
-                data = np.loadtxt(f, delimiter=delimiter, skiprows=skiprows)
         else:
-            with open(path, "r") as f:
-                first_line = f.readline()
-            has_header = (
-                not first_line.strip()
-                .replace(delimiter, "")
-                .replace(".", "")
-                .replace("-", "")
-                .isdigit()
+            data = np.loadtxt(
+                path,
+                delimiter=delimiter,
+                skiprows=1 if has_header else 0,
+                usecols=usecols,
+                ndmin=2,
             )
-            skiprows = 1 if has_header else 0
-            data = np.loadtxt(path, delimiter=delimiter, skiprows=skiprows)
 
-        if data.ndim == 1:
-            return None
+        if has_row_labels:
+            data = data.T
         return data
     except Exception:
         return None
+
+
+def _read_preview_lines(path: Path, n_lines: int = 2) -> list[str]:
+    opener = gzip.open if path.suffix == ".gz" else open
+    lines: list[str] = []
+    with opener(path, "rt", newline="") as f:
+        for _ in range(n_lines):
+            line = f.readline()
+            if not line:
+                break
+            lines.append(line.rstrip("\r\n"))
+    return lines
+
+
+def _sniff_delimiter(line: str, fmt: str) -> str:
+    candidates = [",", ";", "\t"]
+    if fmt == "tsv":
+        candidates = ["\t", ";", ","]
+    counts = {delimiter: line.count(delimiter) for delimiter in candidates}
+    best = max(candidates, key=lambda delimiter: counts[delimiter])
+    if counts[best] == 0:
+        return "\t" if fmt == "tsv" else ","
+    return best
+
+
+def _parse_delimited_line(line: str, delimiter: str) -> list[str]:
+    return next(csv.reader([line], delimiter=delimiter))
+
+
+def _is_numeric_token(token: str) -> bool:
+    stripped = token.strip().strip('"')
+    if stripped == "":
+        return False
+    try:
+        float(stripped)
+        return True
+    except ValueError:
+        return False

@@ -16,11 +16,15 @@ import pytest
 # Path setup — add experiment dirs so we can import feature modules directly
 # ---------------------------------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+SRC_DIR = PROJECT_ROOT / "src"
 H24_DIR = PROJECT_ROOT / "experiments" / "h24_benford_scrna"
 H23_DIR = PROJECT_ROOT / "experiments" / "h23_phacking_behavioral"
+H26_DIR = PROJECT_ROOT / "experiments" / "h26_geo_screening"
 
+sys.path.insert(0, str(SRC_DIR))
 sys.path.insert(0, str(H24_DIR))
 sys.path.insert(0, str(H23_DIR))
+sys.path.insert(0, str(H26_DIR))
 
 
 # ===========================================================================
@@ -116,6 +120,132 @@ class TestCellLevelFeatures:
         scores = score_anomalies(model, features)
         assert scores.shape == (50,)
         assert np.isfinite(scores).all()
+
+
+# ===========================================================================
+# 3b. H26 GEO file heuristics and delimited loaders
+# ===========================================================================
+class TestH26GeoHelpers:
+    """Test GEO supplementary-file selection and delimited matrix loading."""
+
+    def test_find_count_matrix_file_prefers_counts(self) -> None:
+        from geo_api import find_count_matrix_file
+
+        selected = find_count_matrix_file(
+            [
+                {"name": "GSE123_metadata.csv.gz", "url": "https://example/metadata"},
+                {"name": "GSE123_counts.csv.gz", "url": "https://example/counts"},
+                {"name": "GSE123_markers.tsv.gz", "url": "https://example/markers"},
+            ]
+        )
+        assert selected is not None
+        assert selected["name"] == "GSE123_counts.csv.gz"
+
+    def test_find_count_matrix_file_rejects_log_tpm(self) -> None:
+        from geo_api import find_count_matrix_file
+
+        selected = find_count_matrix_file(
+            [{"name": "GSE205501_cd8_bulk_RNA_log2TPM.txt.gz", "url": "https://example/tpm"}]
+        )
+        assert selected is None
+
+    def test_load_count_matrix_semicolon_with_row_labels(self, tmp_path: Path) -> None:
+        from format_loaders import load_count_matrix
+
+        path = tmp_path / "counts.csv"
+        path.write_text(
+            "gene;cell_a;cell_b\n"
+            "ENSG0001;1;0\n"
+            "ENSG0002;0;2\n"
+            "ENSG0003;3;4\n",
+            encoding="utf-8",
+        )
+
+        matrix = load_count_matrix(path)
+        assert matrix is not None
+        assert matrix.shape == (2, 3)
+        assert matrix.dtype == np.int64
+        assert matrix.tolist() == [[1, 0, 3], [0, 2, 4]]
+
+    def test_scope_gate_rejects_full_length_like_matrix(self) -> None:
+        from run_h26_mass_screen import check_supported_scope
+
+        calibration = {
+            "domain_bounds": {
+                "max_mean_library_size": 60000.0,
+                "max_mean_genes_detected": 4000.0,
+                "min_zero_fraction": 0.84,
+            }
+        }
+        summary = {
+            "n_cells": 192,
+            "n_genes": 38366,
+            "mean_library_size": 1160856.0,
+            "mean_genes_detected": 6841.0,
+            "zero_fraction": 0.8217,
+        }
+
+        reasons = check_supported_scope(summary, calibration)
+        assert len(reasons) == 3
+        assert any("mean_library_size" in reason for reason in reasons)
+        assert any("mean_genes_detected" in reason for reason in reasons)
+        assert any("zero_fraction" in reason for reason in reasons)
+
+    def test_calibrate_candidate_clean_vs_flagged(self) -> None:
+        from run_h26_mass_screen import calibrate_candidate
+
+        calibration = {
+            "clean_bank_max": {
+                "best_match_frac_anomalous": 0.7873,
+                "best_match_chi2_vs_reference": 0.064331,
+                "best_match_negative_median_if": 0.0458,
+            }
+        }
+        clean_like = {
+            "PBMC3k_10x": {
+                "frac_anomalous": 0.7714,
+                "chi2_vs_reference": 0.036534,
+                "median_if_score": -0.0666,
+            },
+            "Kang2018_GSE96583": {
+                "frac_anomalous": 0.5554,
+                "chi2_vs_reference": 0.016339,
+                "median_if_score": -0.0160,
+            },
+            "Neurons900_10x": {
+                "frac_anomalous": 0.1434,
+                "chi2_vs_reference": 0.019542,
+                "median_if_score": 0.0526,
+            },
+        }
+        flagged_like = {
+            "PBMC3k_10x": {
+                "frac_anomalous": 1.0,
+                "chi2_vs_reference": 0.443827,
+                "median_if_score": -0.2154,
+            },
+            "Kang2018_GSE96583": {
+                "frac_anomalous": 0.9896,
+                "chi2_vs_reference": 0.415089,
+                "median_if_score": -0.1897,
+            },
+            "Neurons900_10x": {
+                "frac_anomalous": 0.9844,
+                "chi2_vs_reference": 0.255301,
+                "median_if_score": -0.2148,
+            },
+        }
+
+        clean_result = calibrate_candidate(clean_like, calibration)
+        flagged_result = calibrate_candidate(flagged_like, calibration)
+
+        assert clean_result["verdict"] == "CLEAN"
+        assert clean_result["risk_score"] == 0.15
+        assert clean_result["calibration_exceedances"] == []
+
+        assert flagged_result["verdict"] == "FLAGGED"
+        assert flagged_result["risk_score"] == 0.9
+        assert len(flagged_result["calibration_exceedances"]) == 3
 
 
 # ===========================================================================
