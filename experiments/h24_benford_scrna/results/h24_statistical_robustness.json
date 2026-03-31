@@ -1,0 +1,51 @@
+{
+  "experiment": "H24_statistical_robustness",
+  "dataset": "PBMC3k_10x",
+  "n_cells": 2700,
+  "results": [
+    {
+      "method": "resample",
+      "n_cv_iterations": 100,
+      "mean_auc": 0.9762,
+      "std_auc": 0.0038,
+      "ci_95_lower": 0.9695,
+      "ci_95_upper": 0.9838,
+      "cohens_d_mean": 0.1193,
+      "cohens_d_max": 0.4235,
+      "permutation_p_value": 0.0,
+      "n_permutations": 1000,
+      "empirical_power": 1.0,
+      "significance": "***"
+    },
+    {
+      "method": "noise",
+      "n_cv_iterations": 100,
+      "mean_auc": 1.0,
+      "std_auc": 0.0,
+      "ci_95_lower": 1.0,
+      "ci_95_upper": 1.0,
+      "cohens_d_mean": 3.4404,
+      "cohens_d_max": 25.0603,
+      "permutation_p_value": 0.0,
+      "n_permutations": 1000,
+      "empirical_power": 1.0,
+      "significance": "***"
+    },
+    {
+      "method": "random_nb",
+      "n_cv_iterations": 100,
+      "mean_auc": 0.9993,
+      "std_auc": 0.0003,
+      "ci_95_lower": 0.9986,
+      "ci_95_upper": 0.9997,
+      "cohens_d_mean": 0.699,
+      "cohens_d_max": 2.279,
+      "permutation_p_value": 0.0,
+      "n_permutations": 1000,
+      "empirical_power": 1.0,
+      "significance": "***"
+    }
+  ],
+  "conclusion": "All fabrication detection results are statistically significant (p < 0.05) with adequate power (>= 0.80). AUC claims are robust.",
+  "elapsed_s": 390.0
+}

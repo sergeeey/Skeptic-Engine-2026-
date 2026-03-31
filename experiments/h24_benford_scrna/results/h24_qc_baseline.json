@@ -1,0 +1,76 @@
+{
+  "experiment": "H24_qc_baseline_comparison",
+  "dataset": "PBMC3k_10x",
+  "n_cells": 2700,
+  "n_genes": 32738,
+  "results": [
+    {
+      "method": "resample",
+      "qc_baseline": {
+        "auc": 0.9361,
+        "ap": 0.901,
+        "features": [
+          "library_size",
+          "n_genes_detected",
+          "fraction_zeros",
+          "log_library_size"
+        ],
+        "n_features": 4
+      },
+      "fusion": {
+        "auc": 0.9783,
+        "ap": 0.9689,
+        "features": "benford_21 + cell_level_8",
+        "n_features": 29
+      },
+      "delta_auc": 0.0422,
+      "verdict": "FUSION_WINS"
+    },
+    {
+      "method": "noise",
+      "qc_baseline": {
+        "auc": 1.0,
+        "ap": 1.0,
+        "features": [
+          "library_size",
+          "n_genes_detected",
+          "fraction_zeros",
+          "log_library_size"
+        ],
+        "n_features": 4
+      },
+      "fusion": {
+        "auc": 1.0,
+        "ap": 1.0,
+        "features": "benford_21 + cell_level_8",
+        "n_features": 29
+      },
+      "delta_auc": 0.0,
+      "verdict": "QC_SUFFICIENT"
+    },
+    {
+      "method": "random_nb",
+      "qc_baseline": {
+        "auc": 0.9794,
+        "ap": 0.9629,
+        "features": [
+          "library_size",
+          "n_genes_detected",
+          "fraction_zeros",
+          "log_library_size"
+        ],
+        "n_features": 4
+      },
+      "fusion": {
+        "auc": 0.999,
+        "ap": 0.9989,
+        "features": "benford_21 + cell_level_8",
+        "n_features": 29
+      },
+      "delta_auc": 0.0196,
+      "verdict": "QC_SUFFICIENT"
+    }
+  ],
+  "conclusion": "Standard QC detects some fabrication types but misses 1/3. Fusion provides consistent detection across all methods.",
+  "elapsed_s": 30.4
+}
