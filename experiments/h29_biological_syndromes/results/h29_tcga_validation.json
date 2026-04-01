@@ -1,0 +1,64 @@
+{
+  "experiment": "tcga_validation",
+  "n_cancers": 5,
+  "n_clean": 5,
+  "total_samples": 1808,
+  "conclusion": "5/5 TCGA cancer proteomics datasets pass self-consistency (1808 total samples).",
+  "results": [
+    {
+      "cancer": "Breast",
+      "study": "brca_tcga",
+      "n_samples": 382,
+      "n_proteins": 236,
+      "constraints": 100,
+      "modules": 6,
+      "syndrome": 0.0022,
+      "class": "clean",
+      "status": "OK"
+    },
+    {
+      "cancer": "Lung",
+      "study": "luad_tcga",
+      "n_samples": 301,
+      "n_proteins": 234,
+      "constraints": 100,
+      "modules": 5,
+      "syndrome": 0.0029,
+      "class": "clean",
+      "status": "OK"
+    },
+    {
+      "cancer": "Colorectal",
+      "study": "coadread_tcga",
+      "n_samples": 368,
+      "n_proteins": 235,
+      "constraints": 100,
+      "modules": 7,
+      "syndrome": 0.0017,
+      "class": "clean",
+      "status": "OK"
+    },
+    {
+      "cancer": "Ovarian",
+      "study": "ov_tcga",
+      "n_samples": 353,
+      "n_proteins": 220,
+      "constraints": 100,
+      "modules": 3,
+      "syndrome": 0.0019,
+      "class": "clean",
+      "status": "OK"
+    },
+    {
+      "cancer": "Endometrial",
+      "study": "ucec_tcga",
+      "n_samples": 404,
+      "n_proteins": 220,
+      "constraints": 100,
+      "modules": 4,
+      "syndrome": 0.0018,
+      "class": "clean",
+      "status": "OK"
+    }
+  ]
+}
