@@ -1,0 +1,81 @@
+{
+  "experiment": "H30_retracted_syndrome",
+  "source": "GSE160269",
+  "paper_pmid": "38572681",
+  "paper_status": "RETRACTED",
+  "conclusion": "All 3 retracted datasets pass self-consistency. Retraction may be for non-data reasons.",
+  "results": [
+    {
+      "dataset": "PBMC3k_reference",
+      "type": "clean_reference",
+      "syndrome": 0.0007,
+      "module_violation": 0.0,
+      "violation_class": "clean",
+      "review_required": false
+    },
+    {
+      "dataset": "GSE160269_Bcell",
+      "type": "retracted",
+      "n_cells": 3000,
+      "n_genes": 2000,
+      "n_constraints": 100,
+      "n_modules": 11,
+      "syndrome": 0.0005,
+      "pairwise_violation": 0.0009,
+      "module_violation": 0.0,
+      "violation_class": "clean",
+      "review_required": false,
+      "noise_sensitivity": "low",
+      "top_violated_pairs": [
+        "XBP1<->PRDX4 d=0.003",
+        "MZB1<->NUCB2 d=0.003",
+        "RPS12<->RPL32 d=0.003",
+        "RPS15A<->RPS14 d=0.003",
+        "XBP1<->FKBP11 d=0.002"
+      ]
+    },
+    {
+      "dataset": "GSE160269_Myeloid",
+      "type": "retracted",
+      "n_cells": 3000,
+      "n_genes": 2000,
+      "n_constraints": 100,
+      "n_modules": 18,
+      "syndrome": 0.0004,
+      "pairwise_violation": 0.0007,
+      "module_violation": 0.0,
+      "violation_class": "clean",
+      "review_required": false,
+      "noise_sensitivity": "low",
+      "top_violated_pairs": [
+        "MS4A2<->SLC18A2 d=0.003",
+        "CPA3<->HDC d=0.002",
+        "CPA3<->CLU d=0.002",
+        "TPSAB1<->TPSD1 d=0.002",
+        "CPA3<->GATA2 d=0.002"
+      ]
+    },
+    {
+      "dataset": "GSE160269_Tcell",
+      "type": "retracted",
+      "n_cells": 3000,
+      "n_genes": 2000,
+      "n_constraints": 100,
+      "n_modules": 10,
+      "syndrome": 0.0004,
+      "pairwise_violation": 0.0009,
+      "module_violation": 0.0,
+      "violation_class": "clean",
+      "review_required": false,
+      "noise_sensitivity": "low",
+      "top_violated_pairs": [
+        "EEF1A1<->RPL19 d=0.003",
+        "EEF1A1<->RPL11 d=0.003",
+        "RPL10<->RPL19 d=0.002",
+        "RPL13<->RPL11 d=0.002",
+        "RPS18<->RPL3 d=0.002"
+      ]
+    }
+  ],
+  "elapsed_s": 354.8
+}
