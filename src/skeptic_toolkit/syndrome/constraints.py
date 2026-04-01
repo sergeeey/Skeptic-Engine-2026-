@@ -157,6 +157,9 @@ def _build_modules(
     # Distance matrix: 1 - |rho|
     dist = 1.0 - np.abs(rho_full)
     np.fill_diagonal(dist, 0)
+    # WHY: NaN correlations (constant columns) produce NaN distances.
+    # Replace with max distance (1.0) so they don't crash linkage.
+    dist = np.nan_to_num(dist, nan=1.0)
     dist = np.clip(dist, 0, 1)
 
     # Hierarchical clustering
