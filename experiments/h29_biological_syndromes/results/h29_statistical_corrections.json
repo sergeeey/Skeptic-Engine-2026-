@@ -1,0 +1,36 @@
+{
+  "mavedb_BRCA1_SGE": {
+    "separation": 0.0523,
+    "p_raw": 0.0222,
+    "p_corrected": 0.0666,
+    "sig": "ns"
+  },
+  "mavedb_MSH2_Jia": {
+    "separation": 0.0348,
+    "p_raw": 0.0225,
+    "p_corrected": 0.0675,
+    "sig": "ns"
+  },
+  "mavedb_VKOR1": {
+    "separation": 0.2034,
+    "p_raw": 0.0243,
+    "p_corrected": 0.0729,
+    "sig": "ns"
+  },
+  "rpcb": {
+    "observed_sep": -0.6847,
+    "ci_95": [
+      -0.7087,
+      -0.6617
+    ],
+    "p_value": 0.0001,
+    "ci_excludes_zero": true,
+    "n_replicated": 15,
+    "n_failed": 15
+  },
+  "tcga_reclassification": {
+    "old_label": "validation",
+    "new_label": "sanity_check_fpr",
+    "reason": "TCGA data pre-QCd, testing on clean data proves FPR=0% not detection power"
+  }
+}
