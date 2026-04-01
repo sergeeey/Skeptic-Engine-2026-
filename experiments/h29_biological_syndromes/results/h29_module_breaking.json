@@ -1,0 +1,69 @@
+{
+  "experiment": "H29_module_breaking",
+  "conclusion": "All 3/3 broken modules detected in top-5 violations.",
+  "n_detected": 3,
+  "n_tested": 3,
+  "results": [
+    {
+      "test": "baseline_real",
+      "syndrome": 0.0007,
+      "module_violation": 0.0,
+      "violation_class": "clean"
+    },
+    {
+      "test": "break_module_1204",
+      "module_genes": [
+        "ADD2",
+        "AHSP",
+        "ANK1",
+        "BPGM",
+        "CA1"
+      ],
+      "module_size": 25,
+      "syndrome": 0.0266,
+      "module_violation": 0.0209,
+      "violation_class": "technical_noise",
+      "target_detected_in_top5": true,
+      "review_required": false
+    },
+    {
+      "test": "break_module_2518",
+      "module_genes": [
+        "CMPK2",
+        "IFIT1",
+        "IFIT2",
+        "IFIT3",
+        "IFIT5"
+      ],
+      "module_size": 7,
+      "syndrome": 0.0065,
+      "module_violation": 0.0192,
+      "violation_class": "clean",
+      "target_detected_in_top5": true,
+      "review_required": false
+    },
+    {
+      "test": "break_module_2355",
+      "module_genes": [
+        "ACTG1",
+        "ARF3",
+        "ARG1",
+        "AZU1",
+        "BPI"
+      ],
+      "module_size": 40,
+      "syndrome": 0.0087,
+      "module_violation": 0.0192,
+      "violation_class": "clean",
+      "target_detected_in_top5": true,
+      "review_required": false
+    },
+    {
+      "test": "full_shuffle",
+      "syndrome": 0.6419,
+      "module_violation": 0.5499,
+      "violation_class": "structural_anomaly"
+    }
+  ],
+  "elapsed_s": 78.9
+}
