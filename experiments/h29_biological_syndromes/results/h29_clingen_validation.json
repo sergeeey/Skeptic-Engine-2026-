@@ -1,0 +1,90 @@
+{
+  "experiment": "clingen_expert_validation",
+  "n_genes": 8,
+  "total_expert_reviewed": 21532,
+  "n_positive": 8,
+  "mean_separation": 0.1108,
+  "conclusion": "8/8 genes show separation on 21532 ClinVar expert-reviewed variants (mean sep=0.1108). Syndrome validated against clinical gold-standard classifications.",
+  "results": [
+    {
+      "gene": "BRCA1",
+      "n_expert_reviewed": 7476,
+      "n_pathogenic": 3947,
+      "n_benign": 3529,
+      "benign_syn": 0.0016,
+      "pathogenic_syn": 0.138,
+      "separation": 0.1364,
+      "pathogenic_class": "local_break"
+    },
+    {
+      "gene": "CFTR",
+      "n_expert_reviewed": 2737,
+      "n_pathogenic": 1180,
+      "n_benign": 1557,
+      "benign_syn": 0.0006,
+      "pathogenic_syn": 0.1313,
+      "separation": 0.1307,
+      "pathogenic_class": "local_break"
+    },
+    {
+      "gene": "TP53",
+      "n_expert_reviewed": 1805,
+      "n_pathogenic": 924,
+      "n_benign": 881,
+      "benign_syn": 0.0014,
+      "pathogenic_syn": 0.0625,
+      "separation": 0.0611,
+      "pathogenic_class": "technical_noise"
+    },
+    {
+      "gene": "MLH1",
+      "n_expert_reviewed": 2953,
+      "n_pathogenic": 1745,
+      "n_benign": 1208,
+      "benign_syn": 0.0024,
+      "pathogenic_syn": 0.1454,
+      "separation": 0.143,
+      "pathogenic_class": "local_break"
+    },
+    {
+      "gene": "LDLR",
+      "n_expert_reviewed": 2527,
+      "n_pathogenic": 1560,
+      "n_benign": 967,
+      "benign_syn": 0.0016,
+      "pathogenic_syn": 0.0782,
+      "separation": 0.0766,
+      "pathogenic_class": "technical_noise"
+    },
+    {
+      "gene": "SCN5A",
+      "n_expert_reviewed": 1899,
+      "n_pathogenic": 453,
+      "n_benign": 1446,
+      "benign_syn": 0.0007,
+      "pathogenic_syn": 0.0556,
+      "separation": 0.0549,
+      "pathogenic_class": "technical_noise"
+    },
+    {
+      "gene": "TERT",
+      "n_expert_reviewed": 1790,
+      "n_pathogenic": 159,
+      "n_benign": 1631,
+      "benign_syn": 0.0007,
+      "pathogenic_syn": 0.0562,
+      "separation": 0.0555,
+      "pathogenic_class": "technical_noise"
+    },
+    {
+      "gene": "GJB2",
+      "n_expert_reviewed": 345,
+      "n_pathogenic": 202,
+      "n_benign": 143,
+      "benign_syn": 0.0073,
+      "pathogenic_syn": 0.2357,
+      "separation": 0.2284,
+      "pathogenic_class": "structural_anomaly"
+    }
+  ]
+}
