@@ -1,0 +1,19 @@
+{
+  "conclusion": "Experimental validation confirms on 1 loci.",
+  "results": [
+    {
+      "locus": "BRCA1",
+      "n_merged": 420,
+      "benign_syn": 0.0068,
+      "damaging_syn": 0.021,
+      "sep": 0.0142,
+      "damaging_class": "technical_noise",
+      "status": "OK"
+    },
+    {
+      "locus": "TP53",
+      "overlap": 0,
+      "status": "LOW_OVERLAP"
+    }
+  ]
+}
