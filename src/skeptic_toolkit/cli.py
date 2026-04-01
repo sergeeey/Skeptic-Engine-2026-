@@ -125,29 +125,8 @@ def compute_scores(
     }
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Skeptic Toolkit MVP — H24-inspired fusion risk scanner for scRNA-seq matrices."
-    )
-    parser.add_argument(
-        "matrix", type=Path, help="Path to candidate count matrix (.mtx/.csv/.tsv)."
-    )
-    parser.add_argument(
-        "--reference",
-        type=Path,
-        help="Optional real count matrix to compare against (default: PBMC3k download).",
-    )
-    parser.add_argument(
-        "--threshold",
-        type=float,
-        default=0.55,
-        help="Final fabrication risk threshold (0-1) above which risk is flagged.",
-    )
-    args = parser.parse_args()
-
-    if not args.matrix.exists():
-        parser.error(f"File not found: {args.matrix}")
-
+def _run_fusion_mode(args) -> None:
+    """Original fusion risk scanning mode."""
     candidate_matrix = load_count_matrix(args.matrix)
     reference_matrix, reference_source = _load_reference_matrix(args.reference)
 
@@ -158,16 +137,16 @@ def main() -> None:
 
     print(f"Candidate matrix: {args.matrix}")
     print(f"Reference source: {reference_source}")
-    print(f"Candidate shape: {candidate_matrix.shape[0]} cells × {candidate_matrix.shape[1]} genes")
-    print(f"Reference shape: {reference_matrix.shape[0]} cells × {reference_matrix.shape[1]} genes")
+    print(f"Candidate shape: {candidate_matrix.shape[0]} cells x {candidate_matrix.shape[1]} genes")
+    print(f"Reference shape: {reference_matrix.shape[0]} cells x {reference_matrix.shape[1]} genes")
     print("\nComponent scores (raw / normalized):")
-    print(f"- Benford chi²: {scores['benford_score']:.3f} / {scores['normalized_benford']:.3f}")
+    print(f"- Benford chi2: {scores['benford_score']:.3f} / {scores['normalized_benford']:.3f}")
     print(f"- Cell-level anomaly: {scores['cell_score']:.3f} / {scores['normalized_cell']:.3f}")
     print(f"- Isolation Forest: {scores['if_score']:.3f} / {scores['normalized_if']:.3f}")
     if fusion_probs.size:
         print(
             f"- Fusion logistic-reg probability (mean): {scores['fusion_probability']:.3f}"
-            f" (range {fusion_probs.min():.3f}–{fusion_probs.max():.3f})"
+            f" (range {fusion_probs.min():.3f}-{fusion_probs.max():.3f})"
         )
     else:
         print("- Fusion logistic-reg probability (no candidate cells)")
@@ -177,6 +156,118 @@ def main() -> None:
     verdict = make_verdict(scores["final_score"], threshold=args.threshold)
     print(f"\nFinal fabrication risk score: {scores['final_score']:.3f}")
     print(f"Verdict: {verdict}")
+
+
+def _run_syndrome_mode(args) -> None:
+    """Syndrome mode: interpretable structural dependency analysis."""
+    from skeptic_toolkit.syndrome import (
+        build_pairwise_constraints,
+        compute_syndrome_pairwise,
+        syndrome_to_json,
+        syndrome_to_markdown,
+    )
+
+    candidate_matrix = load_count_matrix(args.matrix)
+    print(f"Candidate matrix: {args.matrix}")
+    print(f"Shape: {candidate_matrix.shape[0]} samples x {candidate_matrix.shape[1]} features")
+
+    if args.reference:
+        reference_matrix = load_count_matrix(args.reference)
+        ref_source = str(args.reference)
+    else:
+        from run_h24 import _download_pbmc3k, _load_count_matrix as _load_10x
+
+        ref_dir = _download_pbmc3k()
+        reference_matrix = _load_10x(ref_dir)
+        ref_source = str(ref_dir)
+
+    print(f"Reference: {ref_source} ({reference_matrix.shape[0]} x {reference_matrix.shape[1]})")
+
+    # Build constraints from reference
+    print("\nBuilding constraint model from reference data...")
+    model = build_pairwise_constraints(
+        reference_matrix.astype(np.float64),
+        top_k=200,
+        seed=42,
+    )
+    print(f"  {len(model.pairwise)} stable constraints found")
+
+    # Score candidate
+    print("\nComputing syndrome...")
+    result = compute_syndrome_pairwise(candidate_matrix.astype(np.float64), model)
+
+    # Display results
+    print(f"\nSyndrome score:     {result.syndrome_score:.4f}")
+    print(f"Pairwise violation: {result.pairwise_violation_score:.4f}")
+    print(f"Stability:          {result.stability_score:.4f}")
+    print(f"Noise sensitivity:  {result.noise_sensitivity}")
+
+    if result.syndrome_score < 0.05:
+        print("\nAssessment: Structural dependencies preserved. No anomalies detected.")
+    elif result.syndrome_score < 0.20:
+        print("\nAssessment: Minor deviations. Expert review recommended.")
+    else:
+        print("\nAssessment: Significant structural violations. Escalate for review.")
+
+    if result.top_violated_pairs:
+        print("\nTop violated dependencies:")
+        for p in result.top_violated_pairs[:5]:
+            print(
+                f"  {p['feature_i']} <-> {p['feature_j']}: "
+                f"expected={p['expected_rho']:.3f} actual={p['actual_rho']:.3f} "
+                f"delta={p['delta']:.3f}"
+            )
+
+    # Save report if requested
+    if args.report:
+        report_path = Path(args.report)
+        if report_path.suffix == ".json":
+            syndrome_to_json(result, report_path)
+            print(f"\nJSON report saved: {report_path}")
+        else:
+            md = syndrome_to_markdown(result)
+            report_path.write_text(md, encoding="utf-8")
+            print(f"\nMarkdown report saved: {report_path}")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Skeptic Toolkit -- scientific data integrity screening."
+    )
+    parser.add_argument(
+        "matrix", type=Path, help="Path to candidate count matrix (.mtx/.csv/.tsv)."
+    )
+    parser.add_argument(
+        "--mode",
+        choices=["fusion", "syndrome"],
+        default="fusion",
+        help="Screening mode: 'fusion' (default, H24-style) or 'syndrome' (H29 structural analysis).",
+    )
+    parser.add_argument(
+        "--reference",
+        type=Path,
+        help="Reference matrix for comparison (default: PBMC3k download).",
+    )
+    parser.add_argument(
+        "--threshold",
+        type=float,
+        default=0.55,
+        help="Risk threshold for fusion mode (0-1).",
+    )
+    parser.add_argument(
+        "--report",
+        type=str,
+        help="Output report path (.json or .md) for syndrome mode.",
+    )
+    args = parser.parse_args()
+
+    if not args.matrix.exists():
+        parser.error(f"File not found: {args.matrix}")
+
+    if args.mode == "syndrome":
+        _run_syndrome_mode(args)
+    else:
+        _run_fusion_mode(args)
 
 
 if __name__ == "__main__":
