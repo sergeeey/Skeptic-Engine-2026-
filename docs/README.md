@@ -37,12 +37,12 @@ Experiment results and analysis are in `experiments/` directory, not in docs.
 - `h10-graph-mpnn-baseline.md` — MPNN graph baseline
 - `h10-hybrid-baseline.md` — descriptor+graph comparison
 
-### H4 TDA Cancer Resistance (PENDING)
+### H4 TDA Cancer Resistance (CLOSED)
 
-- `h4-dataset-decision.md` — dataset route choice
-- `h4-benchmark-plan.md` — scaffold plan
-- `h4-data-contract.md` — required contract fields for GSE164897
-- `h4-audit-report.md` — audit-ready metadata summary for the default route
+- `h4-dataset-decision.md` — historical dataset route choice before closure
+- `h4-benchmark-plan.md` — archived benchmark framing plus closure note
+- `h4-data-contract.md` — archived contract fields for GSE164897
+- `h4-audit-report.md` — archived audit-ready metadata summary for the default route
 
 ### Verification
 

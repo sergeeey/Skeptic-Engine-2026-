@@ -11,7 +11,18 @@
 
 `H4` — TDA for early detection of resistant-state transitions in cancer single-cell data
 
-## Goal
+## Track Status
+
+`CLOSED` as of `2026-03-30`.
+
+Closure basis:
+
+- first clean benchmark run did not support the claim
+- TDA result stayed at `AUC=0.50`
+- PCA reached `AUC=0.9998`, indicating trivial batch structure rather than a defensible TDA win
+- the project kill criterion was triggered and effort was redirected back to Branch 2
+
+## Historical Goal
 
 Build a reproducible single-cell benchmark that tests whether TDA-derived features improve resistance-state detection beyond standard embedding, clustering, or trajectory baselines.
 
@@ -51,14 +62,21 @@ Can TDA features provide measurable value over simpler single-cell state-space b
 - persistence-derived features over the single-cell state geometry
 - topological summaries designed to capture resistant-state transition structure
 
-## Immediate Build Scope
+## Archived Build Scope
 
 1. Fix the exact `GSE164897` label definition.
 2. Write the H4 dataset card and execution plan from the benchmark spec.
 3. Delay ingestion and modeling code until the label contract and split policy are explicit.
 
-## Success Standard
+## Outcome
 
-`H4` only survives as a serious execution track if the benchmark makes it possible to answer a clean question:
+`H4` did not survive as a serious execution track.
 
-`Does TDA add signal beyond standard single-cell baselines for resistance-state detection?`
+The retained question is historical:
+
+`Did TDA add signal beyond standard single-cell baselines for resistance-state detection?`
+
+Current answer:
+
+- not on the executed benchmark
+- do not resume this scaffold without a newly justified hypothesis and reopen decision

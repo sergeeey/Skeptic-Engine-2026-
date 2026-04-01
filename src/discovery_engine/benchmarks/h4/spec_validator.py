@@ -15,6 +15,7 @@ _REQUIRED_ROUTE_FIELDS = [
     "split_unit",
 ]
 _ALLOWED_ROUTE_STATUS = {"scouting", "contract_locked_pending_audit", "ready"}
+_ALLOWED_TRACK_STATUS = {"active", "closed_after_kill_criterion", "archived"}
 
 
 @dataclass(slots=True)
@@ -119,6 +120,8 @@ def validate_h4_spec(spec: dict[str, object]) -> H4SpecValidationReport:
     warnings: list[str] = []
 
     candidate_id = str(spec.get("candidate_id", "H4"))
+    track_status = str(spec.get("track_status", "active"))
+    status_reason = str(spec.get("status_reason", "")).strip()
     dataset_routes = spec.get("dataset_routes", [])
     if not isinstance(dataset_routes, list) or not dataset_routes:
         errors.append("dataset_routes must be a non-empty list.")
@@ -129,6 +132,13 @@ def validate_h4_spec(spec: dict[str, object]) -> H4SpecValidationReport:
 
     if not isinstance(spec.get("baselines"), list) or not spec.get("baselines"):
         errors.append("baselines must be a non-empty list.")
+
+    if track_status not in _ALLOWED_TRACK_STATUS:
+        errors.append(
+            f"track_status must be one of {sorted(_ALLOWED_TRACK_STATUS)}, got {track_status!r}."
+        )
+    if track_status != "active" and not status_reason:
+        errors.append("closed or archived H4 specs must declare status_reason.")
 
     route_reports = [
         _validate_route(route)
@@ -145,6 +155,9 @@ def validate_h4_spec(spec: dict[str, object]) -> H4SpecValidationReport:
         warnings.extend(
             [f"Route {route_report.route_id}: {warning}" for warning in route_report.warnings]
         )
+
+    if track_status == "closed_after_kill_criterion":
+        warnings.append("H4 is closed after kill criterion; route metadata is archival until explicitly reopened.")
 
     return H4SpecValidationReport(
         candidate_id=candidate_id,

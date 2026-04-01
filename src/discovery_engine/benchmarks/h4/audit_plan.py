@@ -7,6 +7,8 @@ from dataclasses import dataclass, field
 class H4AuditPlan:
     route_id: str
     accession: str
+    track_status: str
+    status_reason: str
     route_status: str
     unit_of_analysis: str
     evaluation_level: str
@@ -21,6 +23,8 @@ class H4AuditPlan:
 def build_h4_audit_plan(spec: dict[str, object], route_id: str | None = None) -> H4AuditPlan:
     dataset_routes = spec.get("dataset_routes", [])
     selected_route: dict[str, object] | None = None
+    track_status = str(spec.get("track_status", "active"))
+    status_reason = str(spec.get("status_reason", ""))
 
     for route in dataset_routes:
         if not isinstance(route, dict):
@@ -58,6 +62,12 @@ def build_h4_audit_plan(spec: dict[str, object], route_id: str | None = None) ->
         "Record sample, condition, replicate, and cell counts before any model code is written.",
     ]
 
+    if track_status != "active":
+        audit_checks.insert(
+            0,
+            "Track is closed; treat this audit plan as archival context unless H4 is explicitly reopened.",
+        )
+
     raw_ingress_steps = [
         "Locate or download the raw source bundle and write a provenance manifest.",
         "Compute checksum and record source URL or accession metadata.",
@@ -70,6 +80,8 @@ def build_h4_audit_plan(spec: dict[str, object], route_id: str | None = None) ->
     return H4AuditPlan(
         route_id=route_name,
         accession=accession,
+        track_status=track_status,
+        status_reason=status_reason,
         route_status=str(selected_route.get("route_status", "")),
         unit_of_analysis=str(selected_route.get("unit_of_analysis", "")),
         evaluation_level=str(selected_route.get("evaluation_level", "")),
