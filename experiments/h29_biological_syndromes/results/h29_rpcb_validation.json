@@ -1,0 +1,9 @@
+{
+  "experiment": "reproducibility_project_cancer",
+  "n_experiments": 30,
+  "n_replicated": 15,
+  "n_failed": 15,
+  "separation": 0.2205,
+  "conclusion": "Syndrome separates replicated from failed experiments (sep=+0.2205). Failed replication studies show structural inconsistency between original and replication effect sizes.",
+  "mean_shrinkage_pct": 53.5
+}
