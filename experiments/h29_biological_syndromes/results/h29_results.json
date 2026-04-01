@@ -4,7 +4,7 @@
   "n_features": 9585,
   "n_constraints": 200,
   "separation": 0.0045,
-  "conclusion": "Syndrome layer detects structure-breaking fabrication (random: 0.595, shuffle: 0.595) with biologically interpretable violations (HBA2-HBB, MYH11-MYLK, SPTA1-SPTB). Does NOT detect subtle noise injection (0.005 vs 0.001 real) -- same as H25 AE baseline. Key value: provides WHICH dependencies are violated, not just overall anomaly score.",
+  "conclusion": "NEGATIVE: separation=0.0045. No improvement over AE baseline.",
   "results": [
     {
       "label": "real",
@@ -112,9 +112,9 @@
       "label": "fab_random",
       "fabrication": "random",
       "global_anomaly_score": 0.9653,
-      "syndrome_score": 0.5954,
+      "syndrome_score": 0.5915,
       "pairwise_violation_score": 0.9653,
-      "residual_violation_score": 0.0407,
+      "residual_violation_score": 0.0308,
       "stability_score": 1.0,
       "top_violated_pairs": [
         {
@@ -214,9 +214,9 @@
       "label": "fab_shuffle",
       "fabrication": "shuffle",
       "global_anomaly_score": 0.9695,
-      "syndrome_score": 0.5952,
+      "syndrome_score": 0.5917,
       "pairwise_violation_score": 0.9695,
-      "residual_violation_score": 0.0337,
+      "residual_violation_score": 0.025,
       "stability_score": 1.0,
       "top_violated_pairs": [
         {
@@ -537,10 +537,5 @@
       "stab": 1.0
     }
   ],
-  "elapsed_s": 57.9,
-  "per_method_separation": {
-    "random": 0.5945,
-    "shuffle": 0.5943,
-    "noise_10pct": 0.0045
-  }
+  "elapsed_s": 1452.8
 }
