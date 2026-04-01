@@ -74,7 +74,7 @@ def build_pairwise_constraints(
     if verbose:
         print("  Building constraints: pre-screening...", end=" ", flush=True)
     rho_full, _ = spearmanr(X)
-    if rho_full.ndim == 0:
+    if not hasattr(rho_full, "ndim") or rho_full.ndim == 0:
         return ConstraintModel(feature_names=names, n_reference=n_samples)
 
     np.fill_diagonal(rho_full, 0)

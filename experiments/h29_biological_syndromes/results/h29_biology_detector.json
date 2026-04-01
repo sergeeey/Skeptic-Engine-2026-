@@ -1,0 +1,631 @@
+{
+  "experiment": "H29_biology_detector",
+  "dataset": "CPTAC_endometrial_proteomics",
+  "n_tumor": 100,
+  "n_normal": 40,
+  "normal_syndrome": 0.002,
+  "tumor_syndrome": 0.1869,
+  "separation": 0.1849,
+  "tumor_violation_class": "structural_anomaly",
+  "tumor_review_required": true,
+  "conclusion": "Syndrome layer detects biological signal: tumor tissue shows structural violations (separation=0.1849) compared to normal. Violated modules likely correspond to cancer pathways. This proves the tool works as a biological discovery instrument, not just a fraud detector.",
+  "top_violated_genes": [
+    "BAG3",
+    "BRD4",
+    "CAMK2G",
+    "CP",
+    "FILIP1",
+    "FTH1",
+    "FTL",
+    "NUMA1",
+    "PFN1",
+    "SERPINA6",
+    "SNCG",
+    "SORBS2",
+    "TAGLN",
+    "TLN1",
+    "TPM2",
+    "TPM3"
+  ],
+  "tumor_result": {
+    "syndrome_score": 0.1869,
+    "pairwise_violation_score": 0.1582,
+    "module_violation_score": 0.3593,
+    "residual_violation_score": 0.0,
+    "stability_score": 1.0,
+    "noise_sensitivity": "low",
+    "violation_class": "structural_anomaly",
+    "review_required": true,
+    "top_violated_pairs": [
+      {
+        "feature_i": "SNCG",
+        "feature_j": "SORBS2",
+        "expected_rho": 0.9426,
+        "actual_rho": 0.0602,
+        "delta": 0.8824,
+        "stability": 1.0,
+        "violation_score": 0.8824
+      },
+      {
+        "feature_i": "BAG3",
+        "feature_j": "FILIP1",
+        "expected_rho": 0.9368,
+        "actual_rho": 0.3988,
+        "delta": 0.5379,
+        "stability": 1.0,
+        "violation_score": 0.5379
+      },
+      {
+        "feature_i": "BAG3",
+        "feature_j": "PFN1",
+        "expected_rho": 0.9332,
+        "actual_rho": 0.4001,
+        "delta": 0.5331,
+        "stability": 1.0,
+        "violation_score": 0.5331
+      },
+      {
+        "feature_i": "TAGLN",
+        "feature_j": "TPM3",
+        "expected_rho": 0.9495,
+        "actual_rho": 0.4233,
+        "delta": 0.5262,
+        "stability": 1.0,
+        "violation_score": 0.5262
+      },
+      {
+        "feature_i": "TPM2",
+        "feature_j": "TPM3",
+        "expected_rho": 0.9516,
+        "actual_rho": 0.4271,
+        "delta": 0.5245,
+        "stability": 1.0,
+        "violation_score": 0.5245
+      },
+      {
+        "feature_i": "FTH1",
+        "feature_j": "FTL",
+        "expected_rho": 0.9331,
+        "actual_rho": 0.4095,
+        "delta": 0.5236,
+        "stability": 1.0,
+        "violation_score": 0.5236
+      },
+      {
+        "feature_i": "BAG3",
+        "feature_j": "TLN1",
+        "expected_rho": 0.9487,
+        "actual_rho": 0.4654,
+        "delta": 0.4833,
+        "stability": 1.0,
+        "violation_score": 0.4833
+      },
+      {
+        "feature_i": "CAMK2G",
+        "feature_j": "FILIP1",
+        "expected_rho": 0.9404,
+        "actual_rho": 0.4743,
+        "delta": 0.4661,
+        "stability": 1.0,
+        "violation_score": 0.4661
+      },
+      {
+        "feature_i": "BRD4",
+        "feature_j": "NUMA1",
+        "expected_rho": 0.9426,
+        "actual_rho": 0.4779,
+        "delta": 0.4647,
+        "stability": 1.0,
+        "violation_score": 0.4647
+      },
+      {
+        "feature_i": "CP",
+        "feature_j": "SERPINA6",
+        "expected_rho": 0.949,
+        "actual_rho": 0.4989,
+        "delta": 0.4501,
+        "stability": 1.0,
+        "violation_score": 0.4501
+      }
+    ],
+    "top_violated_modules": [
+      {
+        "module_id": 1132,
+        "module_size": 5,
+        "top_genes": [
+          "CXXC5",
+          "KAZN",
+          "REPS1",
+          "SH2D3A",
+          "UBE2E1"
+        ],
+        "expected_internal_rho": 0.6607,
+        "actual_internal_rho": 0.1171,
+        "delta": 0.5436,
+        "n_broken_pairs": 10,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 253,
+        "module_size": 5,
+        "top_genes": [
+          "CD14",
+          "DDX1",
+          "IGF2",
+          "LDHB",
+          "MAN1A1"
+        ],
+        "expected_internal_rho": 0.6368,
+        "actual_internal_rho": 0.0956,
+        "delta": 0.5412,
+        "n_broken_pairs": 10,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 1456,
+        "module_size": 5,
+        "top_genes": [
+          "ACSS2",
+          "MMS19",
+          "TSR3",
+          "U2AF1",
+          "ZNFX1"
+        ],
+        "expected_internal_rho": 0.6406,
+        "actual_internal_rho": 0.1107,
+        "delta": 0.5299,
+        "n_broken_pairs": 10,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 936,
+        "module_size": 5,
+        "top_genes": [
+          "CCDC85A",
+          "EIF2S3",
+          "HNRNPH1",
+          "PDK2",
+          "SENP2"
+        ],
+        "expected_internal_rho": 0.6519,
+        "actual_internal_rho": 0.1224,
+        "delta": 0.5295,
+        "n_broken_pairs": 10,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 1516,
+        "module_size": 5,
+        "top_genes": [
+          "CDS1",
+          "CHCHD5",
+          "INTS11",
+          "YDJC",
+          "YEATS2"
+        ],
+        "expected_internal_rho": 0.6476,
+        "actual_internal_rho": 0.1194,
+        "delta": 0.5282,
+        "n_broken_pairs": 9,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 1300,
+        "module_size": 5,
+        "top_genes": [
+          "BRCC3",
+          "FRMD4A",
+          "MAOA",
+          "MX2",
+          "OVGP1"
+        ],
+        "expected_internal_rho": 0.6546,
+        "actual_internal_rho": 0.1334,
+        "delta": 0.5212,
+        "n_broken_pairs": 10,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 1299,
+        "module_size": 5,
+        "top_genes": [
+          "BCAR3",
+          "COL4A3BP",
+          "FBXW11",
+          "TLE4",
+          "ZNF407"
+        ],
+        "expected_internal_rho": 0.6507,
+        "actual_internal_rho": 0.1312,
+        "delta": 0.5195,
+        "n_broken_pairs": 10,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 1402,
+        "module_size": 7,
+        "top_genes": [
+          "CEP44",
+          "DYNC1H1",
+          "EXOC3",
+          "EXOC4",
+          "HPS5"
+        ],
+        "expected_internal_rho": 0.6499,
+        "actual_internal_rho": 0.1425,
+        "delta": 0.5074,
+        "n_broken_pairs": 19,
+        "n_total_pairs": 21
+      },
+      {
+        "module_id": 1604,
+        "module_size": 7,
+        "top_genes": [
+          "COTL1",
+          "KRT7",
+          "MYO1E",
+          "RIN2",
+          "SMPDL3A"
+        ],
+        "expected_internal_rho": 0.6551,
+        "actual_internal_rho": 0.1574,
+        "delta": 0.4977,
+        "n_broken_pairs": 18,
+        "n_total_pairs": 21
+      },
+      {
+        "module_id": 1472,
+        "module_size": 5,
+        "top_genes": [
+          "ACO1",
+          "CSK",
+          "PGM1",
+          "PTN",
+          "ZER1"
+        ],
+        "expected_internal_rho": 0.6474,
+        "actual_internal_rho": 0.1532,
+        "delta": 0.4942,
+        "n_broken_pairs": 9,
+        "n_total_pairs": 10
+      }
+    ],
+    "top_violated_features": [],
+    "module_violation_counts": {
+      "module_254": 6,
+      "module_1425": 3,
+      "module_888": 4,
+      "module_72": 88,
+      "module_1119": 1,
+      "module_1663": 1640,
+      "module_1132": 10,
+      "module_1106": 1,
+      "module_1604": 18,
+      "module_1300": 10,
+      "module_936": 10,
+      "module_1611": 13,
+      "module_460": 4,
+      "module_1299": 10,
+      "module_1598": 2,
+      "module_1402": 19,
+      "module_1467": 3,
+      "module_1660": 10,
+      "module_1516": 9,
+      "module_1472": 9,
+      "module_1427": 24,
+      "module_843": 19,
+      "module_1456": 10,
+      "module_255": 53,
+      "module_427": 10,
+      "module_1350": 8,
+      "module_1602": 7,
+      "module_1450": 25,
+      "module_253": 10,
+      "module_969": 49
+    },
+    "n_constraints": 200,
+    "n_modules": 30,
+    "n_samples": 100
+  },
+  "normal_result": {
+    "syndrome_score": 0.002,
+    "pairwise_violation_score": 0.0041,
+    "module_violation_score": 0.0,
+    "residual_violation_score": 0.0,
+    "stability_score": 0.8,
+    "noise_sensitivity": "medium",
+    "violation_class": "clean",
+    "review_required": false,
+    "top_violated_pairs": [
+      {
+        "feature_i": "CORO1C",
+        "feature_j": "TLN1",
+        "expected_rho": 0.9311,
+        "actual_rho": 0.9424,
+        "delta": 0.0113,
+        "stability": 1.0,
+        "violation_score": 0.0113
+      },
+      {
+        "feature_i": "ACTN1",
+        "feature_j": "VCL",
+        "expected_rho": 0.943,
+        "actual_rho": 0.9537,
+        "delta": 0.0107,
+        "stability": 1.0,
+        "violation_score": 0.0107
+      },
+      {
+        "feature_i": "CNN1",
+        "feature_j": "TPM1",
+        "expected_rho": 0.9363,
+        "actual_rho": 0.947,
+        "delta": 0.0107,
+        "stability": 1.0,
+        "violation_score": 0.0107
+      },
+      {
+        "feature_i": "CORO1C",
+        "feature_j": "DPYSL3",
+        "expected_rho": 0.9346,
+        "actual_rho": 0.9453,
+        "delta": 0.0107,
+        "stability": 1.0,
+        "violation_score": 0.0107
+      },
+      {
+        "feature_i": "HBA2",
+        "feature_j": "SPTA1",
+        "expected_rho": 0.9336,
+        "actual_rho": 0.9439,
+        "delta": 0.0103,
+        "stability": 1.0,
+        "violation_score": 0.0103
+      },
+      {
+        "feature_i": "ACTN4",
+        "feature_j": "SYNPO2",
+        "expected_rho": 0.9326,
+        "actual_rho": 0.9425,
+        "delta": 0.0099,
+        "stability": 1.0,
+        "violation_score": 0.0099
+      },
+      {
+        "feature_i": "SYNPO2",
+        "feature_j": "TLN1",
+        "expected_rho": 0.9484,
+        "actual_rho": 0.9582,
+        "delta": 0.0098,
+        "stability": 1.0,
+        "violation_score": 0.0098
+      },
+      {
+        "feature_i": "ACTN4",
+        "feature_j": "ILK",
+        "expected_rho": 0.9462,
+        "actual_rho": 0.9557,
+        "delta": 0.0095,
+        "stability": 1.0,
+        "violation_score": 0.0095
+      },
+      {
+        "feature_i": "CALD1",
+        "feature_j": "TLN1",
+        "expected_rho": 0.9494,
+        "actual_rho": 0.9584,
+        "delta": 0.009,
+        "stability": 1.0,
+        "violation_score": 0.009
+      },
+      {
+        "feature_i": "HSPB8",
+        "feature_j": "SORBS1",
+        "expected_rho": 0.9324,
+        "actual_rho": 0.9234,
+        "delta": 0.009,
+        "stability": 1.0,
+        "violation_score": 0.009
+      }
+    ],
+    "top_violated_modules": [
+      {
+        "module_id": 254,
+        "module_size": 5,
+        "top_genes": [
+          "ATRN",
+          "CFI",
+          "FGA",
+          "FGB",
+          "FGG"
+        ],
+        "expected_internal_rho": 0.7435,
+        "actual_internal_rho": 0.7435,
+        "delta": 0.0,
+        "n_broken_pairs": 0,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 1425,
+        "module_size": 5,
+        "top_genes": [
+          "AGK",
+          "APOOL",
+          "CYC1",
+          "GHITM",
+          "NDUFA13"
+        ],
+        "expected_internal_rho": 0.7069,
+        "actual_internal_rho": 0.7069,
+        "delta": 0.0,
+        "n_broken_pairs": 0,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 888,
+        "module_size": 5,
+        "top_genes": [
+          "CD200",
+          "KCNMA1",
+          "SGCB",
+          "SGCD",
+          "SGCE"
+        ],
+        "expected_internal_rho": 0.7043,
+        "actual_internal_rho": 0.7043,
+        "delta": 0.0,
+        "n_broken_pairs": 0,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 72,
+        "module_size": 30,
+        "top_genes": [
+          "ADD2",
+          "AHSP",
+          "ANK1",
+          "BPGM",
+          "CA1"
+        ],
+        "expected_internal_rho": 0.6954,
+        "actual_internal_rho": 0.6954,
+        "delta": 0.0,
+        "n_broken_pairs": 8,
+        "n_total_pairs": 435
+      },
+      {
+        "module_id": 1119,
+        "module_size": 6,
+        "top_genes": [
+          "CSTA",
+          "FYTTD1",
+          "HK3",
+          "ITGAM",
+          "MNDA"
+        ],
+        "expected_internal_rho": 0.6795,
+        "actual_internal_rho": 0.6795,
+        "delta": 0.0,
+        "n_broken_pairs": 0,
+        "n_total_pairs": 15
+      },
+      {
+        "module_id": 1663,
+        "module_size": 91,
+        "top_genes": [
+          "A1BG",
+          "AFM",
+          "AGT",
+          "AHSG",
+          "ALB"
+        ],
+        "expected_internal_rho": 0.6757,
+        "actual_internal_rho": 0.6757,
+        "delta": 0.0,
+        "n_broken_pairs": 43,
+        "n_total_pairs": 4095
+      },
+      {
+        "module_id": 1132,
+        "module_size": 5,
+        "top_genes": [
+          "CXXC5",
+          "KAZN",
+          "REPS1",
+          "SH2D3A",
+          "UBE2E1"
+        ],
+        "expected_internal_rho": 0.6607,
+        "actual_internal_rho": 0.6607,
+        "delta": 0.0,
+        "n_broken_pairs": 0,
+        "n_total_pairs": 10
+      },
+      {
+        "module_id": 1106,
+        "module_size": 14,
+        "top_genes": [
+          "BPI",
+          "CAMP",
+          "DEFA1B",
+          "ELANE",
+          "LAMTOR4"
+        ],
+        "expected_internal_rho": 0.6597,
+        "actual_internal_rho": 0.6597,
+        "delta": 0.0,
+        "n_broken_pairs": 0,
+        "n_total_pairs": 91
+      },
+      {
+        "module_id": 1604,
+        "module_size": 7,
+        "top_genes": [
+          "COTL1",
+          "KRT7",
+          "MYO1E",
+          "RIN2",
+          "SMPDL3A"
+        ],
+        "expected_internal_rho": 0.6551,
+        "actual_internal_rho": 0.6551,
+        "delta": 0.0,
+        "n_broken_pairs": 0,
+        "n_total_pairs": 21
+      },
+      {
+        "module_id": 1300,
+        "module_size": 5,
+        "top_genes": [
+          "BRCC3",
+          "FRMD4A",
+          "MAOA",
+          "MX2",
+          "OVGP1"
+        ],
+        "expected_internal_rho": 0.6546,
+        "actual_internal_rho": 0.6546,
+        "delta": 0.0,
+        "n_broken_pairs": 0,
+        "n_total_pairs": 10
+      }
+    ],
+    "top_violated_features": [],
+    "module_violation_counts": {
+      "module_254": 0,
+      "module_1425": 0,
+      "module_888": 0,
+      "module_72": 8,
+      "module_1119": 0,
+      "module_1663": 43,
+      "module_1132": 0,
+      "module_1106": 0,
+      "module_1604": 0,
+      "module_1300": 0,
+      "module_936": 0,
+      "module_1611": 0,
+      "module_460": 0,
+      "module_1299": 0,
+      "module_1598": 0,
+      "module_1402": 0,
+      "module_1467": 0,
+      "module_1660": 0,
+      "module_1516": 0,
+      "module_1472": 0,
+      "module_1427": 0,
+      "module_843": 0,
+      "module_1456": 0,
+      "module_255": 6,
+      "module_427": 0,
+      "module_1350": 0,
+      "module_1602": 0,
+      "module_1450": 0,
+      "module_253": 0,
+      "module_969": 1
+    },
+    "n_constraints": 200,
+    "n_modules": 30,
+    "n_samples": 40
+  },
+  "elapsed_s": 63.9
+}
