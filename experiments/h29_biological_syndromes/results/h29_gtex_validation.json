@@ -1,0 +1,62 @@
+{
+  "experiment": "gtex_validation",
+  "n_tissues": 54,
+  "n_genes": 28,
+  "syndrome": 0.0096,
+  "class": "clean",
+  "constraints": 50,
+  "modules": 1,
+  "conclusion": "GTEx 54 healthy tissues x 28 genes: syndrome=0.0096 [clean]. 50 cross-tissue gene constraints established.",
+  "top_constraints": [
+    {
+      "g1": "JAK2",
+      "g2": "PIK3CA",
+      "rho": 0.933
+    },
+    {
+      "g1": "PIK3CA",
+      "g2": "RB1",
+      "rho": 0.895
+    },
+    {
+      "g1": "PIK3CA",
+      "g2": "STAT3",
+      "rho": 0.893
+    },
+    {
+      "g1": "CTNNB1",
+      "g2": "SMAD4",
+      "rho": 0.888
+    },
+    {
+      "g1": "MYC",
+      "g2": "TP53",
+      "rho": 0.887
+    },
+    {
+      "g1": "PIK3CA",
+      "g2": "PTEN",
+      "rho": 0.88
+    },
+    {
+      "g1": "CDK4",
+      "g2": "PIK3CA",
+      "rho": 0.854
+    },
+    {
+      "g1": "JAK2",
+      "g2": "STAT3",
+      "rho": 0.853
+    },
+    {
+      "g1": "CTNNB1",
+      "g2": "PIK3CA",
+      "rho": 0.849
+    },
+    {
+      "g1": "CDK4",
+      "g2": "TP53",
+      "rho": 0.844
+    }
+  ]
+}
