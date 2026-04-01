@@ -1,0 +1,17 @@
+{
+  "experiment": "H30_fabrication_search",
+  "source": "Crossref RetractionWatch database (69,440 records)",
+  "query": "fabrication/falsification + genomics/transcriptomics",
+  "n_total_retractions": 69440,
+  "n_fabrication_genomics": 15,
+  "n_with_geo_data": 0,
+  "conclusion": "IMPORTANT FINDING: None of the 15 confirmed data fabrication cases in genomics have deposited raw data in GEO. Fabricators avoid sharing raw data. This means: (1) our tool cannot be validated on confirmed fabrication because fabricated raw data is not publicly available, and (2) mandatory raw data deposition would itself be a deterrent against fabrication. This finding strengthens the paper: we document WHY real-world validation of fabrication detection tools is fundamentally limited.",
+  "pmids_checked": [
+    "31585079",
+    "26830482",
+    "21332509",
+    "29049855",
+    "23883936",
+    "19665971"
+  ]
+}
