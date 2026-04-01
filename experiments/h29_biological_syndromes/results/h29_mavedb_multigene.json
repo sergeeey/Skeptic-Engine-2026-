@@ -1,0 +1,63 @@
+{
+  "experiment": "mavedb_multigene",
+  "n_datasets": 5,
+  "n_validated": 3,
+  "n_positive": 3,
+  "conclusion": "3/3 genes show positive separation (mean=0.0968). Experimental MaveDB data confirms syndrome signal.",
+  "results": [
+    {
+      "gene": "BRCA1_SGE",
+      "n_variants": 2743,
+      "n_benign": 1372,
+      "n_damaging": 1371,
+      "constraints": 2,
+      "benign_syn": 0.0011,
+      "damaging_syn": 0.0534,
+      "separation": 0.0523,
+      "damaging_class": "technical_noise",
+      "status": "OK"
+    },
+    {
+      "gene": "MSH2_Jia",
+      "n_variants": 6810,
+      "n_benign": 3405,
+      "n_damaging": 3405,
+      "constraints": 9,
+      "benign_syn": 0.0012,
+      "damaging_syn": 0.036,
+      "separation": 0.0348,
+      "damaging_class": "technical_noise",
+      "status": "OK"
+    },
+    {
+      "gene": "PTEN_Matreyek",
+      "n_variants": 185,
+      "status": "FEW_FEATURES",
+      "score_range": [
+        -1.0,
+        0.17
+      ]
+    },
+    {
+      "gene": "TP53_Giacomelli",
+      "n_variants": 8274,
+      "status": "FEW_FEATURES",
+      "score_range": [
+        -4.367651217084684,
+        2.844018326456068
+      ]
+    },
+    {
+      "gene": "VKOR1",
+      "n_variants": 10438,
+      "n_benign": 5220,
+      "n_damaging": 5218,
+      "constraints": 3,
+      "benign_syn": 0.0009,
+      "damaging_syn": 0.2043,
+      "separation": 0.2034,
+      "damaging_class": "structural_anomaly",
+      "status": "OK"
+    }
+  ]
+}
