@@ -1,0 +1,54 @@
+{
+  "experiment": "H29_bioai_validation",
+  "dataset": "CPTAC_proteomics",
+  "correct_ranking": true,
+  "conclusion": "Syndrome correctly ranks synthetic data quality: real < good_synthetic < marginal < shuffle. This validates the tool as a quality checker for bio-AI generated data. A well-trained generative model should produce data with low syndrome score.",
+  "results": [
+    {
+      "type": "real_data",
+      "label": "Reference (real)",
+      "syndrome_score": 0.0007,
+      "pairwise_violation": 0.0014,
+      "module_violation": 0.0,
+      "violation_class": "clean",
+      "review_required": false
+    },
+    {
+      "type": "good_synthetic",
+      "label": "Correlated noise (good AI)",
+      "syndrome_score": 0.0582,
+      "pairwise_violation": 0.0799,
+      "module_violation": 0.0607,
+      "violation_class": "technical_noise",
+      "review_required": false
+    },
+    {
+      "type": "marginal_synthetic",
+      "label": "Marginal-matched (naive AI)",
+      "syndrome_score": 0.6468,
+      "pairwise_violation": 0.9647,
+      "module_violation": 0.5482,
+      "violation_class": "structural_anomaly",
+      "review_required": true
+    },
+    {
+      "type": "shuffle",
+      "label": "Shuffle (bad, breaks structure)",
+      "syndrome_score": 0.6485,
+      "pairwise_violation": 0.9674,
+      "module_violation": 0.5494,
+      "violation_class": "structural_anomaly",
+      "review_required": true
+    },
+    {
+      "type": "random",
+      "label": "Random from distributions (bad)",
+      "syndrome_score": 0.6496,
+      "pairwise_violation": 0.9709,
+      "module_violation": 0.5473,
+      "violation_class": "structural_anomaly",
+      "review_required": true
+    }
+  ],
+  "elapsed_s": 78.5
+}
