@@ -1,0 +1,820 @@
+{
+  "experiment": "H30",
+  "n_papers": 201,
+  "n_with_gse": 30,
+  "n_gse": 57,
+  "n_accessible": 55,
+  "accessible": [
+    {
+      "gse": "GSE101448",
+      "accessible": true,
+      "n_files": 3,
+      "files": [
+        "GSE101448_RAW.tar",
+        "GSE101448_non-normalized.txt.gz",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE103236",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE103236_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE103611",
+      "accessible": true,
+      "n_files": 3,
+      "files": [
+        "GSE103611_RAW.tar",
+        "GSE103611_nor_data_rma_probelevel.csv.gz",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE116726",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE116726_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE117285",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE117285_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE123568",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE123568_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE12644",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE12644_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE131619",
+      "accessible": true,
+      "n_files": 1,
+      "files": [
+        "GSE131619_normalized_expression.txt.gz"
+      ]
+    },
+    {
+      "gse": "GSE131761",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE131761_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE143780",
+      "accessible": true,
+      "n_files": 1,
+      "files": [
+        "GSE143780_norm_gene_counts.txt.gz"
+      ]
+    },
+    {
+      "gse": "GSE14520",
+      "accessible": true,
+      "n_files": 4,
+      "files": [
+        "GSE14520_Extra_Supplement.txt.gz",
+        "GSE14520_RAW.tar",
+        "GSE14520_README.txt",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE147507",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE147507_RawReadCounts_Ferret.tsv.gz",
+        "GSE147507_RawReadCounts_Human.tsv.gz"
+      ]
+    },
+    {
+      "gse": "GSE149614",
+      "accessible": true,
+      "n_files": 3,
+      "files": [
+        "GSE149614_HCC.metadata.updated.txt.gz",
+        "GSE149614_HCC.scRNAseq.S71915.count.txt.gz",
+        "GSE149614_HCC.scRNAseq.S71915.normalized.txt.gz"
+      ]
+    },
+    {
+      "gse": "GSE15296",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE15296_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE15471",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE15471_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE15824",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE15824_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE160269",
+      "accessible": true,
+      "n_files": 13,
+      "files": [
+        "GSE160269_CD45neg_UMIs.txt.gz",
+        "GSE160269_CD45neg_cells.txt.gz",
+        "GSE160269_CD45pos_UMIs.txt.gz",
+        "GSE160269_CD45pos_cells.txt.gz",
+        "GSE160269_TCR_contig_annotations.csv.gz",
+        "GSE160269_UMI_matrix_Bcell.txt.gz",
+        "GSE160269_UMI_matrix_Endothelial.txt.gz",
+        "GSE160269_UMI_matrix_Epithelia.txt.gz",
+        "GSE160269_UMI_matrix_FRC.txt.gz",
+        "GSE160269_UMI_matrix_Fibroblast.txt.gz"
+      ]
+    },
+    {
+      "gse": "GSE16561",
+      "accessible": true,
+      "n_files": 3,
+      "files": [
+        "GSE16561_RAW.tar",
+        "GSE16561_RAW.txt.gz",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE17755",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE17755_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE22255",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE22255_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE22804",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE22804_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE25097",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE25097_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE26966",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE26966_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE27515",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE27515_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE2871",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE2871_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE29221",
+      "accessible": true,
+      "n_files": 3,
+      "files": [
+        "GSE29221_RAW.tar",
+        "GSE29221_non-normalized.txt.gz",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE29431",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE29431_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE33429",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE33429_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE41922",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE41922_fold-change.txt.gz",
+        "GSE41922_non-normalized.txt.gz"
+      ]
+    },
+    {
+      "gse": "GSE42072",
+      "accessible": true,
+      "n_files": 3,
+      "files": [
+        "GSE42072_RAW.tar",
+        "GSE42072_combine_miRNA_matrix.txt.gz",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE42568",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE42568_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE4290",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE4290_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE44001",
+      "accessible": true,
+      "n_files": 1,
+      "files": [
+        "GSE44001_non-normalzied.txt.gz"
+      ]
+    },
+    {
+      "gse": "GSE46474",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE46474_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE48060",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE48060_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE50161",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE50161_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE51472",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE51472_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE58294",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE58294_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE60993",
+      "accessible": true,
+      "n_files": 3,
+      "files": [
+        "GSE60993_RAW.tar",
+        "GSE60993_non-normalized.txt.gz",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE61218",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE61218_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE62452",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE62452_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE63357",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE63357_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE66360",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE66360_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE67566",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE67566_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE7014",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE7014_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE70951",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE70951_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE79973",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE79973_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE83453",
+      "accessible": true,
+      "n_files": 3,
+      "files": [
+        "GSE83453_RAW.tar",
+        "GSE83453_non_normalized.txt.gz",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE84005",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE84005_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE84437",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE84437_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE86574",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE86574_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE89587",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE89587_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE89714",
+      "accessible": true,
+      "n_files": 1,
+      "files": [
+        "GSE89714_Annotation.txt.gz"
+      ]
+    },
+    {
+      "gse": "GSE93272",
+      "accessible": true,
+      "n_files": 2,
+      "files": [
+        "GSE93272_RAW.tar",
+        "filelist.txt"
+      ]
+    },
+    {
+      "gse": "GSE97320",
+      "accessible": true,
+      "n_files": 3,
+      "files": [
+        "GSE97320_RAW.tar",
+        "GSE97320_logFC.txt.gz",
+        "filelist.txt"
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "pmid": "34370061",
+      "title": "CircRNA_0043691 sponges miR-873-3p to promote metastasis of gastric cancer.",
+      "journal": "Mammalian genome : official journal of the International Mammalian Genome Society",
+      "year": "2021",
+      "gse_accessions": [
+        "GSE141977"
+      ]
+    },
+    {
+      "pmid": "38572681",
+      "title": "RETRACTED: Single-cell transcriptome sequencing analysis reveals intra-tumor heterogeneity in esophageal squamous cell carcinoma.",
+      "journal": "Environmental toxicology",
+      "year": "2025",
+      "gse_accessions": [
+        "GSE160269"
+      ]
+    },
+    {
+      "pmid": "35350590",
+      "title": "miR-143-5p suppresses breast cancer progression by targeting the HIF-1\u03b1-related GLUT1 pathway.",
+      "journal": "Oncology letters",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE41922",
+        "GSE42072"
+      ]
+    },
+    {
+      "pmid": "37781388",
+      "title": "Baricitinib protects mice from sepsis-induced cardiac dysfunction and multiple-organ failure.",
+      "journal": "Frontiers in immunology",
+      "year": "2023",
+      "gse_accessions": [
+        "GSE131761"
+      ]
+    },
+    {
+      "pmid": "36091596",
+      "title": "Integrated Microarray Analysis to Identify Genes and Small-Molecule Drugs Associated with Stroke Progression.",
+      "journal": "Evidence-based complementary and alternative medicine : eCAM",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE22255",
+        "GSE58294",
+        "GSE16561"
+      ]
+    },
+    {
+      "pmid": "35686034",
+      "title": "Identification and Verification of Key Tumor Genes Associated with Diagnosis and Prognosis of Breast Cancer Based on Bioinformatics Analysis.",
+      "journal": "Disease markers",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE42568",
+        "GSE29431"
+      ]
+    },
+    {
+      "pmid": "35789606",
+      "title": "CKS2 and S100A12: Two Novel Diagnostic Biomarkers for Rheumatoid Arthritis.",
+      "journal": "Disease markers",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE93272",
+        "GSE17755"
+      ]
+    },
+    {
+      "pmid": "36062187",
+      "title": "Inflammation and Oxidative Stress Role of S100A12 as a Potential Diagnostic and Therapeutic Biomarker in Acute Myocardial Infarction.",
+      "journal": "Oxidative medicine and cellular longevity",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE48060",
+        "GSE60993",
+        "GSE24519",
+        "GSE97320",
+        "GSE66360"
+      ]
+    },
+    {
+      "pmid": "34368360",
+      "title": "Identification of Biomarkers for Predicting Allograft Rejection following Kidney Transplantation Based on the Weighted Gene Coexpression Network Analysis.",
+      "journal": "BioMed research international",
+      "year": "2021",
+      "gse_accessions": [
+        "GSE15296",
+        "GSE46474"
+      ]
+    },
+    {
+      "pmid": "37909396",
+      "title": "Identification of autophagy-related genes in diabetic foot ulcer based on bioinformatic analysis.",
+      "journal": "International wound journal",
+      "year": "2024",
+      "gse_accessions": [
+        "GSE29221",
+        "GSE7014"
+      ]
+    },
+    {
+      "pmid": "34925543",
+      "title": "Circular RNA hsa_circ_0001658 Inhibits Intervertebral Disc Degeneration Development by Regulating hsa-miR-181c-5p/FAS.",
+      "journal": "Computational and mathematical methods in medicine",
+      "year": "2021",
+      "gse_accessions": [
+        "GSE67566",
+        "GSE116726"
+      ]
+    },
+    {
+      "pmid": "34381521",
+      "title": "Application of Bioinformatics Methods to Identify Key Genes and Functions in Chronic Pelvic Pain.",
+      "journal": "Evidence-based complementary and alternative medicine : eCAM",
+      "year": "2021",
+      "gse_accessions": [
+        "GSE131619"
+      ]
+    },
+    {
+      "pmid": "35966737",
+      "title": "Potential Progression Mechanism and Key Genes in Early Stage of mTBI.",
+      "journal": "Evidence-based complementary and alternative medicine : eCAM",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE2871"
+      ]
+    },
+    {
+      "pmid": "33688500",
+      "title": "Identification and Validation of Key Genes in Hepatocellular Carcinoma by Bioinformatics Analysis.",
+      "journal": "BioMed research international",
+      "year": "2021",
+      "gse_accessions": [
+        "GSE25097",
+        "GSE84005"
+      ]
+    },
+    {
+      "pmid": "36246969",
+      "title": "Development and Optimization of a Prognostic Model Associated with Stemness Genes in Hepatocellular Carcinoma.",
+      "journal": "BioMed research international",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE149614",
+        "GSE14520"
+      ]
+    },
+    {
+      "pmid": "35368753",
+      "title": "Development of a Model System to Study Expression Profile of RAC2 Gene in Breast Cancer MDA-MB-231 Cell Line.",
+      "journal": "Evidence-based complementary and alternative medicine : eCAM",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE27515"
+      ]
+    },
+    {
+      "pmid": "34422080",
+      "title": "Integrated Analysis of miRNA-mRNA Regulatory Networks Associated with Osteonecrosis of the Femoral Head.",
+      "journal": "Evidence-based complementary and alternative medicine : eCAM",
+      "year": "2021",
+      "gse_accessions": [
+        "GSE123568",
+        "GSE89587"
+      ]
+    },
+    {
+      "pmid": "34292991",
+      "title": "Integrative bioinformatics approaches to map key biological markers and therapeutic drugs in Extramammary Paget's disease of the scrotum.",
+      "journal": "PloS one",
+      "year": "2021",
+      "gse_accessions": [
+        "GSE117285"
+      ]
+    },
+    {
+      "pmid": "35280505",
+      "title": "Biomarkers for Breast Adenocarcinoma Using In Silico Approaches.",
+      "journal": "Evidence-based complementary and alternative medicine : eCAM",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE70951"
+      ]
+    },
+    {
+      "pmid": "31181442",
+      "title": "LncRNA LINC00689 promotes the growth, metastasis and glycolysis of glioma cells by targeting miR-338-3p/PKM2 axis.",
+      "journal": "Biomedicine & pharmacotherapy = Biomedecine & pharmacotherapie",
+      "year": "2019",
+      "gse_accessions": [
+        "GSE4290"
+      ]
+    },
+    {
+      "pmid": "36203534",
+      "title": "A Bioinformatic Approach Based on Systems Biology to Determine the Effects of SARS-CoV-2 Infection in Patients with Hypertrophic Cardiomyopathy.",
+      "journal": "Computational and mathematical methods in medicine",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE89714",
+        "GSE147507"
+      ]
+    },
+    {
+      "pmid": "39281206",
+      "title": "Identification of Inflammatory Gene in the Congenital Heart Surgery Patients following Cardiopulmonary Bypass via the Way of WGCNA and Machine Learning Algorithms.",
+      "journal": "Disease markers",
+      "year": "2023",
+      "gse_accessions": [
+        "GSE143780"
+      ]
+    },
+    {
+      "pmid": "35035531",
+      "title": "Screening and Identification of Key Biomarkers in Lower Grade Glioma via Bioinformatical Analysis.",
+      "journal": "Applied bionics and biomechanics",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE15824",
+        "GSE86574",
+        "GSE50161"
+      ]
+    },
+    {
+      "pmid": "36276274",
+      "title": "SFRP2 is a Novel Diagnostic Biomarker and Suppresses the Proliferation of Pituitary Adenoma.",
+      "journal": "Journal of oncology",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE26966",
+        "GSE63357"
+      ]
+    },
+    {
+      "pmid": "34513999",
+      "title": "Integrated Bioinformatics-Based Identification of Potential Diagnostic Biomarkers Associated with Diabetic Foot Ulcer Development.",
+      "journal": "Journal of diabetes research",
+      "year": "2021",
+      "gse_accessions": [
+        "GSE29221",
+        "GSE7014"
+      ]
+    },
+    {
+      "pmid": "36199424",
+      "title": "Identification of ",
+      "journal": "Oxidative medicine and cellular longevity",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE83453",
+        "GSE12644",
+        "GSE51472"
+      ]
+    },
+    {
+      "pmid": "36061357",
+      "title": "Identification of Candidate Therapeutic Target Genes and Profiling of Tumor-Infiltrating Immune Cells in Pancreatic Cancer via Integrated Transcriptomic Analysis.",
+      "journal": "Disease markers",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE101448",
+        "GSE15471",
+        "GSE62452"
+      ]
+    },
+    {
+      "pmid": "35982735",
+      "title": "Circular RNA hsa_circ_0002360 Promotes Proliferation and Invasion and Inhibits Oxidative Stress in Gastric Cancer by Sponging miR-629-3p and Regulating the PDLIM4 Expression.",
+      "journal": "Oxidative medicine and cellular longevity",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE33429",
+        "GSE79973",
+        "GSE103236",
+        "GSE84437",
+        "GSE22804"
+      ]
+    },
+    {
+      "pmid": "35509856",
+      "title": "Differentially Expressed Genes in Nasopharyngeal Carcinoma Tissues and Their Correlation with Recurrence and Metastasis of Nasopharyngeal Carcinoma.",
+      "journal": "Computational and mathematical methods in medicine",
+      "year": "2022",
+      "gse_accessions": [
+        "GSE103611",
+        "GSE61218"
+      ]
+    },
+    {
+      "pmid": "37755325",
+      "title": "Pathogenomics model for personalized medicine in cervical cancer: Cross-talk of gene expressions and pathological images related to oxidative stress.",
+      "journal": "Environmental toxicology",
+      "year": "2024",
+      "gse_accessions": [
+        "GSE44001"
+      ]
+    }
+  ]
+}
