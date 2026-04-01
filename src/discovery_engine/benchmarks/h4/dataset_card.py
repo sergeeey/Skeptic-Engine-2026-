@@ -29,6 +29,8 @@ class H4RouteCard:
 class H4DatasetCard:
     candidate_id: str
     title: str
+    track_status: str
+    status_reason: str
     current_route_id: str
     current_route_title: str
     phase2_route_ids: list[str] = field(default_factory=list)
@@ -97,6 +99,8 @@ def build_h4_dataset_card(spec: dict[str, object]) -> H4DatasetCard:
     return H4DatasetCard(
         candidate_id=str(spec.get("candidate_id", "H4")),
         title=str(spec.get("title", "")),
+        track_status=str(spec.get("track_status", "active")),
+        status_reason=str(spec.get("status_reason", "")),
         current_route_id=default_route_id,
         current_route_title=default_route_title,
         phase2_route_ids=phase2_route_ids,

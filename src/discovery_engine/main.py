@@ -468,6 +468,8 @@ def main() -> None:
 
         print(f"H4 spec: {path}")
         print(f"Candidate: {task_card.candidate_id} | {task_card.title}")
+        print(f"Track status: {task_card.track_status}")
+        print(f"Status note: {task_card.status_reason or 'none'}")
         print(f"Default route: {task_card.default_route} ({task_card.label_type})")
         print(f"Metrics: {', '.join(task_card.metrics)}")
         print(f"Baselines: {', '.join(task_card.baselines)}")
@@ -482,6 +484,8 @@ def main() -> None:
         spec = load_h4_spec(path)
         card = build_h4_dataset_card(spec)
         print(f"Candidate: {card.candidate_id} | {card.title}")
+        print(f"Track status: {card.track_status}")
+        print(f"Status note: {card.status_reason or 'none'}")
         print(f"Current route: {card.current_route_id} | {card.current_route_title}")
         print(f"Phase-2 routes: {', '.join(card.phase2_route_ids) or 'none'}")
         print(f"Metrics: {', '.join(card.metrics)}")
@@ -513,6 +517,8 @@ def main() -> None:
         report = validate_h4_spec(spec)
         print(f"H4 spec: {path}")
         print(f"Candidate: {report.candidate_id}")
+        print(f"Track status: {spec.get('track_status', 'active')}")
+        print(f"Status note: {spec.get('status_reason', 'none')}")
         print(
             f"Valid: {report.is_valid} | routes={report.route_count} | "
             f"default_routes={report.default_route_count}"
@@ -542,9 +548,10 @@ def main() -> None:
         plan = build_h4_audit_plan(spec, route_id=route_id)
         print(f"H4 route: {plan.route_id} | accession={plan.accession}")
         print(
-            f"Status: {plan.route_status} | unit={plan.unit_of_analysis} | "
+            f"Track status: {plan.track_status} | route_status={plan.route_status} | unit={plan.unit_of_analysis} | "
             f"evaluation={plan.evaluation_level} | split_unit={plan.split_unit}"
         )
+        print(f"Status note: {plan.status_reason or 'none'}")
         print(f"Group keys: {', '.join(plan.group_keys_for_split) or 'none'}")
         print(f"Leakage keys: {', '.join(plan.leakage_keys) or 'none'}")
         print("Blocking issues:")

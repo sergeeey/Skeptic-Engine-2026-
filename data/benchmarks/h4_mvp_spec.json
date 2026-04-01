@@ -1,6 +1,9 @@
 {
   "candidate_id": "H4",
   "title": "TDA for early detection of resistant-state transitions in cancer single-cell data",
+  "track_status": "closed_after_kill_criterion",
+  "status_reason": "Closed after the first clean benchmark run: TDA AUC=0.50 stayed at random while PCA reached 0.9998 from trivial batch structure, so the H4 claim did not survive the project kill criterion.",
+  "closed_on": "2026-03-30",
   "benchmark_goal": "Test whether TDA-derived features improve early resistant-state detection beyond standard single-cell baselines on a concrete resistance-labeled benchmark.",
   "metrics": [
     "average_precision",
