@@ -163,6 +163,7 @@ def _run_syndrome_mode(args) -> None:
     from skeptic_toolkit.syndrome import (
         build_pairwise_constraints,
         compute_syndrome_pairwise,
+        syndrome_to_csv,
         syndrome_to_json,
         syndrome_to_markdown,
     )
@@ -183,34 +184,30 @@ def _run_syndrome_mode(args) -> None:
 
     print(f"Reference: {ref_source} ({reference_matrix.shape[0]} x {reference_matrix.shape[1]})")
 
-    # Build constraints from reference
+    # Build constraints from reference (pairwise + modules)
     print("\nBuilding constraint model from reference data...")
     model = build_pairwise_constraints(
         reference_matrix.astype(np.float64),
         top_k=200,
         seed=42,
     )
-    print(f"  {len(model.pairwise)} stable constraints found")
+    print(f"  {len(model.pairwise)} pairwise constraints, {len(model.modules)} modules")
 
     # Score candidate
     print("\nComputing syndrome...")
     result = compute_syndrome_pairwise(candidate_matrix.astype(np.float64), model)
 
-    # Display results
+    # Display
     print(f"\nSyndrome score:     {result.syndrome_score:.4f}")
     print(f"Pairwise violation: {result.pairwise_violation_score:.4f}")
+    print(f"Module violation:   {result.module_violation_score:.4f}")
+    print(f"Violation class:    {result.violation_class}")
+    print(f"Review required:    {'Yes' if result.review_required else 'No'}")
     print(f"Stability:          {result.stability_score:.4f}")
     print(f"Noise sensitivity:  {result.noise_sensitivity}")
 
-    if result.syndrome_score < 0.05:
-        print("\nAssessment: Structural dependencies preserved. No anomalies detected.")
-    elif result.syndrome_score < 0.20:
-        print("\nAssessment: Minor deviations. Expert review recommended.")
-    else:
-        print("\nAssessment: Significant structural violations. Escalate for review.")
-
     if result.top_violated_pairs:
-        print("\nTop violated dependencies:")
+        print("\nTop violated pairs:")
         for p in result.top_violated_pairs[:5]:
             print(
                 f"  {p['feature_i']} <-> {p['feature_j']}: "
@@ -218,12 +215,25 @@ def _run_syndrome_mode(args) -> None:
                 f"delta={p['delta']:.3f}"
             )
 
-    # Save report if requested
+    if result.top_violated_modules:
+        print("\nTop violated modules:")
+        for m in result.top_violated_modules[:3]:
+            genes = ", ".join(m["top_genes"][:3])
+            print(
+                f"  [{genes}...] size={m['module_size']}: "
+                f"expected={m['expected_internal_rho']:.3f} actual={m['actual_internal_rho']:.3f} "
+                f"broken={m['n_broken_pairs']}/{m['n_total_pairs']}"
+            )
+
+    # Save reports
     if args.report:
         report_path = Path(args.report)
         if report_path.suffix == ".json":
             syndrome_to_json(result, report_path)
             print(f"\nJSON report saved: {report_path}")
+        elif report_path.suffix == ".csv":
+            syndrome_to_csv(result, report_path)
+            print(f"\nCSV report saved: {report_path}")
         else:
             md = syndrome_to_markdown(result)
             report_path.write_text(md, encoding="utf-8")

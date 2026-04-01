@@ -1,0 +1,868 @@
+{
+  "experiment": "H29_h24_portability",
+  "dataset": "PBMC3k_top2000genes",
+  "n_cells": 2700,
+  "n_genes": 2000,
+  "n_constraints": 100,
+  "n_modules": 6,
+  "conclusion": "Syndrome layer WORKS on scRNA-seq for structure-breaking fabrication (max separation=0.5334). Zero-inflation limits number of constraints but signal persists.",
+  "results": [
+    {
+      "label": "real",
+      "fabrication": "none",
+      "syndrome_score": 0.0007,
+      "pairwise_violation_score": 0.0014,
+      "module_violation_score": 0.0,
+      "residual_violation_score": 0.0,
+      "stability_score": 1.0,
+      "noise_sensitivity": "low",
+      "violation_class": "clean",
+      "review_required": false,
+      "top_violated_pairs": [
+        {
+          "feature_i": "gene_10677",
+          "feature_j": "gene_10679",
+          "expected_rho": 0.7855,
+          "actual_rho": 0.7811,
+          "delta": 0.0045,
+          "stability": 1.0,
+          "violation_score": 0.0045
+        },
+        {
+          "feature_i": "gene_26013",
+          "feature_j": "gene_32022",
+          "expected_rho": 0.7346,
+          "actual_rho": 0.7301,
+          "delta": 0.0045,
+          "stability": 1.0,
+          "violation_score": 0.0045
+        },
+        {
+          "feature_i": "gene_10700",
+          "feature_j": "gene_10699",
+          "expected_rho": 0.7289,
+          "actual_rho": 0.7246,
+          "delta": 0.0043,
+          "stability": 1.0,
+          "violation_score": 0.0043
+        },
+        {
+          "feature_i": "gene_9798",
+          "feature_j": "gene_10679",
+          "expected_rho": 0.745,
+          "actual_rho": 0.7412,
+          "delta": 0.0039,
+          "stability": 1.0,
+          "violation_score": 0.0039
+        },
+        {
+          "feature_i": "gene_14247",
+          "feature_j": "gene_9799",
+          "expected_rho": 0.7248,
+          "actual_rho": 0.7212,
+          "delta": 0.0036,
+          "stability": 1.0,
+          "violation_score": 0.0036
+        },
+        {
+          "feature_i": "gene_10709",
+          "feature_j": "gene_9799",
+          "expected_rho": 0.7174,
+          "actual_rho": 0.7139,
+          "delta": 0.0035,
+          "stability": 1.0,
+          "violation_score": 0.0035
+        },
+        {
+          "feature_i": "gene_11447",
+          "feature_j": "gene_9799",
+          "expected_rho": 0.7426,
+          "actual_rho": 0.7392,
+          "delta": 0.0034,
+          "stability": 1.0,
+          "violation_score": 0.0034
+        },
+        {
+          "feature_i": "gene_11447",
+          "feature_j": "gene_13731",
+          "expected_rho": 0.716,
+          "actual_rho": 0.713,
+          "delta": 0.003,
+          "stability": 1.0,
+          "violation_score": 0.003
+        },
+        {
+          "feature_i": "gene_9798",
+          "feature_j": "gene_10677",
+          "expected_rho": 0.7457,
+          "actual_rho": 0.7427,
+          "delta": 0.0029,
+          "stability": 1.0,
+          "violation_score": 0.0029
+        },
+        {
+          "feature_i": "gene_10700",
+          "feature_j": "gene_10678",
+          "expected_rho": 0.7117,
+          "actual_rho": 0.7089,
+          "delta": 0.0029,
+          "stability": 1.0,
+          "violation_score": 0.0029
+        }
+      ],
+      "top_violated_modules": [
+        {
+          "module_id": 1418,
+          "module_size": 10,
+          "top_genes": [
+            "gene_9798",
+            "gene_10677",
+            "gene_10700",
+            "gene_10699",
+            "gene_10679"
+          ],
+          "expected_internal_rho": 0.617,
+          "actual_internal_rho": 0.617,
+          "delta": 0.0,
+          "n_broken_pairs": 0,
+          "n_total_pairs": 45
+        },
+        {
+          "module_id": 1221,
+          "module_size": 65,
+          "top_genes": [
+            "gene_14247",
+            "gene_26013",
+            "gene_30970",
+            "gene_24673",
+            "gene_15745"
+          ],
+          "expected_internal_rho": 0.5866,
+          "actual_internal_rho": 0.5866,
+          "delta": 0.0,
+          "n_broken_pairs": 0,
+          "n_total_pairs": 2080
+        },
+        {
+          "module_id": 1667,
+          "module_size": 38,
+          "top_genes": [
+            "gene_30933",
+            "gene_18998",
+            "gene_21053",
+            "gene_1955",
+            "gene_28817"
+          ],
+          "expected_internal_rho": 0.5686,
+          "actual_internal_rho": 0.5686,
+          "delta": 0.0,
+          "n_broken_pairs": 0,
+          "n_total_pairs": 703
+        },
+        {
+          "module_id": 716,
+          "module_size": 6,
+          "top_genes": [
+            "gene_31075",
+            "gene_26824",
+            "gene_28832",
+            "gene_17449",
+            "gene_19179"
+          ],
+          "expected_internal_rho": 0.5526,
+          "actual_internal_rho": 0.5526,
+          "delta": 0.0,
+          "n_broken_pairs": 0,
+          "n_total_pairs": 15
+        },
+        {
+          "module_id": 1417,
+          "module_size": 5,
+          "top_genes": [
+            "gene_30656",
+            "gene_27507",
+            "gene_23288",
+            "gene_18944",
+            "gene_23926"
+          ],
+          "expected_internal_rho": 0.5508,
+          "actual_internal_rho": 0.5508,
+          "delta": 0.0,
+          "n_broken_pairs": 0,
+          "n_total_pairs": 10
+        },
+        {
+          "module_id": 1643,
+          "module_size": 7,
+          "top_genes": [
+            "gene_13302",
+            "gene_11887",
+            "gene_20155",
+            "gene_26185",
+            "gene_556"
+          ],
+          "expected_internal_rho": 0.5393,
+          "actual_internal_rho": 0.5393,
+          "delta": 0.0,
+          "n_broken_pairs": 0,
+          "n_total_pairs": 21
+        }
+      ],
+      "top_violated_features": [],
+      "module_violation_counts": {
+        "module_1418": 0,
+        "module_1221": 0,
+        "module_1667": 0,
+        "module_716": 0,
+        "module_1417": 0,
+        "module_1643": 0
+      },
+      "n_constraints": 100,
+      "n_modules": 6,
+      "n_samples": 2700
+    },
+    {
+      "label": "fab_resample",
+      "fabrication": "resample",
+      "syndrome_score": 0.5341,
+      "pairwise_violation_score": 0.7358,
+      "module_violation_score": 0.5539,
+      "residual_violation_score": 0.0,
+      "stability_score": 1.0,
+      "noise_sensitivity": "low",
+      "violation_class": "structural_anomaly",
+      "review_required": true,
+      "top_violated_pairs": [
+        {
+          "feature_i": "gene_10679",
+          "feature_j": "gene_10678",
+          "expected_rho": 0.8448,
+          "actual_rho": -0.0001,
+          "delta": 0.8449,
+          "stability": 1.0,
+          "violation_score": 0.8449
+        },
+        {
+          "feature_i": "gene_10677",
+          "feature_j": "gene_10679",
+          "expected_rho": 0.7855,
+          "actual_rho": -0.0173,
+          "delta": 0.8028,
+          "stability": 1.0,
+          "violation_score": 0.8028
+        },
+        {
+          "feature_i": "gene_8218",
+          "feature_j": "gene_3761",
+          "expected_rho": 0.7419,
+          "actual_rho": -0.0562,
+          "delta": 0.7981,
+          "stability": 1.0,
+          "violation_score": 0.7981
+        },
+        {
+          "feature_i": "gene_30429",
+          "feature_j": "gene_2224",
+          "expected_rho": 0.8028,
+          "actual_rho": 0.0235,
+          "delta": 0.7793,
+          "stability": 1.0,
+          "violation_score": 0.7793
+        },
+        {
+          "feature_i": "gene_10608",
+          "feature_j": "gene_10610",
+          "expected_rho": 0.724,
+          "actual_rho": -0.0534,
+          "delta": 0.7774,
+          "stability": 1.0,
+          "violation_score": 0.7774
+        },
+        {
+          "feature_i": "gene_10709",
+          "feature_j": "gene_19420",
+          "expected_rho": 0.7302,
+          "actual_rho": -0.0427,
+          "delta": 0.773,
+          "stability": 1.0,
+          "violation_score": 0.773
+        },
+        {
+          "feature_i": "gene_30429",
+          "feature_j": "gene_32215",
+          "expected_rho": 0.7192,
+          "actual_rho": -0.0529,
+          "delta": 0.7722,
+          "stability": 1.0,
+          "violation_score": 0.7722
+        },
+        {
+          "feature_i": "gene_28817",
+          "feature_j": "gene_30429",
+          "expected_rho": 0.7326,
+          "actual_rho": -0.0386,
+          "delta": 0.7712,
+          "stability": 1.0,
+          "violation_score": 0.7712
+        },
+        {
+          "feature_i": "gene_11447",
+          "feature_j": "gene_5521",
+          "expected_rho": 0.742,
+          "actual_rho": -0.0281,
+          "delta": 0.7701,
+          "stability": 1.0,
+          "violation_score": 0.7701
+        },
+        {
+          "feature_i": "gene_26013",
+          "feature_j": "gene_15745",
+          "expected_rho": 0.7353,
+          "actual_rho": -0.0343,
+          "delta": 0.7696,
+          "stability": 1.0,
+          "violation_score": 0.7696
+        }
+      ],
+      "top_violated_modules": [
+        {
+          "module_id": 1418,
+          "module_size": 10,
+          "top_genes": [
+            "gene_9798",
+            "gene_10677",
+            "gene_10700",
+            "gene_10699",
+            "gene_10679"
+          ],
+          "expected_internal_rho": 0.617,
+          "actual_internal_rho": 0.0129,
+          "delta": 0.6041,
+          "n_broken_pairs": 45,
+          "n_total_pairs": 45
+        },
+        {
+          "module_id": 1221,
+          "module_size": 65,
+          "top_genes": [
+            "gene_14247",
+            "gene_26013",
+            "gene_30970",
+            "gene_24673",
+            "gene_15745"
+          ],
+          "expected_internal_rho": 0.5866,
+          "actual_internal_rho": 0.0158,
+          "delta": 0.5708,
+          "n_broken_pairs": 2080,
+          "n_total_pairs": 2080
+        },
+        {
+          "module_id": 1667,
+          "module_size": 38,
+          "top_genes": [
+            "gene_30933",
+            "gene_18998",
+            "gene_21053",
+            "gene_1955",
+            "gene_28817"
+          ],
+          "expected_internal_rho": 0.5686,
+          "actual_internal_rho": 0.0153,
+          "delta": 0.5533,
+          "n_broken_pairs": 703,
+          "n_total_pairs": 703
+        },
+        {
+          "module_id": 1417,
+          "module_size": 5,
+          "top_genes": [
+            "gene_30656",
+            "gene_27507",
+            "gene_23288",
+            "gene_18944",
+            "gene_23926"
+          ],
+          "expected_internal_rho": 0.5508,
+          "actual_internal_rho": 0.0159,
+          "delta": 0.5349,
+          "n_broken_pairs": 10,
+          "n_total_pairs": 10
+        },
+        {
+          "module_id": 716,
+          "module_size": 6,
+          "top_genes": [
+            "gene_31075",
+            "gene_26824",
+            "gene_28832",
+            "gene_17449",
+            "gene_19179"
+          ],
+          "expected_internal_rho": 0.5526,
+          "actual_internal_rho": 0.0191,
+          "delta": 0.5335,
+          "n_broken_pairs": 15,
+          "n_total_pairs": 15
+        },
+        {
+          "module_id": 1643,
+          "module_size": 7,
+          "top_genes": [
+            "gene_13302",
+            "gene_11887",
+            "gene_20155",
+            "gene_26185",
+            "gene_556"
+          ],
+          "expected_internal_rho": 0.5393,
+          "actual_internal_rho": 0.0124,
+          "delta": 0.5269,
+          "n_broken_pairs": 21,
+          "n_total_pairs": 21
+        }
+      ],
+      "top_violated_features": [],
+      "module_violation_counts": {
+        "module_1418": 45,
+        "module_1221": 2080,
+        "module_1667": 703,
+        "module_716": 15,
+        "module_1417": 10,
+        "module_1643": 21
+      },
+      "n_constraints": 100,
+      "n_modules": 6,
+      "n_samples": 2700
+    },
+    {
+      "label": "fab_noise",
+      "fabrication": "noise",
+      "syndrome_score": 0.0861,
+      "pairwise_violation_score": 0.0736,
+      "module_violation_score": 0.1644,
+      "residual_violation_score": 0.0,
+      "stability_score": 1.0,
+      "noise_sensitivity": "low",
+      "violation_class": "technical_noise",
+      "review_required": false,
+      "top_violated_pairs": [
+        {
+          "feature_i": "gene_1957",
+          "feature_j": "gene_31958",
+          "expected_rho": 0.7121,
+          "actual_rho": 0.4744,
+          "delta": 0.2377,
+          "stability": 1.0,
+          "violation_score": 0.2377
+        },
+        {
+          "feature_i": "gene_10679",
+          "feature_j": "gene_10678",
+          "expected_rho": 0.8448,
+          "actual_rho": 0.6555,
+          "delta": 0.1893,
+          "stability": 1.0,
+          "violation_score": 0.1893
+        },
+        {
+          "feature_i": "gene_10699",
+          "feature_j": "gene_10678",
+          "expected_rho": 0.7135,
+          "actual_rho": 0.5299,
+          "delta": 0.1837,
+          "stability": 1.0,
+          "violation_score": 0.1837
+        },
+        {
+          "feature_i": "gene_1955",
+          "feature_j": "gene_1957",
+          "expected_rho": 0.7323,
+          "actual_rho": 0.5664,
+          "delta": 0.1659,
+          "stability": 1.0,
+          "violation_score": 0.1659
+        },
+        {
+          "feature_i": "gene_10677",
+          "feature_j": "gene_10678",
+          "expected_rho": 0.723,
+          "actual_rho": 0.5672,
+          "delta": 0.1558,
+          "stability": 1.0,
+          "violation_score": 0.1558
+        },
+        {
+          "feature_i": "gene_1955",
+          "feature_j": "gene_16744",
+          "expected_rho": 0.7166,
+          "actual_rho": 0.5621,
+          "delta": 0.1546,
+          "stability": 1.0,
+          "violation_score": 0.1546
+        },
+        {
+          "feature_i": "gene_30429",
+          "feature_j": "gene_32215",
+          "expected_rho": 0.7192,
+          "actual_rho": 0.569,
+          "delta": 0.1502,
+          "stability": 1.0,
+          "violation_score": 0.1502
+        },
+        {
+          "feature_i": "gene_10700",
+          "feature_j": "gene_10678",
+          "expected_rho": 0.7117,
+          "actual_rho": 0.5724,
+          "delta": 0.1393,
+          "stability": 1.0,
+          "violation_score": 0.1393
+        },
+        {
+          "feature_i": "gene_30429",
+          "feature_j": "gene_2224",
+          "expected_rho": 0.8028,
+          "actual_rho": 0.6677,
+          "delta": 0.1351,
+          "stability": 1.0,
+          "violation_score": 0.1351
+        },
+        {
+          "feature_i": "gene_10608",
+          "feature_j": "gene_10610",
+          "expected_rho": 0.724,
+          "actual_rho": 0.598,
+          "delta": 0.126,
+          "stability": 1.0,
+          "violation_score": 0.126
+        }
+      ],
+      "top_violated_modules": [
+        {
+          "module_id": 1417,
+          "module_size": 5,
+          "top_genes": [
+            "gene_30656",
+            "gene_27507",
+            "gene_23288",
+            "gene_18944",
+            "gene_23926"
+          ],
+          "expected_internal_rho": 0.5508,
+          "actual_internal_rho": 0.2251,
+          "delta": 0.3257,
+          "n_broken_pairs": 7,
+          "n_total_pairs": 10
+        },
+        {
+          "module_id": 716,
+          "module_size": 6,
+          "top_genes": [
+            "gene_31075",
+            "gene_26824",
+            "gene_28832",
+            "gene_17449",
+            "gene_19179"
+          ],
+          "expected_internal_rho": 0.5526,
+          "actual_internal_rho": 0.3274,
+          "delta": 0.2252,
+          "n_broken_pairs": 4,
+          "n_total_pairs": 15
+        },
+        {
+          "module_id": 1418,
+          "module_size": 10,
+          "top_genes": [
+            "gene_9798",
+            "gene_10677",
+            "gene_10700",
+            "gene_10699",
+            "gene_10679"
+          ],
+          "expected_internal_rho": 0.617,
+          "actual_internal_rho": 0.437,
+          "delta": 0.18,
+          "n_broken_pairs": 11,
+          "n_total_pairs": 45
+        },
+        {
+          "module_id": 1667,
+          "module_size": 38,
+          "top_genes": [
+            "gene_30933",
+            "gene_18998",
+            "gene_21053",
+            "gene_1955",
+            "gene_28817"
+          ],
+          "expected_internal_rho": 0.5686,
+          "actual_internal_rho": 0.4223,
+          "delta": 0.1463,
+          "n_broken_pairs": 47,
+          "n_total_pairs": 703
+        },
+        {
+          "module_id": 1643,
+          "module_size": 7,
+          "top_genes": [
+            "gene_13302",
+            "gene_11887",
+            "gene_20155",
+            "gene_26185",
+            "gene_556"
+          ],
+          "expected_internal_rho": 0.5393,
+          "actual_internal_rho": 0.4836,
+          "delta": 0.0557,
+          "n_broken_pairs": 0,
+          "n_total_pairs": 21
+        },
+        {
+          "module_id": 1221,
+          "module_size": 65,
+          "top_genes": [
+            "gene_14247",
+            "gene_26013",
+            "gene_30970",
+            "gene_24673",
+            "gene_15745"
+          ],
+          "expected_internal_rho": 0.5866,
+          "actual_internal_rho": 0.5331,
+          "delta": 0.0535,
+          "n_broken_pairs": 5,
+          "n_total_pairs": 2080
+        }
+      ],
+      "top_violated_features": [],
+      "module_violation_counts": {
+        "module_1418": 11,
+        "module_1221": 5,
+        "module_1667": 47,
+        "module_716": 4,
+        "module_1417": 7,
+        "module_1643": 0
+      },
+      "n_constraints": 100,
+      "n_modules": 6,
+      "n_samples": 2700
+    },
+    {
+      "label": "fab_random_nb",
+      "fabrication": "random_nb",
+      "syndrome_score": 0.5318,
+      "pairwise_violation_score": 0.7309,
+      "module_violation_score": 0.5547,
+      "residual_violation_score": 0.0,
+      "stability_score": 1.0,
+      "noise_sensitivity": "low",
+      "violation_class": "structural_anomaly",
+      "review_required": true,
+      "top_violated_pairs": [
+        {
+          "feature_i": "gene_10679",
+          "feature_j": "gene_10678",
+          "expected_rho": 0.8448,
+          "actual_rho": 0.0339,
+          "delta": 0.8109,
+          "stability": 1.0,
+          "violation_score": 0.8109
+        },
+        {
+          "feature_i": "gene_30970",
+          "feature_j": "gene_11082",
+          "expected_rho": 0.7404,
+          "actual_rho": -0.0594,
+          "delta": 0.7998,
+          "stability": 1.0,
+          "violation_score": 0.7998
+        },
+        {
+          "feature_i": "gene_30970",
+          "feature_j": "gene_10709",
+          "expected_rho": 0.7444,
+          "actual_rho": -0.0514,
+          "delta": 0.7958,
+          "stability": 1.0,
+          "violation_score": 0.7958
+        },
+        {
+          "feature_i": "gene_30429",
+          "feature_j": "gene_2224",
+          "expected_rho": 0.8028,
+          "actual_rho": 0.0078,
+          "delta": 0.7949,
+          "stability": 1.0,
+          "violation_score": 0.7949
+        },
+        {
+          "feature_i": "gene_26013",
+          "feature_j": "gene_5521",
+          "expected_rho": 0.7587,
+          "actual_rho": -0.0248,
+          "delta": 0.7834,
+          "stability": 1.0,
+          "violation_score": 0.7834
+        },
+        {
+          "feature_i": "gene_15745",
+          "feature_j": "gene_11447",
+          "expected_rho": 0.7587,
+          "actual_rho": -0.0195,
+          "delta": 0.7782,
+          "stability": 1.0,
+          "violation_score": 0.7782
+        },
+        {
+          "feature_i": "gene_10700",
+          "feature_j": "gene_10679",
+          "expected_rho": 0.7414,
+          "actual_rho": -0.0361,
+          "delta": 0.7775,
+          "stability": 1.0,
+          "violation_score": 0.7775
+        },
+        {
+          "feature_i": "gene_10699",
+          "feature_j": "gene_10679",
+          "expected_rho": 0.7508,
+          "actual_rho": -0.0238,
+          "delta": 0.7746,
+          "stability": 1.0,
+          "violation_score": 0.7746
+        },
+        {
+          "feature_i": "gene_10709",
+          "feature_j": "gene_11447",
+          "expected_rho": 0.7515,
+          "actual_rho": -0.0213,
+          "delta": 0.7728,
+          "stability": 1.0,
+          "violation_score": 0.7728
+        },
+        {
+          "feature_i": "gene_30429",
+          "feature_j": "gene_10608",
+          "expected_rho": 0.7289,
+          "actual_rho": -0.0394,
+          "delta": 0.7682,
+          "stability": 1.0,
+          "violation_score": 0.7682
+        }
+      ],
+      "top_violated_modules": [
+        {
+          "module_id": 1418,
+          "module_size": 10,
+          "top_genes": [
+            "gene_9798",
+            "gene_10677",
+            "gene_10700",
+            "gene_10699",
+            "gene_10679"
+          ],
+          "expected_internal_rho": 0.617,
+          "actual_internal_rho": 0.0161,
+          "delta": 0.6009,
+          "n_broken_pairs": 45,
+          "n_total_pairs": 45
+        },
+        {
+          "module_id": 1221,
+          "module_size": 65,
+          "top_genes": [
+            "gene_14247",
+            "gene_26013",
+            "gene_30970",
+            "gene_24673",
+            "gene_15745"
+          ],
+          "expected_internal_rho": 0.5866,
+          "actual_internal_rho": 0.0153,
+          "delta": 0.5713,
+          "n_broken_pairs": 2080,
+          "n_total_pairs": 2080
+        },
+        {
+          "module_id": 1667,
+          "module_size": 38,
+          "top_genes": [
+            "gene_30933",
+            "gene_18998",
+            "gene_21053",
+            "gene_1955",
+            "gene_28817"
+          ],
+          "expected_internal_rho": 0.5686,
+          "actual_internal_rho": 0.0148,
+          "delta": 0.5538,
+          "n_broken_pairs": 703,
+          "n_total_pairs": 703
+        },
+        {
+          "module_id": 716,
+          "module_size": 6,
+          "top_genes": [
+            "gene_31075",
+            "gene_26824",
+            "gene_28832",
+            "gene_17449",
+            "gene_19179"
+          ],
+          "expected_internal_rho": 0.5526,
+          "actual_internal_rho": 0.0152,
+          "delta": 0.5374,
+          "n_broken_pairs": 15,
+          "n_total_pairs": 15
+        },
+        {
+          "module_id": 1417,
+          "module_size": 5,
+          "top_genes": [
+            "gene_30656",
+            "gene_27507",
+            "gene_23288",
+            "gene_18944",
+            "gene_23926"
+          ],
+          "expected_internal_rho": 0.5508,
+          "actual_internal_rho": 0.0142,
+          "delta": 0.5366,
+          "n_broken_pairs": 10,
+          "n_total_pairs": 10
+        },
+        {
+          "module_id": 1643,
+          "module_size": 7,
+          "top_genes": [
+            "gene_13302",
+            "gene_11887",
+            "gene_20155",
+            "gene_26185",
+            "gene_556"
+          ],
+          "expected_internal_rho": 0.5393,
+          "actual_internal_rho": 0.0111,
+          "delta": 0.5282,
+          "n_broken_pairs": 21,
+          "n_total_pairs": 21
+        }
+      ],
+      "top_violated_features": [],
+      "module_violation_counts": {
+        "module_1418": 45,
+        "module_1221": 2080,
+        "module_1667": 703,
+        "module_716": 15,
+        "module_1417": 10,
+        "module_1643": 21
+      },
+      "n_constraints": 100,
+      "n_modules": 6,
+      "n_samples": 2700
+    }
+  ],
+  "elapsed_s": 22.5
+}
