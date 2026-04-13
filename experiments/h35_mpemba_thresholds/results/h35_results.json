@@ -1,0 +1,73 @@
+{
+  "experiment": "H35",
+  "description": "Mpemba Sweet Spot — Adaptive Thresholds",
+  "summary": {
+    "global_threshold": 0.48717390764855195,
+    "global_f1": 0.9797973595333129,
+    "avg_improvement": 0.0003321837466451205,
+    "summary_improvements": {
+      "mean_delta_f1": 0.0003321837466451205,
+      "weighted_delta_f1": 0.0003321837466451205,
+      "max_gain": 0.000726512818970737,
+      "min_gain": 3.3650862646616986e-05
+    },
+    "n_domains_optimized": 3
+  },
+  "domain_results": {
+    "h24_benford_resample": {
+      "domain": "h24_benford_resample",
+      "optimal_threshold": 0.47912487118152364,
+      "f1_score": 0.9817645975317738,
+      "precision": 0.9765481861487725,
+      "recall": 0.987037037037037,
+      "n_samples": 5400,
+      "n_positives": 2700
+    },
+    "h24_benford_noise": {
+      "domain": "h24_benford_noise",
+      "optimal_threshold": 0.5248142710759608,
+      "f1_score": 0.9791278419679462,
+      "precision": 0.9853713428357089,
+      "recall": 0.9729629629629629,
+      "n_samples": 5400,
+      "n_positives": 2700
+    },
+    "h24_benford_random_nb": {
+      "domain": "h24_benford_random_nb",
+      "optimal_threshold": 0.47924253605451655,
+      "f1_score": 0.9812362030905076,
+      "precision": 0.9747807017543859,
+      "recall": 0.9877777777777778,
+      "n_samples": 5400,
+      "n_positives": 2700
+    }
+  },
+  "improvements": [
+    {
+      "detector": "h24_benford_resample",
+      "domain_threshold": 0.47912487118152364,
+      "domain_f1": 0.9817645975317738,
+      "global_f1_on_domain": 0.9817309466691272,
+      "improvement": 3.3650862646616986e-05
+    },
+    {
+      "detector": "h24_benford_noise",
+      "domain_threshold": 0.5248142710759608,
+      "domain_f1": 0.9791278419679462,
+      "global_f1_on_domain": 0.9784013291489755,
+      "improvement": 0.000726512818970737
+    },
+    {
+      "detector": "h24_benford_random_nb",
+      "domain_threshold": 0.47924253605451655,
+      "domain_f1": 0.9812362030905076,
+      "global_f1_on_domain": 0.9809998155321896,
+      "improvement": 0.0002363875583180075
+    }
+  ],
+  "mpemba_crossing": {
+    "detector": "h24_benford_noise",
+    "crossing_threshold": 0.4985555785786435,
+    "optimized_threshold": 0.5248142710759608
+  }
+}
