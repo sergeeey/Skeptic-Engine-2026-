@@ -402,9 +402,117 @@ GSE164897 (Schmidt et al. 2021): A375 melanoma cell line, 30,716 cells across 4 
 
 ---
 
-## 8. Novel Scientific Observations
+## 8. Experiments H27–H33: Extended Validation Arc
 
-### 8.1 scRNA-seq UMI Counts Do Not Follow Benford's Law
+### 10.1 H27: Clinical Trials Behavioral Analysis
+
+**Hypothesis:** Behavioral features from p-value sequences can screen clinical trial reporting anomalies.
+
+**Data:** ClinicalTrials.gov API — 200 completed trials, 42 with 3+ extracted p-values.
+
+**Results:**
+- Median p-values per trial: 6.5
+- Mean fraction significant: 54.6%
+- IsolationForest flagged: 5 (11.9%)
+- Supervised track skipped (all trials COMPLETED, no withdrawn labels)
+
+**Limitations:** Only ~21% trials have structured p-values in API. Small sample (n=42).
+
+### 10.2 H28: Paper Mill Detection
+
+**Hypothesis:** Combined p-value behavioral + authorship metadata can classify retracted vs non-retracted papers.
+
+**Data:** 50 retracted papers + 51 matched controls (Retraction Watch + PubMed).
+
+**Results (5-fold CV):**
+
+| Feature set | Best AUC | Best model |
+|---|---|---|
+| P-value only | 0.501 | RF |
+| Metadata only | 0.600 | GBM |
+| **Combined** | **0.591** | **GBM** |
+
+Top features: abstract_length (0.18), affiliation_diversity (0.15), author_per_reference (0.15).
+
+**Verdict:** WEAK SIGNAL — metadata dominates, p-values near random (too few full-text articles with extractable p-values).
+
+### 10.3 H29: Biological Syndromes
+
+**Hypothesis:** Autoencoder reconstruction error + constraint violation analysis can detect fabricated proteomics data.
+
+**Data:** CPTAC proteomics (Bradshaw 2021) + synthetic fabrication (random, shuffle, noise).
+
+**Results:**
+- Separation = 0.0045 (NEGATIVE, threshold > 0.05)
+- No improvement over AE baseline
+- Constraint violations nearly identical between real and fabricated
+
+**Verdict:** NEGATIVE — syndrome layer does not improve over standalone AE on this dataset.
+
+### 10.4 H30: Retracted scRNA-seq Validation
+
+**Hypothesis:** Retracted GEO datasets show structural anomalies detectable by syndrome analysis.
+
+**Data:** GSE160269 (PMID 38572681) — 3 retracted datasets vs clean PBMC3k reference.
+
+**Results:**
+- All 3 retracted datasets pass self-consistency checks
+- Syndrome scores ≈ 0.0004-0.0005 (near-zero violations)
+- Violations are structural breaks, NOT proof of fraud
+
+**Verdict:** Clean self-consistency — retraction may be for non-data reasons (ethics, consent, etc.).
+
+### 8.5 H31: Unified Anomaly Score (UAS)
+
+**Hypothesis:** A unified anomaly score combining signals from multiple detection methods provides better discrimination than any single method.
+
+**Signals combined:** Benford deviation (H24), AE reconstruction (H25), behavioral p-hacking (H23), syndrome violation (H29), metadata anomaly (H28).
+
+**Data:** 10 synthetic datasets (5 clean + 5 fabricated from H29).
+
+**Results:**
+- Weighted UAS — AUC: **1.000**, AP: **1.000**
+- Stacking (GBM) — AUC: **1.000** ± 0.000
+- Top anomalous: fab_shuffle (0.719), fab_random (0.718), fab_noise (0.471)
+
+**Verdict:** SUCCESS — perfect detection on synthetic ground truth.
+
+### 8.6 H32: Temporal P-Hacking Detection
+
+**Hypothesis:** Authors engaged in p-hacking exhibit temporal drift in p-value distributions — increasing concentration just below 0.05 over time.
+
+**Signals:** frac_just_below_05 trend, mean_p drift, success_rate drift, pvalue_clustering trend.
+
+**Data:** 10 synthetic authors (5 clean uniform + 5 increasing p-hacking pattern).
+
+**Results:**
+- Accuracy: **1.000**, Precision: **1.000**, Recall: **1.000**, F1: **1.000**
+- All 5 p-hacking authors flagged, 0 clean authors flagged
+- Top drift feature: frac_just_below_05 (5/5 significant)
+
+**Verdict:** SUCCESS — perfect classification on synthetic ground truth.
+
+### 8.7 H33: Cross-Modal Consistency Detection
+
+**Hypothesis:** Fabricated datasets exhibit inconsistency across data modalities (e.g., mRNA vs protein for same samples).
+
+**Signals:** gene_protein_correlation, rank_consistency, pathway_concordance, sample_clustering_agreement, effect_size_ratio.
+
+**Data:** Synthetic paired mRNA-protein (50 samples × 100 genes): real (shared latent) vs fabricated (independent).
+
+**Results:**
+- Overall separation: **0.383** (SUCCESS, threshold > 0.3)
+- Top metric: gene_protein_correlation (real 0.842 vs fabricated 0.004, sep=0.838)
+- rank_consistency: 0.656 separation
+- pathway_concordance: 0.238 separation
+
+**Verdict:** SUCCESS — cross-modal inconsistency detects fabrication.
+
+---
+
+## 9. Novel Scientific Observations
+
+### 10.1 scRNA-seq UMI Counts Do Not Follow Benford's Law
 
 Real scRNA-seq data has first-digit frequency fd_1 = 0.74 (vs Benford expected 0.30). This is because the median nonzero UMI count is 1, creating extreme concentration on digit 1. This means:
 
@@ -412,7 +520,7 @@ Real scRNA-seq data has first-digit frequency fd_1 = 0.74 (vs Benford expected 0
 - A fabricator who forces Benford compliance makes their data MORE detectable, not less
 - This observation is not documented in prior literature and represents a publishable finding on its own
 
-### 8.2 Different Fabrication Types Are Caught by Different Feature Groups
+### 10.2 Different Fabrication Types Are Caught by Different Feature Groups
 
 - **Correlation-destroying fabrication (resample):** caught by cell-level structural features (zero fraction, library size correlation disruption)
 - **Distribution-generating fabrication (random NB):** caught by Benford digit chi-squared deviation
@@ -420,11 +528,11 @@ Real scRNA-seq data has first-digit frequency fd_1 = 0.74 (vs Benford expected 0
 
 This implies that a single detection method is insufficient — fusion of complementary feature groups is necessary.
 
-### 8.3 Cross-Dataset Generalization is Fundamentally Limited for Sophisticated Fabrication
+### 10.3 Cross-Dataset Generalization is Fundamentally Limited for Sophisticated Fabrication
 
 Fabrication detection signals are entangled with dataset-specific characteristics (library preparation protocol, sequencing depth, biological composition). Feature normalization (z-score, rank, delta-Benford) does not rescue generalization. This is an honest negative result that should be reported to prevent false confidence in "universal" fabrication detectors.
 
-### 8.4 Banking Autoencoder Reconstruction Error Captures Structural Coherence
+### 10.4 Banking Autoencoder Reconstruction Error Captures Structural Coherence
 
 The autoencoder trained on real proteomics data learns the joint distribution of protein expression values. Fabrication methods that break inter-protein correlations (shuffle, random) produce high reconstruction error even when marginal distributions are preserved. This is exactly the mechanism used in banking fraud detection (transaction coherence) and validates the cross-domain transfer.
 
@@ -443,6 +551,13 @@ The autoencoder trained on real proteomics data learns the joint distribution of
 | H23-statcheck | Behavioral (statcheck) | 0.765 | [0.452, 1.000] | 61 real | **Underpowered** |
 | H23-pmc | PMC recompute (quasi-label) | 0.980 | — | 59 PMC articles | Supporting (quasi-label) |
 | **H4** | **TDA cancer resistance** | **0.500** | — | **GSE164897** | **KILLED** |
+| H27 | Clinical trials behavioral | — | — | 200 trials | Unsupervised screening |
+| H28 | Paper mills detection | 0.591 (GBM) | — | 50 retracted + 51 controls | Weak signal |
+| H29 | Biological syndromes | — | — | CPTAC + synthetic | NEGATIVE (sep=0.0045) |
+| H30 | Retracted scRNA-seq validation | — | — | GSE160269 (PMID 38572681) | Clean self-consistency |
+| **H31** | **Unified Anomaly Score** | **1.000** | — | **10 synthetic datasets** | **SUCCESS** |
+| **H32** | **Temporal P-Hacking Detection** | **F1 1.000** | — | **10 synthetic authors** | **SUCCESS** |
+| **H33** | **Cross-Modal Consistency** | **0.383 sep** | — | **mRNA + protein synthetic** | **SUCCESS** |
 
 **Audited:** data authenticity, fabrication validity, feature correctness, train/test leakage (shuffle test), bootstrap confidence intervals.
 
@@ -450,7 +565,7 @@ The autoencoder trained on real proteomics data learns the joint distribution of
 
 ---
 
-## 10. Limitations
+## 11. Limitations
 
 1. **All fabrication is simulated.** No real-world fabricated scRNA-seq, proteomics, or p-hacking datasets with confirmed ground truth exist for validation.
 
@@ -468,7 +583,7 @@ The autoencoder trained on real proteomics data learns the joint distribution of
 
 ---
 
-## 11. Artifacts Inventory
+## 12. Artifacts Inventory
 
 ### Result Files (11 JSON)
 
@@ -532,7 +647,7 @@ experiments/
 
 ---
 
-## 12. Prospects
+## 13. Prospects
 
 ### 12.1 Immediate Next Steps (no public action required)
 
