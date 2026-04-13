@@ -1,0 +1,25 @@
+{
+  "stable": {
+    "total": 100,
+    "promoted": 100,
+    "held": 0,
+    "killed": 0,
+    "correct": 100,
+    "accuracy": 1.0,
+    "avg_score": 0.642
+  },
+  "unstable": {
+    "total": 100,
+    "promoted": 0,
+    "held": 0,
+    "killed": 100,
+    "correct": 100,
+    "accuracy": 1.0,
+    "avg_score": 0.164
+  },
+  "overall": {
+    "total": 200,
+    "total_correct": 200,
+    "accuracy": 1.0
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "baseline": {
+    "total_correct": 130,
+    "total_count": 130,
+    "accuracy": 1.0,
+    "stable": {
+      "total": 50,
+      "correct": 50,
+      "accuracy": 1.0
+    },
+    "marginal": {
+      "total": 30,
+      "correct": 30,
+      "accuracy": 1.0
+    },
+    "unstable": {
+      "total": 50,
+      "correct": 50,
+      "accuracy": 1.0
+    }
+  },
+  "default_mrm": {
+    "total_correct": 83,
+    "total_count": 130,
+    "accuracy": 0.638,
+    "stable": {
+      "total": 50,
+      "correct": 20,
+      "accuracy": 0.4,
+      "avg_score": 0.547
+    },
+    "marginal": {
+      "total": 30,
+      "correct": 13,
+      "accuracy": 0.433,
+      "avg_score": 0.466
+    },
+    "unstable": {
+      "total": 50,
+      "correct": 50,
+      "accuracy": 1.0,
+      "avg_score": 0.163
+    }
+  },
+  "optimized_mrm": {
+    "total_correct": 119,
+    "total_count": 130,
+    "accuracy": 0.915,
+    "stable": {
+      "total": 50,
+      "correct": 50,
+      "accuracy": 1.0,
+      "avg_score": 0.547
+    },
+    "marginal": {
+      "total": 30,
+      "correct": 19,
+      "accuracy": 0.633,
+      "avg_score": 0.466
+    },
+    "unstable": {
+      "total": 50,
+      "correct": 50,
+      "accuracy": 1.0,
+      "avg_score": 0.163
+    }
+  },
+  "best_thresholds": {
+    "promote_above": 0.45,
+    "hold_below": 0.5,
+    "kill_below": 0.3,
+    "min_stability": 0.2,
+    "min_dynamic": 0.2,
+    "max_uncertainty": 0.55
+  },
+  "improvement_over_baseline": -0.085
+}

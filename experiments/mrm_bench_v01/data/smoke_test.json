@@ -1,0 +1,28 @@
+[
+  {
+    "candidate_id": "smoke_001",
+    "source": "smoke_test",
+    "composition": "LiFePO4",
+    "structure_format": "json",
+    "structure_blob": "{\"lattice\": [[10,0,0],[0,10,0],[0,0,10]], \"sites\": []}",
+    "generator_version": null,
+    "generator_seed": null,
+    "target_properties": {},
+    "novelty_context": {},
+    "created_at": "2026-04-06T10:55:50.337632+00:00",
+    "provenance_hash": "08cb3c60b2310c34"
+  },
+  {
+    "candidate_id": "smoke_002",
+    "source": "smoke_test",
+    "composition": "NaCl",
+    "structure_format": "json",
+    "structure_blob": "{\"lattice\": [[5.6,0,0],[0,5.6,0],[0,0,5.6]], \"sites\": []}",
+    "generator_version": null,
+    "generator_seed": null,
+    "target_properties": {},
+    "novelty_context": {},
+    "created_at": "2026-04-06T10:55:50.337632+00:00",
+    "provenance_hash": "97071c8ff287de8b"
+  }
+]

@@ -1,0 +1,2342 @@
+[
+  {
+    "candidate_id": "mp_sta_246ddf",
+    "source": "materials_project",
+    "composition": "Ag(AuF4)2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-18125\", \"composition\": \"Ag(AuF4)2\", \"energy_above_hull\": 0, \"formation_energy\": -1.201867790454545, \"band_gap\": 0.258499999999999, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.201867790454545,
+      "band_gap": 0.258499999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-18125"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_d4ce49",
+    "source": "materials_project",
+    "composition": "Ag(BCl)6",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-567334\", \"composition\": \"Ag(BCl)6\", \"energy_above_hull\": 0, \"formation_energy\": -0.736950766538461, \"band_gap\": 2.7028, \"crystal_system\": \"Cubic\", \"space_group\": 205}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -0.736950766538461,
+      "band_gap": 2.7028
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 205,
+      "mp_id": "mp-567334"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_87dee7",
+    "source": "materials_project",
+    "composition": "Ag(W3Br7)2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-29717\", \"composition\": \"Ag(W3Br7)2\", \"energy_above_hull\": 0.014560410317456002, \"formation_energy\": -0.8251726423412681, \"band_gap\": 0.0, \"crystal_system\": \"Cubic\", \"space_group\": 201}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.014560410317456002,
+      "formation_energy": -0.8251726423412681,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 201,
+      "mp_id": "mp-29717"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_940bad",
+    "source": "materials_project",
+    "composition": "Ag13(PbO3)6",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-676840\", \"composition\": \"Ag13(PbO3)6\", \"energy_above_hull\": 0.007080113918918001, \"formation_energy\": -0.823027415585585, \"band_gap\": 0.0, \"crystal_system\": \"Triclinic\", \"space_group\": 1}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.007080113918918001,
+      "formation_energy": -0.823027415585585,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 1,
+      "mp_id": "mp-676840"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_8134d9",
+    "source": "materials_project",
+    "composition": "Ag13As3(IO3)4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1199256\", \"composition\": \"Ag13As3(IO3)4\", \"energy_above_hull\": 0.006591958281249001, \"formation_energy\": -0.833353502786457, \"band_gap\": 0.33329999999999904, \"crystal_system\": \"Monoclinic\", \"space_group\": 11}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.006591958281249001,
+      "formation_energy": -0.833353502786457,
+      "band_gap": 0.33329999999999904
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 11,
+      "mp_id": "mp-1199256"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_395557",
+    "source": "materials_project",
+    "composition": "Ag25(BiO6)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-28729\", \"composition\": \"Ag25(BiO6)3\", \"energy_above_hull\": 0.0035070769565180003, \"formation_energy\": -0.5467989480797101, \"band_gap\": 0.056799999999999004, \"crystal_system\": \"Trigonal\", \"space_group\": 147}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.0035070769565180003,
+      "formation_energy": -0.5467989480797101,
+      "band_gap": 0.056799999999999004
+    },
+    "novelty_context": {
+      "crystal_system": "Trigonal",
+      "space_group": 147,
+      "mp_id": "mp-28729"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_a025a2",
+    "source": "materials_project",
+    "composition": "Ag2B8O13",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1247866\", \"composition\": \"Ag2B8O13\", \"energy_above_hull\": 0.007411922173912001, \"formation_energy\": -2.503243793550724, \"band_gap\": 2.9324, \"crystal_system\": \"Monoclinic\", \"space_group\": 4}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.007411922173912001,
+      "formation_energy": -2.503243793550724,
+      "band_gap": 2.9324
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 4,
+      "mp_id": "mp-1247866"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_fef0e3",
+    "source": "materials_project",
+    "composition": "Ag2B8O13",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-554873\", \"composition\": \"Ag2B8O13\", \"energy_above_hull\": 0, \"formation_energy\": -2.510655715724636, \"band_gap\": 3.4397, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -2.510655715724636,
+      "band_gap": 3.4397
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-554873"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_76b867",
+    "source": "materials_project",
+    "composition": "Ag2B8O13",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-759792\", \"composition\": \"Ag2B8O13\", \"energy_above_hull\": 0.011548473586955, \"formation_energy\": -2.499107242137681, \"band_gap\": 2.858, \"crystal_system\": \"Triclinic\", \"space_group\": 1}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.011548473586955,
+      "formation_energy": -2.499107242137681,
+      "band_gap": 2.858
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 1,
+      "mp_id": "mp-759792"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_21a875",
+    "source": "materials_project",
+    "composition": "Ag2Bi2S3Cl2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-559071\", \"composition\": \"Ag2Bi2S3Cl2\", \"energy_above_hull\": 0.004958104166663001, \"formation_energy\": -0.7483002703703701, \"band_gap\": 1.6367999999999991, \"crystal_system\": \"Triclinic\", \"space_group\": 2}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.004958104166663001,
+      "formation_energy": -0.7483002703703701,
+      "band_gap": 1.6367999999999991
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 2,
+      "mp_id": "mp-559071"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_3686a8",
+    "source": "materials_project",
+    "composition": "Ag2BiO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-23558\", \"composition\": \"Ag2BiO3\", \"energy_above_hull\": 0, \"formation_energy\": -0.9173112705555521, \"band_gap\": 0.38720000000000004, \"crystal_system\": \"Orthorhombic\", \"space_group\": 34}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -0.9173112705555521,
+      "band_gap": 0.38720000000000004
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 34,
+      "mp_id": "mp-23558"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_d8e34e",
+    "source": "materials_project",
+    "composition": "Ag2BiO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-558712\", \"composition\": \"Ag2BiO3\", \"energy_above_hull\": 0.004223702499997001, \"formation_energy\": -0.913087568055555, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 52}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.004223702499997001,
+      "formation_energy": -0.913087568055555,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 52,
+      "mp_id": "mp-558712"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_67b714",
+    "source": "materials_project",
+    "composition": "Ag2BiO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-561113\", \"composition\": \"Ag2BiO3\", \"energy_above_hull\": 0.0012473537499970001, \"formation_energy\": -0.9160639168055551, \"band_gap\": 0.5053000000000001, \"crystal_system\": \"Monoclinic\", \"space_group\": 7}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.0012473537499970001,
+      "formation_energy": -0.9160639168055551,
+      "band_gap": 0.5053000000000001
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 7,
+      "mp_id": "mp-561113"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_baa0ab",
+    "source": "materials_project",
+    "composition": "Ag2Br3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-862982\", \"composition\": \"Ag2Br3\", \"energy_above_hull\": 0, \"formation_energy\": -0.589244397666665, \"band_gap\": 0.0, \"crystal_system\": \"Trigonal\", \"space_group\": 167}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -0.589244397666665,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Trigonal",
+      "space_group": 167,
+      "mp_id": "mp-862982"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_3a5bd2",
+    "source": "materials_project",
+    "composition": "Ag2BrNO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-556345\", \"composition\": \"Ag2BrNO3\", \"energy_above_hull\": 0.019580985714285, \"formation_energy\": -0.6550704147619041, \"band_gap\": 1.6045, \"crystal_system\": \"Orthorhombic\", \"space_group\": 62}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.019580985714285,
+      "formation_energy": -0.6550704147619041,
+      "band_gap": 1.6045
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 62,
+      "mp_id": "mp-556345"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_c6f01a",
+    "source": "materials_project",
+    "composition": "Ag2CO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-4691\", \"composition\": \"Ag2CO3\", \"energy_above_hull\": 0, \"formation_energy\": -1.089499118055555, \"band_gap\": 0.4736, \"crystal_system\": \"Monoclinic\", \"space_group\": 11}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.089499118055555,
+      "band_gap": 0.4736
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 11,
+      "mp_id": "mp-4691"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_ea619e",
+    "source": "materials_project",
+    "composition": "Ag2F",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1391\", \"composition\": \"Ag2F\", \"energy_above_hull\": 0, \"formation_energy\": -0.8383200133333321, \"band_gap\": 0.0, \"crystal_system\": \"Trigonal\", \"space_group\": 164}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -0.8383200133333321,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Trigonal",
+      "space_group": 164,
+      "mp_id": "mp-1391"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_a68e0d",
+    "source": "materials_project",
+    "composition": "Ag2F5",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-542298\", \"composition\": \"Ag2F5\", \"energy_above_hull\": 0, \"formation_energy\": -1.229926874642856, \"band_gap\": 0.0, \"crystal_system\": \"Triclinic\", \"space_group\": 2}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.229926874642856,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 2,
+      "mp_id": "mp-542298"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_e74f02",
+    "source": "materials_project",
+    "composition": "Ag2Ge(S2O7)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1196546\", \"composition\": \"Ag2Ge(S2O7)3\", \"energy_above_hull\": 0, \"formation_energy\": -1.599947565999999, \"band_gap\": 2.8072, \"crystal_system\": \"Trigonal\", \"space_group\": 147}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.599947565999999,
+      "band_gap": 2.8072
+    },
+    "novelty_context": {
+      "crystal_system": "Trigonal",
+      "space_group": 147,
+      "mp_id": "mp-1196546"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_810975",
+    "source": "materials_project",
+    "composition": "Ag2GePbS4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-861942\", \"composition\": \"Ag2GePbS4\", \"energy_above_hull\": 0, \"formation_energy\": -0.550358512291666, \"band_gap\": 1.3699, \"crystal_system\": \"Orthorhombic\", \"space_group\": 40}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -0.550358512291666,
+      "band_gap": 1.3699
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 40,
+      "mp_id": "mp-861942"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_bd1764",
+    "source": "materials_project",
+    "composition": "Ag2H2IOF",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-690687\", \"composition\": \"Ag2H2IOF\", \"energy_above_hull\": 0, \"formation_energy\": -1.046624786547618, \"band_gap\": 1.4591, \"crystal_system\": \"Monoclinic\", \"space_group\": 4}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.046624786547618,
+      "band_gap": 1.4591
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 4,
+      "mp_id": "mp-690687"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_f61534",
+    "source": "materials_project",
+    "composition": "Ag2H4(SO4)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-860963\", \"composition\": \"Ag2H4(SO4)3\", \"energy_above_hull\": 0, \"formation_energy\": -1.449344143492063, \"band_gap\": 2.8821, \"crystal_system\": \"Orthorhombic\", \"space_group\": 33}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.449344143492063,
+      "band_gap": 2.8821
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 33,
+      "mp_id": "mp-860963"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_e56174",
+    "source": "materials_project",
+    "composition": "Ag2Hg(SeO3)2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-558763\", \"composition\": \"Ag2Hg(SeO3)2\", \"energy_above_hull\": 0.012571866363638001, \"formation_energy\": -0.9140723493655301, \"band_gap\": 1.9351, \"crystal_system\": \"Orthorhombic\", \"space_group\": 61}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.012571866363638001,
+      "formation_energy": -0.9140723493655301,
+      "band_gap": 1.9351
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 61,
+      "mp_id": "mp-558763"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_e4226d",
+    "source": "materials_project",
+    "composition": "Ag2Hg2(TeO4)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-553949\", \"composition\": \"Ag2Hg2(TeO4)3\", \"energy_above_hull\": 0, \"formation_energy\": -1.105035922807017, \"band_gap\": 0.16060000000000002, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.105035922807017,
+      "band_gap": 0.16060000000000002
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-553949"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_c7707e",
+    "source": "materials_project",
+    "composition": "Ag2HgI4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1229122\", \"composition\": \"Ag2HgI4\", \"energy_above_hull\": 0.0011233871428580002, \"formation_energy\": -0.5112391594047601, \"band_gap\": 1.276399999999999, \"crystal_system\": \"Tetragonal\", \"space_group\": 121}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.0011233871428580002,
+      "formation_energy": -0.5112391594047601,
+      "band_gap": 1.276399999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 121,
+      "mp_id": "mp-1229122"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_aacbb1",
+    "source": "materials_project",
+    "composition": "Ag2HgI4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-23485\", \"composition\": \"Ag2HgI4\", \"energy_above_hull\": 0, \"formation_energy\": -0.512362546547618, \"band_gap\": 1.2219, \"crystal_system\": \"Tetragonal\", \"space_group\": 82}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -0.512362546547618,
+      "band_gap": 1.2219
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 82,
+      "mp_id": "mp-23485"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_5d83d8",
+    "source": "materials_project",
+    "composition": "Ag2HgI4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-570256\", \"composition\": \"Ag2HgI4\", \"energy_above_hull\": 0.002405364285717, \"formation_energy\": -0.509957182261901, \"band_gap\": 1.100399999999999, \"crystal_system\": \"Tetragonal\", \"space_group\": 111}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.002405364285717,
+      "formation_energy": -0.509957182261901,
+      "band_gap": 1.100399999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 111,
+      "mp_id": "mp-570256"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_568d54",
+    "source": "materials_project",
+    "composition": "Ag2INO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-557396\", \"composition\": \"Ag2INO3\", \"energy_above_hull\": 0.001587870178573, \"formation_energy\": -0.618246061726189, \"band_gap\": 1.4835, \"crystal_system\": \"Orthorhombic\", \"space_group\": 19}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.001587870178573,
+      "formation_energy": -0.618246061726189,
+      "band_gap": 1.4835
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 19,
+      "mp_id": "mp-557396"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_f3a720",
+    "source": "materials_project",
+    "composition": "Ag2Mo(I2O7)2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1203404\", \"composition\": \"Ag2Mo(I2O7)2\", \"energy_above_hull\": 0.009820445416662, \"formation_energy\": -0.9568541320634911, \"band_gap\": 1.9610999999999992, \"crystal_system\": \"Monoclinic\", \"space_group\": 15}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.009820445416662,
+      "formation_energy": -0.9568541320634911,
+      "band_gap": 1.9610999999999992
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 15,
+      "mp_id": "mp-1203404"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_f08cad",
+    "source": "materials_project",
+    "composition": "Ag2Mo2O7",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-27966\", \"composition\": \"Ag2Mo2O7\", \"energy_above_hull\": 0, \"formation_energy\": -1.5074706507575741, \"band_gap\": 1.9011, \"crystal_system\": \"Triclinic\", \"space_group\": 2}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.5074706507575741,
+      "band_gap": 1.9011
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 2,
+      "mp_id": "mp-27966"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_2a019e",
+    "source": "materials_project",
+    "composition": "Ag2Mo2O7",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-560276\", \"composition\": \"Ag2Mo2O7\", \"energy_above_hull\": 0.0009334045454540001, \"formation_energy\": -1.50653724621212, \"band_gap\": 2.0118, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.0009334045454540001,
+      "formation_energy": -1.50653724621212,
+      "band_gap": 2.0118
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-560276"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_9d0023",
+    "source": "materials_project",
+    "composition": "Ag2Mo3SeO12",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-556429\", \"composition\": \"Ag2Mo3SeO12\", \"energy_above_hull\": 0.008686748680556002, \"formation_energy\": -1.549436900454281, \"band_gap\": 1.7276999999999991, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.008686748680556002,
+      "formation_energy": -1.549436900454281,
+      "band_gap": 1.7276999999999991
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-556429"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_e16298",
+    "source": "materials_project",
+    "composition": "Ag2MoO4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-19318\", \"composition\": \"Ag2MoO4\", \"energy_above_hull\": 0.001024362499997, \"formation_energy\": -1.251052689761907, \"band_gap\": 1.873099999999999, \"crystal_system\": \"Cubic\", \"space_group\": 227}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.001024362499997,
+      "formation_energy": -1.251052689761907,
+      "band_gap": 1.873099999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 227,
+      "mp_id": "mp-19318"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_a6fa2a",
+    "source": "materials_project",
+    "composition": "Ag2NClO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-557303\", \"composition\": \"Ag2NClO3\", \"energy_above_hull\": 0.0046095557142860006, \"formation_energy\": -0.68977540690476, \"band_gap\": 1.71, \"crystal_system\": \"Orthorhombic\", \"space_group\": 62}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.0046095557142860006,
+      "formation_energy": -0.68977540690476,
+      "band_gap": 1.71
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 62,
+      "mp_id": "mp-557303"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_2f965e",
+    "source": "materials_project",
+    "composition": "Ag2P2H2O7",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1195759\", \"composition\": \"Ag2P2H2O7\", \"energy_above_hull\": 0.001177638493597, \"formation_energy\": -1.815974185778388, \"band_gap\": 2.1369, \"crystal_system\": \"Orthorhombic\", \"space_group\": 70}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.001177638493597,
+      "formation_energy": -1.815974185778388,
+      "band_gap": 2.1369
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 70,
+      "mp_id": "mp-1195759"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_8bf26d",
+    "source": "materials_project",
+    "composition": "Ag2P2PbO7",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-557644\", \"composition\": \"Ag2P2PbO7\", \"energy_above_hull\": 0.0022233000347250003, \"formation_energy\": -1.98453012438492, \"band_gap\": 2.3697, \"crystal_system\": \"Triclinic\", \"space_group\": 2}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.0022233000347250003,
+      "formation_energy": -1.98453012438492,
+      "band_gap": 2.3697
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 2,
+      "mp_id": "mp-557644"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_01b37e",
+    "source": "materials_project",
+    "composition": "Ag2P2PdO7",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1190325\", \"composition\": \"Ag2P2PdO7\", \"energy_above_hull\": 0, \"formation_energy\": -1.785766681051587, \"band_gap\": 1.166799999999999, \"crystal_system\": \"Monoclinic\", \"space_group\": 15}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.785766681051587,
+      "band_gap": 1.166799999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 15,
+      "mp_id": "mp-1190325"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_5f4a5d",
+    "source": "materials_project",
+    "composition": "Ag2PHO4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-707138\", \"composition\": \"Ag2PHO4\", \"energy_above_hull\": 0, \"formation_energy\": -1.5734414415699391, \"band_gap\": 1.3274, \"crystal_system\": \"Trigonal\", \"space_group\": 151}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.5734414415699391,
+      "band_gap": 1.3274
+    },
+    "novelty_context": {
+      "crystal_system": "Trigonal",
+      "space_group": 151,
+      "mp_id": "mp-707138"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_f453af",
+    "source": "materials_project",
+    "composition": "Ag2PO3F",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-558151\", \"composition\": \"Ag2PO3F\", \"energy_above_hull\": 0.00529821249999, \"formation_energy\": -1.769361049353741, \"band_gap\": 1.0803, \"crystal_system\": \"Monoclinic\", \"space_group\": 15}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.00529821249999,
+      "formation_energy": -1.769361049353741,
+      "band_gap": 1.0803
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 15,
+      "mp_id": "mp-558151"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_b2274a",
+    "source": "materials_project",
+    "composition": "Ag2Pb8Cl4O7",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-667327\", \"composition\": \"Ag2Pb8Cl4O7\", \"energy_above_hull\": 0.00520407742857, \"formation_energy\": -1.381790716468252, \"band_gap\": 2.2477, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.00520407742857,
+      "formation_energy": -1.381790716468252,
+      "band_gap": 2.2477
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-667327"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_e773fe",
+    "source": "materials_project",
+    "composition": "Ag2PbO2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-20210\", \"composition\": \"Ag2PbO2\", \"energy_above_hull\": 0.0050141350666690005, \"formation_energy\": -0.817315429666662, \"band_gap\": 1.3818000000000001, \"crystal_system\": \"Monoclinic\", \"space_group\": 15}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.0050141350666690005,
+      "formation_energy": -0.817315429666662,
+      "band_gap": 1.3818000000000001
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 15,
+      "mp_id": "mp-20210"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_db717e",
+    "source": "materials_project",
+    "composition": "Ag2PdCl4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-28557\", \"composition\": \"Ag2PdCl4\", \"energy_above_hull\": 0.0016302800000000002, \"formation_energy\": -0.5746215314285701, \"band_gap\": 0.9506000000000001, \"crystal_system\": \"Orthorhombic\", \"space_group\": 64}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.0016302800000000002,
+      "formation_energy": -0.5746215314285701,
+      "band_gap": 0.9506000000000001
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 64,
+      "mp_id": "mp-28557"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_f2ef7e",
+    "source": "materials_project",
+    "composition": "Ag2S2O7",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1192057\", \"composition\": \"Ag2S2O7\", \"energy_above_hull\": 0, \"formation_energy\": -1.4055423298484842, \"band_gap\": 2.301599999999999, \"crystal_system\": \"Triclinic\", \"space_group\": 2}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.4055423298484842,
+      "band_gap": 2.301599999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 2,
+      "mp_id": "mp-1192057"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_6082be",
+    "source": "materials_project",
+    "composition": "Ag2SO4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-5625\", \"composition\": \"Ag2SO4\", \"energy_above_hull\": 0, \"formation_energy\": -1.256612797261903, \"band_gap\": 1.2289, \"crystal_system\": \"Orthorhombic\", \"space_group\": 70}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.256612797261903,
+      "band_gap": 1.2289
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 70,
+      "mp_id": "mp-5625"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_6ec8dd",
+    "source": "materials_project",
+    "composition": "Ag2SeO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-16913\", \"composition\": \"Ag2SeO3\", \"energy_above_hull\": 0, \"formation_energy\": -0.8250872030295131, \"band_gap\": 1.7022, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -0.8250872030295131,
+      "band_gap": 1.7022
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-16913"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_b80f8a",
+    "source": "materials_project",
+    "composition": "Ag2SeO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-2748718\", \"composition\": \"Ag2SeO3\", \"energy_above_hull\": 0, \"formation_energy\": -0.5705825800520821, \"band_gap\": 2.093499999999999, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -0.5705825800520821,
+      "band_gap": 2.093499999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-2748718"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_4f49c3",
+    "source": "materials_project",
+    "composition": "Ag2SeO4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-11641\", \"composition\": \"Ag2SeO4\", \"energy_above_hull\": 0, \"formation_energy\": -0.8401073900967221, \"band_gap\": 0.42639999999999906, \"crystal_system\": \"Orthorhombic\", \"space_group\": 70}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -0.8401073900967221,
+      "band_gap": 0.42639999999999906
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 70,
+      "mp_id": "mp-11641"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_5550d8",
+    "source": "materials_project",
+    "composition": "Ag2SeO4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-663172\", \"composition\": \"Ag2SeO4\", \"energy_above_hull\": 0.015562147142851002, \"formation_energy\": -0.8245452429538681, \"band_gap\": 0.48150000000000004, \"crystal_system\": \"Triclinic\", \"space_group\": 2}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.015562147142851002,
+      "formation_energy": -0.8245452429538681,
+      "band_gap": 0.48150000000000004
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 2,
+      "mp_id": "mp-663172"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_3e3aa8",
+    "source": "materials_project",
+    "composition": "Ag2Sn(S2O7)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1197599\", \"composition\": \"Ag2Sn(S2O7)3\", \"energy_above_hull\": 0, \"formation_energy\": -1.616673894666667, \"band_gap\": 2.4602, \"crystal_system\": \"Trigonal\", \"space_group\": 147}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0,
+      "formation_energy": -1.616673894666667,
+      "band_gap": 2.4602
+    },
+    "novelty_context": {
+      "crystal_system": "Trigonal",
+      "space_group": 147,
+      "mp_id": "mp-1197599"
+    }
+  },
+  {
+    "candidate_id": "mp_sta_0b5bca",
+    "source": "materials_project",
+    "composition": "Ag2SnO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-680202\", \"composition\": \"Ag2SnO3\", \"energy_above_hull\": 0.012345233055551, \"formation_energy\": -1.199212698333333, \"band_gap\": 0.1452, \"crystal_system\": \"Orthorhombic\", \"space_group\": 19}",
+    "target_properties": {
+      "_profile_type": "stable",
+      "energy_above_hull": 0.012345233055551,
+      "formation_energy": -1.199212698333333,
+      "band_gap": 0.1452
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 19,
+      "mp_id": "mp-680202"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_1968ee",
+    "source": "materials_project",
+    "composition": "Ag15Bi7I40",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-685512\", \"composition\": \"Ag15Bi7I40\", \"energy_above_hull\": 0.128536540725806, \"formation_energy\": -0.44390911475806405, \"band_gap\": 0.0, \"crystal_system\": \"Monoclinic\", \"space_group\": 8}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.128536540725806,
+      "formation_energy": -0.44390911475806405,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 8,
+      "mp_id": "mp-685512"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_5174b7",
+    "source": "materials_project",
+    "composition": "Ag2CN2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-574486\", \"composition\": \"Ag2CN2\", \"energy_above_hull\": 0.268039843333333, \"formation_energy\": 0.268039843333338, \"band_gap\": 1.0037, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.268039843333333,
+      "formation_energy": 0.268039843333338,
+      "band_gap": 1.0037
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-574486"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_9d377d",
+    "source": "materials_project",
+    "composition": "Ag2GeO4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-755127\", \"composition\": \"Ag2GeO4\", \"energy_above_hull\": 0.106118254285713, \"formation_energy\": -1.071060896190475, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 70}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.106118254285713,
+      "formation_energy": -1.071060896190475,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 70,
+      "mp_id": "mp-755127"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_b894c2",
+    "source": "materials_project",
+    "composition": "Ag2H12C6N3Cl",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-567645\", \"composition\": \"Ag2H12C6N3Cl\", \"energy_above_hull\": 0.23963775309027702, \"formation_energy\": -0.116943085347222, \"band_gap\": 3.5031, \"crystal_system\": \"Orthorhombic\", \"space_group\": 33}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.23963775309027702,
+      "formation_energy": -0.116943085347222,
+      "band_gap": 3.5031
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 33,
+      "mp_id": "mp-567645"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_ebcbdf",
+    "source": "materials_project",
+    "composition": "Ag2H6PdS2(NO3)2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1202149\", \"composition\": \"Ag2H6PdS2(NO3)2\", \"energy_above_hull\": 0.10656070559210201, \"formation_energy\": -0.9421109829385961, \"band_gap\": 1.894899999999999, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.10656070559210201,
+      "formation_energy": -0.9421109829385961,
+      "band_gap": 1.894899999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-1202149"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_eb7e68",
+    "source": "materials_project",
+    "composition": "Ag2H8C2S2N5ClO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215002\", \"composition\": \"Ag2H8C2S2N5ClO3\", \"energy_above_hull\": 0.18775050698124401, \"formation_energy\": -0.5539089868840591, \"band_gap\": 2.4575, \"crystal_system\": \"Triclinic\", \"space_group\": 2}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.18775050698124401,
+      "formation_energy": -0.5539089868840591,
+      "band_gap": 2.4575
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 2,
+      "mp_id": "mp-1215002"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_b98701",
+    "source": "materials_project",
+    "composition": "Ag2HgI4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-37163\", \"composition\": \"Ag2HgI4\", \"energy_above_hull\": 0.10249282714285601, \"formation_energy\": -0.409869719404762, \"band_gap\": 0.087199999999999, \"crystal_system\": \"Trigonal\", \"space_group\": 160}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.10249282714285601,
+      "formation_energy": -0.409869719404762,
+      "band_gap": 0.087199999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Trigonal",
+      "space_group": 160,
+      "mp_id": "mp-37163"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_f7e11d",
+    "source": "materials_project",
+    "composition": "Ag2HgI4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-675242\", \"composition\": \"Ag2HgI4\", \"energy_above_hull\": 0.17515235142857002, \"formation_energy\": -0.33721019511904804, \"band_gap\": 0.0, \"crystal_system\": \"Monoclinic\", \"space_group\": 8}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.17515235142857002,
+      "formation_energy": -0.33721019511904804,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 8,
+      "mp_id": "mp-675242"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_6689e3",
+    "source": "materials_project",
+    "composition": "Ag2IO6",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1079032\", \"composition\": \"Ag2IO6\", \"energy_above_hull\": 0.11357515567901101, \"formation_energy\": -0.394565362037037, \"band_gap\": 0.0, \"crystal_system\": \"Trigonal\", \"space_group\": 148}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.11357515567901101,
+      "formation_energy": -0.394565362037037,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Trigonal",
+      "space_group": 148,
+      "mp_id": "mp-1079032"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_3e082b",
+    "source": "materials_project",
+    "composition": "Ag2O",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-38238\", \"composition\": \"Ag2O\", \"energy_above_hull\": 0.10868900944444301, \"formation_energy\": -0.20694484833333102, \"band_gap\": 0.0, \"crystal_system\": \"Triclinic\", \"space_group\": 1}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.10868900944444301,
+      "formation_energy": -0.20694484833333102,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 1,
+      "mp_id": "mp-38238"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_1834fc",
+    "source": "materials_project",
+    "composition": "Ag2O",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-7711\", \"composition\": \"Ag2O\", \"energy_above_hull\": 0.11929020833333101, \"formation_energy\": -0.19634364944444302, \"band_gap\": 0.0, \"crystal_system\": \"Trigonal\", \"space_group\": 164}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.11929020833333101,
+      "formation_energy": -0.19634364944444302,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Trigonal",
+      "space_group": 164,
+      "mp_id": "mp-7711"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_cc4700",
+    "source": "materials_project",
+    "composition": "Ag2O3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1046809\", \"composition\": \"Ag2O3\", \"energy_above_hull\": 0.256296793666665, \"formation_energy\": -0.11838629966666601, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 63}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.256296793666665,
+      "formation_energy": -0.11838629966666601,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 63,
+      "mp_id": "mp-1046809"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_df2ac2",
+    "source": "materials_project",
+    "composition": "Ag2O3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-11872\", \"composition\": \"Ag2O3\", \"energy_above_hull\": 0.18969381066666502, \"formation_energy\": -0.184989282666666, \"band_gap\": 0.0, \"crystal_system\": \"Cubic\", \"space_group\": 224}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.18969381066666502,
+      "formation_energy": -0.184989282666666,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 224,
+      "mp_id": "mp-11872"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_8c97f8",
+    "source": "materials_project",
+    "composition": "Ag2PbI4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1229102\", \"composition\": \"Ag2PbI4\", \"energy_above_hull\": 0.10418355357142801, \"formation_energy\": -0.558193473333332, \"band_gap\": 0.9013999999999991, \"crystal_system\": \"Tetragonal\", \"space_group\": 139}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.10418355357142801,
+      "formation_energy": -0.558193473333332,
+      "band_gap": 0.9013999999999991
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 139,
+      "mp_id": "mp-1229102"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_58ffc6",
+    "source": "materials_project",
+    "composition": "Ag2Se",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-2275442\", \"composition\": \"Ag2Se\", \"energy_above_hull\": 0.125732638333332, \"formation_energy\": -0.007605372187500001, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 51}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.125732638333332,
+      "formation_energy": -0.007605372187500001,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 51,
+      "mp_id": "mp-2275442"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_b953f1",
+    "source": "materials_project",
+    "composition": "Ag2Se",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-568889\", \"composition\": \"Ag2Se\", \"energy_above_hull\": 0.12621994416666701, \"formation_energy\": -0.0071180663541660005, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 17}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.12621994416666701,
+      "formation_energy": -0.0071180663541660005,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 17,
+      "mp_id": "mp-568889"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_1cd16d",
+    "source": "materials_project",
+    "composition": "Ag2TeO6",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1182991\", \"composition\": \"Ag2TeO6\", \"energy_above_hull\": 0.265777035925927, \"formation_energy\": -0.538682968888888, \"band_gap\": 0.0, \"crystal_system\": \"Monoclinic\", \"space_group\": 9}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.265777035925927,
+      "formation_energy": -0.538682968888888,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 9,
+      "mp_id": "mp-1182991"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_0120df",
+    "source": "materials_project",
+    "composition": "Ag2TeO6",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183014\", \"composition\": \"Ag2TeO6\", \"energy_above_hull\": 0.169457155925927, \"formation_energy\": -0.635002848888888, \"band_gap\": 0.28080000000000005, \"crystal_system\": \"Monoclinic\", \"space_group\": 9}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.169457155925927,
+      "formation_energy": -0.635002848888888,
+      "band_gap": 0.28080000000000005
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 9,
+      "mp_id": "mp-1183014"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_14a62c",
+    "source": "materials_project",
+    "composition": "Ag2TeO6",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1189776\", \"composition\": \"Ag2TeO6\", \"energy_above_hull\": 0.260022109814815, \"formation_energy\": -0.5444378950000001, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 43}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.260022109814815,
+      "formation_energy": -0.5444378950000001,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 43,
+      "mp_id": "mp-1189776"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_0a75fb",
+    "source": "materials_project",
+    "composition": "Ag3(Bi2Br3)7",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-685586\", \"composition\": \"Ag3(Bi2Br3)7\", \"energy_above_hull\": 0.11200338750000001, \"formation_energy\": -0.7519538380263161, \"band_gap\": 0.038699999999999006, \"crystal_system\": \"Monoclinic\", \"space_group\": 6}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.11200338750000001,
+      "formation_energy": -0.7519538380263161,
+      "band_gap": 0.038699999999999006
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 6,
+      "mp_id": "mp-685586"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_9e1d07",
+    "source": "materials_project",
+    "composition": "Ag32Te20As3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1229256\", \"composition\": \"Ag32Te20As3\", \"energy_above_hull\": 0.29677628500000003, \"formation_energy\": 0.21351861106060202, \"band_gap\": 0.0, \"crystal_system\": \"Hexagonal\", \"space_group\": 191}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.29677628500000003,
+      "formation_energy": 0.21351861106060202,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Hexagonal",
+      "space_group": 191,
+      "mp_id": "mp-1229256"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_8f13e6",
+    "source": "materials_project",
+    "composition": "Ag3Bi",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1229111\", \"composition\": \"Ag3Bi\", \"energy_above_hull\": 0.14664321500000102, \"formation_energy\": 0.14664321500000102, \"band_gap\": 0.0, \"crystal_system\": \"Hexagonal\", \"space_group\": 187}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.14664321500000102,
+      "formation_energy": 0.14664321500000102,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Hexagonal",
+      "space_group": 187,
+      "mp_id": "mp-1229111"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_b5910e",
+    "source": "materials_project",
+    "composition": "Ag3Br",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183272\", \"composition\": \"Ag3Br\", \"energy_above_hull\": 0.286870891666667, \"formation_energy\": -0.042939627499998, \"band_gap\": 0.0, \"crystal_system\": \"Hexagonal\", \"space_group\": 194}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.286870891666667,
+      "formation_energy": -0.042939627499998,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Hexagonal",
+      "space_group": 194,
+      "mp_id": "mp-1183272"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_f18f9e",
+    "source": "materials_project",
+    "composition": "Ag3Cl",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183265\", \"composition\": \"Ag3Cl\", \"energy_above_hull\": 0.26348526041666503, \"formation_energy\": -0.02073470645833, \"band_gap\": 0.0, \"crystal_system\": \"Hexagonal\", \"space_group\": 194}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.26348526041666503,
+      "formation_energy": -0.02073470645833,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Hexagonal",
+      "space_group": 194,
+      "mp_id": "mp-1183265"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_b32558",
+    "source": "materials_project",
+    "composition": "Ag3F",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183244\", \"composition\": \"Ag3F\", \"energy_above_hull\": 0.21894842958333102, \"formation_energy\": -0.409791580416666, \"band_gap\": 0.0, \"crystal_system\": \"Hexagonal\", \"space_group\": 194}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.21894842958333102,
+      "formation_energy": -0.409791580416666,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Hexagonal",
+      "space_group": 194,
+      "mp_id": "mp-1183244"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_65d9ae",
+    "source": "materials_project",
+    "composition": "Ag3Ge",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-985283\", \"composition\": \"Ag3Ge\", \"energy_above_hull\": 0.10019832625000101, \"formation_energy\": 0.10019832625000101, \"band_gap\": 0.0, \"crystal_system\": \"Cubic\", \"space_group\": 225}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.10019832625000101,
+      "formation_energy": 0.10019832625000101,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 225,
+      "mp_id": "mp-985283"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_b7c992",
+    "source": "materials_project",
+    "composition": "Ag3H13SeN4O5",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-695941\", \"composition\": \"Ag3H13SeN4O5\", \"energy_above_hull\": 0.18962974666666801, \"formation_energy\": -0.6396731714843741, \"band_gap\": 2.1569, \"crystal_system\": \"Orthorhombic\", \"space_group\": 19}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.18962974666666801,
+      "formation_energy": -0.6396731714843741,
+      "band_gap": 2.1569
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 19,
+      "mp_id": "mp-695941"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_188c89",
+    "source": "materials_project",
+    "composition": "Ag3I(NO3)2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-653562\", \"composition\": \"Ag3I(NO3)2\", \"energy_above_hull\": 0.234367761666668, \"formation_energy\": -0.410811842499999, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 19}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.234367761666668,
+      "formation_energy": -0.410811842499999,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 19,
+      "mp_id": "mp-653562"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_0c4f07",
+    "source": "materials_project",
+    "composition": "Ag3N5O6",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-562667\", \"composition\": \"Ag3N5O6\", \"energy_above_hull\": 0.16514404595238102, \"formation_energy\": -0.321044200714286, \"band_gap\": 2.1573, \"crystal_system\": \"Orthorhombic\", \"space_group\": 36}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.16514404595238102,
+      "formation_energy": -0.321044200714286,
+      "band_gap": 2.1573
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 36,
+      "mp_id": "mp-562667"
+    }
+  },
+  {
+    "candidate_id": "mp_mar_cf4d04",
+    "source": "materials_project",
+    "composition": "Ag3P",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-985295\", \"composition\": \"Ag3P\", \"energy_above_hull\": 0.22011171022727102, \"formation_energy\": 0.20542232584686101, \"band_gap\": 0.0, \"crystal_system\": \"Tetragonal\", \"space_group\": 139}",
+    "target_properties": {
+      "_profile_type": "marginal",
+      "energy_above_hull": 0.22011171022727102,
+      "formation_energy": 0.20542232584686101,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 139,
+      "mp_id": "mp-985295"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_330272",
+    "source": "materials_project",
+    "composition": "Ac2Br2O",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1207297\", \"composition\": \"Ac2Br2O\", \"energy_above_hull\": 1.242843714666666, \"formation_energy\": -1.460072974, \"band_gap\": 0.0, \"crystal_system\": \"Tetragonal\", \"space_group\": 123}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.242843714666666,
+      "formation_energy": -1.460072974,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 123,
+      "mp_id": "mp-1207297"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_e21c81",
+    "source": "materials_project",
+    "composition": "Ac2Cl2O",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1207291\", \"composition\": \"Ac2Cl2O\", \"energy_above_hull\": 1.313464733, \"formation_energy\": -1.622560442000001, \"band_gap\": 0.0, \"crystal_system\": \"Tetragonal\", \"space_group\": 123}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.313464733,
+      "formation_energy": -1.622560442000001,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 123,
+      "mp_id": "mp-1207291"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_c5dfd9",
+    "source": "materials_project",
+    "composition": "Ac3Br",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183119\", \"composition\": \"Ac3Br\", \"energy_above_hull\": 0.580771254583333, \"formation_energy\": -0.250735133125, \"band_gap\": 0.0, \"crystal_system\": \"Hexagonal\", \"space_group\": 194}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.580771254583333,
+      "formation_energy": -0.250735133125,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Hexagonal",
+      "space_group": 194,
+      "mp_id": "mp-1183119"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_900ebf",
+    "source": "materials_project",
+    "composition": "Ac3Cl",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183056\", \"composition\": \"Ac3Cl\", \"energy_above_hull\": 0.702535130000001, \"formation_energy\": -0.22682963583334, \"band_gap\": 0.0, \"crystal_system\": \"Cubic\", \"space_group\": 221}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.702535130000001,
+      "formation_energy": -0.22682963583334,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 221,
+      "mp_id": "mp-1183056"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_c3b034",
+    "source": "materials_project",
+    "composition": "Ac3Cl",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183113\", \"composition\": \"Ac3Cl\", \"energy_above_hull\": 0.701206447499998, \"formation_energy\": -0.22815831833334202, \"band_gap\": 0.0, \"crystal_system\": \"Hexagonal\", \"space_group\": 194}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.701206447499998,
+      "formation_energy": -0.22815831833334202,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Hexagonal",
+      "space_group": 194,
+      "mp_id": "mp-1183113"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_32169c",
+    "source": "materials_project",
+    "composition": "Ac3Mo",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183097\", \"composition\": \"Ac3Mo\", \"energy_above_hull\": 0.6916704356249991, \"formation_energy\": 0.6916704356249991, \"band_gap\": 0.0, \"crystal_system\": \"Tetragonal\", \"space_group\": 139}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.6916704356249991,
+      "formation_energy": 0.6916704356249991,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 139,
+      "mp_id": "mp-1183097"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_95aa82",
+    "source": "materials_project",
+    "composition": "Ac3Nb",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183104\", \"composition\": \"Ac3Nb\", \"energy_above_hull\": 0.556803858125, \"formation_energy\": 0.556803858125, \"band_gap\": 0.0, \"crystal_system\": \"Tetragonal\", \"space_group\": 139}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.556803858125,
+      "formation_energy": 0.556803858125,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 139,
+      "mp_id": "mp-1183104"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_76d2fd",
+    "source": "materials_project",
+    "composition": "AcBO3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183052\", \"composition\": \"AcBO3\", \"energy_above_hull\": 0.7924727446666661, \"formation_energy\": -2.475389555333333, \"band_gap\": 0.8071, \"crystal_system\": \"Cubic\", \"space_group\": 221}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.7924727446666661,
+      "formation_energy": -2.475389555333333,
+      "band_gap": 0.8071
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 221,
+      "mp_id": "mp-1183052"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_244595",
+    "source": "materials_project",
+    "composition": "AcNb3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183255\", \"composition\": \"AcNb3\", \"energy_above_hull\": 0.5851438668750001, \"formation_energy\": 0.5851438668750001, \"band_gap\": 0.0, \"crystal_system\": \"Cubic\", \"space_group\": 225}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.5851438668750001,
+      "formation_energy": 0.5851438668750001,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 225,
+      "mp_id": "mp-1183255"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_c91eeb",
+    "source": "materials_project",
+    "composition": "Ag(AsSe2)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215094\", \"composition\": \"Ag(AsSe2)3\", \"energy_above_hull\": 1.456981329120538, \"formation_energy\": 1.099221675177083, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 65}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.456981329120538,
+      "formation_energy": 1.099221675177083,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 65,
+      "mp_id": "mp-1215094"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_9ccd9c",
+    "source": "materials_project",
+    "composition": "Ag(BiSe2)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1207284\", \"composition\": \"Ag(BiSe2)3\", \"energy_above_hull\": 1.543587983999998, \"formation_energy\": 1.19318131217359, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 65}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.543587983999998,
+      "formation_energy": 1.19318131217359,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 65,
+      "mp_id": "mp-1207284"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_33c9fd",
+    "source": "materials_project",
+    "composition": "Ag(BiTe2)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1206226\", \"composition\": \"Ag(BiTe2)3\", \"energy_above_hull\": 1.325534068656253, \"formation_energy\": 1.105454834906254, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 65}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.325534068656253,
+      "formation_energy": 1.105454834906254,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 65,
+      "mp_id": "mp-1206226"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_6456df",
+    "source": "materials_project",
+    "composition": "Ag(NO)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1192809\", \"composition\": \"Ag(NO)3\", \"energy_above_hull\": 1.556993246071429, \"formation_energy\": 1.070804999404761, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 58}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.556993246071429,
+      "formation_energy": 1.070804999404761,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 58,
+      "mp_id": "mp-1192809"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_fc93a0",
+    "source": "materials_project",
+    "composition": "Ag(NO2)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-732005\", \"composition\": \"Ag(NO2)3\", \"energy_above_hull\": 0.553319284999995, \"formation_energy\": -0.095571144916667, \"band_gap\": 0.16560000000000002, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.553319284999995,
+      "formation_energy": -0.095571144916667,
+      "band_gap": 0.16560000000000002
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-732005"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_f900a3",
+    "source": "materials_project",
+    "composition": "Ag12SBr",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215080\", \"composition\": \"Ag12SBr\", \"energy_above_hull\": 1.707332522142857, \"formation_energy\": 1.563036622678573, \"band_gap\": 0.394499999999999, \"crystal_system\": \"Cubic\", \"space_group\": 221}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.707332522142857,
+      "formation_energy": 1.563036622678573,
+      "band_gap": 0.394499999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 221,
+      "mp_id": "mp-1215080"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_cc15d2",
+    "source": "materials_project",
+    "composition": "Ag12SI",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215073\", \"composition\": \"Ag12SI\", \"energy_above_hull\": 1.698985467142857, \"formation_energy\": 1.5820983019642871, \"band_gap\": 0.40240000000000004, \"crystal_system\": \"Cubic\", \"space_group\": 221}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.698985467142857,
+      "formation_energy": 1.5820983019642871,
+      "band_gap": 0.40240000000000004
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 221,
+      "mp_id": "mp-1215073"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_080a9e",
+    "source": "materials_project",
+    "composition": "Ag2AsO2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215023\", \"composition\": \"Ag2AsO2\", \"energy_above_hull\": 0.8128242867777791, \"formation_energy\": -0.152529003166665, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 70}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.8128242867777791,
+      "formation_energy": -0.152529003166665,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 70,
+      "mp_id": "mp-1215023"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_2a6a31",
+    "source": "materials_project",
+    "composition": "Ag2AsS4N",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1080805\", \"composition\": \"Ag2AsS4N\", \"energy_above_hull\": 0.6471504663541651, \"formation_energy\": 0.536835336542969, \"band_gap\": 0.0, \"crystal_system\": \"Tetragonal\", \"space_group\": 121}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.6471504663541651,
+      "formation_energy": 0.536835336542969,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 121,
+      "mp_id": "mp-1080805"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_947cce",
+    "source": "materials_project",
+    "composition": "Ag2Au3N6Cl17",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183003\", \"composition\": \"Ag2Au3N6Cl17\", \"energy_above_hull\": 0.879637937232125, \"formation_energy\": 0.6387050524999941, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 71}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.879637937232125,
+      "formation_energy": 0.6387050524999941,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 71,
+      "mp_id": "mp-1183003"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_9f134d",
+    "source": "materials_project",
+    "composition": "Ag2B8O13",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-851575\", \"composition\": \"Ag2B8O13\", \"energy_above_hull\": 1.2364586256521721, \"formation_energy\": -1.274197090072464, \"band_gap\": 0.414099999999999, \"crystal_system\": \"Triclinic\", \"space_group\": 1}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.2364586256521721,
+      "formation_energy": -1.274197090072464,
+      "band_gap": 0.414099999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 1,
+      "mp_id": "mp-851575"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_f211f7",
+    "source": "materials_project",
+    "composition": "Ag2BBr",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-631581\", \"composition\": \"Ag2BBr\", \"energy_above_hull\": 1.298749192291667, \"formation_energy\": 0.968938673125001, \"band_gap\": 0.0, \"crystal_system\": \"Cubic\", \"space_group\": 225}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.298749192291667,
+      "formation_energy": 0.968938673125001,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 225,
+      "mp_id": "mp-631581"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_5bf64a",
+    "source": "materials_project",
+    "composition": "Ag2C4Br3N",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-725087\", \"composition\": \"Ag2C4Br3N\", \"energy_above_hull\": 1.375624338499998, \"formation_energy\": 1.081002139666666, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 62}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.375624338499998,
+      "formation_energy": 1.081002139666666,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 62,
+      "mp_id": "mp-725087"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_136e32",
+    "source": "materials_project",
+    "composition": "Ag2C4I3N",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1199990\", \"composition\": \"Ag2C4I3N\", \"energy_above_hull\": 1.093198192625, \"formation_energy\": 0.8733057161666661, \"band_gap\": 1.0895, \"crystal_system\": \"Orthorhombic\", \"space_group\": 62}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.093198192625,
+      "formation_energy": 0.8733057161666661,
+      "band_gap": 1.0895
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 62,
+      "mp_id": "mp-1199990"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_b0f140",
+    "source": "materials_project",
+    "composition": "Ag2CSNClO4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-680067\", \"composition\": \"Ag2CSNClO4\", \"energy_above_hull\": 0.8971311421000001, \"formation_energy\": -0.246439743583333, \"band_gap\": 2.5318, \"crystal_system\": \"Monoclinic\", \"space_group\": 15}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.8971311421000001,
+      "formation_energy": -0.246439743583333,
+      "band_gap": 2.5318
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 15,
+      "mp_id": "mp-680067"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_38db07",
+    "source": "materials_project",
+    "composition": "Ag2H21N7(ClO4)2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-686742\", \"composition\": \"Ag2H21N7(ClO4)2\", \"energy_above_hull\": 0.7000302915416671, \"formation_energy\": -0.23794727636458302, \"band_gap\": 0.0, \"crystal_system\": \"Triclinic\", \"space_group\": 1}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.7000302915416671,
+      "formation_energy": -0.23794727636458302,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 1,
+      "mp_id": "mp-686742"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_9e5038",
+    "source": "materials_project",
+    "composition": "Ag2HgAu",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1095946\", \"composition\": \"Ag2HgAu\", \"energy_above_hull\": 0.9806254037499961, \"formation_energy\": 0.9339437568749951, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 71}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.9806254037499961,
+      "formation_energy": 0.9339437568749951,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 71,
+      "mp_id": "mp-1095946"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_e057c3",
+    "source": "materials_project",
+    "composition": "Ag2IOF",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1079461\", \"composition\": \"Ag2IOF\", \"energy_above_hull\": 0.5675847296666661, \"formation_energy\": -0.285906325666666, \"band_gap\": 0.0, \"crystal_system\": \"Monoclinic\", \"space_group\": 4}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.5675847296666661,
+      "formation_energy": -0.285906325666666,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 4,
+      "mp_id": "mp-1079461"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_e1301d",
+    "source": "materials_project",
+    "composition": "Ag2P2PbO7",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-667579\", \"composition\": \"Ag2P2PbO7\", \"energy_above_hull\": 1.7841441050347262, \"formation_energy\": -0.20260931938491902, \"band_gap\": 0.0, \"crystal_system\": \"Triclinic\", \"space_group\": 2}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.7841441050347262,
+      "formation_energy": -0.20260931938491902,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 2,
+      "mp_id": "mp-667579"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_6997f7",
+    "source": "materials_project",
+    "composition": "Ag2PO2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215041\", \"composition\": \"Ag2PO2\", \"energy_above_hull\": 0.791737381133335, \"formation_energy\": -0.5808117695952361, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 70}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.791737381133335,
+      "formation_energy": -0.5808117695952361,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 70,
+      "mp_id": "mp-1215041"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_be27b0",
+    "source": "materials_project",
+    "composition": "Ag2PdAu",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1096329\", \"composition\": \"Ag2PdAu\", \"energy_above_hull\": 1.754791473333334, \"formation_energy\": 1.658512415833346, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 71}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.754791473333334,
+      "formation_energy": 1.658512415833346,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 71,
+      "mp_id": "mp-1096329"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_b7f732",
+    "source": "materials_project",
+    "composition": "Ag2S(NO)2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-731792\", \"composition\": \"Ag2S(NO)2\", \"energy_above_hull\": 0.5567683335714271, \"formation_energy\": -0.12160238761904701, \"band_gap\": 0.012400000000000001, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.5567683335714271,
+      "formation_energy": -0.12160238761904701,
+      "band_gap": 0.012400000000000001
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-731792"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_40b5ca",
+    "source": "materials_project",
+    "composition": "Ag2S(NO)4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1192523\", \"composition\": \"Ag2S(NO)4\", \"energy_above_hull\": 0.5429990077272691, \"formation_energy\": -0.256663681439394, \"band_gap\": 0.0, \"crystal_system\": \"Tetragonal\", \"space_group\": 114}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.5429990077272691,
+      "formation_energy": -0.256663681439394,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 114,
+      "mp_id": "mp-1192523"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_7f32da",
+    "source": "materials_project",
+    "composition": "Ag2SO2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215021\", \"composition\": \"Ag2SO2\", \"energy_above_hull\": 0.830707877999998, \"formation_energy\": -0.11901113166666501, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 70}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.830707877999998,
+      "formation_energy": -0.11901113166666501,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 70,
+      "mp_id": "mp-1215021"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_0f4c59",
+    "source": "materials_project",
+    "composition": "Ag2Se",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1247874\", \"composition\": \"Ag2Se\", \"energy_above_hull\": 2.379682808888887, \"formation_energy\": 2.246344798368053, \"band_gap\": 0.027700000000000002, \"crystal_system\": \"Triclinic\", \"space_group\": 1}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 2.379682808888887,
+      "formation_energy": 2.246344798368053,
+      "band_gap": 0.027700000000000002
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 1,
+      "mp_id": "mp-1247874"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_13863f",
+    "source": "materials_project",
+    "composition": "Ag2SeO2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215036\", \"composition\": \"Ag2SeO2\", \"energy_above_hull\": 0.6044530208333321, \"formation_energy\": -0.09959967213541601, \"band_gap\": 0.15400000000000003, \"crystal_system\": \"Orthorhombic\", \"space_group\": 70}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.6044530208333321,
+      "formation_energy": -0.09959967213541601,
+      "band_gap": 0.15400000000000003
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 70,
+      "mp_id": "mp-1215036"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_b98476",
+    "source": "materials_project",
+    "composition": "Ag2Te",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1247858\", \"composition\": \"Ag2Te\", \"energy_above_hull\": 2.389718632500003, \"formation_energy\": 2.294528760833335, \"band_gap\": 0.06519999999999901, \"crystal_system\": \"Triclinic\", \"space_group\": 1}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 2.389718632500003,
+      "formation_energy": 2.294528760833335,
+      "band_gap": 0.06519999999999901
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 1,
+      "mp_id": "mp-1247858"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_e71a40",
+    "source": "materials_project",
+    "composition": "Ag3BiSe6",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215149\", \"composition\": \"Ag3BiSe6\", \"energy_above_hull\": 1.02355997466406, \"formation_energy\": 0.8404938300598981, \"band_gap\": 0.0942, \"crystal_system\": \"Orthorhombic\", \"space_group\": 65}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.02355997466406,
+      "formation_energy": 0.8404938300598981,
+      "band_gap": 0.0942
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 65,
+      "mp_id": "mp-1215149"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_f1e178",
+    "source": "materials_project",
+    "composition": "Ag3C2(NO3)2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1214975\", \"composition\": \"Ag3C2(NO3)2\", \"energy_above_hull\": 0.796153195384617, \"formation_energy\": -0.20508974076923, \"band_gap\": 0.0, \"crystal_system\": \"Monoclinic\", \"space_group\": 14}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.796153195384617,
+      "formation_energy": -0.20508974076923,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 14,
+      "mp_id": "mp-1214975"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_9afc4f",
+    "source": "materials_project",
+    "composition": "Ag3CN(ClO5)2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1198516\", \"composition\": \"Ag3CN(ClO5)2\", \"energy_above_hull\": 0.772520699103855, \"formation_energy\": 0.01231062117647, \"band_gap\": 1.356599999999999, \"crystal_system\": \"Monoclinic\", \"space_group\": 4}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.772520699103855,
+      "formation_energy": 0.01231062117647,
+      "band_gap": 1.356599999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 4,
+      "mp_id": "mp-1198516"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_5d3695",
+    "source": "materials_project",
+    "composition": "Ag3CS(NO2)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-562248\", \"composition\": \"Ag3CS(NO2)3\", \"energy_above_hull\": 0.5565124473809521, \"formation_energy\": -0.45080609803571503, \"band_gap\": 2.102999999999999, \"crystal_system\": \"Triclinic\", \"space_group\": 2}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.5565124473809521,
+      "formation_energy": -0.45080609803571503,
+      "band_gap": 2.102999999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 2,
+      "mp_id": "mp-562248"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_a3c288",
+    "source": "materials_project",
+    "composition": "Ag3HSN3O2",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215046\", \"composition\": \"Ag3HSN3O2\", \"energy_above_hull\": 0.7465635063108961, \"formation_energy\": 0.17117053737500001, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 57}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.7465635063108961,
+      "formation_energy": 0.17117053737500001,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 57,
+      "mp_id": "mp-1215046"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_45a6a8",
+    "source": "materials_project",
+    "composition": "Ag3Mo3AsO13",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1355420\", \"composition\": \"Ag3Mo3AsO13\", \"energy_above_hull\": 1.453038696062501, \"formation_energy\": -0.08734935337500001, \"band_gap\": 0.0, \"crystal_system\": \"Triclinic\", \"space_group\": 2}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.453038696062501,
+      "formation_energy": -0.08734935337500001,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 2,
+      "mp_id": "mp-1355420"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_ffa675",
+    "source": "materials_project",
+    "composition": "Ag3N",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-985299\", \"composition\": \"Ag3N\", \"energy_above_hull\": 0.9805402187500001, \"formation_energy\": 0.9805402187500001, \"band_gap\": 0.0, \"crystal_system\": \"Tetragonal\", \"space_group\": 139}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.9805402187500001,
+      "formation_energy": 0.9805402187500001,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Tetragonal",
+      "space_group": 139,
+      "mp_id": "mp-985299"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_5c7895",
+    "source": "materials_project",
+    "composition": "Ag3PO4",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-558154\", \"composition\": \"Ag3PO4\", \"energy_above_hull\": 1.223252239999999, \"formation_energy\": -0.186099944955356, \"band_gap\": 0.0, \"crystal_system\": \"Cubic\", \"space_group\": 223}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.223252239999999,
+      "formation_energy": -0.186099944955356,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 223,
+      "mp_id": "mp-558154"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_633f54",
+    "source": "materials_project",
+    "composition": "Ag3Ru",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183261\", \"composition\": \"Ag3Ru\", \"energy_above_hull\": 0.5244341787499991, \"formation_energy\": 0.5244341787499991, \"band_gap\": 0.0, \"crystal_system\": \"Hexagonal\", \"space_group\": 194}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.5244341787499991,
+      "formation_energy": 0.5244341787499991,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Hexagonal",
+      "space_group": 194,
+      "mp_id": "mp-1183261"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_418e75",
+    "source": "materials_project",
+    "composition": "Ag3S(NO)3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1182998\", \"composition\": \"Ag3S(NO)3\", \"energy_above_hull\": 0.863119526958332, \"formation_energy\": 0.1858752955, \"band_gap\": 0.0, \"crystal_system\": \"Orthorhombic\", \"space_group\": 57}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.863119526958332,
+      "formation_energy": 0.1858752955,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 57,
+      "mp_id": "mp-1182998"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_338c07",
+    "source": "materials_project",
+    "composition": "Ag3SI3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215087\", \"composition\": \"Ag3SI3\", \"energy_above_hull\": 1.1208775575, \"formation_energy\": 0.719940501785715, \"band_gap\": 0.279999999999999, \"crystal_system\": \"Triclinic\", \"space_group\": 1}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.1208775575,
+      "formation_energy": 0.719940501785715,
+      "band_gap": 0.279999999999999
+    },
+    "novelty_context": {
+      "crystal_system": "Triclinic",
+      "space_group": 1,
+      "mp_id": "mp-1215087"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_abf75b",
+    "source": "materials_project",
+    "composition": "Ag3SI3",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215096\", \"composition\": \"Ag3SI3\", \"energy_above_hull\": 1.115789063214286, \"formation_energy\": 0.7148520075000001, \"band_gap\": 0.36599999999999905, \"crystal_system\": \"Monoclinic\", \"space_group\": 8}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.115789063214286,
+      "formation_energy": 0.7148520075000001,
+      "band_gap": 0.36599999999999905
+    },
+    "novelty_context": {
+      "crystal_system": "Monoclinic",
+      "space_group": 8,
+      "mp_id": "mp-1215096"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_8c5eee",
+    "source": "materials_project",
+    "composition": "Ag3SbTe6",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1215084\", \"composition\": \"Ag3SbTe6\", \"energy_above_hull\": 1.160505323187496, \"formation_energy\": 0.854847681500001, \"band_gap\": 0.1705, \"crystal_system\": \"Orthorhombic\", \"space_group\": 65}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 1.160505323187496,
+      "formation_energy": 0.854847681500001,
+      "band_gap": 0.1705
+    },
+    "novelty_context": {
+      "crystal_system": "Orthorhombic",
+      "space_group": 65,
+      "mp_id": "mp-1215084"
+    }
+  },
+  {
+    "candidate_id": "mp_uns_5fcb90",
+    "source": "materials_project",
+    "composition": "Ag3W",
+    "structure_format": "json",
+    "structure_blob": "{\"mp_id\": \"mp-1183177\", \"composition\": \"Ag3W\", \"energy_above_hull\": 0.867660342500002, \"formation_energy\": 0.867660342500002, \"band_gap\": 0.0, \"crystal_system\": \"Cubic\", \"space_group\": 225}",
+    "target_properties": {
+      "_profile_type": "unstable",
+      "energy_above_hull": 0.867660342500002,
+      "formation_energy": 0.867660342500002,
+      "band_gap": 0.0
+    },
+    "novelty_context": {
+      "crystal_system": "Cubic",
+      "space_group": 225,
+      "mp_id": "mp-1183177"
+    }
+  }
+]
