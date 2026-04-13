@@ -23,6 +23,11 @@ DATA_DIR = PROJECT_ROOT / "data"
 if str(SRC_DIR) not in sys.path:
     sys.path.insert(0, str(SRC_DIR))
 
+# Ensure h31 experiment is importable (for test_h31_uas.py)
+H31_DIR = EXPERIMENTS_DIR / "h31_unified_anomaly_score"
+if str(H31_DIR) not in sys.path:
+    sys.path.insert(0, str(H31_DIR))
+
 
 # ===========================================================================
 # Experiment directory fixtures
@@ -103,6 +108,33 @@ def h27_dir() -> Path:
 def h28_dir() -> Path:
     """H28: Paper mills detection."""
     d = EXPERIMENTS_DIR / "h28_paper_mills"
+    if str(d) not in sys.path:
+        sys.path.insert(0, str(d))
+    return d
+
+
+@pytest.fixture(scope="session")
+def h31_dir() -> Path:
+    """H31: Unified Anomaly Score."""
+    d = EXPERIMENTS_DIR / "h31_unified_anomaly_score"
+    if str(d) not in sys.path:
+        sys.path.insert(0, str(d))
+    return d
+
+
+@pytest.fixture(scope="session")
+def h29_dir() -> Path:
+    """H29: Biological syndromes."""
+    d = EXPERIMENTS_DIR / "h29_biological_syndromes"
+    if str(d) not in sys.path:
+        sys.path.insert(0, str(d))
+    return d
+
+
+@pytest.fixture(scope="session")
+def h30_dir() -> Path:
+    """H30: Retracted validation."""
+    d = EXPERIMENTS_DIR / "h30_retracted_validation"
     if str(d) not in sys.path:
         sys.path.insert(0, str(d))
     return d
