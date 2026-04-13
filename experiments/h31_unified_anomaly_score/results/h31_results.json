@@ -1,0 +1,134 @@
+{
+  "experiment": "H31",
+  "description": "Unified Anomaly Score",
+  "summary": {
+    "n_datasets": 8,
+    "n_signals": 5,
+    "mean_uas": 0.5020071959592258,
+    "std_uas": 0.12718076135583609,
+    "max_uas": 0.71875,
+    "min_uas": 0.4100073597768826,
+    "n_fabricated": 3,
+    "n_retracted": 4,
+    "validation": {
+      "weighted_auc": 1.0,
+      "weighted_ap": 1.0,
+      "h30_retracted_auc": 0.0
+    }
+  },
+  "dataset_reports": [
+    {
+      "dataset": "h29_fab_shuffle",
+      "uas_score": 0.71875,
+      "signals": {
+        "h24_benford": 0.5,
+        "h25_ae": 0.5,
+        "h23_behavioral": 0.5,
+        "h29_syndrome": 1.0,
+        "h30_retracted": 1.0
+      },
+      "is_fabricated": true,
+      "is_retracted": false
+    },
+    {
+      "dataset": "h29_fab_random",
+      "uas_score": 0.7176654013015185,
+      "signals": {
+        "h24_benford": 0.5,
+        "h25_ae": 0.5,
+        "h23_behavioral": 0.5,
+        "h29_syndrome": 0.9956616052060737,
+        "h30_retracted": 1.0
+      },
+      "is_fabricated": true,
+      "is_retracted": false
+    },
+    {
+      "dataset": "h29_fab_noise_10pct",
+      "uas_score": 0.4707126071686809,
+      "signals": {
+        "h24_benford": 0.5,
+        "h25_ae": 0.5,
+        "h23_behavioral": 0.5,
+        "h29_syndrome": 0.007850428674723684,
+        "h30_retracted": 1.0
+      },
+      "is_fabricated": true,
+      "is_retracted": false
+    },
+    {
+      "dataset": "h29_real",
+      "uas_score": 0.46875,
+      "signals": {
+        "h24_benford": 0.5,
+        "h25_ae": 0.5,
+        "h23_behavioral": 0.5,
+        "h29_syndrome": 0.0,
+        "h30_retracted": 1.0
+      },
+      "is_fabricated": false,
+      "is_retracted": false
+    },
+    {
+      "dataset": "PBMC3k_reference",
+      "uas_score": 0.41011994984894024,
+      "signals": {
+        "h24_benford": 0.5,
+        "h25_ae": 0.5,
+        "h23_behavioral": 0.5,
+        "h29_syndrome": 0.5150294391075302,
+        "h30_retracted": 0.0006004803843074459
+      },
+      "is_fabricated": false,
+      "is_retracted": true
+    },
+    {
+      "dataset": "GSE160269_Bcell",
+      "uas_score": 0.4100448898009018,
+      "signals": {
+        "h24_benford": 0.5,
+        "h25_ae": 0.5,
+        "h23_behavioral": 0.5,
+        "h29_syndrome": 0.5150294391075302,
+        "h30_retracted": 0.00020016012810248197
+      },
+      "is_fabricated": false,
+      "is_retracted": true
+    },
+    {
+      "dataset": "GSE160269_Myeloid",
+      "uas_score": 0.4100073597768826,
+      "signals": {
+        "h24_benford": 0.5,
+        "h25_ae": 0.5,
+        "h23_behavioral": 0.5,
+        "h29_syndrome": 0.5150294391075302,
+        "h30_retracted": 0.0
+      },
+      "is_fabricated": false,
+      "is_retracted": true
+    },
+    {
+      "dataset": "GSE160269_Tcell",
+      "uas_score": 0.4100073597768826,
+      "signals": {
+        "h24_benford": 0.5,
+        "h25_ae": 0.5,
+        "h23_behavioral": 0.5,
+        "h29_syndrome": 0.5150294391075302,
+        "h30_retracted": 0.0
+      },
+      "is_fabricated": false,
+      "is_retracted": true
+    }
+  ],
+  "weights": {
+    "benford": 0.15,
+    "ae_reconstruction": 0.15,
+    "behavioral": 0.15,
+    "syndrome": 0.2,
+    "pvalue_cluster": 0.1,
+    "metadata": 0.1,
+    "cross_dataset": 0.15
+  }
+}
