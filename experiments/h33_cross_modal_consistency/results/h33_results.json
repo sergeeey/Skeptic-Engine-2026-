@@ -1,0 +1,91 @@
+{
+  "experiment": "H33",
+  "description": "Cross-Modal Consistency Detection",
+  "summary": {
+    "n_real_datasets": 1,
+    "n_fabricated_datasets": 1,
+    "n_partial_levels": 4,
+    "overall_separation": 0.38261740284161727,
+    "separations": {
+      "gene_protein_correlation": 0.8384820882088208,
+      "rank_consistency": 0.6562828282828282,
+      "pathway_concordance": 0.23764339144172886,
+      "sample_clustering_agreement": 0.0007277550269207296,
+      "effect_size_ratio": 0.1799509512477876
+    },
+    "classification_accuracy": 0.5,
+    "corruption_trends": {
+      "gene_protein_correlation": {
+        "slope": -1.239132193219322,
+        "p_value": 1.1799475547554756
+      },
+      "rank_consistency": {
+        "slope": -1.050488888888889,
+        "p_value": 0.9501939393939396
+      },
+      "pathway_concordance": {
+        "slope": -0.5145155646189157,
+        "p_value": 0.7255572661746221
+      },
+      "sample_clustering_agreement": {
+        "slope": -0.08123579118323562,
+        "p_value": 0.07418724224317746
+      },
+      "effect_size_ratio": {
+        "slope": 0.2052159026491722,
+        "p_value": 0.23430072472295316
+      }
+    },
+    "conclusion": "SUCCESS"
+  },
+  "dataset_reports": [
+    {
+      "dataset_type": "real",
+      "gene_protein_correlation": 0.8422454245424541,
+      "rank_consistency": 0.6584,
+      "pathway_concordance": 0.5722607588549224,
+      "sample_clustering_agreement": -0.027538810028405983,
+      "effect_size_ratio": 0.5099936085788934
+    },
+    {
+      "dataset_type": "fabricated",
+      "gene_protein_correlation": 0.0037633363336333626,
+      "rank_consistency": 0.002117171717171715,
+      "pathway_concordance": 0.3346173674131936,
+      "sample_clustering_agreement": -0.026811055001485253,
+      "effect_size_ratio": 0.689944559826681
+    },
+    {
+      "dataset_type": "partial_0.2",
+      "gene_protein_correlation": 0.9073980198019802,
+      "rank_consistency": 0.7435474747474748,
+      "pathway_concordance": 0.6561760732670382,
+      "sample_clustering_agreement": 0.04896632864586251,
+      "effect_size_ratio": 0.31793965475347014
+    },
+    {
+      "dataset_type": "partial_0.4",
+      "gene_protein_correlation": 0.7194539453945394,
+      "rank_consistency": 0.5320323232323233,
+      "pathway_concordance": 0.4873040235828058,
+      "sample_clustering_agreement": 0.0571477182502174,
+      "effect_size_ratio": 0.27248964162343287
+    },
+    {
+      "dataset_type": "partial_0.6",
+      "gene_protein_correlation": 0.4403189918991899,
+      "rank_consistency": 0.3054787878787879,
+      "pathway_concordance": 0.3811762008431749,
+      "sample_clustering_agreement": 0.021457448654571217,
+      "effect_size_ratio": 0.3174379061287875
+    },
+    {
+      "dataset_type": "partial_0.8",
+      "gene_protein_correlation": 0.17435487548754872,
+      "rank_consistency": 0.11873939393939395,
+      "pathway_concordance": 0.34854163776763797,
+      "sample_clustering_agreement": 0.006705891055587484,
+      "effect_size_ratio": 0.4397675016844667
+    }
+  ]
+}
