@@ -29,7 +29,18 @@ dependencies = [
 h24 = ["matplotlib", "h5py"]
 h25 = ["torch", "pandas", "matplotlib"]
 h4 = ["ripser"]
-all = ["torch", "pandas", "matplotlib", "h5py", "ripser"]
+mrm = ["pymatgen>=2024"]
+all = ["torch", "pandas", "matplotlib", "h5py", "ripser", "pymatgen>=2024"]
+dev = [
+    "pytest>=7.4,<9",
+    "pytest-cov>=4.1,<6",
+    "pytest-mock>=3.11,<4",
+    "ruff>=0.1.9,<0.5",
+    "mypy>=1.7,<2",
+    "pre-commit>=3.5,<4",
+    "build>=1.0,<2",
+    "twine>=4.0,<6",
+]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -43,3 +54,85 @@ Documentation = "https://doi.org/10.5281/zenodo.19238786"
 
 [project.scripts]
 skeptic-toolkit = "skeptic_toolkit.cli:main"
+skeptic-mrm = "skeptic_mrm.cli:main"
+discovery-engine = "discovery_engine.cli:main"
+
+# ============================================================
+# Dev Tool Configuration
+# ============================================================
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    "E",     # pycodestyle errors
+    "W",     # pycodestyle warnings
+    "F",     # pyflakes
+    "I",     # isort
+    "N",     # pep8-naming
+    "UP",    # pyupgrade
+    "B",     # flake8-bugbear
+    "SIM",   # flake8-simplify
+    "PTH",   # flake8-use-pathlib
+    "RUF",   # ruff-specific rules
+]
+ignore = [
+    "E501",  # line length (handled by formatter)
+    "B008",  # do not perform function calls in argument defaults (common in FastAPI)
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101", "PLR2004"]  # allow assert statements and magic numbers in tests
+"experiments/**/*.py" = ["S101", "E402"]  # experimental code may have relaxed constraints
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",
+    "--tb=short",
+    "--strict-markers",
+    "--strict-config",
+    "--cov=src",
+    "--cov-report=term-missing",
+    "--cov-report=html:htmlcov",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "experiment: marks tests as experiment-specific (may require data files)",
+]
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "src"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = [
+    "scipy.*",
+    "sklearn.*",
+    "torch.*",
+    "h5py",
+    "ripser",
+    "pymatgen.*",
+]
+ignore_missing_imports = true
