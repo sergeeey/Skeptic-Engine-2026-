@@ -232,7 +232,7 @@ class TestPcurveTestStat:
 
 
 class TestExtractPvaluesRegex:
-    """Test extract_pvalues_regex from behavioral_features.py.
+    r"""Test extract_pvalues_regex from behavioral_features.py.
 
     NOTE: The regex pattern r"p\s*[<>=]\s*\.?(\d+(?:\.\d+)?)" has a known
     quirk: for "p < .001", the \.? optionally matches the dot, then (\d+)
@@ -278,7 +278,7 @@ class TestExtractPvaluesRegex:
         assert result == [0.001]
 
     def test_less_than_leading_dot_actual_behavior(self) -> None:
-        """Extract from 'p < .001' — regex quirk: returns [1.0].
+        r"""Extract from 'p < .001' — regex quirk: returns [1.0].
 
         The pattern \.?(\d+) matches dot then "001" → 1.0 (leading zeros).
         This is a known limitation of the regex.
@@ -567,9 +567,9 @@ class TestNcbiRequest:
         mock_urlopen: MagicMock,
     ) -> None:
         """Should retry on failure and succeed on second attempt."""
-        from skeptic_engine.utils.io_helpers import ncbi_request
-
         from urllib.error import HTTPError
+
+        from skeptic_engine.utils.io_helpers import ncbi_request
 
         # First call fails, second succeeds
         mock_response = MagicMock()
@@ -595,9 +595,9 @@ class TestNcbiRequest:
         mock_urlopen: MagicMock,
     ) -> None:
         """Should return None after all retries fail."""
-        from skeptic_engine.utils.io_helpers import ncbi_request
-
         from urllib.error import HTTPError
+
+        from skeptic_engine.utils.io_helpers import ncbi_request
 
         mock_urlopen.side_effect = HTTPError("url", 500, "Error", {}, None)
 
@@ -651,9 +651,9 @@ class TestNcbiRequest:
         mock_urlopen: MagicMock,
     ) -> None:
         """Should use exponential backoff on retries."""
-        from skeptic_engine.utils.io_helpers import ncbi_request
-
         from urllib.error import HTTPError
+
+        from skeptic_engine.utils.io_helpers import ncbi_request
 
         mock_urlopen.side_effect = HTTPError("url", 500, "Error", {}, None)
 
@@ -772,8 +772,8 @@ class TestRunCvEvaluate:
             model = MagicMock()
 
             # Dynamic predict_proba that returns correct size
-            def dynamic_predict_proba(X: np.ndarray) -> np.ndarray:
-                n_samples = len(X)
+            def dynamic_predict_proba(x: np.ndarray) -> np.ndarray:
+                n_samples = len(x)
                 half = n_samples // 2
                 return np.array(
                     [[0.7, 0.3]] * half + [[0.3, 0.7]] * (n_samples - half)
@@ -818,8 +818,8 @@ class TestRunCvEvaluate:
 
         def factory() -> MagicMock:
             model = MagicMock()
-            def dynamic_predict_proba(X: np.ndarray) -> np.ndarray:
-                n_samples = len(X)
+            def dynamic_predict_proba(x: np.ndarray) -> np.ndarray:
+                n_samples = len(x)
                 half = n_samples // 2
                 return np.array(
                     [[0.7, 0.3]] * half + [[0.3, 0.7]] * (n_samples - half)
@@ -830,7 +830,7 @@ class TestRunCvEvaluate:
         run_cv_evaluate(x, y, factory, n_splits=2, clean_fn=clean_fn)
 
         # clean_fn called for each fold: train + test = 2 calls per fold
-        assert len(clean_calls) == 4  # 2 folds × 2 (train + test)
+        assert len(clean_calls) == 4  # 2 folds x 2 (train + test)
 
     def test_cv_without_clean_fn(self) -> None:
         """Should work without clean_fn."""
@@ -842,8 +842,8 @@ class TestRunCvEvaluate:
 
         def factory() -> MagicMock:
             model = MagicMock()
-            def dynamic_predict_proba(X: np.ndarray) -> np.ndarray:
-                n_samples = len(X)
+            def dynamic_predict_proba(x: np.ndarray) -> np.ndarray:
+                n_samples = len(x)
                 half = n_samples // 2
                 return np.array(
                     [[0.7, 0.3]] * half + [[0.3, 0.7]] * (n_samples - half)
@@ -1102,7 +1102,7 @@ class TestTrainIsolationForest:
 
     def test_deterministic_results(self) -> None:
         """Same data + seed → same model predictions."""
-        from skeptic_engine.utils.anomaly_detection import train_isolation_forest, score_anomalies
+        from skeptic_engine.utils.anomaly_detection import score_anomalies, train_isolation_forest
 
         rng = np.random.default_rng(42)
         features = rng.random((50, 5))
@@ -1121,7 +1121,7 @@ class TestScoreAnomalies:
 
     def test_score_shape(self) -> None:
         """Output shape should match number of samples."""
-        from skeptic_engine.utils.anomaly_detection import train_isolation_forest, score_anomalies
+        from skeptic_engine.utils.anomaly_detection import score_anomalies, train_isolation_forest
 
         rng = np.random.default_rng(42)
         features = rng.random((30, 5))
@@ -1133,7 +1133,7 @@ class TestScoreAnomalies:
 
     def test_scores_are_finite(self) -> None:
         """All scores should be finite."""
-        from skeptic_engine.utils.anomaly_detection import train_isolation_forest, score_anomalies
+        from skeptic_engine.utils.anomaly_detection import score_anomalies, train_isolation_forest
 
         rng = np.random.default_rng(42)
         features = rng.random((50, 8))
@@ -1145,7 +1145,7 @@ class TestScoreAnomalies:
 
     def test_score_new_data(self) -> None:
         """Should be able to score new (unseen) data."""
-        from skeptic_engine.utils.anomaly_detection import train_isolation_forest, score_anomalies
+        from skeptic_engine.utils.anomaly_detection import score_anomalies, train_isolation_forest
 
         rng = np.random.default_rng(42)
         train_data = rng.random((50, 5))
@@ -1159,7 +1159,7 @@ class TestScoreAnomalies:
 
     def test_scores_vary(self) -> None:
         """Scores should have some variance."""
-        from skeptic_engine.utils.anomaly_detection import train_isolation_forest, score_anomalies
+        from skeptic_engine.utils.anomaly_detection import score_anomalies, train_isolation_forest
 
         rng = np.random.default_rng(42)
         features = rng.random((100, 5))

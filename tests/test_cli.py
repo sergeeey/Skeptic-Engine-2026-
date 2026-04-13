@@ -12,7 +12,6 @@ Covers:
 
 from __future__ import annotations
 
-import sys
 from unittest.mock import MagicMock, patch
 
 import pytest
@@ -649,9 +648,9 @@ class TestErrorHandling:
 
     def test_main_handles_click_exit(self) -> None:
         """main() should handle Click Exit exception."""
-        from discovery_engine.cli import main
-
         import click
+
+        from discovery_engine.cli import main
 
         with patch("discovery_engine.cli.cli", side_effect=click.exceptions.Exit(0)):
             with pytest.raises(SystemExit) as exc_info:
