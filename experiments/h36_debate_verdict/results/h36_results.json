@@ -1,0 +1,106 @@
+{
+  "experiment": "H36",
+  "description": "Debate-Driven Verdict",
+  "results": {
+    "clear_clean": {
+      "status": "CLEAN",
+      "confidence": 0.6,
+      "prosecution_score": 0.0,
+      "defense_score": 1.0,
+      "key_evidence": [
+        {
+          "claim": "Digit distribution is consistent with expectations",
+          "evidence": "MACE=0.020 < 0.05",
+          "weight": 0.98,
+          "category": "benford"
+        },
+        {
+          "claim": "Low calibrated anomaly probability",
+          "evidence": "Calibrated Score=0.120",
+          "weight": 0.88,
+          "category": "calibration"
+        },
+        {
+          "claim": "Strong consistency across modalities",
+          "evidence": "Correlation=0.750 > 0.5",
+          "weight": 0.75,
+          "category": "cross_modal"
+        }
+      ],
+      "unresolved_points": [],
+      "explanation": "Prosecution scored 0.00 vs Defense 3.91. Verdict: CLEAN (confidence 0.60)."
+    },
+    "suspicious": {
+      "status": "ANOMALOUS",
+      "confidence": 0.8123209169054442,
+      "prosecution_score": 0.6561604584527221,
+      "defense_score": 0.3438395415472779,
+      "key_evidence": [
+        {
+          "claim": "Significant temporal drift in reporting patterns",
+          "evidence": "Slope=0.0400, p=0.0050",
+          "weight": 0.995,
+          "category": "temporal"
+        },
+        {
+          "claim": "Significant deviation from Benford's Law",
+          "evidence": "MACE=0.150 > 0.1 threshold",
+          "weight": 0.15,
+          "category": "benford"
+        }
+      ],
+      "unresolved_points": [],
+      "explanation": "Prosecution scored 1.15 vs Defense 0.60. Verdict: ANOMALOUS (confidence 0.81)."
+    },
+    "clear_anomalous": {
+      "status": "ANOMALOUS",
+      "confidence": 1.0,
+      "prosecution_score": 1.0,
+      "defense_score": 0.0,
+      "key_evidence": [
+        {
+          "claim": "Significant temporal drift in reporting patterns",
+          "evidence": "Slope=0.1200, p=0.0001",
+          "weight": 0.9999,
+          "category": "temporal"
+        },
+        {
+          "claim": "High calibrated anomaly probability",
+          "evidence": "Calibrated Score=0.960",
+          "weight": 0.96,
+          "category": "calibration"
+        },
+        {
+          "claim": "Low consistency across data modalities",
+          "evidence": "Correlation=0.050 < 0.2",
+          "weight": 0.95,
+          "category": "cross_modal"
+        }
+      ],
+      "unresolved_points": [],
+      "explanation": "Prosecution scored 4.01 vs Defense 0.00. Verdict: ANOMALOUS (confidence 1.00)."
+    },
+    "edge_case": {
+      "status": "CLEAN",
+      "confidence": 0.6,
+      "prosecution_score": 0.0,
+      "defense_score": 1.0,
+      "key_evidence": [
+        {
+          "claim": "No significant trend over time",
+          "evidence": "p=0.120 > 0.1",
+          "weight": 0.7,
+          "category": "temporal"
+        }
+      ],
+      "unresolved_points": [],
+      "explanation": "Prosecution scored 0.00 vs Defense 0.70. Verdict: CLEAN (confidence 0.60)."
+    }
+  },
+  "summary": {
+    "clear_clean": "CLEAN",
+    "suspicious": "ANOMALOUS",
+    "clear_anomalous": "ANOMALOUS",
+    "edge_case": "CLEAN"
+  }
+}
