@@ -1,0 +1,381 @@
+{
+  "experiment": "H32",
+  "description": "Temporal P-Hacking Detection",
+  "summary": {
+    "n_authors": 10,
+    "n_flagged": 5,
+    "n_drift_detected": 5,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "feature_drift_counts": {
+      "frac_just_below_05": 5,
+      "frac_significant": 5,
+      "pvalue_clustering": 4,
+      "mean_p": 3
+    }
+  },
+  "author_reports": [
+    {
+      "author_id": "phacking_author_1",
+      "n_papers": 14,
+      "n_pvalues": 89,
+      "drift_detected": true,
+      "flag": true,
+      "max_drift_p_value": 5.247547341102887e-08,
+      "n_significant_drifts": 3,
+      "features": [
+        {
+          "name": "frac_just_below_05",
+          "slope": 0.044698238269666846,
+          "p_value": 5.247547341102887e-08,
+          "is_significant": true
+        },
+        {
+          "name": "frac_significant",
+          "slope": 0.042775161346589916,
+          "p_value": 1.6433703770024621e-06,
+          "is_significant": true
+        },
+        {
+          "name": "mean_p",
+          "slope": -0.015035132822626016,
+          "p_value": 0.08115417336319042,
+          "is_significant": false
+        },
+        {
+          "name": "pvalue_clustering",
+          "slope": 0.09816849816849818,
+          "p_value": 0.00014852945994858757,
+          "is_significant": true
+        }
+      ],
+      "true_label": "p-hacking"
+    },
+    {
+      "author_id": "phacking_author_2",
+      "n_papers": 14,
+      "n_pvalues": 95,
+      "drift_detected": true,
+      "flag": true,
+      "max_drift_p_value": 4.362405559010796e-08,
+      "n_significant_drifts": 4,
+      "features": [
+        {
+          "name": "frac_just_below_05",
+          "slope": 0.042146345717774286,
+          "p_value": 4.362405559010796e-08,
+          "is_significant": true
+        },
+        {
+          "name": "frac_significant",
+          "slope": 0.04760160474446189,
+          "p_value": 9.954175811510702e-06,
+          "is_significant": true
+        },
+        {
+          "name": "mean_p",
+          "slope": -0.022951424707421397,
+          "p_value": 0.005434638836237848,
+          "is_significant": true
+        },
+        {
+          "name": "pvalue_clustering",
+          "slope": 0.09065934065934064,
+          "p_value": 0.00022331079338611115,
+          "is_significant": true
+        }
+      ],
+      "true_label": "p-hacking"
+    },
+    {
+      "author_id": "phacking_author_3",
+      "n_papers": 14,
+      "n_pvalues": 76,
+      "drift_detected": true,
+      "flag": true,
+      "max_drift_p_value": 1.768421254211283e-05,
+      "n_significant_drifts": 4,
+      "features": [
+        {
+          "name": "frac_just_below_05",
+          "slope": 0.03945665445665445,
+          "p_value": 1.768421254211283e-05,
+          "is_significant": true
+        },
+        {
+          "name": "frac_significant",
+          "slope": 0.041379731379731374,
+          "p_value": 0.00022812492639434634,
+          "is_significant": true
+        },
+        {
+          "name": "mean_p",
+          "slope": -0.029180575163807624,
+          "p_value": 0.00811354165969247,
+          "is_significant": true
+        },
+        {
+          "name": "pvalue_clustering",
+          "slope": 0.09395604395604396,
+          "p_value": 0.0009178616766059022,
+          "is_significant": true
+        }
+      ],
+      "true_label": "p-hacking"
+    },
+    {
+      "author_id": "phacking_author_4",
+      "n_papers": 14,
+      "n_pvalues": 79,
+      "drift_detected": true,
+      "flag": true,
+      "max_drift_p_value": 0.0001110060325121287,
+      "n_significant_drifts": 2,
+      "features": [
+        {
+          "name": "frac_just_below_05",
+          "slope": 0.03669457526600383,
+          "p_value": 0.0001110060325121287,
+          "is_significant": true
+        },
+        {
+          "name": "frac_significant",
+          "slope": 0.03530786673643816,
+          "p_value": 0.0013726734641262839,
+          "is_significant": true
+        },
+        {
+          "name": "mean_p",
+          "slope": -0.01970670635776536,
+          "p_value": 0.03389534664598082,
+          "is_significant": false
+        },
+        {
+          "name": "pvalue_clustering",
+          "slope": 0.06538461538461537,
+          "p_value": 0.02562735617290257,
+          "is_significant": false
+        }
+      ],
+      "true_label": "p-hacking"
+    },
+    {
+      "author_id": "phacking_author_5",
+      "n_papers": 14,
+      "n_pvalues": 87,
+      "drift_detected": true,
+      "flag": true,
+      "max_drift_p_value": 2.875028928706058e-06,
+      "n_significant_drifts": 4,
+      "features": [
+        {
+          "name": "frac_just_below_05",
+          "slope": 0.03789290075004361,
+          "p_value": 2.875028928706058e-06,
+          "is_significant": true
+        },
+        {
+          "name": "frac_significant",
+          "slope": 0.03232513518227804,
+          "p_value": 7.257790712356105e-05,
+          "is_significant": true
+        },
+        {
+          "name": "mean_p",
+          "slope": -0.028979933726473412,
+          "p_value": 0.0005094885579027819,
+          "is_significant": true
+        },
+        {
+          "name": "pvalue_clustering",
+          "slope": 0.0912087912087912,
+          "p_value": 0.00031295976849665674,
+          "is_significant": true
+        }
+      ],
+      "true_label": "p-hacking"
+    },
+    {
+      "author_id": "clean_author_1",
+      "n_papers": 14,
+      "n_pvalues": 85,
+      "drift_detected": false,
+      "flag": false,
+      "max_drift_p_value": 0.052024283156839046,
+      "n_significant_drifts": 0,
+      "features": [
+        {
+          "name": "frac_just_below_05",
+          "slope": -0.0021978021978021974,
+          "p_value": 0.4069221033345374,
+          "is_significant": false
+        },
+        {
+          "name": "frac_significant",
+          "slope": 0.004521193092621664,
+          "p_value": 0.3840088126836606,
+          "is_significant": false
+        },
+        {
+          "name": "mean_p",
+          "slope": -0.015513953105116591,
+          "p_value": 0.052024283156839046,
+          "is_significant": false
+        },
+        {
+          "name": "pvalue_clustering",
+          "slope": -0.015384615384615385,
+          "p_value": 0.4069221033345317,
+          "is_significant": false
+        }
+      ],
+      "true_label": "clean"
+    },
+    {
+      "author_id": "clean_author_2",
+      "n_papers": 14,
+      "n_pvalues": 84,
+      "drift_detected": false,
+      "flag": false,
+      "max_drift_p_value": 0.31278115072138746,
+      "n_significant_drifts": 0,
+      "features": [
+        {
+          "name": "frac_just_below_05",
+          "slope": 0.0016047444618873187,
+          "p_value": 0.6226655925527844,
+          "is_significant": false
+        },
+        {
+          "name": "frac_significant",
+          "slope": 0.004186289900575614,
+          "p_value": 0.31278115072138746,
+          "is_significant": false
+        },
+        {
+          "name": "mean_p",
+          "slope": 0.00556482704926477,
+          "p_value": 0.5190066037209806,
+          "is_significant": false
+        },
+        {
+          "name": "pvalue_clustering",
+          "slope": 0.01758241758241758,
+          "p_value": 0.4873949362586183,
+          "is_significant": false
+        }
+      ],
+      "true_label": "clean"
+    },
+    {
+      "author_id": "clean_author_3",
+      "n_papers": 14,
+      "n_pvalues": 93,
+      "drift_detected": false,
+      "flag": false,
+      "max_drift_p_value": 0.10886430106296374,
+      "n_significant_drifts": 0,
+      "features": [
+        {
+          "name": "frac_just_below_05",
+          "slope": 0.0031746031746031746,
+          "p_value": 0.10886430106296374,
+          "is_significant": false
+        },
+        {
+          "name": "frac_significant",
+          "slope": 0.003205128205128205,
+          "p_value": 0.5797519520167638,
+          "is_significant": false
+        },
+        {
+          "name": "mean_p",
+          "slope": -0.00605926738723006,
+          "p_value": 0.4886953446748481,
+          "is_significant": false
+        },
+        {
+          "name": "pvalue_clustering",
+          "slope": 0.028571428571428577,
+          "p_value": 0.1088643010629694,
+          "is_significant": false
+        }
+      ],
+      "true_label": "clean"
+    },
+    {
+      "author_id": "clean_author_4",
+      "n_papers": 14,
+      "n_pvalues": 79,
+      "drift_detected": false,
+      "flag": false,
+      "max_drift_p_value": 0.10886430106295886,
+      "n_significant_drifts": 0,
+      "features": [
+        {
+          "name": "frac_just_below_05",
+          "slope": -0.007142857142857143,
+          "p_value": 0.10886430106295886,
+          "is_significant": false
+        },
+        {
+          "name": "frac_significant",
+          "slope": -0.007142857142857143,
+          "p_value": 0.10886430106295886,
+          "is_significant": false
+        },
+        {
+          "name": "mean_p",
+          "slope": 0.006005317422124788,
+          "p_value": 0.5514687546642336,
+          "is_significant": false
+        },
+        {
+          "name": "pvalue_clustering",
+          "slope": -0.02857142857142857,
+          "p_value": 0.10886430106295886,
+          "is_significant": false
+        }
+      ],
+      "true_label": "clean"
+    },
+    {
+      "author_id": "clean_author_5",
+      "n_papers": 14,
+      "n_pvalues": 89,
+      "drift_detected": false,
+      "flag": false,
+      "max_drift_p_value": 0.290952067723238,
+      "n_significant_drifts": 0,
+      "features": [
+        {
+          "name": "frac_just_below_05",
+          "slope": 0.007142857142857141,
+          "p_value": 0.33438738997796236,
+          "is_significant": false
+        },
+        {
+          "name": "frac_significant",
+          "slope": 0.0033882783882783858,
+          "p_value": 0.6836597126611705,
+          "is_significant": false
+        },
+        {
+          "name": "mean_p",
+          "slope": -0.0030275544147522937,
+          "p_value": 0.7207247086594659,
+          "is_significant": false
+        },
+        {
+          "name": "pvalue_clustering",
+          "slope": 0.026373626373626377,
+          "p_value": 0.290952067723238,
+          "is_significant": false
+        }
+      ],
+      "true_label": "clean"
+    }
+  ]
+}
