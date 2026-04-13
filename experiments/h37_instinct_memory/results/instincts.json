@@ -1,0 +1,30 @@
+[
+  {
+    "trigger": "scRNA-seq UMI counts",
+    "action": "Run Benford check first (fd_1 != 0.3)",
+    "confidence": 0.95,
+    "scope": "scRNA-seq",
+    "activation_count": 0
+  },
+  {
+    "trigger": "Proteomics correlation",
+    "action": "Prioritize Cross-Modal Consistency",
+    "confidence": 0.88,
+    "scope": "proteomics",
+    "activation_count": 0
+  },
+  {
+    "trigger": "P-value sequences",
+    "action": "Check temporal drift (frac_just_below_05)",
+    "confidence": 0.92,
+    "scope": "meta-analysis",
+    "activation_count": 0
+  },
+  {
+    "trigger": "Small sample size",
+    "action": "Lower confidence thresholds",
+    "confidence": 0.7,
+    "scope": "global",
+    "activation_count": 0
+  }
+]
