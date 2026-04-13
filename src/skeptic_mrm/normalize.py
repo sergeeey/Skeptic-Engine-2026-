@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import re
 from dataclasses import dataclass, field
+from typing import Any
 
 from skeptic_mrm.schemas.material_candidate import MaterialCandidate
 
@@ -19,7 +20,7 @@ class NormalizationReport:
     deduplicated: int
     rejections: list[dict[str, str]] = field(default_factory=list)  # {candidate_id, reason}
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return {
             "total_input": self.total_input,
             "kept": self.kept,

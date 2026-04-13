@@ -74,48 +74,48 @@ def extract_behavioral_features(p_values: Sequence[float] | np.ndarray) -> np.nd
 
     p = np.clip(p_sequence, 1e-15, 1.0)
 
-    features = []
+    features: list[float] = []
 
     # 1-3: Basic p-value statistics
-    features.append(np.mean(p))  # mean p-value
-    features.append(np.std(p) if n > 1 else 0)  # std of p-values
-    features.append(np.min(p))  # minimum p-value
+    features.append(float(np.mean(p)))  # mean p-value
+    features.append(float(np.std(p)) if n > 1 else 0.0)  # std of p-values
+    features.append(float(np.min(p)))  # minimum p-value
 
     # 4-6: Distribution shape
-    features.append((p < 0.05).sum() / n)  # fraction significant
+    features.append(float((p < 0.05).sum() / n))  # fraction significant
     features.append(
-        (p < 0.10).sum() / n - (p < 0.05).sum() / n
+        float((p < 0.10).sum() / n - (p < 0.05).sum() / n)
     )  # fraction in "gray zone" 0.05-0.10
-    features.append(((p > 0.04) & (p < 0.05)).sum() / max(n, 1))  # fraction just below 0.05
+    features.append(float(((p > 0.04) & (p < 0.05)).sum() / max(n, 1)))  # fraction just below 0.05
 
     # 7-9: Sequence dynamics (fraud-style: velocity, direction changes)
     if n > 1:
         diffs = np.diff(p)
-        features.append(np.mean(diffs))  # mean delta (trend)
-        features.append(np.std(diffs))  # volatility of deltas
-        features.append((diffs < 0).sum() / len(diffs))  # fraction of decreasing steps
+        features.append(float(np.mean(diffs)))  # mean delta (trend)
+        features.append(float(np.std(diffs)))  # volatility of deltas
+        features.append(float((diffs < 0).sum() / len(diffs)))  # fraction of decreasing steps
     else:
-        features.extend([0, 0, 0])
+        features.extend([0.0, 0.0, 0.0])
 
     # 10-12: Terminal behavior (fraud: what happens at the end?)
-    features.append(p[-1])  # final p-value
+    features.append(float(p[-1]))  # final p-value
     features.append(1.0 if p[-1] < 0.05 else 0.0)  # did they "succeed"?
-    features.append(p[-1] - p[0] if n > 1 else 0)  # total drift
+    features.append(float(p[-1] - p[0]) if n > 1 else 0.0)  # total drift
 
     # 13-15: Entropy and regularity
     hist, _ = np.histogram(p, bins=10, range=(0, 1))
     hist_norm = hist / max(hist.sum(), 1)
     entropy = -np.sum(hist_norm[hist_norm > 0] * np.log2(hist_norm[hist_norm > 0]))
-    features.append(entropy)  # Shannon entropy of p-distribution
-    features.append(n)  # sequence length
-    features.append(np.log1p(n))  # log sequence length
+    features.append(float(entropy))  # Shannon entropy of p-distribution
+    features.append(float(n))  # sequence length
+    features.append(float(np.log1p(n)))  # log sequence length
 
     # 16-18: Suspicious patterns
     features.append(
-        np.sum(np.abs(np.diff(np.sign(np.diff(p)))) > 0) / max(n - 2, 1) if n > 2 else 0
+        float(np.sum(np.abs(np.diff(np.sign(np.diff(p)))) > 0) / max(n - 2, 1)) if n > 2 else 0.0
     )  # direction change rate
-    features.append(np.max(np.abs(np.diff(p))) if n > 1 else 0)  # max single-step jump
-    features.append(np.corrcoef(np.arange(n), p)[0, 1] if n > 2 else 0)  # trend correlation
+    features.append(float(np.max(np.abs(np.diff(p)))) if n > 1 else 0.0)  # max single-step jump
+    features.append(float(np.corrcoef(np.arange(n), p)[0, 1]) if n > 2 else 0.0)  # trend correlation
 
     return np.array(features[:18])
 

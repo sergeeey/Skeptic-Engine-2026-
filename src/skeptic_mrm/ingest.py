@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import uuid
 from pathlib import Path
-from typing import Iterable
+from typing import Any, Iterable
 
 from skeptic_mrm.schemas.material_candidate import MaterialCandidate
 
@@ -20,11 +20,11 @@ def _parse_poscar_block(text: str) -> str:
     return text.strip()
 
 
-def _load_json_candidates(path: Path) -> list[dict]:
+def _load_json_candidates(path: Path) -> list[dict[str, Any]]:
     """Load candidates from JSON/JSONL file."""
     content = path.read_text(encoding="utf-8")
     if content.strip().startswith("["):
-        return json.loads(content)
+        return json.loads(content)  # type: ignore[no-any-return]
     # JSONL
     return [json.loads(line) for line in content.splitlines() if line.strip()]
 

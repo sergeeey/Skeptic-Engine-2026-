@@ -61,7 +61,7 @@ def ncbi_request(url: str, rate_limit: float = 0.35, max_retries: int = 3) -> st
         try:
             req = Request(url, headers={"User-Agent": DEFAULT_USER_AGENT})
             with urlopen(req, timeout=30) as response:
-                return response.read().decode("utf-8", errors="replace")
+                return str(response.read().decode("utf-8", errors="replace"))
         except (HTTPError, URLError, TimeoutError) as e:
             if attempt == max_retries - 1:
                 print(f"NCBI request failed after {max_retries} attempts: {e}")

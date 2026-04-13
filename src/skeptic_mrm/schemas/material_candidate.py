@@ -6,6 +6,7 @@ import hashlib
 import json
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -20,7 +21,7 @@ class MaterialCandidate:
     generator_version: str | None = None
     generator_seed: int | None = None
     target_properties: dict[str, float] = field(default_factory=dict)
-    novelty_context: dict[str, object] = field(default_factory=dict)
+    novelty_context: dict[str, Any] = field(default_factory=dict)
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     provenance_hash: str = ""
 
@@ -43,7 +44,7 @@ class MaterialCandidate:
                 self, "provenance_hash", hashlib.sha256(payload.encode()).hexdigest()[:16]
             )
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return {
             "candidate_id": self.candidate_id,
             "source": self.source,
@@ -59,7 +60,7 @@ class MaterialCandidate:
         }
 
     @classmethod
-    def from_dict(cls, data: dict) -> "MaterialCandidate":
+    def from_dict(cls, data: dict[str, Any]) -> "MaterialCandidate":
         return cls(
             candidate_id=data["candidate_id"],
             source=data["source"],

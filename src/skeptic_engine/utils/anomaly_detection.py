@@ -83,7 +83,7 @@ def score_anomalies(
     -----
     Uses decision_function which returns the average anomaly score.
     """
-    return model.decision_function(features)
+    return np.asarray(model.decision_function(features))
 
 
 def cell_level_features(matrix: np.ndarray) -> np.ndarray:

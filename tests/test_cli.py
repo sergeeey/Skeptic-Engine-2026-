@@ -29,8 +29,8 @@ def runner() -> CliRunner:
 
 @pytest.fixture
 def mock_legacy_main() -> MagicMock:
-    """Mock the legacy main function to avoid executing real commands."""
-    with patch("discovery_engine.main.main") as mock:
+    """Mock the _run_legacy helper to avoid executing real commands."""
+    with patch("discovery_engine.cli._run_legacy") as mock:
         yield mock
 
 

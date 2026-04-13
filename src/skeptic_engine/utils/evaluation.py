@@ -202,4 +202,4 @@ def clean_features(
     This is a wrapper around `np.nan_to_num` with sensible defaults
     for machine learning pipelines.
     """
-    return np.nan_to_num(x, nan=nan, posinf=posinf, neginf=neginf)
+    return np.asarray(np.nan_to_num(x, nan=nan, posinf=posinf, neginf=neginf))

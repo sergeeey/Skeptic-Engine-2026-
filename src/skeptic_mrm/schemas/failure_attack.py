@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -12,13 +13,13 @@ class FailureAttack:
     attack_id: str
     candidate_id: str
     attack_type: str  # "temperature_ramp", "pressure_ramp", "lattice_perturbation", etc.
-    params: dict[str, object] = field(default_factory=dict)
+    params: dict[str, Any] = field(default_factory=dict)
     collapsed: bool = False
     property_drop: float = 0.0
     stress_hotspots_detected: bool = False
-    details: dict[str, object] = field(default_factory=dict)
+    details: dict[str, Any] = field(default_factory=dict)
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return {
             "attack_id": self.attack_id,
             "candidate_id": self.candidate_id,
@@ -31,7 +32,7 @@ class FailureAttack:
         }
 
     @classmethod
-    def from_dict(cls, data: dict) -> "FailureAttack":
+    def from_dict(cls, data: dict[str, Any]) -> "FailureAttack":
         return cls(
             attack_id=data["attack_id"],
             candidate_id=data["candidate_id"],

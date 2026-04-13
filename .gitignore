@@ -30,4 +30,12 @@ _external/
 
 # Claude Code local memory
 .claude/
+
+# Large data files (downloaded separately, not for version control)
 experiments/h26_geo_screening/data/
+experiments/h30_retracted_validation/data/GSE160269/*.gz
+experiments/mrm_real_data/data/*.gz
+
+# Artifacts / outputs
+*.coverage
+htmlcov/

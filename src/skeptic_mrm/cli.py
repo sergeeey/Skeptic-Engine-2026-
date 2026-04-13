@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
+from typing import Any
 
 from skeptic_mrm.ingest import load_candidates
 from skeptic_mrm.normalize import normalize_candidates
@@ -89,7 +90,7 @@ def cmd_report(args: list[str]) -> None:
         _print_html_report(data.get("batch_report", data))
 
 
-def _print_html_report(data: dict) -> None:
+def _print_html_report(data: dict[str, Any]) -> None:
     """Generate a simple HTML report."""
     summary = data.get("summary", {})
     candidates = data.get("candidate_reports", [])

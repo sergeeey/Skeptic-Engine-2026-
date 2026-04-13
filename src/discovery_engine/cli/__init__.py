@@ -21,6 +21,24 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 
+def _run_legacy(command: str) -> None:
+    """Run legacy main() with a specific command via sys.argv patch.
+
+    Parameters
+    ----------
+    command : str
+        Command string to pass to legacy main.
+    """
+    from discovery_engine.main import main as legacy_main
+
+    old_argv = sys.argv
+    sys.argv = ["discovery-engine", command]
+    try:
+        legacy_main()
+    finally:
+        sys.argv = old_argv
+
+
 # ============================================================
 # Root CLI Group
 # ============================================================
@@ -54,7 +72,6 @@ def pipeline() -> None:
 @click.option("--candidates", is_flag=True, help="Include candidate generation stage.")
 def pipeline_run(sources: bool, semantic: bool, candidates: bool) -> None:
     """Run the full discovery pipeline or selected stages."""
-    from discovery_engine.main import main as legacy_main
 
     # Build command string for legacy main
     command_parts = ["pipeline"]
@@ -66,34 +83,31 @@ def pipeline_run(sources: bool, semantic: bool, candidates: bool) -> None:
         command_parts.append("candidates")
 
     click.echo(f"Running pipeline: {' → '.join(command_parts)}")
-    legacy_main(" ".join(command_parts))
+    _run_legacy(" ".join(command_parts))
 
 
 @pipeline.command("sources")
 def pipeline_sources() -> None:
     """Fetch and normalize sources from biorxiv, PubMed, Zenodo."""
-    from discovery_engine.main import main as legacy_main
 
     click.echo("Fetching and normalizing sources...")
-    legacy_main("sources")
+    _run_legacy("sources")
 
 
 @pipeline.command("semantic")
 def pipeline_semantic() -> None:
     """Build semantic profiles and find cross-domain links."""
-    from discovery_engine.main import main as legacy_main
 
     click.echo("Building semantic profiles...")
-    legacy_main("semantic")
+    _run_legacy("semantic")
 
 
 @pipeline.command("candidates")
 def pipeline_candidates() -> None:
     """Generate candidate hypotheses from cross-domain links."""
-    from discovery_engine.main import main as legacy_main
 
     click.echo("Generating candidates...")
-    legacy_main("candidates")
+    _run_legacy("candidates")
 
 
 # ============================================================
@@ -108,28 +122,25 @@ def skeptic() -> None:
 @skeptic.command("review")
 def skeptic_review() -> None:
     """Run skeptic challenge on candidate hypotheses."""
-    from discovery_engine.main import main as legacy_main
 
     click.echo("Running skeptic review...")
-    legacy_main("skeptic-run")
+    _run_legacy("skeptic-run")
 
 
 @skeptic.command("top5")
 def skeptic_top5() -> None:
     """Review top 5 candidates with enhanced prior art."""
-    from discovery_engine.main import main as legacy_main
 
     click.echo("Running top 5 skeptic review...")
-    legacy_main("skeptic-top5")
+    _run_legacy("skeptic-top5")
 
 
 @skeptic.command("report-seeds")
 def skeptic_report_seeds() -> None:
     """Generate report for seeded candidates."""
-    from discovery_engine.main import main as legacy_main
 
     click.echo("Generating seed report...")
-    legacy_main("report-seeds")
+    _run_legacy("report-seeds")
 
 
 # ============================================================
@@ -149,41 +160,36 @@ def h4() -> None:
 @h4.command("plan")
 def h4_plan() -> None:
     """Show H4 execution plan (closed track)."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main("h4-plan")
+    _run_legacy("h4-plan")
 
 
 @h4.command("dataset-card")
 def h4_dataset_card() -> None:
     """Generate H4 dataset card."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main("h4-dataset-card")
+    _run_legacy("h4-dataset-card")
 
 
 @h4.command("validate-spec")
 def h4_validate_spec() -> None:
     """Validate H4 MVP specification."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main("h4-validate-spec")
+    _run_legacy("h4-validate-spec")
 
 
 @h4.command("audit-plan")
 def h4_audit_plan() -> None:
     """Generate H4 audit plan (archival context)."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main("h4-audit-plan")
+    _run_legacy("h4-audit-plan")
 
 
 @h4.command("top5-board")
 def h4_top5_board() -> None:
     """Display H4 top 5 board."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main("top5-board")
+    _run_legacy("top5-board")
 
 
 # ============================================================
@@ -198,62 +204,55 @@ def h10() -> None:
 @h10.command("plan")
 def h10_plan() -> None:
     """Show H10 execution plan."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main("h10-plan")
+    _run_legacy("h10-plan")
 
 
 @h10.command("routes")
 def h10_routes() -> None:
     """List available H10 routes."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main("h10-routes")
+    _run_legacy("h10-routes")
 
 
 @h10.command("dataset-card")
 def h10_dataset_card() -> None:
     """Generate H10 dataset card."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main("h10-dataset-card")
+    _run_legacy("h10-dataset-card")
 
 
 @h10.command("map")
 @click.option("--route", default=None, help="Route ID to use for mapping.")
 def h10_map(route: str | None) -> None:
     """Map H10 dataset to benchmark format."""
-    from discovery_engine.main import main as legacy_main
 
     cmd = "h10-map"
     if route:
         cmd += f":{route}"
-    legacy_main(cmd)
+    _run_legacy(cmd)
 
 
 @h10.command("readiness")
 def h10_readiness() -> None:
     """Check H10 readiness report."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main("h10-readiness")
+    _run_legacy("h10-readiness")
 
 
 @h10.command("baseline-scaffold")
 def h10_baseline_scaffold() -> None:
     """Generate H10 baseline scaffold."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main("h10-baseline-scaffold")
+    _run_legacy("h10-baseline-scaffold")
 
 
 @h10.command("init-route")
 @click.argument("route_id")
 def h10_init_route(route_id: str) -> None:
     """Initialize a new H10 route."""
-    from discovery_engine.main import main as legacy_main
 
-    legacy_main(f"h10-init-route:{route_id}")
+    _run_legacy(f"h10-init-route:{route_id}")
 
 
 # ============================================================
@@ -270,20 +269,18 @@ def fetch() -> None:
 @click.option("--limit", default=50, help="Maximum number of results.")
 def fetch_scholar(query: str, limit: int) -> None:
     """Fetch papers from Semantic Scholar."""
-    from discovery_engine.main import main as legacy_main
 
     click.echo(f"Fetching from Semantic Scholar: {query}")
-    legacy_main(f"fetch-scholar:{query}:limit={limit}")
+    _run_legacy(f"fetch-scholar:{query}:limit={limit}")
 
 
 @fetch.command("biorxiv")
 @click.option("--limit", default=100, help="Maximum number of results.")
 def fetch_biorxiv(limit: int) -> None:
     """Fetch recent preprints from biorxiv."""
-    from discovery_engine.main import main as legacy_main
 
     click.echo(f"Fetching from biorxiv (limit={limit})...")
-    legacy_main(f"fetch-biorxiv:limit={limit}")
+    _run_legacy(f"fetch-biorxiv:limit={limit}")
 
 
 @fetch.command("zenodo")
@@ -291,23 +288,21 @@ def fetch_biorxiv(limit: int) -> None:
 @click.option("--limit", default=50, help="Maximum number of results.")
 def fetch_zenodo(query: str, limit: int) -> None:
     """Fetch records from Zenodo."""
-    from discovery_engine.main import main as legacy_main
 
     cmd = "fetch-zenodo"
     if query:
         cmd += f":{query}"
     cmd += f":limit={limit}"
     click.echo(f"Fetching from Zenodo: {query or 'all'}")
-    legacy_main(cmd)
+    _run_legacy(cmd)
 
 
 @fetch.command("all")
 def fetch_all() -> None:
     """Fetch from all sources (scholar + biorxiv + zenodo)."""
-    from discovery_engine.main import main as legacy_main
 
     click.echo("Fetching from all sources...")
-    legacy_main("fetch-all")
+    _run_legacy("fetch-all")
 
 
 # ============================================================

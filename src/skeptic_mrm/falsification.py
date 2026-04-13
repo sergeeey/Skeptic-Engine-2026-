@@ -139,7 +139,7 @@ class FalsificationResult:
         drop_penalty = min(self.avg_property_drop, 1.0)
         return max(0.0, 1.0 - collapse_rate - 0.3 * drop_penalty)
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return {
             "candidate_id": self.candidate_id,
             "n_attacks": len(self.attacks),

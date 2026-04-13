@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -18,7 +19,7 @@ class SimulationRun:
     metrics: dict[str, float | bool] = field(default_factory=dict)
     artifacts: dict[str, str] = field(default_factory=dict)  # uri paths
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return {
             "run_id": self.run_id,
             "candidate_id": self.candidate_id,
@@ -31,7 +32,7 @@ class SimulationRun:
         }
 
     @classmethod
-    def from_dict(cls, data: dict) -> "SimulationRun":
+    def from_dict(cls, data: dict[str, Any]) -> "SimulationRun":
         return cls(
             run_id=data["run_id"],
             candidate_id=data["candidate_id"],

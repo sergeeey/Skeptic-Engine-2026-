@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from enum import Enum
+from typing import Any
 
 
 class DecisionStatus(str, Enum):
@@ -24,7 +25,7 @@ class ReliabilityDecision:
     reasons: list[str] = field(default_factory=list)
     review_required: bool = False
 
-    def to_dict(self) -> dict:
+    def to_dict(self) -> dict[str, Any]:
         return {
             "decision_id": self.decision_id,
             "candidate_id": self.candidate_id,
@@ -36,7 +37,7 @@ class ReliabilityDecision:
         }
 
     @classmethod
-    def from_dict(cls, data: dict) -> "ReliabilityDecision":
+    def from_dict(cls, data: dict[str, Any]) -> "ReliabilityDecision":
         return cls(
             decision_id=data["decision_id"],
             candidate_id=data["candidate_id"],
