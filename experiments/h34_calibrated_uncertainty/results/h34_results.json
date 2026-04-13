@@ -1,0 +1,110 @@
+{
+  "experiment": "H34",
+  "description": "Calibrated Uncertainty for Anomaly Detection",
+  "summary": {
+    "n_calibration_entries": 27,
+    "total_calibration_samples": 16224,
+    "n_positive": 8113,
+    "n_negative": 8111,
+    "global_mace": 0.03204198990601749,
+    "baseline_mace": 0.20201854032278263,
+    "improvement": 0.16997655041676513,
+    "detectors_calibrated": [
+      "h24_benford_resample",
+      "h24_benford_noise",
+      "h24_benford_random_nb",
+      "h31_uas",
+      "h32_temporal",
+      "h33_cross_modal"
+    ]
+  },
+  "detectors": {
+    "h24_benford_resample": {
+      "mace": 0.03301490412825932,
+      "n_samples": 5400,
+      "score_range": [
+        0.0031600966714750074,
+        0.9969304376897544
+      ],
+      "is_fitted": true
+    },
+    "h24_benford_noise": {
+      "mace": 0.036142142238051005,
+      "n_samples": 5400,
+      "score_range": [
+        0.0007024959456519036,
+        0.9960804099725658
+      ],
+      "is_fitted": true
+    },
+    "h24_benford_random_nb": {
+      "mace": 0.03660192285584513,
+      "n_samples": 5400,
+      "score_range": [
+        0.003520628266285602,
+        0.9985997796512373
+      ],
+      "is_fitted": true
+    },
+    "h31_uas": {
+      "mace": 1.0,
+      "n_samples": 1,
+      "score_range": [
+        0.0,
+        1.0
+      ],
+      "is_fitted": false
+    },
+    "h32_temporal": {
+      "mace": 1.0,
+      "n_samples": 1,
+      "score_range": [
+        0.0,
+        1.0
+      ],
+      "is_fitted": false
+    },
+    "h33_cross_modal": {
+      "mace": 1.0,
+      "n_samples": 1,
+      "score_range": [
+        0.0,
+        1.0
+      ],
+      "is_fitted": false
+    }
+  },
+  "global_model": {
+    "mace": 0.03204198990601749,
+    "n_samples": 16224
+  },
+  "calibration_data_sources": [
+    "h24_benford_resample",
+    "h24_benford_noise",
+    "h24_benford_random_nb",
+    "h31_uas",
+    "h31_uas",
+    "h31_uas",
+    "h31_uas",
+    "h31_uas",
+    "h31_uas",
+    "h31_uas",
+    "h31_uas",
+    "h32_temporal",
+    "h32_temporal",
+    "h32_temporal",
+    "h32_temporal",
+    "h32_temporal",
+    "h32_temporal",
+    "h32_temporal",
+    "h32_temporal",
+    "h32_temporal",
+    "h32_temporal",
+    "h33_cross_modal",
+    "h33_cross_modal",
+    "h33_cross_modal",
+    "h33_cross_modal",
+    "h33_cross_modal",
+    "h33_cross_modal"
+  ]
+}

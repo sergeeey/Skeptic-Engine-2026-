@@ -46,17 +46,20 @@
 
 ---
 
-## Status: 🟡 IN PROGRESS
+## Status: 🟢 READY FOR PUBLISHING
 
 **Completed:**
 - ✅ README 2.0 with unified narrative
 - ✅ REPORT updated with H27-H33
 - ✅ 302 tests passing
 - ✅ ruff + mypy green
+- ✅ Version bumped to 0.2.0
+- ✅ Build succeeds (wheel + sdist)
+- ✅ Twine check PASSED
 
-**Remaining:**
-- ⏳ Version bump to 0.2.0
-- ⏳ Package build verification
-- ⏳ PyPI upload
-- ⏳ Zenodo v0.2
-- ⏳ bioRxiv preprint v03
+**Remaining (external actions required):**
+- ⏳ PyPI upload: `twine upload dist/skeptic_engine-0.2.0*`
+- ⏳ Zenodo v0.2: upload post-H33 code + report
+- ⏳ bioRxiv preprint v03: manuscript with H31+H32+H33
+- ⏳ Tag release: `git tag v0.2.0 && git push origin v0.2.0`
+- ⏳ Send pitch emails (Bradshaw, Bik, Nuijten)

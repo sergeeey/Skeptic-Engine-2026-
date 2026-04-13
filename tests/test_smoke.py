@@ -36,7 +36,7 @@ class TestCLIImports:
     def test_import_skeptic_toolkit(self) -> None:
         from skeptic_toolkit import __version__
 
-        assert __version__ == "0.1.1"
+        assert __version__ == "0.2.0"
 
     def test_import_cli_module(self) -> None:
         from skeptic_toolkit.cli import load_count_matrix, compute_scores, main
@@ -470,7 +470,7 @@ class TestVerifiedResult:
         d = vr.to_dict()
         assert d["experiment_id"] == "H24"
         assert d["result_hash"] == vr.result_hash
-        assert d["package_version"] == "0.1.1"
+        assert d["package_version"] == "0.2.0"
 
     def test_save_and_read(self, tmp_path: Path) -> None:
         from skeptic_toolkit.verified_result import VerifiedResult
