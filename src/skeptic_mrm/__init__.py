@@ -6,5 +6,5 @@ It tries to break them early, score their resilience,
 and reduce false-positive promotion before expensive validation.
 """
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __domain__ = "inorganic_crystals"
