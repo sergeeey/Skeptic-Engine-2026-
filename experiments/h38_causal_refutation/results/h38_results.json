@@ -1,0 +1,33 @@
+{
+  "experiment": "H38",
+  "description": "Causal Refutation via DoWhy Integration",
+  "summary": {
+    "n_samples": 1000,
+    "original_effect": 0.5,
+    "syndrome_score": 0.19579996719862983,
+    "causal_fragility": 0.25,
+    "dowhy_version": "real"
+  },
+  "claims": [
+    {
+      "paper_id": "H38_Synthetic_Study",
+      "original_effect": 0.5,
+      "syndrome_score": 0.19579996719862983,
+      "causal_fragility": 0.25,
+      "refutations": [
+        {
+          "test_name": "Placebo Treatment",
+          "passed": true,
+          "new_effect": 0.030471707975443137,
+          "p_value": 0.4006018113793266
+        },
+        {
+          "test_name": "Add Unobserved Common Cause",
+          "passed": true,
+          "new_effect": 0.2782804160177235,
+          "p_value": 0.05
+        }
+      ]
+    }
+  ]
+}
