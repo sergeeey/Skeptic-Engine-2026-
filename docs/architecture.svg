@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#161b22"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f6feb"/>
+      <stop offset="100%" style="stop-color:#388bfd"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#238636"/>
+      <stop offset="100%" style="stop-color:#2ea043"/>
+    </linearGradient>
+    <linearGradient id="card3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8957e5"/>
+      <stop offset="100%" style="stop-color:#a371f7"/>
+    </linearGradient>
+    <linearGradient id="card4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#bd5000"/>
+      <stop offset="100%" style="stop-color:#db6d28"/>
+    </linearGradient>
+    <linearGradient id="result" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0883e"/>
+      <stop offset="100%" style="stop-color:#f5a623"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#484f58"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="600" y="55" font-size="32" font-weight="700" fill="#f0f6fc" text-anchor="middle">SKEPTIC ENGINE v0.2.0</text>
+  <text x="600" y="85" font-size="16" fill="#8b949e" text-anchor="middle">Adversarial Testing Framework for Scientific Data Integrity</text>
+
+  <!-- Main Pipeline -->
+  <!-- Stage 1: Raw Data -->
+  <rect x="40" y="130" width="220" height="220" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="40" y="130" width="220" height="40" rx="12" fill="#30363d"/>
+  <text x="150" y="155" font-size="16" font-weight="600" fill="#f0f6fc" text-anchor="middle">1. RAW DATA</text>
+  <text x="60" y="195" font-size="13" fill="#c9d1d9">• scRNA-seq matrices</text>
+  <text x="60" y="220" font-size="13" fill="#c9d1d9">• Proteomics / CNA</text>
+  <text x="60" y="245" font-size="13" fill="#c9d1d9">• P-value sequences</text>
+  <text x="60" y="270" font-size="13" fill="#c9d1d9">• Meta-analyses</text>
+  <text x="60" y="310" font-size="12" fill="#8b949e">Source: GEO, CPTAC, PubMed</text>
+  <text x="60" y="330" font-size="12" fill="#8b949e">11 data types supported</text>
+
+  <!-- Stage 2: Multi-Modal Detectors -->
+  <rect x="320" y="130" width="280" height="220" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="320" y="130" width="280" height="40" rx="12" fill="#1f6feb"/>
+  <text x="460" y="155" font-size="16" font-weight="600" fill="#f0f6fc" text-anchor="middle">2. MULTI-MODAL DETECTORS</text>
+  
+  <rect x="335" y="180" width="120" height="30" rx="6" fill="url(#card1)"/>
+  <text x="395" y="200" font-size="12" font-weight="600" fill="#f0f6fc" text-anchor="middle">H24: Benford</text>
+  <rect x="465" y="180" width="120" height="30" rx="6" fill="url(#card1)"/>
+  <text x="525" y="200" font-size="12" font-weight="600" fill="#f0f6fc" text-anchor="middle">H25: Autoencoder</text>
+  
+  <rect x="335" y="220" width="120" height="30" rx="6" fill="url(#card1)"/>
+  <text x="395" y="240" font-size="12" font-weight="600" fill="#f0f6fc" text-anchor="middle">H23: P-Hacking</text>
+  <rect x="465" y="220" width="120" height="30" rx="6" fill="url(#card1)"/>
+  <text x="525" y="240" font-size="12" font-weight="600" fill="#f0f6fc" text-anchor="middle">H33: Cross-Modal</text>
+  
+  <rect x="335" y="260" width="120" height="30" rx="6" fill="url(#card1)"/>
+  <text x="395" y="280" font-size="12" font-weight="600" fill="#f0f6fc" text-anchor="middle">H32: Temporal</text>
+  <rect x="465" y="260" width="120" height="30" rx="6" fill="url(#card1)"/>
+  <text x="525" y="280" font-size="12" font-weight="600" fill="#f0f6fc" text-anchor="middle">H29: Syndrome</text>
+  
+  <text x="460" y="325" font-size="12" fill="#8b949e" text-anchor="middle">7 detectors → Unified Anomaly Score (H31)</text>
+  <text x="460" y="342" font-size="12" fill="#3fb950" text-anchor="middle">AUC 0.729 — 1.000</text>
+
+  <!-- Stage 3: Calibration -->
+  <rect x="660" y="130" width="260" height="220" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="660" y="130" width="260" height="40" rx="12" fill="#238636"/>
+  <text x="790" y="155" font-size="16" font-weight="600" fill="#f0f6fc" text-anchor="middle">3. CALIBRATION (H34)</text>
+  <text x="680" y="195" font-size="13" fill="#c9d1d9">• Isotonic Regression</text>
+  <text x="680" y="220" font-size="13" fill="#c9d1d9">• 16,224 calibration samples</text>
+  <text x="680" y="245" font-size="13" fill="#c9d1d9">• MACE 0.202 → 0.032</text>
+  <text x="680" y="270" font-size="13" fill="#c9d1d9">• 84% improvement</text>
+  <text x="680" y="305" font-size="13" fill="#3fb950">Output: Calibrated Probability</text>
+  <text x="680" y="325" font-size="12" fill="#8b949e">with 95% Confidence Intervals</text>
+
+  <!-- Stage 4: Adversarial Debate -->
+  <rect x="980" y="130" width="180" height="220" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="980" y="130" width="180" height="40" rx="12" fill="#8957e5"/>
+  <text x="1070" y="155" font-size="16" font-weight="600" fill="#f0f6fc" text-anchor="middle">4. DEBATE (H36)</text>
+  <text x="995" y="195" font-size="13" fill="#f0883e">⚖️ Prosecutor</text>
+  <text x="995" y="215" font-size="12" fill="#8b949e">Evidence for anomaly</text>
+  <text x="995" y="245" font-size="13" fill="#3fb950">🛡️ Defense</text>
+  <text x="995" y="265" font-size="12" fill="#8b949e">Natural explanations</text>
+  <text x="995" y="295" font-size="13" fill="#a371f7">⚖️ Judge</text>
+  <text x="995" y="315" font-size="12" fill="#8b949e">Structured verdict</text>
+
+  <!-- Arrows between stages -->
+  <path d="M 270 240 L 310 240" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 610 240 L 650 240" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 930 240 L 970 240" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Output Section -->
+  <rect x="300" y="420" width="600" height="120" rx="12" fill="#161b22" stroke="#f0883e" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="300" y="420" width="600" height="40" rx="12" fill="#bd5000"/>
+  <text x="600" y="445" font-size="18" font-weight="700" fill="#f0f6fc" text-anchor="middle">STRUCTURED VERDICT</text>
+  
+  <text x="330" y="485" font-size="14" fill="#c9d1d9">"Prosecutor: 3 anomalies found (Benford MACE=0.15, p-value clustering, temporal drift)."</text>
+  <text x="330" y="505" font-size="14" fill="#c9d1d9">"Defense: Large sample size (n=5000), no batch effects, cross-modal consistency high."</text>
+  <text x="330" y="525" font-size="14" fill="#f0883e">Verdict: <tspan font-weight="700">SUSPICIOUS</tspan> (Confidence 0.72, CI [0.65, 0.79])</text>
+
+  <!-- Key Metrics Section -->
+  <rect x="40" y="580" width="1120" height="140" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2" filter="url(#shadow)"/>
+  <text x="600" y="610" font-size="20" font-weight="700" fill="#f0f6fc" text-anchor="middle">KEY METRICS</text>
+  
+  <rect x="60" y="630" width="240" height="70" rx="8" fill="#1f2937"/>
+  <text x="180" y="655" font-size="28" font-weight="700" fill="#3fb950" text-anchor="middle">349</text>
+  <text x="180" y="680" font-size="13" fill="#8b949e" text-anchor="middle">Unit Tests Passing</text>
+  
+  <rect x="320" y="630" width="240" height="70" rx="8" fill="#1f2937"/>
+  <text x="440" y="655" font-size="28" font-weight="700" fill="#58a6ff" text-anchor="middle">37</text>
+  <text x="440" y="680" font-size="13" fill="#8b949e" text-anchor="middle">Experiments (H4–H37)</text>
+  
+  <rect x="580" y="630" width="240" height="70" rx="8" fill="#1f2937"/>
+  <text x="700" y="655" font-size="28" font-weight="700" fill="#a371f7" text-anchor="middle">0.032</text>
+  <text x="700" y="680" font-size="13" fill="#8b949e" text-anchor="middle">Calibration Error (MACE)</text>
+  
+  <rect x="840" y="630" width="240" height="70" rx="8" fill="#1f2937"/>
+  <text x="960" y="655" font-size="28" font-weight="700" fill="#f0883e" text-anchor="middle">1.000</text>
+  <text x="960" y="680" font-size="13" fill="#8b949e" text-anchor="middle">Unified Detection AUC</text>
+
+  <!-- Innovation Badges -->
+  <rect x="40" y="750" width="1120" height="120" rx="12" fill="#161b22" stroke="#30363d" stroke-width="2" filter="url(#shadow)"/>
+  <text x="600" y="780" font-size="20" font-weight="700" fill="#f0f6fc" text-anchor="middle">NOVEL CONTRIBUTIONS</text>
+  
+  <rect x="60" y="800" width="250" height="55" rx="8" fill="#1f2937"/>
+  <text x="185" y="820" font-size="14" font-weight="600" fill="#58a6ff" text-anchor="middle">Unified Anomaly Score</text>
+  <text x="185" y="840" font-size="12" fill="#8b949e" text-anchor="middle">Multi-modal ensemble (H31)</text>
+  
+  <rect x="330" y="800" width="250" height="55" rx="8" fill="#1f2937"/>
+  <text x="455" y="820" font-size="14" font-weight="600" fill="#3fb950" text-anchor="middle">Isotonic Recalibration</text>
+  <text x="455" y="840" font-size="12" fill="#8b949e" text-anchor="middle">Raw scores → Calibrated CI (H34)</text>
+  
+  <rect x="600" y="800" width="250" height="55" rx="8" fill="#1f2937"/>
+  <text x="725" y="820" font-size="14" font-weight="600" fill="#a371f7" text-anchor="middle">Adversarial Debate</text>
+  <text x="725" y="840" font-size="12" fill="#8b949e" text-anchor="middle">Prosecutor/Defense/Judge (H36)</text>
+  
+  <rect x="870" y="800" width="250" height="55" rx="8" fill="#1f2937"/>
+  <text x="995" y="820" font-size="14" font-weight="600" fill="#f0883e" text-anchor="middle">Adaptive Thresholds</text>
+  <text x="995" y="840" font-size="12" fill="#8b949e" text-anchor="middle">Domain-specific sweet spots (H35)</text>
+</svg>
