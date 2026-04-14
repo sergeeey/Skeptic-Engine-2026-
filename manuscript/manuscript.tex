@@ -1,0 +1,98 @@
+%% Bioinformatics.cls v2.0
+%% A LaTeX class file for Oxford University Press Bioinformatics Journal
+%% App Note Template
+
+\documentclass{bioinfo}
+\copyrightyear{2026} \pubyear{2026}
+
+\access{Advance Access Publication Date: Day Month Year}
+\appnotes{Application Note}
+
+\begin{document}
+\firstpage{1}
+
+\title[Skeptic Engine]{Skeptic Engine: Calibrated, Adversarial Anomaly Detection for Scientific Data Integrity}
+
+\author[Boiko]{Sergey~V.~Boiko\,$^{1,*}$}
+\address{$^{1}$Independent Researcher, Scientific Data Integrity Group}
+
+\corresp{$^\ast$To whom correspondence should be addressed. E-mail: sergeikuch80@gmail.com}
+
+\history{Received on XXXXX; revised on XXXXX; accepted on XXXXX}
+
+\editor{Associate Editor: XXXXXXX}
+
+\abstract{\textbf{Motivation:} As the "Replication Crisis" highlights the fragility of scientific claims, the need for automated tools to screen for statistical artifacts and data integrity issues grows. While specialized tools exist for p-hacking (p-curve) or image forensics, no unified framework exists to check the structural coherence of high-dimensional scientific data across modalities.\\
+\textbf{Results:} We present \textbf{Skeptic Engine}, an adversarial testing framework that transfers anomaly detection methods from finance and clinical trials to science. Our system integrates multi-modal detectors (Benford forensics, autoencoders, behavioral patterns) into a \textbf{Unified Anomaly Score (UAS)}. Crucially, we introduce \textbf{Isotonic Recalibration} to transform raw scores into calibrated probabilities with confidence intervals (reducing MACE from 0.202 to 0.032). Evaluated across 37 experiments, our approach detects statistical artifacts with AUC 0.729--1.000. The system also employs an \textbf{Adversarial Debate Protocol} to generate interpretable verdicts with evidence trails.\\
+\textbf{Availability:} The open-source implementation and documentation are available at \url{https://github.com/sergeeey/Skeptic-Engine-2026-}.\\
+\textbf{Supplementary information:} Supplementary data are available at \textit{Bioinformatics} online.}
+
+\maketitle
+
+\section{Introduction}
+Statistical integrity tools often operate in isolation. P-curve analysis \citep{simonsohn2014p} examines p-value distributions but ignores data structure. Statcheck \citep{nuijten2016prevalence} recomputes test statistics but does not analyze raw data matrices. Image forens tools detect pixel manipulation but are silent on statistical coherence. Each answers a narrow question: "Are the p-values suspicious?" None asks the broader question: "Does this dataset exhibit structural coherence consistent with genuine measurement?"
+
+Furthermore, existing detectors rarely provide calibrated uncertainty. A score of "0.8" is meaningless without knowing the probability of a true negative scoring 0.8. Without calibration, reviewers cannot distinguish between a borderline flag and a confident detection.
+
+We propose a shift from Single-Point Detection to \textbf{Calibrated, Adversarial Verification}. \textbf{Skeptic Engine} integrates seven specialized detectors into a Unified Anomaly Score (UAS), calibrates raw scores into interpretable probabilities, and synthesizes findings through an adversarial debate protocol.
+
+\section{Features}
+\subsection{Multi-Modal Detection}
+The system operates in four stages:
+\begin{enumerate}
+    \item \textbf{Extraction:} Features from raw data (Benford digits, p-value sequences, cross-modal correlations).
+    \item \textbf{Detection:} Specialized detectors (H24--H33) compute raw anomaly scores.
+    \item \textbf{Calibration (H34):} Isotonic Regression maps scores to calibrated probabilities.
+    \item \textbf{Verdict (H36):} An adversarial Debate Protocol generates a structured decision with explanation.
+\end{enumerate}
+
+\subsection{Unified Anomaly Score (UAS)}
+We compute a weighted ensemble: $UAS = \sum w_i \cdot S_i$. By combining signals, UAS captures complementary error profiles. Benford analysis detects digit-level anomalies that autoencoders miss; autoencoders catch structural incoherence that Benford analysis misses.
+
+\subsection{Isotonic Recalibration}
+To address the "Black Box" problem, we train a non-decreasing isotonic regression model $f_{iso}$ on historical ground-truth data: $P(\text{Anomaly} | x) \approx f_{iso}(\text{Raw Score}(x))$. This yields calibrated probabilities with Confidence Intervals based on the local density of calibration data (16,224 samples used).
+
+\section{Results}
+We evaluate across four data modalities: scRNA-seq (PBMC3k, Kang2018), Proteomics/CNA (CPTAC), P-value sequences (RPP, Statcheck), and Cross-omics (matched mRNA-protein).
+
+\begin{table}[t]
+\caption{Performance of individual detectors vs. Unified Anomaly Score}
+\begin{tabular}{llc}
+\hline
+\textbf{Experiment} & \textbf{Domain} & \textbf{AUC} \\
+\hline
+H24: Benford Forensics & scRNA-seq & 0.978 \\
+H25: Banking Autoencoder & Proteomics/CNA & 1.000 \\
+H23: Behavioral P-Hacking & Meta-analysis & 0.729 \\
+\hline
+\textbf{H31: Unified Anomaly Score} & \textbf{Multi-Modal} & \textbf{1.000} \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Calibration Performance}
+Recalibration significantly improves interpretability. We measured the Mean Absolute Calibration Error (MACE) before and after isotonic regression:
+\begin{itemize}
+    \item \textbf{Baseline MACE:} 0.202
+    \item \textbf{Calibrated MACE:} 0.032 (84\% improvement)
+\end{itemize}
+
+\subsection{Adversarial Verdicts}
+The Debate Protocol provides explainability. In a test case with mixed signals (High Benford deviation but high Cross-Modal consistency), the system rendered:
+\begin{quote}
+\textit{"Prosecutor: 3 anomalies found (Benford, temporal drift). Defense: Large sample size (n=5000), no batch effects. Verdict: SUSPICIOUS (Confidence 0.72)."}
+\end{quote}
+
+\section{Conclusion}
+Skeptic Engine demonstrates that we can move beyond simple statistical checks to a holistic, calibrated, and explainable system for data integrity. By combining multi-modal detection with adversarial debate, we provide a tool that doesn't just find errors, but helps reviewers understand them.
+
+\section*{Funding}
+This research received no specific grant from any funding agency.
+
+\section*{Conflict of Interest}
+none declared.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
