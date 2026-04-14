@@ -107,7 +107,7 @@ class MatterSimRealBackend(ISimulationBackend):
                     positions = [s.get("abc", s.get("xyz", [0, 0, 0])) for s in sites]
                     atoms = Atoms(symbols=symbols, positions=positions, cell=lattice, pbc=True)
                     return atoms
-            except:
+            except Exception:
                 pass
             # Fallback: create a simple crystal based on composition
             return self._fallback_structure(candidate)

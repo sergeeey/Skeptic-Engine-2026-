@@ -73,7 +73,8 @@ def check_geo(gse):
         time.sleep(0.4)
         files = re.findall(r'href="([^"]+\.(mtx|csv|tsv|h5|txt|tar)\.?g?z?)"', html, re.I)
         return {"gse": gse, "accessible": True, "n_files": len(files), "files": [f[0] for f in files[:10]]}
-    except: return {"gse": gse, "accessible": False, "n_files": 0, "files": []}
+    except Exception:
+        return {"gse": gse, "accessible": False, "n_files": 0, "files": []}
 
 def main():
     print("=" * 70)

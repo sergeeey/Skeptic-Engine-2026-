@@ -195,7 +195,7 @@ def run_mattersim_calibration(n_candidates: int = 20, use_real_model: bool = Tru
                         symbols = [s.get("species", [{}])[0].get("element", "H") for s in sites]
                         positions = [s.get("abc", s.get("xyz", [0, 0, 0])) for s in sites]
                         return Atoms(symbols=symbols, positions=positions, cell=lattice, pbc=True)
-                except:
+                except Exception:
                     pass
             
             # Fallback

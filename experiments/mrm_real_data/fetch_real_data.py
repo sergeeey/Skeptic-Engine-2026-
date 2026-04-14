@@ -49,10 +49,7 @@ def fetch_jarvis_dft(n_stable: int = 50, n_unstable: int = 50) -> dict[str, list
     for url in endpoints:
         try:
             print(f"  Trying: {url}")
-            ctx = ssl.create_default_context()
-            ctx.check_hostname = False
-            ctx.verify_mode = ssl.CERT_NONE
-            
+
             import urllib.request
             req = urllib.request.Request(
                 url,
@@ -61,8 +58,9 @@ def fetch_jarvis_dft(n_stable: int = 50, n_unstable: int = 50) -> dict[str, list
                     "User-Agent": "SE-MRM/0.1.0",
                 }
             )
-            
-            with urllib.request.urlopen(req, timeout=30, context=ctx) as resp:
+
+            # Use default SSL context — verify certificates
+            with urllib.request.urlopen(req, timeout=30) as resp:
                 data = json.loads(resp.read().decode())
             
             if isinstance(data, list) and len(data) > 0:

@@ -2,20 +2,23 @@
 import os, json, sys, uuid
 from pathlib import Path
 
-# Set API key BEFORE importing mp_api
-os.environ['MP_API_KEY'] = 'MP_API_KEY_REMOVED'
+# Load MP_API_KEY from environment (set via .env file)
+mp_api_key = os.environ.get("MP_API_KEY")
+if not mp_api_key:
+    raise RuntimeError(
+        "MP_API_KEY environment variable is required. "
+        "Copy .env.example to .env and set your key: https://materialsproject.org/api"
+    )
+os.environ['MP_API_KEY'] = mp_api_key
 
 print("=== Materials Project Data Fetch ===", flush=True)
-
-sys.path.insert(0, r'E:\nobel premia Boiko - 2026\src')
-sys.path.insert(0, r'E:\nobel premia Boiko - 2026\experiments\mrm_real_data')
 
 from mp_api.client import MPRester
 print("MP API imported OK", flush=True)
 
 stable, marginal, unstable = [], [], []
 
-with MPRester('MP_API_KEY_REMOVED') as mpr:
+with MPRester(mp_api_key) as mpr:
     # Stable: eah < 0.02 AND formation_energy < -0.5 (truly stable)
     # Exclude radioactive elements (Ac, Tc, Pm, Po, At, Rn, Fr, Ra, etc.)
     print("  Fetching stable (eah < 0.02, fe < -0.5)...", flush=True)

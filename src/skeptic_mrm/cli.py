@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import html
 import json
 import sys
 from pathlib import Path
@@ -128,7 +129,11 @@ th {{ background: #eee; }}
         score = c.get("score_bundle", {}).get("final_reliability_score", 0)
         comp = c.get("candidate", {}).get("composition", "?")
         cid = c.get("candidate", {}).get("candidate_id", "?")
-        html += f'<tr class="{status}"><td>{cid}</td><td>{comp}</td><td>{score:.3f}</td><td>{status}</td></tr>\n'
+        # Escape all user-controlled data to prevent XSS
+        safe_cid = html.escape(str(cid))
+        safe_comp = html.escape(str(comp))
+        safe_status = html.escape(str(status))
+        html += f'<tr class="{safe_status}"><td>{safe_cid}</td><td>{safe_comp}</td><td>{score:.3f}</td><td>{safe_status}</td></tr>\n'
     html += "</table></body></html>"
     print(html)
 
