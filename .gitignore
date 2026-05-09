@@ -37,5 +37,7 @@ experiments/h30_retracted_validation/data/GSE160269/*.gz
 experiments/mrm_real_data/data/*.gz
 
 # Artifacts / outputs
+.coverage
 *.coverage
+coverage.xml
 htmlcov/
