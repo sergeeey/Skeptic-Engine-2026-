@@ -9,7 +9,7 @@ Trigger + Action + Confidence + Scope.
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
@@ -34,7 +34,7 @@ class Instinct:
         }
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> "Instinct":
+    def from_dict(cls, data: dict[str, Any]) -> Instinct:
         return cls(**data)
 
 
@@ -52,15 +52,11 @@ class InstinctMemory:
         # Check for duplicate trigger+scope
         for existing in self.instincts:
             if existing.trigger == instinct.trigger and existing.scope == instinct.scope:
-                # Update confidence (moving average) and count
-                old_conf = existing.confidence
-                old_count = existing.activation_count
-                
                 # Update action if new confidence is higher
                 if instinct.confidence > existing.confidence:
                     existing.action = instinct.action
                     existing.confidence = instinct.confidence
-                
+
                 existing.activation_count += 1
                 return
 
@@ -72,7 +68,7 @@ class InstinctMemory:
         for inst in self.instincts:
             if self._matches_scope(inst.scope, context):
                 relevant.append(inst)
-        
+
         # Sort by confidence descending
         return sorted(relevant, key=lambda x: x.confidence, reverse=True)
 
@@ -87,14 +83,14 @@ class InstinctMemory:
         p = path or self.storage_path
         if not p:
             return
-        
+
         p.parent.mkdir(parents=True, exist_ok=True)
         data = [i.to_dict() for i in self.instincts]
-        with open(p, "w", encoding="utf-8") as f:
+        with p.open("w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
 
     def load(self, path: Path) -> None:
         """Load instincts from JSON."""
-        with open(path, "r", encoding="utf-8") as f:
+        with path.open(encoding="utf-8") as f:
             data = json.load(f)
         self.instincts = [Instinct.from_dict(d) for d in data]

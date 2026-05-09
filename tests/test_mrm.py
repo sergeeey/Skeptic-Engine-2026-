@@ -11,10 +11,9 @@ Covers:
 from __future__ import annotations
 
 import json
+from dataclasses import FrozenInstanceError
 from pathlib import Path
-from unittest.mock import MagicMock, patch
 
-import numpy as np
 import pytest
 
 
@@ -119,7 +118,7 @@ class TestMaterialCandidate:
 
         mc = MaterialCandidate(**sample_material_candidate)
 
-        with pytest.raises(Exception):  # frozen dataclass raises
+        with pytest.raises(FrozenInstanceError):
             mc.composition = "NewComp"
 
     def test_default_novelty_context(self) -> None:
@@ -187,7 +186,7 @@ class TestSimulationRun:
 
         sr = SimulationRun(**sample_simulation_run)
 
-        with pytest.raises(Exception):
+        with pytest.raises(FrozenInstanceError):
             sr.status = "failed"
 
 

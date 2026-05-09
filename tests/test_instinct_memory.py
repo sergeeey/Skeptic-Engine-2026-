@@ -14,7 +14,7 @@ import pytest
 def instinct_module():
     """Import instinct memory module."""
     import sys
-    
+
     src_dir = Path(__file__).resolve().parents[1] / "src"
     if str(src_dir) not in sys.path:
         sys.path.insert(0, str(src_dir))
@@ -78,7 +78,7 @@ class TestInstinctMemory:
         mem.add_instinct(
             instinct_module["Instinct"]("T", "Action B", 0.9, "scRNA-seq")
         )
-        
+
         # Should not add new one, but update existing
         assert len(mem.instincts) == 1
         assert mem.instincts[0].confidence == pytest.approx(0.9)
@@ -99,7 +99,7 @@ class TestInstinctMemory:
 
         ctx = {"data_type": "scRNA-seq", "genes": 1000}
         relevant = mem.get_relevant_instincts(ctx)
-        
+
         assert len(relevant) == 2  # scRNA-seq + global
         assert relevant[0].confidence >= relevant[1].confidence  # Sorted
 
@@ -109,10 +109,10 @@ class TestInstinctMemory:
         mem.add_instinct(
             instinct_module["Instinct"]("T", "A", 0.9, "scope")
         )
-        
+
         save_path = tmp_path / "instincts.json"
         mem.save(save_path)
-        
+
         mem2 = instinct_module["InstinctMemory"](save_path)
         assert len(mem2.instincts) == 1
         assert mem2.instincts[0].trigger == "T"

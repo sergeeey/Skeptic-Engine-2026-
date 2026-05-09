@@ -1,0 +1,68 @@
+{
+  "schema_version": "0.1",
+  "generated_for": "skeptic-engine-v0.2.0-governance-sprint",
+  "repo_has_root_results_dir": false,
+  "notes": [
+    "Skeptic Engine currently stores structured result artifacts under experiments/**/results and experiments/bootstrap_results, not under a root results/ directory.",
+    "This inventory is a curated release-governance index, not a complete file listing.",
+    "Public claims should cite these artifacts through publication_claim_matrix.v0.2.0.json before being treated as verified."
+  ],
+  "public_surfaces": [
+    "README.md",
+    "REPORT.md",
+    "RELEASE_CHECKLIST.md",
+    "manuscript/manuscript.tex",
+    "manuscript/PREPRINT_v01.md",
+    "manuscript/PREPRINT_STRUCTURE.md"
+  ],
+  "structured_artifacts": [
+    {
+      "id": "h23_real_rpp",
+      "path": "experiments/h23_phacking_behavioral/results/h23_real_rpp_results.json",
+      "kind": "experiment_result",
+      "scope": "real replication data, underpowered"
+    },
+    {
+      "id": "h24_benford_scrna",
+      "path": "experiments/h24_benford_scrna/results/h24_results.json",
+      "kind": "experiment_result",
+      "scope": "PBMC3k synthetic fabrication benchmark"
+    },
+    {
+      "id": "bootstrap_ci",
+      "path": "experiments/bootstrap_results/bootstrap_ci.json",
+      "kind": "robustness_result",
+      "scope": "bootstrap confidence intervals for selected claims"
+    },
+    {
+      "id": "h31_uas",
+      "path": "experiments/h31_unified_anomaly_score/results/h31_results.json",
+      "kind": "experiment_result",
+      "scope": "unified anomaly score on small synthetic/curated benchmark"
+    },
+    {
+      "id": "h32_temporal",
+      "path": "experiments/h32_temporal_drift/results/h32_results.json",
+      "kind": "experiment_result",
+      "scope": "synthetic temporal p-hacking author benchmark"
+    },
+    {
+      "id": "h33_cross_modal",
+      "path": "experiments/h33_cross_modal_consistency/results/h33_results.json",
+      "kind": "experiment_result",
+      "scope": "cross-modal consistency synthetic/fabricated benchmark"
+    },
+    {
+      "id": "h34_calibration",
+      "path": "experiments/h34_calibrated_uncertainty/results/h34_results.json",
+      "kind": "calibration_result",
+      "scope": "calibration summary; detector-level fitted status must be checked"
+    },
+    {
+      "id": "pyproject",
+      "path": "pyproject.toml",
+      "kind": "package_metadata",
+      "scope": "package version and dev tool configuration"
+    }
+  ]
+}

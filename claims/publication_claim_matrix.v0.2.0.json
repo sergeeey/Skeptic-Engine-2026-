@@ -1,0 +1,263 @@
+{
+  "schema_version": "0.1",
+  "generated_for": "skeptic-engine-v0.2.0-governance-sprint",
+  "governance_source": "claims/publication_canonical_index.v0.2.0.json",
+  "claims": [
+    {
+      "id": "SE-P01",
+      "surface": "README.md",
+      "claim_text": "Skeptic Engine detects statistical anomalies and data integrity artifacts, not deliberate fraud.",
+      "status": "VERIFIED",
+      "evidence": [
+        "README.md",
+        "REPORT.md"
+      ],
+      "checks": [
+        {
+          "type": "file_contains",
+          "path": "README.md",
+          "text": "not deliberate fraud"
+        },
+        {
+          "type": "file_contains",
+          "path": "REPORT.md",
+          "text": "not fraud accusation tools"
+        }
+      ],
+      "required_wording": "artifact/anomaly detection; flagged datasets require expert review; no intent attribution",
+      "caveats": [
+        "Never phrase the tool as proving fraud or misconduct."
+      ]
+    },
+    {
+      "id": "SE-P02",
+      "surface": "README.md",
+      "claim_text": "H23 real RPP behavioral p-hacking detector reports AUC 0.7291.",
+      "status": "PARTIAL",
+      "evidence": [
+        "experiments/h23_phacking_behavioral/results/h23_real_rpp_results.json",
+        "experiments/bootstrap_results/bootstrap_ci.json"
+      ],
+      "checks": [
+        {
+          "type": "json_value",
+          "path": "experiments/h23_phacking_behavioral/results/h23_real_rpp_results.json",
+          "json_path": "best_auc",
+          "expected": 0.7291,
+          "tolerance": 0.0001
+        },
+        {
+          "type": "json_value",
+          "path": "experiments/bootstrap_results/bootstrap_ci.json",
+          "json_path": "H23_RPP_LR.above_random",
+          "expected": false
+        }
+      ],
+      "required_wording": "real-data AUC 0.7291; underpowered/suggestive because bootstrap CI crosses random",
+      "caveats": [
+        "Do not call this fully validated without the underpowered caveat."
+      ]
+    },
+    {
+      "id": "SE-P03",
+      "surface": "README.md",
+      "claim_text": "H24 scRNA-seq fusion benchmark has robust within-dataset signal on synthetic fabrication.",
+      "status": "VERIFIED",
+      "evidence": [
+        "experiments/bootstrap_results/bootstrap_ci.json",
+        "experiments/h24_benford_scrna/results/h24_results.json"
+      ],
+      "checks": [
+        {
+          "type": "json_value",
+          "path": "experiments/bootstrap_results/bootstrap_ci.json",
+          "json_path": "H24_resample_fusion.mean",
+          "expected": 0.993,
+          "tolerance": 0.0001
+        },
+        {
+          "type": "json_value",
+          "path": "experiments/bootstrap_results/bootstrap_ci.json",
+          "json_path": "H24_resample_fusion.above_random",
+          "expected": true
+        }
+      ],
+      "required_wording": "within-dataset synthetic-fabrication benchmark; not real-world fraud ground truth",
+      "caveats": [
+        "Cross-dataset generalization limitations must remain visible."
+      ]
+    },
+    {
+      "id": "SE-P04",
+      "surface": "README.md",
+      "claim_text": "H31 Unified Anomaly Score weighted AUC is 1.000 on its benchmark.",
+      "status": "PARTIAL",
+      "evidence": [
+        "experiments/h31_unified_anomaly_score/results/h31_results.json"
+      ],
+      "checks": [
+        {
+          "type": "json_value",
+          "path": "experiments/h31_unified_anomaly_score/results/h31_results.json",
+          "json_path": "summary.validation.weighted_auc",
+          "expected": 1.0
+        },
+        {
+          "type": "json_value",
+          "path": "experiments/h31_unified_anomaly_score/results/h31_results.json",
+          "json_path": "summary.n_datasets",
+          "expected": 8
+        }
+      ],
+      "required_wording": "AUC 1.000 on a small synthetic/curated benchmark, not broad deployment validation",
+      "caveats": [
+        "Perfect metric requires explicit scope caveat."
+      ]
+    },
+    {
+      "id": "SE-P05",
+      "surface": "README.md",
+      "claim_text": "H32 temporal p-hacking benchmark reports F1 1.000.",
+      "status": "PARTIAL",
+      "evidence": [
+        "experiments/h32_temporal_drift/results/h32_results.json"
+      ],
+      "checks": [
+        {
+          "type": "json_value",
+          "path": "experiments/h32_temporal_drift/results/h32_results.json",
+          "json_path": "summary.f1",
+          "expected": 1.0
+        },
+        {
+          "type": "json_value",
+          "path": "experiments/h32_temporal_drift/results/h32_results.json",
+          "json_path": "summary.n_authors",
+          "expected": 10
+        }
+      ],
+      "required_wording": "F1 1.000 on 10 synthetic authors; not real-world author validation",
+      "caveats": [
+        "Synthetic-only status must be visible anywhere the perfect F1 is cited."
+      ]
+    },
+    {
+      "id": "SE-P06",
+      "surface": "README.md",
+      "claim_text": "H33 cross-modal consistency reports overall separation 0.38261740284161727.",
+      "status": "VERIFIED",
+      "evidence": [
+        "experiments/h33_cross_modal_consistency/results/h33_results.json"
+      ],
+      "checks": [
+        {
+          "type": "json_value",
+          "path": "experiments/h33_cross_modal_consistency/results/h33_results.json",
+          "json_path": "summary.overall_separation",
+          "expected": 0.38261740284161727,
+          "tolerance": 0.000001
+        }
+      ],
+      "required_wording": "cross-modal consistency separation, with limited benchmark scope",
+      "caveats": [
+        "Do not convert separation into clinical/editorial accuracy."
+      ]
+    },
+    {
+      "id": "SE-P07",
+      "surface": "manuscript/manuscript.tex",
+      "claim_text": "Isotonic recalibration reduces MACE from 0.20201854032278263 to 0.03204198990601749.",
+      "status": "VERIFIED",
+      "evidence": [
+        "experiments/h34_calibrated_uncertainty/results/h34_results.json"
+      ],
+      "checks": [
+        {
+          "type": "json_value",
+          "path": "experiments/h34_calibrated_uncertainty/results/h34_results.json",
+          "json_path": "summary.baseline_mace",
+          "expected": 0.20201854032278263,
+          "tolerance": 0.000001
+        },
+        {
+          "type": "json_value",
+          "path": "experiments/h34_calibrated_uncertainty/results/h34_results.json",
+          "json_path": "summary.global_mace",
+          "expected": 0.03204198990601749,
+          "tolerance": 0.000001
+        }
+      ],
+      "required_wording": "MACE improvement, with detector-level fitted status disclosed if discussing individual detectors",
+      "caveats": [
+        "H31/H32/H33 detector-level entries are not fitted in the current artifact."
+      ]
+    },
+    {
+      "id": "SE-P08",
+      "surface": "RELEASE_CHECKLIST.md",
+      "claim_text": "Package version is 0.2.0.",
+      "status": "VERIFIED",
+      "evidence": [
+        "pyproject.toml",
+        "src/skeptic_toolkit/__init__.py",
+        "src/skeptic_mrm/__init__.py"
+      ],
+      "checks": [
+        {
+          "type": "file_contains",
+          "path": "pyproject.toml",
+          "text": "version = \"0.2.0\""
+        },
+        {
+          "type": "file_contains",
+          "path": "src/skeptic_toolkit/__init__.py",
+          "text": "__version__ = \"0.2.0\""
+        },
+        {
+          "type": "file_contains",
+          "path": "src/skeptic_mrm/__init__.py",
+          "text": "__version__ = \"0.2.0\""
+        }
+      ],
+      "required_wording": "v0.2.0 package metadata",
+      "caveats": []
+    },
+    {
+      "id": "SE-P09",
+      "surface": "RELEASE_CHECKLIST.md",
+      "claim_text": "302 tests passing / ruff + mypy green / READY FOR PUBLISHING",
+      "status": "RETIRED",
+      "evidence": [
+        "RELEASE_CHECKLIST.md"
+      ],
+      "checks": [
+        {
+          "type": "file_not_contains",
+          "path": "RELEASE_CHECKLIST.md",
+          "text": "READY FOR PUBLISHING"
+        },
+        {
+          "type": "file_not_contains",
+          "path": "RELEASE_CHECKLIST.md",
+          "text": "ruff + mypy green"
+        },
+        {
+          "type": "file_not_contains",
+          "path": "RELEASE_CHECKLIST.md",
+          "text": "302 tests passing"
+        }
+      ],
+      "required_wording": "Release status must be fail-closed and based on current command output.",
+      "caveats": [
+        "Distinguish pytest tests from adversarial/scientific tests."
+      ]
+    }
+  ],
+  "summary": {
+    "total_claims": 9,
+    "verified": 5,
+    "partial": 3,
+    "retired": 1,
+    "unverified": 0
+  }
+}

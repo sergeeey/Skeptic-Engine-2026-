@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+from typing import Any
+
 import numpy as np
 import pytest
 
@@ -49,7 +51,7 @@ def h32_module():
 
 
 @pytest.fixture
-def sample_clean_author(h32_module) -> "AuthorPValueSeries":
+def sample_clean_author(h32_module: dict[str, Any]) -> Any:
     """Author with uniform p-values (no drift)."""
     rng = np.random.default_rng(42)
     years = list(range(2010, 2024))
@@ -62,7 +64,7 @@ def sample_clean_author(h32_module) -> "AuthorPValueSeries":
 
 
 @pytest.fixture
-def sample_phacking_author(h32_module) -> "AuthorPValueSeries":
+def sample_phacking_author(h32_module: dict[str, Any]) -> Any:
     """Author with increasing p-hacking pattern."""
     rng = np.random.default_rng(42)
     years = list(range(2010, 2024))
@@ -226,7 +228,7 @@ class TestSyntheticData:
         rng = np.random.default_rng(42)
         authors = h32_module["generate_synthetic_authors"](rng)
         clean_authors = [a for a in authors if "clean" in a.author_id]
-        
+
         for author in clean_authors:
             all_pvalues = [p for pvs in author.p_values for p in pvs]
             mean_p = np.mean(all_pvalues)
@@ -238,7 +240,7 @@ class TestSyntheticData:
         rng = np.random.default_rng(42)
         authors = h32_module["generate_synthetic_authors"](rng)
         phacking_authors = [a for a in authors if "phacking" in a.author_id]
-        
+
         for author in phacking_authors:
             # Last year should have more p-values near 0.05 than first year
             first_year_frac = sum(1 for p in author.p_values[0] if 0.04 <= p < 0.05) / max(len(author.p_values[0]), 1)
@@ -270,7 +272,7 @@ class TestH32Integration:
         assert "summary" in results
         assert "author_reports" in results
         assert len(results["author_reports"]) == 10
-        
+
         summary = results["summary"]
         assert summary["accuracy"] >= 0.8  # Should detect p-hacking well
         assert summary["n_flagged"] >= 3  # At least some authors flagged

@@ -12,7 +12,6 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from unittest.mock import patch
 
 import numpy as np
 import pytest
@@ -159,7 +158,7 @@ class TestCollectSignalH29:
         # Should have at least some signals from real H29 file
         assert isinstance(signals, dict)
         # Real H29 has labels like "real", "fab_random", etc.
-        assert any(k.startswith("h29_") for k in signals.keys())
+        assert any(k.startswith("h29_") for k in signals)
 
     def test_all_scores_in_valid_range(self, h31_module: dict) -> None:
         """All scores should be in [0, 1]."""
@@ -349,15 +348,15 @@ class TestComputeUasStacking:
     def _make_cv_data(self, n_samples: int, n_features: int) -> tuple[np.ndarray, np.ndarray]:
         """Create simple CV data with balanced classes."""
         rng = np.random.default_rng(42)
-        X = rng.random((n_samples, n_features))
+        x = rng.random((n_samples, n_features))
         y = np.array([0] * (n_samples // 2) + [1] * (n_samples - n_samples // 2))
-        return X, y
+        return x, y
 
     def test_basic_stacking(self, h31_module: dict) -> None:
         """Should return CV metrics dict."""
-        X, y = self._make_cv_data(20, 5)
+        x, y = self._make_cv_data(20, 5)
 
-        result = h31_module["compute_uas_stacking"](X, y, n_splits=3)
+        result = h31_module["compute_uas_stacking"](x, y, n_splits=3)
 
         assert "mean_auc" in result
         assert "mean_ap" in result
@@ -367,27 +366,27 @@ class TestComputeUasStacking:
 
     def test_insufficient_data(self, h31_module: dict) -> None:
         """Should return status dict when data is insufficient."""
-        X = np.array([[0.5], [0.6]])
+        x = np.array([[0.5], [0.6]])
         y = np.array([0, 1])  # Only 1 positive, 1 negative
 
-        result = h31_module["compute_uas_stacking"](X, y)
+        result = h31_module["compute_uas_stacking"](x, y)
 
         assert result.get("status") == "insufficient_data_for_cv"
 
     def test_feature_importance_shape(self, h31_module: dict) -> None:
         """Feature importance should match number of features."""
-        X, y = self._make_cv_data(30, 7)
+        x, y = self._make_cv_data(30, 7)
 
-        result = h31_module["compute_uas_stacking"](X, y, n_splits=3)
+        result = h31_module["compute_uas_stacking"](x, y, n_splits=3)
 
         assert len(result["feature_importance"]) == 7
         assert all(0 <= fi <= 1 for fi in result["feature_importance"])
 
     def test_n_splits_adaptive(self, h31_module: dict) -> None:
         """Should adapt n_splits to class balance."""
-        X, y = self._make_cv_data(10, 3)  # 5 pos, 5 neg
+        x, y = self._make_cv_data(10, 3)  # 5 pos, 5 neg
 
-        result = h31_module["compute_uas_stacking"](X, y)
+        result = h31_module["compute_uas_stacking"](x, y)
 
         # Should have run with some n_splits
         assert "mean_auc" in result

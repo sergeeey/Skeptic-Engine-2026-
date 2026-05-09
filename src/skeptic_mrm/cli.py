@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-import html
+import html as html_lib
 import json
 import sys
 from pathlib import Path
@@ -95,7 +95,7 @@ def _print_html_report(data: dict[str, Any]) -> None:
     """Generate a simple HTML report."""
     summary = data.get("summary", {})
     candidates = data.get("candidate_reports", [])
-    html = f"""<!DOCTYPE html>
+    report_html = f"""<!DOCTYPE html>
 <html>
 <head><title>SE-MRM Batch Report</title>
 <style>
@@ -130,12 +130,12 @@ th {{ background: #eee; }}
         comp = c.get("candidate", {}).get("composition", "?")
         cid = c.get("candidate", {}).get("candidate_id", "?")
         # Escape all user-controlled data to prevent XSS
-        safe_cid = html.escape(str(cid))
-        safe_comp = html.escape(str(comp))
-        safe_status = html.escape(str(status))
-        html += f'<tr class="{safe_status}"><td>{safe_cid}</td><td>{safe_comp}</td><td>{score:.3f}</td><td>{safe_status}</td></tr>\n'
-    html += "</table></body></html>"
-    print(html)
+        safe_cid = html_lib.escape(str(cid))
+        safe_comp = html_lib.escape(str(comp))
+        safe_status = html_lib.escape(str(status))
+        report_html += f'<tr class="{safe_status}"><td>{safe_cid}</td><td>{safe_comp}</td><td>{score:.3f}</td><td>{safe_status}</td></tr>\n'
+    report_html += "</table></body></html>"
+    print(report_html)
 
 
 def cmd_benchmark(args: list[str]) -> None:
@@ -144,19 +144,27 @@ def cmd_benchmark(args: list[str]) -> None:
     print("Run: python experiments/mrm_bench_v01/run_bench_v01.py")
 
 
+def print_help() -> None:
+    """Print top-level CLI help."""
+    print("Skeptic Engine: Materials Reliability Module (SE-MRM) v0.2.0")
+    print("A falsification-first reliability layer for inorganic crystal candidates.")
+    print()
+    print("Usage: skeptic-mrm <command> [args...]")
+    print()
+    print("Commands:")
+    print("  ingest <path>           Load and validate candidates from file")
+    print("  run --input <path>      Run full MRM pipeline")
+    print("  report <path>           Display batch report")
+    print("  benchmark <name>        Run benchmark suite")
+    print()
+    print("Options:")
+    print("  -h, --help              Show this help message")
+
+
 def main() -> None:
     """CLI entry point for skeptic-mrm."""
-    if len(sys.argv) < 2:
-        print("Skeptic Engine: Materials Reliability Module (SE-MRM) v0.1.0")
-        print("A falsification-first reliability layer for inorganic crystal candidates.")
-        print()
-        print("Usage: skeptic-mrm <command> [args...]")
-        print()
-        print("Commands:")
-        print("  ingest <path>           Load and validate candidates from file")
-        print("  run --input <path>      Run full MRM pipeline")
-        print("  report <path>           Display batch report")
-        print("  benchmark <name>        Run benchmark suite")
+    if len(sys.argv) < 2 or sys.argv[1] in {"-h", "--help", "help"}:
+        print_help()
         return
 
     command = sys.argv[1]

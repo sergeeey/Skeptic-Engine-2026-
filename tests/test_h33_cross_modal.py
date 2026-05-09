@@ -295,7 +295,7 @@ class TestH33Integration:
         assert results["experiment"] == "H33"
         assert "summary" in results
         assert "dataset_reports" in results
-        
+
         summary = results["summary"]
         assert summary["overall_separation"] > 0.2  # Should detect fabrication
         assert summary["conclusion"] in ("SUCCESS", "WEAK")

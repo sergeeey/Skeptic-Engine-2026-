@@ -12,6 +12,7 @@ Covers:
 
 from __future__ import annotations
 
+import contextlib
 from unittest.mock import MagicMock, patch
 
 import pytest
@@ -623,10 +624,8 @@ class TestErrorHandling:
         from discovery_engine.cli import main
 
         # Click may show help and exit with 0 or 1, or just return
-        try:
+        with contextlib.suppress(SystemExit):
             main([])
-        except SystemExit:
-            pass  # Expected in some Click versions
 
     def test_main_handles_keyboard_interrupt(self) -> None:
         """main() should handle KeyboardInterrupt gracefully."""

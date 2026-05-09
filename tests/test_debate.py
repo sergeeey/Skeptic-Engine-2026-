@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import numpy as np
 import pytest
 
 
@@ -69,7 +68,7 @@ class TestProsecutor:
         features = {"benford_mace": 0.2}
         p = debate_module["Prosecutor"]()
         args = p.generate_arguments(features)
-        
+
         benford_args = [a for a in args if a.category == "benford"]
         assert len(benford_args) == 1
         assert benford_args[0].weight == pytest.approx(0.2)
@@ -79,7 +78,7 @@ class TestProsecutor:
         features = {"pvalue_frac_below_05": 0.4}
         p = debate_module["Prosecutor"]()
         args = p.generate_arguments(features)
-        
+
         pval_args = [a for a in args if a.category == "p_value"]
         assert len(pval_args) == 1
         assert pval_args[0].weight == pytest.approx(0.4)
@@ -110,7 +109,7 @@ class TestDefense:
         features = {"n_samples": 5000}
         d = debate_module["Defense"]()
         args = d.generate_arguments(features)
-        
+
         sample_args = [a for a in args if a.category == "sample_size"]
         assert len(sample_args) == 1
 
@@ -119,7 +118,7 @@ class TestDefense:
         features = {"benford_mace": 0.02}
         d = debate_module["Defense"]()
         args = d.generate_arguments(features)
-        
+
         benford_args = [a for a in args if a.category == "benford"]
         assert len(benford_args) == 1
         assert benford_args[0].weight > 0.9
@@ -154,7 +153,7 @@ class TestJudge:
         d_args = [
             debate_module["Argument"]("Claim 3", "Ev 3", 0.1, "cat1"),
         ]
-        
+
         verdict = j.render_verdict(p_args, d_args)
         assert verdict.status == "ANOMALOUS"
         assert verdict.confidence > 0.5
@@ -169,7 +168,7 @@ class TestJudge:
             debate_module["Argument"]("Claim 3", "Ev 3", 0.8, "cat1"),
             debate_module["Argument"]("Claim 4", "Ev 4", 0.9, "cat2"),
         ]
-        
+
         verdict = j.render_verdict(p_args, d_args)
         assert verdict.status == "CLEAN"
 
@@ -182,7 +181,7 @@ class TestJudge:
         d_args = [
             debate_module["Argument"]("Defense Benford", "Ev 3", 0.5, "benford"),
         ]
-        
+
         verdict = j.render_verdict(p_args, d_args)
         assert any("benford" in point for point in verdict.unresolved_points)
 
@@ -208,9 +207,9 @@ class TestRunDebate:
             "cross_modal_corr": 0.4,
             "calibrated_score": 0.6,
         }
-        
+
         verdict = debate_module["run_debate"](features)
-        
+
         assert verdict.status in ("CLEAN", "SUSPICIOUS", "ANOMALOUS")
         assert 0 <= verdict.confidence <= 1
         assert len(verdict.key_evidence) > 0

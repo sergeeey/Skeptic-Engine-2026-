@@ -26,8 +26,8 @@ from skeptic_engine.utils.behavioral_features import (
     pcurve_test_stat,
 )
 from skeptic_engine.utils.calibration import (
-    CalibrationModel,
     CalibratedScore,
+    CalibrationModel,
     build_calibration_dataset,
     compute_mace,
 )

@@ -56,7 +56,7 @@ class TestThresholdOptimizer:
         scores, labels = synthetic_data
         opt = threshold_optimizer["ThresholdOptimizer"]()
         opt.fit(scores, labels)
-        
+
         # Threshold should be around 0.5
         assert 0.3 < opt.threshold_ < 0.7
 
@@ -72,7 +72,7 @@ class TestThresholdOptimizer:
         scores, labels = synthetic_data
         opt = threshold_optimizer["ThresholdOptimizer"]()
         opt.fit(scores, labels)
-        
+
         preds = opt.predict(scores)
         assert set(preds).issubset({0, 1})
 
@@ -81,11 +81,11 @@ class TestThresholdOptimizer:
         scores, labels = synthetic_data
         opt = threshold_optimizer["ThresholdOptimizer"]()
         opt.fit(scores, labels)
-        
+
         # Evaluate F1 at optimal threshold
         preds_opt = opt.predict(scores)
         f1_opt = f1_score(labels, preds_opt)
-        
+
         # Should be close to the stored F1
         assert f1_opt == pytest.approx(opt.f1_score_, abs=0.01)
 
@@ -93,14 +93,14 @@ class TestThresholdOptimizer:
         """Should handle empty data gracefully."""
         opt = threshold_optimizer["ThresholdOptimizer"]()
         opt.fit(np.array([]), np.array([]))
-        
+
         assert opt.threshold_ == 0.5  # Default fallback
 
     def test_single_sample(self, threshold_optimizer: dict) -> None:
         """Should handle single sample."""
         opt = threshold_optimizer["ThresholdOptimizer"]()
         opt.fit(np.array([0.5]), np.array([0.0]))
-        
+
         assert opt.threshold_ == 0.5
 
     def test_to_result(self, threshold_optimizer: dict, synthetic_data) -> None:
@@ -108,7 +108,7 @@ class TestThresholdOptimizer:
         scores, labels = synthetic_data
         opt = threshold_optimizer["ThresholdOptimizer"]()
         opt.fit(scores, labels)
-        
+
         result = opt.to_result(n_samples=200, n_positives=100)
         assert result.n_samples == 200
         assert result.n_positives == 100
@@ -119,7 +119,7 @@ class TestThresholdOptimizer:
         scores, labels = synthetic_data
         opt = threshold_optimizer["ThresholdOptimizer"]()
         opt.fit(scores, labels)
-        
+
         result = opt.to_result(n_samples=200, n_positives=100)
         d = result.to_dict()
         assert "optimal_threshold" in d
@@ -139,7 +139,7 @@ class TestFindSweetSpots:
             {"detector": "b", "scores": [0.2, 0.8] * 50, "labels": [0.0, 1.0] * 50},
         ]
         results = threshold_optimizer["find_sweet_spots"](data)
-        
+
         assert "a" in results
         assert "b" in results
         assert len(results) == 2
@@ -151,7 +151,7 @@ class TestFindSweetSpots:
             {"detector": "big", "scores": [0.1, 0.9] * 50, "labels": [0.0, 1.0] * 50},
         ]
         results = threshold_optimizer["find_sweet_spots"](data)
-        
+
         assert "small" not in results
         assert "big" in results
 

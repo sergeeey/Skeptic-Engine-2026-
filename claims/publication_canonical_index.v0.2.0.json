@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.1",
+  "generated_for": "skeptic-engine-v0.2.0-governance-sprint",
+  "scope": "Release-facing Skeptic Engine claims for v0.2.0 governance",
+  "release_surface": [
+    "README.md",
+    "REPORT.md",
+    "RELEASE_CHECKLIST.md",
+    "manuscript/manuscript.tex",
+    "manuscript/PREPRINT_v01.md",
+    "manuscript/PREPRINT_STRUCTURE.md"
+  ],
+  "governance": {
+    "project_canon": "PROJECT_CANON.md",
+    "artifact_inventory": "claims/artifact_inventory.v0.2.0.json",
+    "claim_matrix": "claims/publication_claim_matrix.v0.2.0.json",
+    "validator": "scripts/validate_publication_claims.py",
+    "redflag_scanner": "scripts/check_redflags.py"
+  },
+  "source_of_truth": {
+    "h23_real_data": [
+      "experiments/h23_phacking_behavioral/results/h23_real_rpp_results.json",
+      "experiments/bootstrap_results/bootstrap_ci.json"
+    ],
+    "h24_benford_scrna": [
+      "experiments/h24_benford_scrna/results/h24_results.json",
+      "experiments/bootstrap_results/bootstrap_ci.json"
+    ],
+    "h31_unified_anomaly_score": [
+      "experiments/h31_unified_anomaly_score/results/h31_results.json"
+    ],
+    "h32_temporal_p_hacking": [
+      "experiments/h32_temporal_drift/results/h32_results.json"
+    ],
+    "h33_cross_modal": [
+      "experiments/h33_cross_modal_consistency/results/h33_results.json"
+    ],
+    "h34_calibration": [
+      "experiments/h34_calibrated_uncertainty/results/h34_results.json"
+    ],
+    "package_metadata": [
+      "pyproject.toml",
+      "src/skeptic_toolkit/__init__.py",
+      "src/skeptic_mrm/__init__.py"
+    ]
+  },
+  "note": "This index intentionally points to existing experiment artifacts rather than introducing a root results/ directory."
+}

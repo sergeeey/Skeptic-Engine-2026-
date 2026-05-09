@@ -51,7 +51,7 @@ class ThresholdOptimizer:
         self.precision_ = 0.0
         self.recall_ = 0.0
 
-    def fit(self, scores: np.ndarray, labels: np.ndarray) -> "ThresholdOptimizer":
+    def fit(self, scores: np.ndarray, labels: np.ndarray) -> ThresholdOptimizer:
         """Find threshold that maximizes F1 score.
 
         Parameters
@@ -70,7 +70,7 @@ class ThresholdOptimizer:
 
         # Compute precision-recall pairs
         precision, recall, thresholds = precision_recall_curve(labels, scores)
-        
+
         # Compute F1 for each threshold
         # F1 = 2 * (P * R) / (P + R)
         # Avoid division by zero
@@ -80,7 +80,7 @@ class ThresholdOptimizer:
 
         # Find index of max F1
         best_idx = np.argmax(f1_scores)
-        
+
         # Note: precision_recall_curve returns len(thresholds) = len(precision) - 1
         # The last precision corresponds to recall=0, which implies threshold=infinity.
         # We map back to the threshold array.

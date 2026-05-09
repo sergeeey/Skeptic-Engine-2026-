@@ -10,7 +10,7 @@ labels (real vs fabricated) are known.
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any
 
 import numpy as np
@@ -58,7 +58,7 @@ class CalibrationModel:
     n_calibration_samples: int = 0
     score_range: tuple[float, float] = (0.0, 1.0)
 
-    def fit(self, raw_scores: np.ndarray, true_labels: np.ndarray) -> "CalibrationModel":
+    def fit(self, raw_scores: np.ndarray, true_labels: np.ndarray) -> CalibrationModel:
         """Fit isotonic regression on calibration data.
 
         Parameters

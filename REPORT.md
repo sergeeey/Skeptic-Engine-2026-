@@ -20,7 +20,7 @@ Three independent experiments produced positive results across five datasets:
 |-----------|---------|----------|-------------|
 | H24: Benford digit forensics on scRNA-seq | 0.978 (fusion) | PBMC3k, Kang2018 | Digit + cell-level fusion detects fabricated count matrices |
 | H25: Banking autoencoder on proteomics | 1.000 (fusion) | CPTAC proteomics, CNA | AE reconstruction error catches structure-breaking fabrication |
-| H23: Behavioral p-hacking detection | 0.993 (sim) / 0.765 (real) | Simulated, RPP (99), Statcheck (61) | Fraud sequence features beat baselines by +7.5pp to +28.7pp |
+| H23: Behavioral p-hacking detection | 0.993 (sim) / 0.765 (real) | Simulated, RPP (99), Statcheck (61) | Behavioral sequence features beat baselines by +7.5pp to +28.7pp |
 
 One hypothesis was killed after honest execution:
 
@@ -653,7 +653,7 @@ experiments/
 
 1. **Third dataset for H24** — non-PBMC tissue (brain, liver, tumor) to test tissue generalizability
 2. **H25 cross-omics** — train on CNA, test on proteomics (and vice versa) to test modality transfer
-3. **Feature engineering V2** — inter-gene correlation features (fraud detection uses inter-transaction patterns) which may improve cross-dataset generalization
+3. **Feature engineering V2** — inter-gene correlation features (financial anomaly detection uses inter-transaction patterns) which may improve cross-dataset generalization
 4. **H23 larger p-value dataset** — use statcheck's 688k extracted p-values (available via DANS repository) for scaled validation
 
 ### 12.2 Publication Path (when ready)

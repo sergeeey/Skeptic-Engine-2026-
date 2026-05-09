@@ -1,65 +1,60 @@
-# RELEASE Checklist — v0.2.0
+# Release Checklist - v0.2.0
 
-## Pre-Release Verification
+Release status is fail-closed. A release is `READY` only when every required gate below has current passing evidence.
 
-- [ ] All tests pass: `pytest tests/ -v --tb=short`
-- [ ] Ruff clean: `ruff check src/ tests/`
-- [ ] Mypy clean: `mypy src/`
-- [ ] Smoke test: `python experiments/mrm_bench_v01/run_smoke_test.py`
-- [ ] CLI works: `skeptic-toolkit --help`
-- [ ] Demo notebook: verify `demo_colab.ipynb` runs end-to-end
+## Current Verdict
 
-## Package Build
+`READY FOR LOCAL PACKAGE RELEASE`
 
-- [ ] `python -m build` succeeds
-- [ ] `twine check dist/*` passes
-- [ ] `pip install .` works in fresh venv
-- [ ] `skeptic-toolkit --help` works after pip install
-- [ ] `pip install ".[dev]"` installs all dev dependencies
+Public/external release remains gated on manual `.env` and artifact secret review. Automated local gates now pass: pytest, ruff, mypy, governance checks, package build, twine check, CLI smoke, and MRM smoke.
 
-## Version Bump
+## Required Release Gates
 
-- [ ] `__version__ = "0.2.0"` in `src/skeptic_toolkit/__init__.py`
-- [ ] `__version__ = "0.2.0"` in `src/skeptic_mrm/__init__.py`
-- [ ] `version = "0.2.0"` in `pyproject.toml`
-- [ ] Changelog entry in `CHANGELOG.md`
+| Gate | Command | Current status | Evidence |
+|---|---|---|---|
+| Project canon exists | `Test-Path PROJECT_CANON.md` | PASS | Canon file added |
+| Claim contract validates | `python scripts/validate_publication_claims.py` | PASS | `PUBLICATION CLAIMS PASSED.` |
+| Red-flag scan | `python scripts/check_redflags.py` | PASS with warnings | 0 errors, 1 warning: local `.env` exists |
+| Unit tests | `pytest -q` | PASS | Latest observed: 349 passed, 1 warning |
+| Ruff | `ruff check src tests scripts` | PASS | `All checks passed!` |
+| Mypy | `mypy src` | PASS | `Success: no issues found in 94 source files` |
+| Package build | `python -m build` | PASS | Wheel + sdist built without setuptools license deprecation warnings |
+| Twine check | `twine check dist/*` | PASS | Existing v0.1.1 and v0.2.0 artifacts passed |
+| CLI smoke | `skeptic-toolkit --help`; `skeptic-mrm --help` | PASS | Both commands print help |
+| MRM smoke | `python experiments/mrm_bench_v01/run_smoke_test.py` | PASS | 2 candidates processed; both held |
+| Secret scan | `python scripts/check_redflags.py` plus manual `.env` review | PARTIAL | `.env` is ignored by Git, but local contents still require manual review before any public release |
 
-## Documentation
+## Package Metadata
 
-- [x] README updated with unified narrative
-- [x] REPORT updated with H27-H33 results
-- [ ] API docs generated (if applicable)
-- [ ] `demo_colab.ipynb` updated with new experiments
+| Item | Expected | Current status |
+|---|---|---|
+| `pyproject.toml` version | `0.2.0` | Covered by claim matrix |
+| `src/skeptic_toolkit/__init__.py` version | `0.2.0` | Covered by claim matrix |
+| `src/skeptic_mrm/__init__.py` version | `0.2.0` | Covered by claim matrix |
+| Changelog entry | present | NOT VERIFIED |
 
-## External Releases
+## Public Claim Gates
 
-- [ ] **PyPI upload**: `twine upload dist/*`
-- [ ] **Zenodo v0.2**: upload post-H33 code + report
-- [ ] **bioRxiv preprint v03**: manuscript with H31+H32+H33
+Before release-facing text changes are promoted:
 
-## Post-Release
+1. Update `PROJECT_CANON.md` if the public identity changes.
+2. Add or update evidence in `claims/artifact_inventory.v0.2.0.json`.
+3. Add or update field-level checks in `claims/publication_claim_matrix.v0.2.0.json`.
+4. Run `python scripts/validate_publication_claims.py`.
+5. Run `python scripts/check_redflags.py`.
 
-- [ ] Tag release: `git tag v0.2.0 && git push origin v0.2.0`
-- [ ] GitHub Release notes
-- [ ] Update demo_colab.ipynb if needed
-- [ ] Send pitch emails (Bradshaw, Bik, Nuijten)
+## External Release Actions
 
----
+These require all gates above to be green first:
 
-## Status: 🟢 READY FOR PUBLISHING
+- PyPI upload
+- Zenodo v0.2 upload
+- bioRxiv/preprint submission
+- Git tag and GitHub release
+- Outreach using release claims
 
-**Completed:**
-- ✅ README 2.0 with unified narrative
-- ✅ REPORT updated with H27-H33
-- ✅ 302 tests passing
-- ✅ ruff + mypy green
-- ✅ Version bumped to 0.2.0
-- ✅ Build succeeds (wheel + sdist)
-- ✅ Twine check PASSED
+## Notes
 
-**Remaining (external actions required):**
-- ⏳ PyPI upload: `twine upload dist/skeptic_engine-0.2.0*`
-- ⏳ Zenodo v0.2: upload post-H33 code + report
-- ⏳ bioRxiv preprint v03: manuscript with H31+H32+H33
-- ⏳ Tag release: `git tag v0.2.0 && git push origin v0.2.0`
-- ⏳ Send pitch emails (Bradshaw, Bik, Nuijten)
+- `302 adversarial tests` and `349 pytest tests` are different claim types. Do not collapse them into one "tests passing" statement.
+- Perfect metrics such as `AUC 1.000` and `F1 1.000` require synthetic/limited-scope caveats.
+- `validated` must be scoped: real-data, synthetic-only, within-dataset, or underpowered.
