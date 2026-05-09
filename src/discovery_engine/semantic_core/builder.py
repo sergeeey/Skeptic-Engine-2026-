@@ -51,7 +51,9 @@ def _shared_terms(profile_a: SemanticProfile, profile_b: SemanticProfile) -> tup
     return tuple(sorted(set(profile_a.bridge_tags).intersection(profile_b.bridge_tags)))
 
 
-def _transferable_methods(profile_a: SemanticProfile, profile_b: SemanticProfile) -> tuple[str, ...]:
+def _transferable_methods(
+    profile_a: SemanticProfile, profile_b: SemanticProfile
+) -> tuple[str, ...]:
     return tuple(sorted(set(profile_a.methods).union(profile_b.methods)))
 
 
@@ -75,7 +77,8 @@ def find_cross_domain_links(
             transferable_methods = _transferable_methods(profile_a, profile_b)
             score = round(
                 (
-                    len(shared_tags) / max(len(set(profile_a.bridge_tags).union(profile_b.bridge_tags)), 1)
+                    len(shared_tags)
+                    / max(len(set(profile_a.bridge_tags).union(profile_b.bridge_tags)), 1)
                     + (record_a.novelty_factor + record_b.novelty_factor) / 2
                 )
                 / 2,

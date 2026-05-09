@@ -116,14 +116,22 @@ _BRIDGE_TAG_QUERY_TERMS = {
     "estimation": ["state estimation", "kalman filter", "observer"],
     "feedback": ["feedback control", "closed loop", "controller"],
     "graph": ["graph neural network", "message passing", "graph learning"],
-    "information_theory": ["information bottleneck", "mutual information", "representation learning"],
+    "information_theory": [
+        "information bottleneck",
+        "mutual information",
+        "representation learning",
+    ],
     "optimization": ["optimization", "bayesian optimization", "active learning"],
     "topology": ["topological data analysis", "persistent homology", "topological descriptors"],
     "surrogates": ["surrogate model", "reduced-order model", "proxy benchmark"],
     "mof": ["metal-organic framework", "MOF benchmark", "reticular chemistry"],
     "stability": ["stability prediction", "degradation benchmark", "phase stability"],
     "single_cell": ["single-cell", "single-cell RNA", "cell state transition"],
-    "llps": ["liquid-liquid phase separation", "condensate dynamics", "intrinsically disordered protein"],
+    "llps": [
+        "liquid-liquid phase separation",
+        "condensate dynamics",
+        "intrinsically disordered protein",
+    ],
     "koopman": ["koopman operator", "slow modes", "dynamical mode decomposition"],
 }
 
@@ -236,7 +244,9 @@ def _record_terms(record: SourceRecord) -> set[str]:
 
 
 def _card_terms(card: HypothesisCard, source_index: dict[str, SourceRecord]) -> set[str]:
-    evidence_records = [source_index[item] for item in card.evidence_source_ids if item in source_index]
+    evidence_records = [
+        source_index[item] for item in card.evidence_source_ids if item in source_index
+    ]
     payload = [
         card.title,
         card.core_mechanism,
@@ -269,7 +279,9 @@ def _card_bridge_tags(card: HypothesisCard, source_index: dict[str, SourceRecord
 
 
 def _card_anchor_terms(card: HypothesisCard, source_index: dict[str, SourceRecord]) -> set[str]:
-    evidence_records = [source_index[item] for item in card.evidence_source_ids if item in source_index]
+    evidence_records = [
+        source_index[item] for item in card.evidence_source_ids if item in source_index
+    ]
     anchors = set(_tokenize(card.title))
     for record in evidence_records:
         anchors.update(_tokenize(" ".join(record.methods)))
@@ -301,7 +313,9 @@ def _query_terms(card: HypothesisCard, source_index: dict[str, SourceRecord]) ->
         if field_name in _DOMAIN_QUERY_TERMS:
             terms.append(_DOMAIN_QUERY_TERMS[field_name])
 
-    evidence_records = [source_index[item] for item in card.evidence_source_ids if item in source_index]
+    evidence_records = [
+        source_index[item] for item in card.evidence_source_ids if item in source_index
+    ]
     for record in evidence_records:
         if record.methods:
             terms.append(record.methods[0].replace("_", " "))
@@ -324,11 +338,15 @@ def _query_terms(card: HypothesisCard, source_index: dict[str, SourceRecord]) ->
     return deduped[:8]
 
 
-def build_targeted_queries(card: HypothesisCard, source_index: dict[str, SourceRecord]) -> list[str]:
+def build_targeted_queries(
+    card: HypothesisCard, source_index: dict[str, SourceRecord]
+) -> list[str]:
     base_terms = _query_terms(card, source_index)
     method = _transfer_method(card) or "computational method"
     domain_a, domain_b = _domain_pair(card)
-    evidence_records = [source_index[item] for item in card.evidence_source_ids if item in source_index]
+    evidence_records = [
+        source_index[item] for item in card.evidence_source_ids if item in source_index
+    ]
 
     queries: list[str] = []
     if base_terms:
@@ -425,8 +443,12 @@ def _score_hit(
         return None
 
     term_overlap = len(shared_terms) / max(min(len(card_terms), 24), 1)
-    anchor_overlap = len(shared_anchor_terms) / max(len(card_anchor_terms), 1) if card_anchor_terms else 0.0
-    bridge_overlap = len(shared_bridge_tags) / max(len(card_bridge_tags), 1) if card_bridge_tags else 0.0
+    anchor_overlap = (
+        len(shared_anchor_terms) / max(len(card_anchor_terms), 1) if card_anchor_terms else 0.0
+    )
+    bridge_overlap = (
+        len(shared_bridge_tags) / max(len(card_bridge_tags), 1) if card_bridge_tags else 0.0
+    )
     domain_bonus = 1.0 if domain_match else 0.35 if record.domain == "interdisciplinary" else 0.0
     authority_bonus = record.authority_score
 
@@ -493,9 +515,9 @@ def fetch_targeted_prior_art(
                 max_results=query_budget,
                 year_range="2016-2026",
             )
-            providers_scanned["semantic_scholar"] = (
-                providers_scanned.get("semantic_scholar", 0) + len(scholar_records)
-            )
+            providers_scanned["semantic_scholar"] = providers_scanned.get(
+                "semantic_scholar", 0
+            ) + len(scholar_records)
             fetched.extend(scholar_records)
         except Exception as exc:
             warnings.append(f"semantic_scholar failed for '{query_variant}': {exc}")

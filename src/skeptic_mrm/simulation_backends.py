@@ -13,7 +13,9 @@ class ISimulationBackend(ABC):
     """Abstract interface for an atomistic simulation backend."""
 
     @abstractmethod
-    def relax(self, candidate: MaterialCandidate, config: dict[str, Any] | None = None) -> SimulationRun:
+    def relax(
+        self, candidate: MaterialCandidate, config: dict[str, Any] | None = None
+    ) -> SimulationRun:
         """Relax structure and return simulation run record."""
 
     @abstractmethod
@@ -45,7 +47,9 @@ class MatterSimBackendStub(ISimulationBackend):
         self._version = "mattersim-stub-0.1"
         self._run_counter = 0
 
-    def relax(self, candidate: MaterialCandidate, config: dict[str, Any] | None = None) -> SimulationRun:
+    def relax(
+        self, candidate: MaterialCandidate, config: dict[str, Any] | None = None
+    ) -> SimulationRun:
         self._run_counter += 1
         run_id = f"sim_{self._run_counter:06d}"
         return SimulationRun(
@@ -114,7 +118,9 @@ class JaxMdBackendExperimental(ISimulationBackend):
         self._version = "jaxmd-experimental-0.1"
         self._run_counter = 0
 
-    def relax(self, candidate: MaterialCandidate, config: dict[str, Any] | None = None) -> SimulationRun:
+    def relax(
+        self, candidate: MaterialCandidate, config: dict[str, Any] | None = None
+    ) -> SimulationRun:
         self._run_counter += 1
         return SimulationRun(
             run_id=f"jaxmd_{self._run_counter:06d}",

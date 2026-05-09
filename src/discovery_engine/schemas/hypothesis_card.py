@@ -37,10 +37,14 @@ class HypothesisCard:
     def __post_init__(self) -> None:
         self.novelty_score = _bounded_score("novelty_score", self.novelty_score)
         self.feasibility_score = _bounded_score("feasibility_score", self.feasibility_score)
-        self.falsifiability_score = _bounded_score("falsifiability_score", self.falsifiability_score)
+        self.falsifiability_score = _bounded_score(
+            "falsifiability_score", self.falsifiability_score
+        )
         self.impact_score = _bounded_score("impact_score", self.impact_score)
         self.validation_cost = _bounded_score("validation_cost", self.validation_cost)
-        self.evidence_quality_score = _bounded_score("evidence_quality_score", self.evidence_quality_score)
+        self.evidence_quality_score = _bounded_score(
+            "evidence_quality_score", self.evidence_quality_score
+        )
         self.confidence_score = _bounded_score("confidence_score", self.confidence_score)
 
     @property

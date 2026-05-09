@@ -45,9 +45,9 @@ class TestExtractBehavioralFeatures:
         p_values = rng.uniform(0, 1, size=50)
         features = extract_behavioral_features(p_values)
 
-        assert len(features) == len(FEATURE_NAMES), (
-            f"Features count {len(features)} != FEATURE_NAMES count {len(FEATURE_NAMES)}"
-        )
+        assert len(features) == len(
+            FEATURE_NAMES
+        ), f"Features count {len(features)} != FEATURE_NAMES count {len(FEATURE_NAMES)}"
 
     def test_edge_case_empty_input(self) -> None:
         """Empty input → zeros array of length 18."""
@@ -691,7 +691,9 @@ class TestNcbiRequest:
         mock_request_cls.assert_called_once()
         call_kwargs = mock_request_cls.call_args
         # Request(url, headers={...})
-        headers = call_kwargs.kwargs.get("headers", call_kwargs.args[1] if len(call_kwargs.args) > 1 else {})
+        headers = call_kwargs.kwargs.get(
+            "headers", call_kwargs.args[1] if len(call_kwargs.args) > 1 else {}
+        )
         assert "User-Agent" in headers
         assert headers["User-Agent"] == DEFAULT_USER_AGENT
 
@@ -775,9 +777,7 @@ class TestRunCvEvaluate:
             def dynamic_predict_proba(x: np.ndarray) -> np.ndarray:
                 n_samples = len(x)
                 half = n_samples // 2
-                return np.array(
-                    [[0.7, 0.3]] * half + [[0.3, 0.7]] * (n_samples - half)
-                )
+                return np.array([[0.7, 0.3]] * half + [[0.3, 0.7]] * (n_samples - half))
 
             model.predict_proba.side_effect = dynamic_predict_proba
             return model
@@ -818,12 +818,12 @@ class TestRunCvEvaluate:
 
         def factory() -> MagicMock:
             model = MagicMock()
+
             def dynamic_predict_proba(x: np.ndarray) -> np.ndarray:
                 n_samples = len(x)
                 half = n_samples // 2
-                return np.array(
-                    [[0.7, 0.3]] * half + [[0.3, 0.7]] * (n_samples - half)
-                )
+                return np.array([[0.7, 0.3]] * half + [[0.3, 0.7]] * (n_samples - half))
+
             model.predict_proba.side_effect = dynamic_predict_proba
             return model
 
@@ -842,12 +842,12 @@ class TestRunCvEvaluate:
 
         def factory() -> MagicMock:
             model = MagicMock()
+
             def dynamic_predict_proba(x: np.ndarray) -> np.ndarray:
                 n_samples = len(x)
                 half = n_samples // 2
-                return np.array(
-                    [[0.7, 0.3]] * half + [[0.3, 0.7]] * (n_samples - half)
-                )
+                return np.array([[0.7, 0.3]] * half + [[0.3, 0.7]] * (n_samples - half))
+
             model.predict_proba.side_effect = dynamic_predict_proba
             return model
 

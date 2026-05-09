@@ -126,10 +126,7 @@ def run_check(check: dict[str, Any]) -> None:
         expected = check["expected"]
         tolerance = check.get("tolerance")
         if not values_equal(actual, expected, tolerance):
-            fail(
-                f"{rel_path}:{check['json_path']} expected {expected!r}, "
-                f"got {actual!r}"
-            )
+            fail(f"{rel_path}:{check['json_path']} expected {expected!r}, " f"got {actual!r}")
         return
 
     fail(f"Unsupported check type: {check_type}")

@@ -73,8 +73,7 @@ def import_mofsimplify_solvent_route(
             text_handle = (line.decode("utf-8-sig") for line in handle)
             reader = csv.DictReader(text_handle)
             imported_rows = [
-                {str(key): str(value or "").strip() for key, value in row.items()}
-                for row in reader
+                {str(key): str(value or "").strip() for key, value in row.items()} for row in reader
             ]
 
     target_name = "solvent_removal_stability_binary"
@@ -111,7 +110,9 @@ def import_mofsimplify_solvent_route(
                 "split": row.get("partition", "").strip(),
                 "doi": row.get("doi", "").strip(),
                 "ann_prediction_probability": row.get("ANN_prediction_probability", "").strip(),
-                "ann_predicted_target_value": row.get("ANN_predicted_solvent_removal_stability", "").strip(),
+                "ann_predicted_target_value": row.get(
+                    "ANN_predicted_solvent_removal_stability", ""
+                ).strip(),
                 "latent_space_entropy": row.get("ANN_LSE", "").strip(),
                 "source_note": source_note,
             }
@@ -181,7 +182,6 @@ def import_mofsimplify_solvent_route(
         join_keys_path=str(join_keys_path),
         available_targets=[target_name],
         class_balance=[
-            f"{label_value}={count}"
-            for label_value, count in sorted(class_counts.items())
+            f"{label_value}={count}" for label_value, count in sorted(class_counts.items())
         ],
     )

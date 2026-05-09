@@ -91,7 +91,9 @@ def _balanced_accuracy(y_true: np.ndarray, y_pred: np.ndarray) -> float:
     return (tpr + tnr) / 2.0
 
 
-def _metric_set(y_true: np.ndarray, probabilities: np.ndarray, threshold: float) -> H10GraphMetricSet:
+def _metric_set(
+    y_true: np.ndarray, probabilities: np.ndarray, threshold: float
+) -> H10GraphMetricSet:
     predictions = (probabilities >= threshold).astype(int)
     return H10GraphMetricSet(
         average_precision=_safe_average_precision(y_true, probabilities),
@@ -123,8 +125,35 @@ def _best_threshold(y_true: np.ndarray, probabilities: np.ndarray) -> float:
 def _element_fraction_features(atomic_numbers: list[int]) -> dict[str, float]:
     counts = np.bincount(np.array(atomic_numbers, dtype=int), minlength=95).astype(float)
     total = max(float(len(atomic_numbers)), 1.0)
-    selected = [1, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 19, 20, 24, 25, 26, 27, 28, 29, 30, 31, 40, 56]
-    return {f"atom_frac_{atomic_number}": counts[atomic_number] / total for atomic_number in selected}
+    selected = [
+        1,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        19,
+        20,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        40,
+        56,
+    ]
+    return {
+        f"atom_frac_{atomic_number}": counts[atomic_number] / total for atomic_number in selected
+    }
 
 
 def _degree_bin_features(degrees: np.ndarray) -> dict[str, float]:
@@ -147,9 +176,15 @@ def _graph_features(raw: dict[str, object]) -> dict[str, float | int | str]:
     graph.add_edges_from((int(a), int(b)) for a, b in raw["edges"])
 
     degrees = np.array([degree for _, degree in graph.degree()], dtype=float)
-    components = [len(component) for component in nx.connected_components(graph)] if graph.number_of_nodes() else [0]
+    components = (
+        [len(component) for component in nx.connected_components(graph)]
+        if graph.number_of_nodes()
+        else [0]
+    )
     largest_component = max(components) if components else 0
-    density = float((2.0 * num_edges) / (num_nodes * max(num_nodes - 1, 1))) if num_nodes > 1 else 0.0
+    density = (
+        float((2.0 * num_edges) / (num_nodes * max(num_nodes - 1, 1))) if num_nodes > 1 else 0.0
+    )
     avg_clustering = float(nx.average_clustering(graph)) if num_edges > 0 else 0.0
 
     features: dict[str, float | int | str] = {
@@ -187,43 +222,46 @@ def _load_graph_feature_frame(path: Path) -> pd.DataFrame:
 
 
 def _build_markdown(run: H10GraphBaselineRun) -> str:
-    return "\n".join(
-        [
-            "# H10 Graph Baseline",
-            "",
-            f"- model: `{run.model_id}`",
-            f"- target: `{run.target_name}`",
-            f"- input artifact: `{run.input_artifact}`",
-            f"- rows: train=`{run.train_rows}`, val=`{run.val_rows}`, test=`{run.test_rows}`",
-            f"- graph feature dim: `{run.graph_feature_dim}`",
-            f"- selected params: `{json.dumps(run.selected_params, ensure_ascii=True)}`",
-            "",
-            "## Validation Metrics",
-            "",
-            f"- average_precision: `{run.val_metrics.average_precision:.6f}`",
-            f"- roc_auc: `{run.val_metrics.roc_auc:.6f}`",
-            f"- balanced_accuracy: `{run.val_metrics.balanced_accuracy:.6f}`",
-            f"- threshold: `{run.val_metrics.threshold:.6f}`",
-            "",
-            "## Test Metrics",
-            "",
-            f"- average_precision: `{run.test_metrics.average_precision:.6f}`",
-            f"- roc_auc: `{run.test_metrics.roc_auc:.6f}`",
-            f"- balanced_accuracy: `{run.test_metrics.balanced_accuracy:.6f}`",
-            f"- threshold: `{run.test_metrics.threshold:.6f}`",
-            "",
-            "## Notes",
-            "",
-            "- This baseline uses graph-derived structural features extracted directly from the graph artifact.",
-            "- It is the first trainable graph-path baseline, even though it is not yet a message-passing neural network.",
-            "- Hyperparameter selection is performed on validation only.",
-            "",
-            "## Artifacts",
-            "",
-            f"- report: `{run.output_report_path}`",
-            f"- predictions: `{run.output_predictions_path}`",
-        ]
-    ) + "\n"
+    return (
+        "\n".join(
+            [
+                "# H10 Graph Baseline",
+                "",
+                f"- model: `{run.model_id}`",
+                f"- target: `{run.target_name}`",
+                f"- input artifact: `{run.input_artifact}`",
+                f"- rows: train=`{run.train_rows}`, val=`{run.val_rows}`, test=`{run.test_rows}`",
+                f"- graph feature dim: `{run.graph_feature_dim}`",
+                f"- selected params: `{json.dumps(run.selected_params, ensure_ascii=True)}`",
+                "",
+                "## Validation Metrics",
+                "",
+                f"- average_precision: `{run.val_metrics.average_precision:.6f}`",
+                f"- roc_auc: `{run.val_metrics.roc_auc:.6f}`",
+                f"- balanced_accuracy: `{run.val_metrics.balanced_accuracy:.6f}`",
+                f"- threshold: `{run.val_metrics.threshold:.6f}`",
+                "",
+                "## Test Metrics",
+                "",
+                f"- average_precision: `{run.test_metrics.average_precision:.6f}`",
+                f"- roc_auc: `{run.test_metrics.roc_auc:.6f}`",
+                f"- balanced_accuracy: `{run.test_metrics.balanced_accuracy:.6f}`",
+                f"- threshold: `{run.test_metrics.threshold:.6f}`",
+                "",
+                "## Notes",
+                "",
+                "- This baseline uses graph-derived structural features extracted directly from the graph artifact.",
+                "- It is the first trainable graph-path baseline, even though it is not yet a message-passing neural network.",
+                "- Hyperparameter selection is performed on validation only.",
+                "",
+                "## Artifacts",
+                "",
+                f"- report: `{run.output_report_path}`",
+                f"- predictions: `{run.output_predictions_path}`",
+            ]
+        )
+        + "\n"
+    )
 
 
 def run_h10_graph_baseline(

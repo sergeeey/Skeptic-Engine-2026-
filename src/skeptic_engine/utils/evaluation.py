@@ -55,9 +55,7 @@ def run_classification(
     dict[str, float]
         Dictionary with 'auc', 'ap', 'f1', 'threshold' metrics.
     """
-    splitter = StratifiedShuffleSplit(
-        n_splits=1, test_size=test_size, random_state=random_state
-    )
+    splitter = StratifiedShuffleSplit(n_splits=1, test_size=test_size, random_state=random_state)
     train_idx, test_idx = next(splitter.split(x, y))
 
     x_train, x_test = x[train_idx], x[test_idx]

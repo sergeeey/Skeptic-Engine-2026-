@@ -152,9 +152,7 @@ class TestPipelineCommands:
         """pipeline run with all flags should include all stages."""
         from discovery_engine.cli import cli
 
-        result = runner.invoke(
-            cli, ["pipeline", "run", "--sources", "--semantic", "--candidates"]
-        )
+        result = runner.invoke(cli, ["pipeline", "run", "--sources", "--semantic", "--candidates"])
 
         assert result.exit_code == 0
         call_args = mock_legacy_main.call_args[0][0]
@@ -709,9 +707,7 @@ class TestCLIIntegration:
         """Full pipeline run with all stages should pass correct command."""
         from discovery_engine.cli import cli
 
-        result = runner.invoke(
-            cli, ["pipeline", "run", "--sources", "--semantic", "--candidates"]
-        )
+        result = runner.invoke(cli, ["pipeline", "run", "--sources", "--semantic", "--candidates"])
 
         assert result.exit_code == 0
         call_arg = mock_legacy_main.call_args[0][0]

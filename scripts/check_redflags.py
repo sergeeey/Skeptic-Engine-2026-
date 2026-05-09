@@ -89,7 +89,9 @@ def scan() -> list[Finding]:
 
     for rel_path, lines in by_file.items():
         if lines == ["<missing release surface>"]:
-            add_finding(findings, "MISSING_SURFACE", "ERROR", rel_path, 0, "Release surface is missing", "")
+            add_finding(
+                findings, "MISSING_SURFACE", "ERROR", rel_path, 0, "Release surface is missing", ""
+            )
             continue
 
         for idx, line in enumerate(lines):

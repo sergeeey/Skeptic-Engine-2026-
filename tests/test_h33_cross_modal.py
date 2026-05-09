@@ -68,7 +68,9 @@ class TestGeneProteinCorrelation:
         corr = h33_module["gene_protein_correlation"](mrna, protein)
         assert corr > 0.3, f"Expected corr > 0.3, got {corr}"
 
-    def test_fabricated_data_low_correlation(self, h33_module: dict, sample_fabricated_data) -> None:
+    def test_fabricated_data_low_correlation(
+        self, h33_module: dict, sample_fabricated_data
+    ) -> None:
         """Fabricated data should show near-zero correlation."""
         mrna, protein = sample_fabricated_data
         corr = h33_module["gene_protein_correlation"](mrna, protein)
@@ -284,7 +286,9 @@ class TestH33Integration:
         import sys
         from pathlib import Path
 
-        exp_dir = Path(__file__).resolve().parents[1] / "experiments" / "h33_cross_modal_consistency"
+        exp_dir = (
+            Path(__file__).resolve().parents[1] / "experiments" / "h33_cross_modal_consistency"
+        )
         if str(exp_dir) not in sys.path:
             sys.path.insert(0, str(exp_dir))
 

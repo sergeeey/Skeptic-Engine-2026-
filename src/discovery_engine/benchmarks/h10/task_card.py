@@ -25,9 +25,7 @@ class H10TaskCard:
             {},
         )
         baselines = [
-            str(item.get("id"))
-            for item in spec.get("baselines", [])
-            if isinstance(item, dict)
+            str(item.get("id")) for item in spec.get("baselines", []) if isinstance(item, dict)
         ]
         return cls(
             candidate_id=str(spec.get("candidate_id", "H10")),

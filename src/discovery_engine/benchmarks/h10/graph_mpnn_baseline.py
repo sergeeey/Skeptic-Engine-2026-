@@ -120,7 +120,9 @@ def _balanced_accuracy(y_true: np.ndarray, y_pred: np.ndarray) -> float:
     return (tpr + tnr) / 2.0
 
 
-def _metric_set(y_true: np.ndarray, probabilities: np.ndarray, threshold: float) -> H10GraphMPNNMetricSet:
+def _metric_set(
+    y_true: np.ndarray, probabilities: np.ndarray, threshold: float
+) -> H10GraphMPNNMetricSet:
     predictions = (probabilities >= threshold).astype(int)
     return H10GraphMPNNMetricSet(
         average_precision=_safe_average_precision(y_true, probabilities),
@@ -193,10 +195,14 @@ def _read_graph_samples(path: Path) -> list[GraphSample]:
     with gzip.open(path, "rt", encoding="utf-8") as handle:
         for line in handle:
             raw = json.loads(line)
-            undirected_edges = [tuple(int(value) for value in edge) for edge in raw.get("edges", [])]
+            undirected_edges = [
+                tuple(int(value) for value in edge) for edge in raw.get("edges", [])
+            ]
             directed_edges: list[tuple[int, int]] = []
             directed_edge_distances: list[float] = []
-            frac_coords = [[float(value) for value in coords] for coords in raw.get("frac_coords", [])]
+            frac_coords = [
+                [float(value) for value in coords] for coords in raw.get("frac_coords", [])
+            ]
             lattice_matrix = [
                 [float(value) for value in row] for row in raw.get("lattice_matrix", [])
             ]
@@ -252,7 +258,9 @@ def _read_graph_samples(path: Path) -> list[GraphSample]:
     return samples
 
 
-def _split_samples(samples: list[GraphSample]) -> tuple[list[GraphSample], list[GraphSample], list[GraphSample]]:
+def _split_samples(
+    samples: list[GraphSample],
+) -> tuple[list[GraphSample], list[GraphSample], list[GraphSample]]:
     grouped = {"train": [], "val": [], "test": []}
     for sample in samples:
         if sample.split not in grouped:
@@ -263,7 +271,9 @@ def _split_samples(samples: list[GraphSample]) -> tuple[list[GraphSample], list[
     return grouped["train"], grouped["val"], grouped["test"]
 
 
-def _mean_pool(node_embeddings: torch.Tensor, graph_index: torch.Tensor, num_graphs: int) -> torch.Tensor:
+def _mean_pool(
+    node_embeddings: torch.Tensor, graph_index: torch.Tensor, num_graphs: int
+) -> torch.Tensor:
     pooled = torch.zeros((num_graphs, node_embeddings.shape[1]), device=node_embeddings.device)
     pooled.index_add_(0, graph_index, node_embeddings)
     counts = torch.zeros(num_graphs, device=node_embeddings.device)
@@ -271,7 +281,9 @@ def _mean_pool(node_embeddings: torch.Tensor, graph_index: torch.Tensor, num_gra
     return pooled / counts.clamp_min(1.0).unsqueeze(1)
 
 
-def _max_pool(node_embeddings: torch.Tensor, graph_index: torch.Tensor, num_graphs: int) -> torch.Tensor:
+def _max_pool(
+    node_embeddings: torch.Tensor, graph_index: torch.Tensor, num_graphs: int
+) -> torch.Tensor:
     pooled_rows: list[torch.Tensor] = []
     for graph_id in range(num_graphs):
         mask = graph_index == graph_id
@@ -282,7 +294,9 @@ def _max_pool(node_embeddings: torch.Tensor, graph_index: torch.Tensor, num_grap
     return torch.stack(pooled_rows, dim=0)
 
 
-def _gated_pool(node_embeddings: torch.Tensor, graph_index: torch.Tensor, num_graphs: int) -> torch.Tensor:
+def _gated_pool(
+    node_embeddings: torch.Tensor, graph_index: torch.Tensor, num_graphs: int
+) -> torch.Tensor:
     gates = torch.sigmoid(node_embeddings.mean(dim=1, keepdim=True))
     pooled = torch.zeros((num_graphs, node_embeddings.shape[1]), device=node_embeddings.device)
     pooled.index_add_(0, graph_index, node_embeddings * gates)
@@ -317,7 +331,9 @@ def _graph_level_features(
     )
     lattice = np.array(lattice_matrix, dtype=np.float64)
     volume = float(abs(np.linalg.det(lattice))) if lattice.size else 0.0
-    edge_lengths = np.array(directed_edge_lengths, dtype=np.float64) if directed_edge_lengths else np.zeros(1)
+    edge_lengths = (
+        np.array(directed_edge_lengths, dtype=np.float64) if directed_edge_lengths else np.zeros(1)
+    )
     return [
         math.log1p(num_nodes),
         math.log1p(num_edges),
@@ -368,7 +384,9 @@ def _collate(samples: list[GraphSample], device: torch.device) -> dict[str, obje
         "graph_index": torch.tensor(graph_index, dtype=torch.long, device=device),
         "targets": torch.tensor(targets, dtype=torch.float32, device=device),
         "graph_features": torch.tensor(graph_features, dtype=torch.float32, device=device),
-        "node_scalar_features": torch.tensor(node_scalar_features, dtype=torch.float32, device=device),
+        "node_scalar_features": torch.tensor(
+            node_scalar_features, dtype=torch.float32, device=device
+        ),
         "num_graphs": len(samples),
         "structure_ids": structure_ids,
         "core_mof_ids": core_mof_ids,
@@ -402,7 +420,9 @@ class EdgeMessagePassingLayer(nn.Module):
         )
         neighbor_sum = torch.zeros_like(node_embeddings)
         neighbor_sum.index_add_(0, target, messages)
-        counts = torch.zeros(node_embeddings.shape[0], dtype=torch.float32, device=node_embeddings.device)
+        counts = torch.zeros(
+            node_embeddings.shape[0], dtype=torch.float32, device=node_embeddings.device
+        )
         counts.index_add_(0, target, torch.ones_like(target, dtype=torch.float32))
         neighbor_mean = neighbor_sum / counts.clamp_min(1.0).unsqueeze(1)
         updated = self.update_mlp(torch.cat([node_embeddings, neighbor_mean], dim=1))
@@ -416,7 +436,10 @@ class H10GraphMPNN(nn.Module):
         self.node_scalar_proj = nn.Linear(9, hidden_dim)
         self.edge_centers = nn.Parameter(torch.linspace(0.8, 4.5, steps=12), requires_grad=False)
         self.layers = nn.ModuleList(
-            [EdgeMessagePassingLayer(hidden_dim=hidden_dim, edge_rbf_dim=12) for _ in range(num_layers)]
+            [
+                EdgeMessagePassingLayer(hidden_dim=hidden_dim, edge_rbf_dim=12)
+                for _ in range(num_layers)
+            ]
         )
         self.dropout = nn.Dropout(dropout)
         self.graph_feature_proj = nn.Sequential(
@@ -439,8 +462,12 @@ class H10GraphMPNN(nn.Module):
         node_scalar_features = batch["node_scalar_features"]
         num_graphs = int(batch["num_graphs"])
 
-        edge_rbf = torch.exp(-1.5 * (edge_distances.unsqueeze(1) - self.edge_centers.unsqueeze(0)) ** 2)
-        node_embeddings = self.atom_embedding(atomic_numbers) + self.node_scalar_proj(node_scalar_features)
+        edge_rbf = torch.exp(
+            -1.5 * (edge_distances.unsqueeze(1) - self.edge_centers.unsqueeze(0)) ** 2
+        )
+        node_embeddings = self.atom_embedding(atomic_numbers) + self.node_scalar_proj(
+            node_scalar_features
+        )
 
         for layer in self.layers:
             node_embeddings = self.dropout(layer(node_embeddings, edge_index, edge_rbf))
@@ -499,43 +526,46 @@ def _predict(
 
 
 def _build_markdown(run: H10GraphMPNNRun) -> str:
-    return "\n".join(
-        [
-            "# H10 Graph MPNN Baseline",
-            "",
-            f"- model: `{run.model_id}`",
-            f"- target: `{run.target_name}`",
-            f"- input artifact: `{run.input_artifact}`",
-            f"- rows: train=`{run.train_rows}`, val=`{run.val_rows}`, test=`{run.test_rows}`",
-            f"- hidden dim: `{run.hidden_dim}`",
-            f"- selected params: `{json.dumps(run.selected_params, ensure_ascii=True)}`",
-            "",
-            "## Validation Metrics",
-            "",
-            f"- average_precision: `{run.val_metrics.average_precision:.6f}`",
-            f"- roc_auc: `{run.val_metrics.roc_auc:.6f}`",
-            f"- balanced_accuracy: `{run.val_metrics.balanced_accuracy:.6f}`",
-            f"- threshold: `{run.val_metrics.threshold:.6f}`",
-            "",
-            "## Test Metrics",
-            "",
-            f"- average_precision: `{run.test_metrics.average_precision:.6f}`",
-            f"- roc_auc: `{run.test_metrics.roc_auc:.6f}`",
-            f"- balanced_accuracy: `{run.test_metrics.balanced_accuracy:.6f}`",
-            f"- threshold: `{run.test_metrics.threshold:.6f}`",
-            "",
-            "## Notes",
-            "",
-            "- This is the current true message-passing graph baseline for H10.",
-            "- It uses pure torch message passing with edge-distance RBF features and does not depend on torch_geometric.",
-            "- The project sets `KMP_DUPLICATE_LIB_OK=TRUE` before torch import because this environment has an OpenMP runtime conflict.",
-            "",
-            "## Artifacts",
-            "",
-            f"- report: `{run.output_report_path}`",
-            f"- predictions: `{run.output_predictions_path}`",
-        ]
-    ) + "\n"
+    return (
+        "\n".join(
+            [
+                "# H10 Graph MPNN Baseline",
+                "",
+                f"- model: `{run.model_id}`",
+                f"- target: `{run.target_name}`",
+                f"- input artifact: `{run.input_artifact}`",
+                f"- rows: train=`{run.train_rows}`, val=`{run.val_rows}`, test=`{run.test_rows}`",
+                f"- hidden dim: `{run.hidden_dim}`",
+                f"- selected params: `{json.dumps(run.selected_params, ensure_ascii=True)}`",
+                "",
+                "## Validation Metrics",
+                "",
+                f"- average_precision: `{run.val_metrics.average_precision:.6f}`",
+                f"- roc_auc: `{run.val_metrics.roc_auc:.6f}`",
+                f"- balanced_accuracy: `{run.val_metrics.balanced_accuracy:.6f}`",
+                f"- threshold: `{run.val_metrics.threshold:.6f}`",
+                "",
+                "## Test Metrics",
+                "",
+                f"- average_precision: `{run.test_metrics.average_precision:.6f}`",
+                f"- roc_auc: `{run.test_metrics.roc_auc:.6f}`",
+                f"- balanced_accuracy: `{run.test_metrics.balanced_accuracy:.6f}`",
+                f"- threshold: `{run.test_metrics.threshold:.6f}`",
+                "",
+                "## Notes",
+                "",
+                "- This is the current true message-passing graph baseline for H10.",
+                "- It uses pure torch message passing with edge-distance RBF features and does not depend on torch_geometric.",
+                "- The project sets `KMP_DUPLICATE_LIB_OK=TRUE` before torch import because this environment has an OpenMP runtime conflict.",
+                "",
+                "## Artifacts",
+                "",
+                f"- report: `{run.output_report_path}`",
+                f"- predictions: `{run.output_predictions_path}`",
+            ]
+        )
+        + "\n"
+    )
 
 
 def run_h10_graph_mpnn_baseline(
@@ -612,7 +642,9 @@ def run_h10_graph_mpnn_baseline(
             score = _safe_average_precision(val_targets, val_probabilities)
             if score > best_local_score:
                 best_local_score = score
-                best_local_state = {key: value.detach().cpu().clone() for key, value in model.state_dict().items()}
+                best_local_state = {
+                    key: value.detach().cpu().clone() for key, value in model.state_dict().items()
+                }
                 patience = 0
             else:
                 patience += 1
@@ -637,7 +669,12 @@ def run_h10_graph_mpnn_baseline(
             best_val_probabilities = val_probabilities
             best_val_targets = val_targets
 
-    if best_state is None or best_params is None or best_val_probabilities is None or best_val_targets is None:
+    if (
+        best_state is None
+        or best_params is None
+        or best_val_probabilities is None
+        or best_val_targets is None
+    ):
         raise RuntimeError("MPNN baseline search failed to produce a model.")
 
     model = H10GraphMPNN(

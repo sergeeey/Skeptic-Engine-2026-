@@ -39,9 +39,13 @@ def normalize_sources(records: list[SourceRecord]) -> tuple[list[SourceRecord], 
         if record.metadata.get("provenance") == "user_requirements":
             warnings.append(f"{record.id}: internal planning source, not external evidence")
         if record.metadata.get("provenance") == "local_seed_document":
-            warnings.append(f"{record.id}: local seed document requires source-level verification later")
+            warnings.append(
+                f"{record.id}: local seed document requires source-level verification later"
+            )
         if record.metadata.get("provenance") == "seed_domain_note":
-            warnings.append(f"{record.id}: domain seed note is a planning scaffold, not external evidence")
+            warnings.append(
+                f"{record.id}: domain seed note is a planning scaffold, not external evidence"
+            )
 
         normalized.append(record)
 

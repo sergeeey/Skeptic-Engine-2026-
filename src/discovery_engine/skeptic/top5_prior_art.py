@@ -149,7 +149,9 @@ def _query_bundle(seed: CandidateSeed, profile: CandidateFamilyProfile) -> list[
     return deduped[:4]
 
 
-def _fetch_records(queries: list[str], max_results_per_source: int) -> tuple[list[SourceRecord], dict[str, int], list[str]]:
+def _fetch_records(
+    queries: list[str], max_results_per_source: int
+) -> tuple[list[SourceRecord], dict[str, int], list[str]]:
     fetched: list[SourceRecord] = []
     providers: dict[str, int] = {}
     warnings: list[str] = []
@@ -196,7 +198,12 @@ def _score_hits(
                 1.0,
                 0.45 * (len(shared_anchor) / max(len(anchor_terms), 1))
                 + 0.25 * (len(shared_terms) / max(min(len(seed_terms), 24), 1))
-                + 0.15 * (len(downgrade_overlap) / max(len(downgrade_terms), 1) if downgrade_terms else 0.0)
+                + 0.15
+                * (
+                    len(downgrade_overlap) / max(len(downgrade_terms), 1)
+                    if downgrade_terms
+                    else 0.0
+                )
                 + 0.15 * record.authority_score,
             ),
             4,
@@ -301,7 +308,9 @@ def review_top5_candidates(
         )
 
     if live_records_fetched < 20:
-        warnings.append("Top5 skeptic coverage is still shallow; too few live records were fetched.")
+        warnings.append(
+            "Top5 skeptic coverage is still shallow; too few live records were fetched."
+        )
 
     return Top5SkepticRun(
         reviews=reviews,
@@ -333,7 +342,9 @@ def write_top5_skeptic_outputs(
         lines.extend(["- warnings:"] + [f"  - {warning}" for warning in run.warnings])
 
     lines.extend(["", "## Reviews", ""])
-    ordered = sorted(run.reviews, key=lambda item: (item.penalty, item.original_score), reverse=True)
+    ordered = sorted(
+        run.reviews, key=lambda item: (item.penalty, item.original_score), reverse=True
+    )
     for review in ordered:
         lines.extend(
             [

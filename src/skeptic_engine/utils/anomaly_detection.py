@@ -121,18 +121,22 @@ def cell_level_features(matrix: np.ndarray) -> np.ndarray:
     log_total = np.log1p(total_counts)
 
     # Coefficient of variation (avoid division by zero)
-    cv = np.divide(std_expr, mean_expr, out=np.zeros_like(std_expr, dtype=np.float64), where=mean_expr != 0)
+    cv = np.divide(
+        std_expr, mean_expr, out=np.zeros_like(std_expr, dtype=np.float64), where=mean_expr != 0
+    )
 
     # Max expression
     max_expr = matrix.max(axis=1)
 
-    return np.column_stack([
-        mean_expr,
-        std_expr,
-        zero_frac,
-        total_counts,
-        detected_genes,
-        log_total,
-        cv,
-        max_expr,
-    ])
+    return np.column_stack(
+        [
+            mean_expr,
+            std_expr,
+            zero_frac,
+            total_counts,
+            detected_genes,
+            log_total,
+            cv,
+            max_expr,
+        ]
+    )

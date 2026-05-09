@@ -513,13 +513,15 @@ class TestIngest:
         from skeptic_mrm.ingest import load_candidates
 
         lines = [
-            json.dumps({
-                "candidate_id": "jl_001",
-                "source": "jsonl_upload",
-                "composition": "KCl",
-                "structure_format": "json",
-                "structure_blob": '{"lattice": [[1,0,0],[0,1,0],[0,0,1]]}',
-            })
+            json.dumps(
+                {
+                    "candidate_id": "jl_001",
+                    "source": "jsonl_upload",
+                    "composition": "KCl",
+                    "structure_format": "json",
+                    "structure_blob": '{"lattice": [[1,0,0],[0,1,0],[0,0,1]]}',
+                }
+            )
         ]
         jsonl_file = tmp_path / "candidates.jsonl"
         jsonl_file.write_text("\n".join(lines), encoding="utf-8")

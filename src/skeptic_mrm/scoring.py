@@ -133,7 +133,8 @@ def compute_scores(
 
     uncertainty = _compute_uncertainty_penalty(simulation_runs, backend)
     evidence = _compute_evidence_completeness(
-        simulation_runs, falsification_n_attacks=0  # set from falsification result
+        simulation_runs,
+        falsification_n_attacks=0,  # set from falsification result
     )
 
     final = (

@@ -45,7 +45,10 @@ from discovery_engine.report_ingest import load_candidate_seeds
 from discovery_engine.semantic_core import build_semantic_profiles, find_cross_domain_links
 from discovery_engine.skeptic import challenge_hypotheses
 from discovery_engine.skeptic.prior_art import write_skeptic_outputs
-from discovery_engine.skeptic.top5_prior_art import review_top5_candidates, write_top5_skeptic_outputs
+from discovery_engine.skeptic.top5_prior_art import (
+    review_top5_candidates,
+    write_top5_skeptic_outputs,
+)
 from discovery_engine.schemas import SourceRecord
 from discovery_engine.top5 import load_top5_board
 
@@ -417,7 +420,9 @@ def main() -> None:
 
     if command == "skeptic-top5":
         max_live_results = int(sys.argv[2]) if len(sys.argv) > 2 else 6
-        seeds = sorted(load_candidate_seeds(_candidate_seed_path()), key=lambda item: item.priority_rank)
+        seeds = sorted(
+            load_candidate_seeds(_candidate_seed_path()), key=lambda item: item.priority_rank
+        )
         run = review_top5_candidates(
             seeds[:5],
             max_live_results_per_source=max_live_results,

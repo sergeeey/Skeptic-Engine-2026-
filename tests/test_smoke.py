@@ -154,10 +154,7 @@ class TestH26GeoHelpers:
 
         path = tmp_path / "counts.csv"
         path.write_text(
-            "gene;cell_a;cell_b\n"
-            "ENSG0001;1;0\n"
-            "ENSG0002;0;2\n"
-            "ENSG0003;3;4\n",
+            "gene;cell_a;cell_b\n" "ENSG0001;1;0\n" "ENSG0002;0;2\n" "ENSG0003;3;4\n",
             encoding="utf-8",
         )
 
@@ -310,9 +307,9 @@ class TestResultsIntegrity:
         data = json.loads(path.read_text(encoding="utf-8"))
         contamination = data["unsupervised"]["contamination"]
         # WHY: code uses "auto" (line 209 of run_h27.py), results must match
-        assert contamination == "auto" or isinstance(contamination, float), (
-            f"contamination should be 'auto' or float, got {contamination}"
-        )
+        assert contamination == "auto" or isinstance(
+            contamination, float
+        ), f"contamination should be 'auto' or float, got {contamination}"
 
     def test_h28_ablation_structure(self) -> None:
         path = PROJECT_ROOT / "experiments/h28_paper_mills/results/h28_results.json"

@@ -64,20 +64,14 @@ class TestInstinctMemory:
     def test_add_and_retrieve(self, instinct_module: dict) -> None:
         """Should add and retrieve instincts."""
         mem = instinct_module["InstinctMemory"]()
-        mem.add_instinct(
-            instinct_module["Instinct"]("T", "A", 0.9, "scRNA-seq")
-        )
+        mem.add_instinct(instinct_module["Instinct"]("T", "A", 0.9, "scRNA-seq"))
         assert len(mem.instincts) == 1
 
     def test_update_existing(self, instinct_module: dict) -> None:
         """Should update existing instinct if trigger+scope match."""
         mem = instinct_module["InstinctMemory"]()
-        mem.add_instinct(
-            instinct_module["Instinct"]("T", "Action A", 0.5, "scRNA-seq")
-        )
-        mem.add_instinct(
-            instinct_module["Instinct"]("T", "Action B", 0.9, "scRNA-seq")
-        )
+        mem.add_instinct(instinct_module["Instinct"]("T", "Action A", 0.5, "scRNA-seq"))
+        mem.add_instinct(instinct_module["Instinct"]("T", "Action B", 0.9, "scRNA-seq"))
 
         # Should not add new one, but update existing
         assert len(mem.instincts) == 1
@@ -87,15 +81,9 @@ class TestInstinctMemory:
     def test_get_relevant(self, instinct_module: dict) -> None:
         """Should return instincts matching scope."""
         mem = instinct_module["InstinctMemory"]()
-        mem.add_instinct(
-            instinct_module["Instinct"]("T1", "A1", 0.9, "scRNA-seq")
-        )
-        mem.add_instinct(
-            instinct_module["Instinct"]("T2", "A2", 0.8, "proteomics")
-        )
-        mem.add_instinct(
-            instinct_module["Instinct"]("T3", "A3", 0.7, "global")
-        )
+        mem.add_instinct(instinct_module["Instinct"]("T1", "A1", 0.9, "scRNA-seq"))
+        mem.add_instinct(instinct_module["Instinct"]("T2", "A2", 0.8, "proteomics"))
+        mem.add_instinct(instinct_module["Instinct"]("T3", "A3", 0.7, "global"))
 
         ctx = {"data_type": "scRNA-seq", "genes": 1000}
         relevant = mem.get_relevant_instincts(ctx)
@@ -106,9 +94,7 @@ class TestInstinctMemory:
     def test_save_and_load(self, instinct_module: dict, tmp_path: Path) -> None:
         """Should persist and load instincts."""
         mem = instinct_module["InstinctMemory"]()
-        mem.add_instinct(
-            instinct_module["Instinct"]("T", "A", 0.9, "scope")
-        )
+        mem.add_instinct(instinct_module["Instinct"]("T", "A", 0.9, "scope"))
 
         save_path = tmp_path / "instincts.json"
         mem.save(save_path)

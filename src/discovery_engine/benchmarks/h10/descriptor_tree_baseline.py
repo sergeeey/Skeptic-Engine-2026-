@@ -90,42 +90,45 @@ def _best_threshold(y_true: pd.Series, probabilities: pd.Series) -> float:
 
 
 def _build_markdown(run: H10TreeBaselineRun) -> str:
-    return "\n".join(
-        [
-            "# H10 Descriptor Tree Baseline",
-            "",
-            f"- model: `{run.model_id}`",
-            f"- target: `{run.target_name}`",
-            f"- input artifact: `{run.input_artifact}`",
-            f"- rows: train=`{run.train_rows}`, val=`{run.val_rows}`, test=`{run.test_rows}`",
-            f"- features: `{run.feature_count}`",
-            f"- selected params: `{json.dumps(run.selected_params, ensure_ascii=True)}`",
-            "",
-            "## Validation Metrics",
-            "",
-            f"- average_precision: `{run.val_metrics.average_precision:.6f}`",
-            f"- roc_auc: `{run.val_metrics.roc_auc:.6f}`",
-            f"- balanced_accuracy: `{run.val_metrics.balanced_accuracy:.6f}`",
-            f"- threshold: `{run.val_metrics.threshold:.6f}`",
-            "",
-            "## Test Metrics",
-            "",
-            f"- average_precision: `{run.test_metrics.average_precision:.6f}`",
-            f"- roc_auc: `{run.test_metrics.roc_auc:.6f}`",
-            f"- balanced_accuracy: `{run.test_metrics.balanced_accuracy:.6f}`",
-            f"- threshold: `{run.test_metrics.threshold:.6f}`",
-            "",
-            "## Notes",
-            "",
-            "- This is a nonlinear descriptor sanity baseline on the same fixed split as descriptor_logreg_v1.",
-            "- Hyperparameter selection is performed on validation only.",
-            "",
-            "## Artifacts",
-            "",
-            f"- report: `{run.output_report_path}`",
-            f"- predictions: `{run.output_predictions_path}`",
-        ]
-    ) + "\n"
+    return (
+        "\n".join(
+            [
+                "# H10 Descriptor Tree Baseline",
+                "",
+                f"- model: `{run.model_id}`",
+                f"- target: `{run.target_name}`",
+                f"- input artifact: `{run.input_artifact}`",
+                f"- rows: train=`{run.train_rows}`, val=`{run.val_rows}`, test=`{run.test_rows}`",
+                f"- features: `{run.feature_count}`",
+                f"- selected params: `{json.dumps(run.selected_params, ensure_ascii=True)}`",
+                "",
+                "## Validation Metrics",
+                "",
+                f"- average_precision: `{run.val_metrics.average_precision:.6f}`",
+                f"- roc_auc: `{run.val_metrics.roc_auc:.6f}`",
+                f"- balanced_accuracy: `{run.val_metrics.balanced_accuracy:.6f}`",
+                f"- threshold: `{run.val_metrics.threshold:.6f}`",
+                "",
+                "## Test Metrics",
+                "",
+                f"- average_precision: `{run.test_metrics.average_precision:.6f}`",
+                f"- roc_auc: `{run.test_metrics.roc_auc:.6f}`",
+                f"- balanced_accuracy: `{run.test_metrics.balanced_accuracy:.6f}`",
+                f"- threshold: `{run.test_metrics.threshold:.6f}`",
+                "",
+                "## Notes",
+                "",
+                "- This is a nonlinear descriptor sanity baseline on the same fixed split as descriptor_logreg_v1.",
+                "- Hyperparameter selection is performed on validation only.",
+                "",
+                "## Artifacts",
+                "",
+                f"- report: `{run.output_report_path}`",
+                f"- predictions: `{run.output_predictions_path}`",
+            ]
+        )
+        + "\n"
+    )
 
 
 def run_h10_descriptor_tree_baseline(

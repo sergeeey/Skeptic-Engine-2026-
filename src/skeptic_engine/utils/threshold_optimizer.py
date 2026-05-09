@@ -74,7 +74,7 @@ class ThresholdOptimizer:
         # Compute F1 for each threshold
         # F1 = 2 * (P * R) / (P + R)
         # Avoid division by zero
-        with np.errstate(divide='ignore', invalid='ignore'):
+        with np.errstate(divide="ignore", invalid="ignore"):
             f1_scores = 2 * precision * recall / (precision + recall)
             f1_scores = np.nan_to_num(f1_scores)
 

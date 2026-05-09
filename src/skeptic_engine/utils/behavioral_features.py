@@ -115,7 +115,9 @@ def extract_behavioral_features(p_values: Sequence[float] | np.ndarray) -> np.nd
         float(np.sum(np.abs(np.diff(np.sign(np.diff(p)))) > 0) / max(n - 2, 1)) if n > 2 else 0.0
     )  # direction change rate
     features.append(float(np.max(np.abs(np.diff(p)))) if n > 1 else 0.0)  # max single-step jump
-    features.append(float(np.corrcoef(np.arange(n), p)[0, 1]) if n > 2 else 0.0)  # trend correlation
+    features.append(
+        float(np.corrcoef(np.arange(n), p)[0, 1]) if n > 2 else 0.0
+    )  # trend correlation
 
     return np.array(features[:18])
 

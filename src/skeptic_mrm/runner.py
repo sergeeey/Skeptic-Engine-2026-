@@ -136,9 +136,7 @@ class MRMRunner:
         sim_runs = [sim_run]
 
         # Stage 4: Falsification attacks
-        policy = RuleBasedAttackPolicy(
-            enabled_attacks=self.config.enabled_attacks
-        )
+        policy = RuleBasedAttackPolicy(enabled_attacks=self.config.enabled_attacks)
         falsification = run_falsification_suite(
             candidate,
             self._backend,

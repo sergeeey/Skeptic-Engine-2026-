@@ -29,7 +29,9 @@ def _build_card(
     confidence = round(max(0.18, evidence_quality * 0.7), 2)
     tier = _risk_tier(feasibility, impact, validation_cost)
 
-    target_question = target.open_questions[0] if target.open_questions else "an unresolved target problem"
+    target_question = (
+        target.open_questions[0] if target.open_questions else "an unresolved target problem"
+    )
     donor_mechanism = donor.mechanisms[0] if donor.mechanisms else "a transferable mechanism"
 
     return HypothesisCard(

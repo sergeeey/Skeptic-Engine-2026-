@@ -34,9 +34,7 @@ class MaterialCandidate:
                     "source": self.source,
                     "composition": self.composition,
                     "structure_format": self.structure_format,
-                    "structure_blob_hash": hashlib.sha256(
-                        self.structure_blob.encode()
-                    ).hexdigest(),
+                    "structure_blob_hash": hashlib.sha256(self.structure_blob.encode()).hexdigest(),
                 },
                 sort_keys=True,
             )

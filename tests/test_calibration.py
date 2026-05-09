@@ -141,7 +141,9 @@ class TestCalibrationModel:
         high_result = model.predict(0.9)
         assert high_result.calibrated_score > 0.7
 
-    def test_predict_returns_calibrated_score(self, calibration_module: dict, sample_calibration_data) -> None:
+    def test_predict_returns_calibrated_score(
+        self, calibration_module: dict, sample_calibration_data
+    ) -> None:
         """Should return CalibratedScore object."""
         scores, labels = sample_calibration_data
         model = calibration_module["CalibrationModel"](detector_name="test")

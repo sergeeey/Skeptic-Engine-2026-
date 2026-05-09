@@ -27,9 +27,7 @@ class CandidateReport:
 
     def __post_init__(self) -> None:
         if not self.generated_at:
-            object.__setattr__(
-                self, "generated_at", datetime.now(timezone.utc).isoformat()
-            )
+            object.__setattr__(self, "generated_at", datetime.now(timezone.utc).isoformat())
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -60,39 +58,27 @@ class BatchReport:
 
     def __post_init__(self) -> None:
         if not self.generated_at:
-            object.__setattr__(
-                self, "generated_at", datetime.now(timezone.utc).isoformat()
-            )
+            object.__setattr__(self, "generated_at", datetime.now(timezone.utc).isoformat())
 
     def top_survivors(self, n: int = 5) -> list[CandidateReport]:
         """Return top-n promoted/hold candidates sorted by score."""
         survivors = [
-            r
-            for r in self.candidate_reports
-            if r.decision.status.value in ("promote", "hold")
+            r for r in self.candidate_reports if r.decision.status.value in ("promote", "hold")
         ]
         survivors.sort(key=lambda r: r.score_bundle.final_reliability_score, reverse=True)
         return survivors[:n]
 
     def failure_summary(self) -> dict[str, Any]:
-        killed = [
-            r for r in self.candidate_reports if r.decision.status.value == "kill"
-        ]
+        killed = [r for r in self.candidate_reports if r.decision.status.value == "kill"]
         return {
             "total": len(self.candidate_reports),
             "promoted": sum(
                 1 for r in self.candidate_reports if r.decision.status.value == "promote"
             ),
-            "held": sum(
-                1 for r in self.candidate_reports if r.decision.status.value == "hold"
-            ),
+            "held": sum(1 for r in self.candidate_reports if r.decision.status.value == "hold"),
             "killed": len(killed),
-            "review_required": sum(
-                1 for r in self.candidate_reports if r.decision.review_required
-            ),
-            "kill_reasons": [
-                r.decision.reasons for r in killed if r.decision.reasons
-            ],
+            "review_required": sum(1 for r in self.candidate_reports if r.decision.review_required),
+            "kill_reasons": [r.decision.reasons for r in killed if r.decision.reasons],
         }
 
     def summary(self) -> str:

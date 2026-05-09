@@ -11,9 +11,19 @@ a proper Click-based CLI featuring:
 from __future__ import annotations
 
 import sys
+from importlib.metadata import PackageNotFoundError, version as pkg_version
 from pathlib import Path
 
 import click
+
+
+def _cli_version() -> str:
+    """Package version from installed metadata (matches pyproject)."""
+    try:
+        return pkg_version("skeptic-engine")
+    except PackageNotFoundError:
+        return "0.2.0"
+
 
 # Add project root to path for legacy module imports
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
@@ -43,16 +53,16 @@ def _run_legacy(command: str) -> None:
 # Root CLI Group
 # ============================================================
 @click.group(context_settings={"help_option_names": ["-h", "--help"]})
-@click.version_option(version="0.2.0", prog_name="discovery-engine")
+@click.version_option(version=_cli_version(), prog_name="discovery-engine")
 def cli() -> None:
     """Discovery Engine — Interdisciplinary Hypothesis Search CLI.
 
-   \b
-    Command Groups:
-      pipeline  Core discovery pipeline stages
-      h4        H4: TDA cancer resistance benchmark
-      h10       H10: MOF stability benchmark
-      fetch     Data collection from external sources
+    \b
+     Command Groups:
+       pipeline  Core discovery pipeline stages
+       h4        H4: TDA cancer resistance benchmark
+       h10       H10: MOF stability benchmark
+       fetch     Data collection from external sources
     """
     pass
 

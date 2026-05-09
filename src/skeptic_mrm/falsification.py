@@ -212,9 +212,7 @@ def run_falsification_suite(
         attacks.append(attack)
 
     total_collapsed = sum(1 for a in attacks if a.collapsed)
-    avg_drop = (
-        sum(a.property_drop for a in attacks) / len(attacks) if attacks else 0.0
-    )
+    avg_drop = sum(a.property_drop for a in attacks) / len(attacks) if attacks else 0.0
     hotspots = sum(1 for a in attacks if a.stress_hotspots_detected)
 
     return FalsificationResult(

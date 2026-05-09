@@ -78,7 +78,9 @@ class H10BaselineScaffold:
             "total_rows": self.total_rows,
             "split_summaries": [asdict(item) for item in self.split_summaries],
             "baselines": [asdict(item) for item in self.baselines],
-            "evaluation_protocol": asdict(self.evaluation_protocol) if self.evaluation_protocol else None,
+            "evaluation_protocol": asdict(self.evaluation_protocol)
+            if self.evaluation_protocol
+            else None,
             "warnings": self.warnings,
             "blockers": self.blockers,
         }
@@ -94,7 +96,9 @@ def _project_relative(project_root: Path, path: Path) -> str:
 def _load_csv_rows(path: Path) -> list[dict[str, str]]:
     with path.open("r", encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
-        return [{str(key): str(value or "").strip() for key, value in row.items()} for row in reader]
+        return [
+            {str(key): str(value or "").strip() for key, value in row.items()} for row in reader
+        ]
 
 
 def _is_float_like(value: str) -> bool:
@@ -131,7 +135,9 @@ def _write_descriptor_feature_artifact(
         with archive.open(MOFSIMPLIFY_FULL_SSD_PATH) as handle:
             text_handle = (line.decode("utf-8-sig") for line in handle)
             reader = csv.DictReader(text_handle)
-            raw_rows = [{str(key): str(value or "").strip() for key, value in row.items()} for row in reader]
+            raw_rows = [
+                {str(key): str(value or "").strip() for key, value in row.items()} for row in reader
+            ]
 
     feature_columns = _detect_feature_columns(raw_rows)
     output_rows: list[dict[str, str]] = []
@@ -231,8 +237,12 @@ def _build_baselines(
                 "Preferred token route is formula or linker/metal tokenization from a structure-derived representation."
             ]
             if not ready:
-                blockers.append("Mapped route does not yet provide reliable formula or linker token fields.")
-                notes.append("Do not use CoRE refcodes as a proxy tokenization baseline; that would be identifier leakage, not chemistry.")
+                blockers.append(
+                    "Mapped route does not yet provide reliable formula or linker token fields."
+                )
+                notes.append(
+                    "Do not use CoRE refcodes as a proxy tokenization baseline; that would be identifier leakage, not chemistry."
+                )
             baselines.append(
                 H10BaselineSpec(
                     baseline_id=baseline_id,
@@ -251,19 +261,25 @@ def _build_baselines(
             ready = graph_artifact_path.exists()
             blockers = []
             if not ready:
-                blockers.append("No local CIF or graph-construction artifact is present yet for the mapped structures.")
+                blockers.append(
+                    "No local CIF or graph-construction artifact is present yet for the mapped structures."
+                )
             notes = [
                 f"core_mof_id coverage is {core_mof_coverage}/{len(mapped_rows)}; schema is ready for later CoRE-MOF structure fetch.",
                 "Graph baseline should only start after a reproducible CIF-to-graph extraction path is added.",
             ]
             if ready:
-                notes.append(f"Graph artifact is available at {_project_relative(project_root, graph_artifact_path)}.")
+                notes.append(
+                    f"Graph artifact is available at {_project_relative(project_root, graph_artifact_path)}."
+                )
             baselines.append(
                 H10BaselineSpec(
                     baseline_id=baseline_id,
                     family=family,
                     status="input_ready" if ready else "scaffold_ready",
-                    input_artifact=_project_relative(project_root, graph_artifact_path) if ready else None,
+                    input_artifact=_project_relative(project_root, graph_artifact_path)
+                    if ready
+                    else None,
                     row_count=core_mof_coverage,
                     feature_count=0,
                     ready_for_training=ready,
@@ -361,11 +377,17 @@ def build_h10_baseline_scaffold(
 ) -> H10BaselineScaffold:
     mapped_rows = _load_csv_rows(mapped_dataset_path)
     if not mapped_rows:
-        raise ValueError("Mapped H10 dataset is empty; run h10-map before building baseline scaffold.")
+        raise ValueError(
+            "Mapped H10 dataset is empty; run h10-map before building baseline scaffold."
+        )
 
-    target_names = sorted({row.get("target_name", "") for row in mapped_rows if row.get("target_name")})
+    target_names = sorted(
+        {row.get("target_name", "") for row in mapped_rows if row.get("target_name")}
+    )
     if len(target_names) != 1:
-        raise ValueError("Mapped H10 dataset must contain exactly one target_name for baseline scaffold generation.")
+        raise ValueError(
+            "Mapped H10 dataset must contain exactly one target_name for baseline scaffold generation."
+        )
 
     descriptor_row_count, descriptor_feature_count = _write_descriptor_feature_artifact(
         archive_path,
@@ -384,9 +406,17 @@ def build_h10_baseline_scaffold(
     )
 
     blockers: list[str] = []
-    if not any(baseline.baseline_id == "descriptor_baseline" and baseline.ready_for_training for baseline in baselines):
-        blockers.append("Descriptor baseline is not train-ready, so no fair benchmark can start yet.")
-    if not any(baseline.baseline_id == "graph_baseline" and baseline.ready_for_training for baseline in baselines):
+    if not any(
+        baseline.baseline_id == "descriptor_baseline" and baseline.ready_for_training
+        for baseline in baselines
+    ):
+        blockers.append(
+            "Descriptor baseline is not train-ready, so no fair benchmark can start yet."
+        )
+    if not any(
+        baseline.baseline_id == "graph_baseline" and baseline.ready_for_training
+        for baseline in baselines
+    ):
         blockers.append("Graph baseline still needs a reproducible CIF-to-graph ingestion path.")
 
     scaffold = H10BaselineScaffold(

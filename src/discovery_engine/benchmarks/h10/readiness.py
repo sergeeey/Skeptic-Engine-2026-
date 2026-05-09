@@ -27,7 +27,9 @@ def build_h10_readiness_report(
         blockers.append("Raw CSV assets do not yet contain enough rows for reproducible mapping.")
     blockers.extend(mapping_report.blockers)
     if mapping_report.row_count == 0:
-        blockers.append("No mapped benchmark rows are available for split planning or baseline training.")
+        blockers.append(
+            "No mapped benchmark rows are available for split planning or baseline training."
+        )
 
     deduped_blockers: list[str] = []
     seen: set[str] = set()

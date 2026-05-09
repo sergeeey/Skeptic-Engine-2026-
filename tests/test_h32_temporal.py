@@ -243,8 +243,12 @@ class TestSyntheticData:
 
         for author in phacking_authors:
             # Last year should have more p-values near 0.05 than first year
-            first_year_frac = sum(1 for p in author.p_values[0] if 0.04 <= p < 0.05) / max(len(author.p_values[0]), 1)
-            last_year_frac = sum(1 for p in author.p_values[-1] if 0.04 <= p < 0.05) / max(len(author.p_values[-1]), 1)
+            first_year_frac = sum(1 for p in author.p_values[0] if 0.04 <= p < 0.05) / max(
+                len(author.p_values[0]), 1
+            )
+            last_year_frac = sum(1 for p in author.p_values[-1] if 0.04 <= p < 0.05) / max(
+                len(author.p_values[-1]), 1
+            )
             # Trend should be upward (or at least not strongly downward)
             assert last_year_frac >= first_year_frac * 0.5  # Allow some noise
 

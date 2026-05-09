@@ -199,11 +199,13 @@ class TestNormalizeSignals:
 
     def test_basic_normalization(self, h31_module: dict) -> None:
         """Should normalize columns to [0, 1]."""
-        matrix = np.array([
-            [0.0, 10.0],
-            [0.5, 20.0],
-            [1.0, 30.0],
-        ])
+        matrix = np.array(
+            [
+                [0.0, 10.0],
+                [0.5, 20.0],
+                [1.0, 30.0],
+            ]
+        )
 
         result = h31_module["normalize_signals"](matrix)
 
@@ -219,11 +221,13 @@ class TestNormalizeSignals:
 
     def test_constant_column(self, h31_module: dict) -> None:
         """Constant column should become 0.5."""
-        matrix = np.array([
-            [1.0, 5.0],
-            [2.0, 5.0],
-            [3.0, 5.0],
-        ])
+        matrix = np.array(
+            [
+                [1.0, 5.0],
+                [2.0, 5.0],
+                [3.0, 5.0],
+            ]
+        )
 
         result = h31_module["normalize_signals"](matrix)
 
@@ -261,11 +265,13 @@ class TestNormalizeSignals:
 
     def test_negative_values(self, h31_module: dict) -> None:
         """Should handle negative input values."""
-        matrix = np.array([
-            [-5.0, -10.0],
-            [0.0, 0.0],
-            [5.0, 10.0],
-        ])
+        matrix = np.array(
+            [
+                [-5.0, -10.0],
+                [0.0, 0.0],
+                [5.0, 10.0],
+            ]
+        )
 
         result = h31_module["normalize_signals"](matrix)
 
@@ -282,11 +288,13 @@ class TestComputeUasWeighted:
 
     def test_basic_weighted_sum(self, h31_module: dict) -> None:
         """Should compute weighted sum correctly."""
-        matrix = np.array([
-            [0.0, 1.0],
-            [1.0, 0.0],
-            [0.5, 0.5],
-        ])
+        matrix = np.array(
+            [
+                [0.0, 1.0],
+                [1.0, 0.0],
+                [0.5, 0.5],
+            ]
+        )
         weights = {"signal_0": 0.3, "signal_1": 0.7}
 
         result = h31_module["compute_uas_weighted"](matrix, weights)

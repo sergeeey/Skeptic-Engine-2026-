@@ -70,7 +70,9 @@ def _relative(project_root: Path, path: Path) -> str:
         return str(path)
 
 
-def _metric_set(y_true: pd.Series, probabilities: pd.Series, threshold: float) -> H10HybridMetricSet:
+def _metric_set(
+    y_true: pd.Series, probabilities: pd.Series, threshold: float
+) -> H10HybridMetricSet:
     predictions = (probabilities >= threshold).astype(int)
     return H10HybridMetricSet(
         average_precision=float(average_precision_score(y_true, probabilities)),
@@ -99,7 +101,9 @@ def _best_threshold(y_true: pd.Series, probabilities: pd.Series) -> float:
     return best_threshold
 
 
-def _build_hybrid_frame(descriptor_feature_path: Path, graph_artifact_path: Path) -> tuple[pd.DataFrame, str, int, int]:
+def _build_hybrid_frame(
+    descriptor_feature_path: Path, graph_artifact_path: Path
+) -> tuple[pd.DataFrame, str, int, int]:
     descriptor_df = pd.read_csv(descriptor_feature_path)
     if descriptor_df.empty:
         raise ValueError("Descriptor feature artifact is empty.")
@@ -115,7 +119,9 @@ def _build_hybrid_frame(descriptor_feature_path: Path, graph_artifact_path: Path
     descriptor_feature_columns = [
         column for column in descriptor_df.columns if column not in _DESCRIPTOR_ID_COLUMNS
     ]
-    graph_feature_columns = [column for column in graph_df.columns if column not in _GRAPH_ID_COLUMNS]
+    graph_feature_columns = [
+        column for column in graph_df.columns if column not in _GRAPH_ID_COLUMNS
+    ]
     if not descriptor_feature_columns or not graph_feature_columns:
         raise ValueError("Hybrid baseline requires both descriptor and graph feature columns.")
 
@@ -134,45 +140,48 @@ def _build_hybrid_frame(descriptor_feature_path: Path, graph_artifact_path: Path
 
 
 def _build_markdown(run: H10HybridBaselineRun) -> str:
-    return "\n".join(
-        [
-            "# H10 Hybrid Baseline",
-            "",
-            f"- model: `{run.model_id}`",
-            f"- target: `{run.target_name}`",
-            f"- descriptor input: `{run.descriptor_input_artifact}`",
-            f"- graph input: `{run.graph_input_artifact}`",
-            f"- rows: train=`{run.train_rows}`, val=`{run.val_rows}`, test=`{run.test_rows}`",
-            f"- descriptor features: `{run.descriptor_feature_count}`",
-            f"- graph features: `{run.graph_feature_count}`",
-            f"- total features: `{run.total_feature_count}`",
-            f"- selected params: `{json.dumps(run.selected_params, ensure_ascii=True)}`",
-            "",
-            "## Validation Metrics",
-            "",
-            f"- average_precision: `{run.val_metrics.average_precision:.6f}`",
-            f"- roc_auc: `{run.val_metrics.roc_auc:.6f}`",
-            f"- balanced_accuracy: `{run.val_metrics.balanced_accuracy:.6f}`",
-            f"- threshold: `{run.val_metrics.threshold:.6f}`",
-            "",
-            "## Test Metrics",
-            "",
-            f"- average_precision: `{run.test_metrics.average_precision:.6f}`",
-            f"- roc_auc: `{run.test_metrics.roc_auc:.6f}`",
-            f"- balanced_accuracy: `{run.test_metrics.balanced_accuracy:.6f}`",
-            f"- threshold: `{run.test_metrics.threshold:.6f}`",
-            "",
-            "## Notes",
-            "",
-            "- This baseline tests whether graph-structural features add value on top of the descriptor stack.",
-            "- It uses a single train/val/test split and selects hyperparameters on validation only.",
-            "",
-            "## Artifacts",
-            "",
-            f"- report: `{run.output_report_path}`",
-            f"- predictions: `{run.output_predictions_path}`",
-        ]
-    ) + "\n"
+    return (
+        "\n".join(
+            [
+                "# H10 Hybrid Baseline",
+                "",
+                f"- model: `{run.model_id}`",
+                f"- target: `{run.target_name}`",
+                f"- descriptor input: `{run.descriptor_input_artifact}`",
+                f"- graph input: `{run.graph_input_artifact}`",
+                f"- rows: train=`{run.train_rows}`, val=`{run.val_rows}`, test=`{run.test_rows}`",
+                f"- descriptor features: `{run.descriptor_feature_count}`",
+                f"- graph features: `{run.graph_feature_count}`",
+                f"- total features: `{run.total_feature_count}`",
+                f"- selected params: `{json.dumps(run.selected_params, ensure_ascii=True)}`",
+                "",
+                "## Validation Metrics",
+                "",
+                f"- average_precision: `{run.val_metrics.average_precision:.6f}`",
+                f"- roc_auc: `{run.val_metrics.roc_auc:.6f}`",
+                f"- balanced_accuracy: `{run.val_metrics.balanced_accuracy:.6f}`",
+                f"- threshold: `{run.val_metrics.threshold:.6f}`",
+                "",
+                "## Test Metrics",
+                "",
+                f"- average_precision: `{run.test_metrics.average_precision:.6f}`",
+                f"- roc_auc: `{run.test_metrics.roc_auc:.6f}`",
+                f"- balanced_accuracy: `{run.test_metrics.balanced_accuracy:.6f}`",
+                f"- threshold: `{run.test_metrics.threshold:.6f}`",
+                "",
+                "## Notes",
+                "",
+                "- This baseline tests whether graph-structural features add value on top of the descriptor stack.",
+                "- It uses a single train/val/test split and selects hyperparameters on validation only.",
+                "",
+                "## Artifacts",
+                "",
+                f"- report: `{run.output_report_path}`",
+                f"- predictions: `{run.output_predictions_path}`",
+            ]
+        )
+        + "\n"
+    )
 
 
 def run_h10_hybrid_baseline(

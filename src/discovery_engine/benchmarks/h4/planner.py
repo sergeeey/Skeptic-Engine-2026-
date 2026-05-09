@@ -35,7 +35,9 @@ def build_h4_execution_plan(spec: dict[str, object]) -> list[str]:
         )
         return plan
 
-    plan.append("Lock the first executable benchmark route before building any single-cell training pipeline.")
+    plan.append(
+        "Lock the first executable benchmark route before building any single-cell training pipeline."
+    )
 
     if isinstance(default_route, dict):
         plan.append(
@@ -49,9 +51,7 @@ def build_h4_execution_plan(spec: dict[str, object]) -> list[str]:
             plan.append(f"Resolve blocking question: {question}")
 
     for route in phase2_routes:
-        plan.append(
-            f"Keep phase-2 route available: {route.get('id')} ({route.get('label_type')})."
-        )
+        plan.append(f"Keep phase-2 route available: {route.get('id')} ({route.get('label_type')}).")
 
     for baseline in baselines:
         if isinstance(baseline, dict):

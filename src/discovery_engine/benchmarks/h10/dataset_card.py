@@ -26,7 +26,9 @@ class H10DatasetCard:
     @property
     def ready_for_mapping(self) -> bool:
         relevant = [asset for asset in self.assets if asset.path.endswith(".csv")]
-        return all(asset.exists for asset in relevant) and any(asset.row_count > 0 for asset in relevant)
+        return all(asset.exists for asset in relevant) and any(
+            asset.row_count > 0 for asset in relevant
+        )
 
 
 def _read_csv_summary(path: Path) -> CsvAssetSummary:

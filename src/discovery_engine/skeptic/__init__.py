@@ -13,7 +13,12 @@ from .prior_art import (
     challenge_hypotheses,
     fetch_targeted_prior_art,
 )
-from .top5_prior_art import Top5SkepticReview, Top5SkepticRun, review_top5_candidates, write_top5_skeptic_outputs
+from .top5_prior_art import (
+    Top5SkepticReview,
+    Top5SkepticRun,
+    review_top5_candidates,
+    write_top5_skeptic_outputs,
+)
 
 __all__ = [
     "CandidateFamilyProfile",

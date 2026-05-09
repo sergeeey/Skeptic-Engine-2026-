@@ -103,7 +103,9 @@ def _validate_route(route: dict[str, object]) -> H4RouteValidationReport:
             report.errors.append("ready routes must not have blocking_issues.")
         if not isinstance(route.get("sample_count"), int):
             report.errors.append("ready routes must declare sample_count.")
-        if route.get("unit_of_analysis") == "single_cell" and not isinstance(route.get("cell_count"), int):
+        if route.get("unit_of_analysis") == "single_cell" and not isinstance(
+            route.get("cell_count"), int
+        ):
             report.errors.append("ready single-cell routes must declare cell_count.")
     elif report.route_status == "contract_locked_pending_audit":
         if not [str(item).strip() for item in blocking_issues]:
@@ -140,12 +142,10 @@ def validate_h4_spec(spec: dict[str, object]) -> H4SpecValidationReport:
     if track_status != "active" and not status_reason:
         errors.append("closed or archived H4 specs must declare status_reason.")
 
-    route_reports = [
-        _validate_route(route)
-        for route in dataset_routes
-        if isinstance(route, dict)
-    ]
-    default_route_count = sum(1 for route in dataset_routes if isinstance(route, dict) and route.get("default_route"))
+    route_reports = [_validate_route(route) for route in dataset_routes if isinstance(route, dict)]
+    default_route_count = sum(
+        1 for route in dataset_routes if isinstance(route, dict) and route.get("default_route")
+    )
     if default_route_count != 1:
         errors.append(f"Exactly one default_route is required, got {default_route_count}.")
 
@@ -157,7 +157,9 @@ def validate_h4_spec(spec: dict[str, object]) -> H4SpecValidationReport:
         )
 
     if track_status == "closed_after_kill_criterion":
-        warnings.append("H4 is closed after kill criterion; route metadata is archival until explicitly reopened.")
+        warnings.append(
+            "H4 is closed after kill criterion; route metadata is archival until explicitly reopened."
+        )
 
     return H4SpecValidationReport(
         candidate_id=candidate_id,

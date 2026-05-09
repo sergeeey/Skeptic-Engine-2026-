@@ -29,7 +29,9 @@ def _load_json_candidates(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in content.splitlines() if line.strip()]
 
 
-def load_cif(path: Path, candidate_id: str | None = None, source: str = "cif_upload") -> MaterialCandidate:
+def load_cif(
+    path: Path, candidate_id: str | None = None, source: str = "cif_upload"
+) -> MaterialCandidate:
     """Load a single CIF file as a MaterialCandidate."""
     text = path.read_text(encoding="utf-8")
     blob = _parse_cif_block(text)
@@ -37,7 +39,7 @@ def load_cif(path: Path, candidate_id: str | None = None, source: str = "cif_upl
     composition = "unknown"
     for line in text.splitlines():
         if line.strip().startswith("_chemical_formula_sum"):
-            composition = line.split(None, 1)[1].strip().strip('"\'')
+            composition = line.split(None, 1)[1].strip().strip("\"'")
             break
     cid = candidate_id or f"mrm_{uuid.uuid4().hex[:8]}"
     return MaterialCandidate(
@@ -49,7 +51,9 @@ def load_cif(path: Path, candidate_id: str | None = None, source: str = "cif_upl
     )
 
 
-def load_poscar(path: Path, candidate_id: str | None = None, source: str = "poscar_upload") -> MaterialCandidate:
+def load_poscar(
+    path: Path, candidate_id: str | None = None, source: str = "poscar_upload"
+) -> MaterialCandidate:
     """Load a single POSCAR file as a MaterialCandidate."""
     text = path.read_text(encoding="utf-8")
     blob = _parse_poscar_block(text)
@@ -76,7 +80,9 @@ def load_json_batch(path: Path, source: str = "json_batch") -> list[MaterialCand
             item["structure_blob"] = ""
         if "structure_format" not in item:
             item["structure_format"] = "json"
-        candidates.append(MaterialCandidate.from_dict({**item, "source": item.get("source", source)}))
+        candidates.append(
+            MaterialCandidate.from_dict({**item, "source": item.get("source", source)})
+        )
     return candidates
 
 

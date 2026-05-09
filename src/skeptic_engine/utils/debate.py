@@ -68,57 +68,67 @@ class Prosecutor:
         if "benford_mace" in features:
             mace = features["benford_mace"]
             if mace > 0.1:
-                args.append(Argument(
-                    claim="Significant deviation from Benford's Law",
-                    evidence=f"MACE={mace:.3f} > 0.1 threshold",
-                    weight=min(mace, 1.0),
-                    category="benford",
-                ))
+                args.append(
+                    Argument(
+                        claim="Significant deviation from Benford's Law",
+                        evidence=f"MACE={mace:.3f} > 0.1 threshold",
+                        weight=min(mace, 1.0),
+                        category="benford",
+                    )
+                )
 
         # P-Value Clustering
         if "pvalue_frac_below_05" in features:
             frac = features["pvalue_frac_below_05"]
             if frac > 0.3:
-                args.append(Argument(
-                    claim="Excessive clustering of p-values near significance",
-                    evidence=f"{frac:.1%} of p-values in [0.04, 0.05)",
-                    weight=frac,
-                    category="p_value",
-                ))
+                args.append(
+                    Argument(
+                        claim="Excessive clustering of p-values near significance",
+                        evidence=f"{frac:.1%} of p-values in [0.04, 0.05)",
+                        weight=frac,
+                        category="p_value",
+                    )
+                )
 
         # Temporal Drift
         if "temporal_drift_slope" in features:
             slope = features["temporal_drift_slope"]
             p_val = features.get("temporal_drift_p", 1.0)
             if abs(slope) > 0.01 and p_val < 0.01:
-                args.append(Argument(
-                    claim="Significant temporal drift in reporting patterns",
-                    evidence=f"Slope={slope:.4f}, p={p_val:.4f}",
-                    weight=1.0 - p_val,
-                    category="temporal",
-                ))
+                args.append(
+                    Argument(
+                        claim="Significant temporal drift in reporting patterns",
+                        evidence=f"Slope={slope:.4f}, p={p_val:.4f}",
+                        weight=1.0 - p_val,
+                        category="temporal",
+                    )
+                )
 
         # Cross-Modal Inconsistency
         if "cross_modal_corr" in features:
             corr = features["cross_modal_corr"]
             if corr < 0.2:
-                args.append(Argument(
-                    claim="Low consistency across data modalities",
-                    evidence=f"Correlation={corr:.3f} < 0.2",
-                    weight=1.0 - corr,
-                    category="cross_modal",
-                ))
+                args.append(
+                    Argument(
+                        claim="Low consistency across data modalities",
+                        evidence=f"Correlation={corr:.3f} < 0.2",
+                        weight=1.0 - corr,
+                        category="cross_modal",
+                    )
+                )
 
         # Calibrated Score
         if "calibrated_score" in features:
             score = features["calibrated_score"]
             if score > 0.8:
-                args.append(Argument(
-                    claim="High calibrated anomaly probability",
-                    evidence=f"Calibrated Score={score:.3f}",
-                    weight=score,
-                    category="calibration",
-                ))
+                args.append(
+                    Argument(
+                        claim="High calibrated anomaly probability",
+                        evidence=f"Calibrated Score={score:.3f}",
+                        weight=score,
+                        category="calibration",
+                    )
+                )
 
         return args
 
@@ -133,67 +143,79 @@ class Defense:
         # Sample Size
         n_samples = features.get("n_samples", 0)
         if n_samples > 1000:
-            args.append(Argument(
-                claim="Large sample size reduces false positive risk",
-                evidence=f"n={n_samples} observations",
-                weight=0.6,
-                category="sample_size",
-            ))
+            args.append(
+                Argument(
+                    claim="Large sample size reduces false positive risk",
+                    evidence=f"n={n_samples} observations",
+                    weight=0.6,
+                    category="sample_size",
+                )
+            )
 
         # Benford Compliance
         if "benford_mace" in features:
             mace = features["benford_mace"]
             if mace < 0.05:
-                args.append(Argument(
-                    claim="Digit distribution is consistent with expectations",
-                    evidence=f"MACE={mace:.3f} < 0.05",
-                    weight=1.0 - mace,
-                    category="benford",
-                ))
+                args.append(
+                    Argument(
+                        claim="Digit distribution is consistent with expectations",
+                        evidence=f"MACE={mace:.3f} < 0.05",
+                        weight=1.0 - mace,
+                        category="benford",
+                    )
+                )
 
         # P-Value Diversity
         if "pvalue_entropy" in features:
             entropy = features["pvalue_entropy"]
             if entropy > 2.0:
-                args.append(Argument(
-                    claim="Diverse p-value distribution suggests honest reporting",
-                    evidence=f"Entropy={entropy:.2f}",
-                    weight=min(entropy / 3.0, 1.0),
-                    category="p_value",
-                ))
+                args.append(
+                    Argument(
+                        claim="Diverse p-value distribution suggests honest reporting",
+                        evidence=f"Entropy={entropy:.2f}",
+                        weight=min(entropy / 3.0, 1.0),
+                        category="p_value",
+                    )
+                )
 
         # No Temporal Drift
         if "temporal_drift_p" in features:
             p_val = features["temporal_drift_p"]
             if p_val > 0.1:
-                args.append(Argument(
-                    claim="No significant trend over time",
-                    evidence=f"p={p_val:.3f} > 0.1",
-                    weight=0.7,
-                    category="temporal",
-                ))
+                args.append(
+                    Argument(
+                        claim="No significant trend over time",
+                        evidence=f"p={p_val:.3f} > 0.1",
+                        weight=0.7,
+                        category="temporal",
+                    )
+                )
 
         # High Cross-Modal Correlation
         if "cross_modal_corr" in features:
             corr = features["cross_modal_corr"]
             if corr > 0.5:
-                args.append(Argument(
-                    claim="Strong consistency across modalities",
-                    evidence=f"Correlation={corr:.3f} > 0.5",
-                    weight=corr,
-                    category="cross_modal",
-                ))
+                args.append(
+                    Argument(
+                        claim="Strong consistency across modalities",
+                        evidence=f"Correlation={corr:.3f} > 0.5",
+                        weight=corr,
+                        category="cross_modal",
+                    )
+                )
 
         # Calibrated Score
         if "calibrated_score" in features:
             score = features["calibrated_score"]
             if score < 0.2:
-                args.append(Argument(
-                    claim="Low calibrated anomaly probability",
-                    evidence=f"Calibrated Score={score:.3f}",
-                    weight=1.0 - score,
-                    category="calibration",
-                ))
+                args.append(
+                    Argument(
+                        claim="Low calibrated anomaly probability",
+                        evidence=f"Calibrated Score={score:.3f}",
+                        weight=1.0 - score,
+                        category="calibration",
+                    )
+                )
 
         return args
 

@@ -26,7 +26,9 @@ def cmd_ingest(args: list[str]) -> None:
     candidates = load_candidates(input_path)
     kept, report = normalize_candidates(candidates)
     print(f"Input: {input_path}")
-    print(f"Total: {report.total_input} | Kept: {report.kept} | Rejected: {report.rejected} | Deduped: {report.deduplicated}")
+    print(
+        f"Total: {report.total_input} | Kept: {report.kept} | Rejected: {report.rejected} | Deduped: {report.deduplicated}"
+    )
     if report.rejections:
         print("Rejections:")
         for r in report.rejections:

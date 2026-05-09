@@ -40,7 +40,13 @@ def _output_path(route: dict[str, object], project_root: Path) -> Path:
     rel_path = _normalize_cell(route.get("mapped_output"))
     if rel_path:
         return project_root / rel_path
-    return project_root / "data" / "benchmarks" / "h10_mapped" / f"{route.get('route_id', 'unknown')}.csv"
+    return (
+        project_root
+        / "data"
+        / "benchmarks"
+        / "h10_mapped"
+        / f"{route.get('route_id', 'unknown')}.csv"
+    )
 
 
 def _read_csv_rows(path: Path) -> tuple[list[dict[str, str]], list[str]]:
@@ -66,7 +72,13 @@ def _select_target_name(
     requested_target_name: str | None,
     blockers: list[str],
 ) -> tuple[str | None, list[str]]:
-    available_targets = sorted({_normalize_cell(row.get("target_name")) for row in label_rows if _normalize_cell(row.get("target_name"))})
+    available_targets = sorted(
+        {
+            _normalize_cell(row.get("target_name"))
+            for row in label_rows
+            if _normalize_cell(row.get("target_name"))
+        }
+    )
 
     if requested_target_name:
         if requested_target_name not in available_targets:
@@ -129,21 +141,21 @@ def build_h10_mapped_dataset(
     if label_rows and "target_value" not in label_columns:
         blockers.append("labels.csv must contain a target_value column.")
 
-    selected_target, available_targets = _select_target_name(route, label_rows, target_name, blockers)
+    selected_target, available_targets = _select_target_name(
+        route, label_rows, target_name, blockers
+    )
 
     structures_by_id = {
-        row["structure_id"]: row
-        for row in structure_rows
-        if row.get("structure_id")
+        row["structure_id"]: row for row in structure_rows if row.get("structure_id")
     }
 
     join_by_label_id = {
-        row["label_id"]: row
-        for row in join_rows
-        if row.get("label_id") and row.get("structure_id")
+        row["label_id"]: row for row in join_rows if row.get("label_id") and row.get("structure_id")
     }
     if join_rows and "label_id" not in join_columns:
-        warnings.append("join_keys.csv is present but does not include label_id; it cannot help with label joins.")
+        warnings.append(
+            "join_keys.csv is present but does not include label_id; it cannot help with label joins."
+        )
 
     mapped_rows: list[dict[str, str]] = []
     unresolved_labels = 0
@@ -185,8 +197,12 @@ def build_h10_mapped_dataset(
                     "target_units": _normalize_cell(label_row.get("target_units")),
                     "split": _normalize_cell(label_row.get("split")),
                     "doi": _normalize_cell(label_row.get("doi")),
-                    "ann_prediction_probability": _normalize_cell(label_row.get("ann_prediction_probability")),
-                    "ann_predicted_target_value": _normalize_cell(label_row.get("ann_predicted_target_value")),
+                    "ann_prediction_probability": _normalize_cell(
+                        label_row.get("ann_prediction_probability")
+                    ),
+                    "ann_predicted_target_value": _normalize_cell(
+                        label_row.get("ann_predicted_target_value")
+                    ),
                     "latent_space_entropy": _normalize_cell(label_row.get("latent_space_entropy")),
                     "join_method": join_method,
                     "structure_source_note": _normalize_cell(structure_row.get("source_note")),
@@ -195,15 +211,19 @@ def build_h10_mapped_dataset(
             )
 
     if unresolved_labels:
-        warnings.append(
-            f"{unresolved_labels} label rows could not be mapped to a structure_id."
-        )
+        warnings.append(f"{unresolved_labels} label rows could not be mapped to a structure_id.")
     if missing_structures:
         warnings.append(
             f"{missing_structures} mapped labels referenced structure_ids absent from structures.csv."
         )
 
-    distinct_target_values = sorted({_normalize_cell(row.get("target_value")) for row in mapped_rows if _normalize_cell(row.get("target_value"))})
+    distinct_target_values = sorted(
+        {
+            _normalize_cell(row.get("target_value"))
+            for row in mapped_rows
+            if _normalize_cell(row.get("target_value"))
+        }
+    )
     if mapped_rows and len(distinct_target_values) < 2:
         blockers.append("Mapped target contains fewer than two distinct target values.")
 
@@ -243,12 +263,10 @@ def build_h10_mapped_dataset(
         distinct_structures=len({row["structure_id"] for row in mapped_rows}),
         available_targets=available_targets,
         target_distribution=[
-            f"{target_value}={count}"
-            for target_value, count in sorted(distribution.items())
+            f"{target_value}={count}" for target_value, count in sorted(distribution.items())
         ],
         split_distribution=[
-            f"{split_name}={count}"
-            for split_name, count in sorted(split_distribution.items())
+            f"{split_name}={count}" for split_name, count in sorted(split_distribution.items())
         ],
         warnings=warnings,
         blockers=blockers,
