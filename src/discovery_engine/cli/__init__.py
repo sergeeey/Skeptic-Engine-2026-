@@ -43,7 +43,7 @@ def _run_legacy(command: str) -> None:
 # Root CLI Group
 # ============================================================
 @click.group(context_settings={"help_option_names": ["-h", "--help"]})
-@click.version_option(version="0.1.1", prog_name="discovery-engine")
+@click.version_option(version="0.2.0", prog_name="discovery-engine")
 def cli() -> None:
     """Discovery Engine — Interdisciplinary Hypothesis Search CLI.
 

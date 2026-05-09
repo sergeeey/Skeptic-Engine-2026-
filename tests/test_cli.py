@@ -69,13 +69,13 @@ class TestRootCLI:
         assert result.exit_code == 0
 
     def test_version_flag(self, runner: CliRunner) -> None:
-        """--version should show version 0.1.1."""
+        """--version should match package release (pyproject version)."""
         from discovery_engine.cli import cli
 
         result = runner.invoke(cli, ["--version"])
 
         assert result.exit_code == 0
-        assert "0.1.1" in result.output
+        assert "0.2.0" in result.output
         assert "discovery-engine" in result.output.lower()
 
     def test_version_short_flag(self, runner: CliRunner) -> None:

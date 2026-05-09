@@ -27,7 +27,7 @@ __all__ = [
 # Default user agent for all requests
 DEFAULT_USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-    "Skeptic-Engine/0.1.1 (+https://github.com/sergeeey/Skeptic-Engine-2026-)"
+    "Skeptic-Engine/0.2.0 (+https://github.com/sergeeey/Skeptic-Engine-2026-)"
 )
 
 # NCBI requires email for high-volume access

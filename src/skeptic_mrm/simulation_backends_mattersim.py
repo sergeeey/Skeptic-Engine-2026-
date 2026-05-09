@@ -8,12 +8,15 @@ Requires: pip install mattersim==1.1.1
 from __future__ import annotations
 
 import json
+import logging
 from pathlib import Path
 from typing import Any
 
 from skeptic_mrm.schemas.material_candidate import MaterialCandidate
 from skeptic_mrm.schemas.simulation_run import SimulationRun
 from skeptic_mrm.simulation_backends import ISimulationBackend
+
+logger = logging.getLogger(__name__)
 
 
 class MatterSimRealBackend(ISimulationBackend):
@@ -153,9 +156,13 @@ class MatterSimRealBackend(ISimulationBackend):
                     lattice = struct.lattice.matrix.tolist()
                     atoms = Atoms(symbols=symbols, scaled_positions=positions, cell=lattice, pbc=True)
                     return atoms
-        except:
-            pass
-        
+        except Exception as exc:
+            logger.warning(
+                "Materials Project fetch failed for %s; using fallback structure: %s",
+                mp_id,
+                exc,
+            )
+
         return self._fallback_structure(MaterialCandidate(
             candidate_id="fallback", source="mp", composition="Fe",
             structure_format="json", structure_blob="{}"

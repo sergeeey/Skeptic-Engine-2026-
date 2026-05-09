@@ -12,19 +12,19 @@
 
 11 experiments (H23–H33), 302 adversarial tests, CI/CD pipeline, CLI toolkit, and Materials Reliability Module (MRM).
 
-| ID | Experiment | Metric | Data / Domain |
-|----|-----------|--------|---------------|
-| H25 | Banking AE on proteomics/CNA | AUC 1.000 | CPTAC (Bradshaw 2021) |
-| H31 | Unified Anomaly Score | AUC 1.000 | Multi-modal fusion |
-| H24 | Benford forensics on scRNA-seq | AUC 0.978 | PBMC3k, Kang2018 |
-| H32 | Temporal P-Hacking detection | F1 1.000 | Simulated time series |
-| H23 | Behavioral p-hacking detection | AUC 0.729 | Reproducibility Project |
-| H33 | Cross-Modal Consistency | Sep 0.383 | Multi-omics integration |
-| H29 | Biological Syndromes | Validated | Multi-tissue patterns |
-| H30 | Retracted Paper Validation | Validated | Retraction dataset |
-| H27 | Clinical Trials Screening | Prototype | Trial registry data |
-| H28 | Paper Mills Detection | Prototype | Publication metadata |
-| MRM | Materials Reliability Module | v0.1 | Materials science |
+| ID | Experiment | Metric | Data / Domain | Scope / caveat |
+|----|-----------|--------|---------------|----------------|
+| H25 | Banking AE on proteomics/CNA | AUC 1.000 | CPTAC (Bradshaw 2021) | Within-dataset fusion; see REPORT for generalization |
+| H31 | Unified Anomaly Score | AUC 1.000 | Multi-modal fusion | Synthetic / controlled fusion benchmark |
+| H24 | Benford forensics on scRNA-seq | AUC 0.978 | PBMC3k, Kang2018 | See limitations: UMI vs Benford |
+| H32 | Temporal P-Hacking detection | F1 1.000 | Simulated time series | Simulation-defined labels |
+| H23 | Behavioral p-hacking detection | AUC 0.729 | Reproducibility Project | Real p-value corpus; scale-up ongoing |
+| H33 | Cross-Modal Consistency | Sep 0.383 | Multi-omics integration | Modest separation; interpret with care |
+| H29 | Biological Syndromes | Validated | Multi-tissue patterns | Scope per experiment report |
+| H30 | Retracted Paper Validation | Validated | Retraction dataset | Screening signal, not misconduct verdict |
+| H27 | Clinical Trials Screening | Prototype | Trial registry data | Early prototype |
+| H28 | Paper Mills Detection | Prototype | Publication metadata | Early prototype |
+| MRM | Materials Reliability Module | v0.1 | Materials science | Stub/fallback backends unless cited artifact |
 
 ## Quick Start
 
@@ -32,8 +32,11 @@
 # Install from source
 pip install .
 
-# Run all experiments
+# Run all experiments (includes H10 graph deps: networkx, pandas, torch, …)
 pip install ".[all]"
+
+# Discovery Engine + H10 MOF baselines only
+pip install ".[h10]"
 
 # Scan a count matrix for statistical artifacts
 skeptic-toolkit matrix.mtx
@@ -88,4 +91,5 @@ QWEN_METHODOLOGY.md           # Adversarial testing methodology
 | [QWEN_METHODOLOGY.md](QWEN_METHODOLOGY.md) | Adversarial testing methodology and design principles |
 | [docs/research-contract.md](docs/research-contract.md) | Scientific integrity boundaries |
 | [docs/project-brief.md](docs/project-brief.md) | Two-branch strategy and success criteria |
-| [AGENTS.md](AGENTS.md) | Agent-based interdisciplinary hypothesis search |
+| [AGENTS.md](AGENTS.md) | Cursor/agent operating contract for this repo (workflow, safety boundaries) |
+| [MANUSCRIPT_CITATION_MAP.md](MANUSCRIPT_CITATION_MAP.md) | Draft insertions and external citations for manuscript (verify rights before publish) |
