@@ -46,6 +46,10 @@ skeptic-toolkit candidate.mtx --reference reference.mtx
 
 # Custom anomaly threshold
 skeptic-toolkit matrix.mtx --threshold 0.6
+
+# Verify file integrity before analysis (new in v0.2.0)
+skeptic-toolkit verify paper.pdf --md5 5478a2662af82dbf6b8473391e18d12d
+skeptic-toolkit verify dataset.csv --zenodo-doi 10.5281/zenodo.19238786
 ```
 
 ```powershell
