@@ -1,0 +1,53 @@
+id: refactor-04-hash-streaming
+type: refactor
+difficulty: medium
+description: "Optimize compute_hash() for large files (>1GB) using memory-efficient streaming"
+
+prompt: |
+  Performance issue: compute_hash() loads entire file into memory via read() in chunks,
+  but for files >1GB this can cause OOM errors on low-memory systems.
+
+  Refactor to use truly streaming approach with configurable chunk size.
+  Benchmark shows current implementation uses 1.2GB RAM for 1GB file.
+  Target: <100MB RAM for any file size.
+
+target_files:
+  - src/skeptic_toolkit/integrity.py
+
+acceptance_criteria:
+  - compute_hash() uses constant memory regardless of file size
+  - Benchmark: hash 1GB file in <500MB RAM
+  - Configurable chunk_size parameter (default 65536 bytes)
+  - No change to function signature (chunk_size is optional)
+  - Tests pass: pytest tests/test_integrity.py -v
+  - Add performance test: test_hash_large_file_memory()
+
+constraints:
+  - Must remain compatible with existing callers
+  - Do not break existing tests
+  - chunk_size must be power of 2 (8192, 16384, 32768, 65536)
+  - No external dependencies beyond stdlib
+
+scoring:
+  pass_tests: 30
+  memory_efficiency: 30
+  no_regression: 20
+  performance: 10
+  lint_clean: 10
+
+expected_solution: |
+  Current (line 40-42):
+    for chunk in iter(lambda: f.read(8192), b""):
+        hasher.update(chunk)
+
+  Already correct! But add chunk_size parameter:
+  def compute_hash(file_path, algorithm="sha256", chunk_size=65536):
+      ...
+      for chunk in iter(lambda: f.read(chunk_size), b""):
+          hasher.update(chunk)
+
+benchmark:
+  file_size: 1GB
+  current_memory: 1.2GB
+  target_memory: <100MB
+  speedup: "none expected (streaming already efficient)"

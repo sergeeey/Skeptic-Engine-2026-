@@ -1,0 +1,54 @@
+id: test-05-zenodo-api-error
+type: test
+difficulty: easy
+description: "Add test coverage for Zenodo API error handling in fetch_zenodo_checksums()"
+
+prompt: |
+  Test coverage gap: fetch_zenodo_checksums() has no tests for API failures:
+    - Network timeout
+    - 404 Not Found (invalid DOI)
+    - 500 Server Error
+    - Malformed JSON response
+
+  Write comprehensive error handling tests using pytest and mocking.
+
+target_files:
+  - tests/test_integrity.py (create if doesn't exist)
+
+acceptance_criteria:
+  - Test: network timeout raises requests.Timeout
+  - Test: 404 raises ValueError with clear message
+  - Test: 500 raises requests.HTTPError
+  - Test: malformed JSON raises JSONDecodeError
+  - All tests pass: pytest tests/test_integrity.py::test_fetch_zenodo_* -v
+  - Use pytest.raises() for exception testing
+  - Use unittest.mock or responses library for HTTP mocking
+  - Coverage >80% for fetch_zenodo_checksums()
+
+constraints:
+  - Do not modify src/skeptic_toolkit/integrity.py
+  - Use pytest conventions (test_*.py, test_* functions)
+  - Mock external API calls (do not hit real Zenodo API)
+  - Tests must be deterministic (no flakiness)
+
+scoring:
+  pass_tests: 40
+  coverage: 30
+  test_quality: 20
+  lint_clean: 10
+
+expected_tests: |
+  - test_fetch_zenodo_checksums_timeout()
+  - test_fetch_zenodo_checksums_not_found()
+  - test_fetch_zenodo_checksums_server_error()
+  - test_fetch_zenodo_checksums_malformed_json()
+  - test_fetch_zenodo_checksums_invalid_doi_format()
+
+example_test: |
+  def test_fetch_zenodo_checksums_not_found():
+      with patch('requests.get') as mock_get:
+          mock_get.return_value.status_code = 404
+          mock_get.return_value.raise_for_status.side_effect = requests.HTTPError("404")
+
+          with pytest.raises(requests.HTTPError):
+              fetch_zenodo_checksums("10.5281/zenodo.999999999")
