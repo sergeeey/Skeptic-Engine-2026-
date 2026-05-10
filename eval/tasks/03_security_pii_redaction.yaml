@@ -1,0 +1,54 @@
+id: security-03-pii-redaction
+type: security
+difficulty: hard
+description: "Detect and prevent accidental logging of PII in integrity.py error messages"
+
+prompt: |
+  Security audit found that verify_file_integrity() may log full file paths in error messages,
+  potentially exposing PII if filename contains sensitive data (e.g., "patient_12345_results.csv").
+
+  Task: Redact sensitive parts of file paths in error messages while keeping them debuggable.
+
+  Examples:
+    - "/home/user/data/patient_12345.csv" → "/home/user/data/patient_*****.csv"
+    - "C:\Users\john.doe\secrets.txt" → "C:\Users\***\secrets.txt"
+    - "public_data.csv" → "public_data.csv" (no PII, no redaction)
+
+target_files:
+  - src/skeptic_toolkit/integrity.py
+
+acceptance_criteria:
+  - File paths with numeric IDs (e.g., patient_12345) are redacted
+  - File paths with usernames in path are redacted
+  - Generic paths (e.g., /tmp/test.csv) are not redacted
+  - Redaction preserves enough context for debugging
+  - No false positives on legitimate filenames
+  - Tests pass: pytest tests/test_integrity.py -v
+  - Add at least 3 test cases for redaction logic
+
+constraints:
+  - Do not break existing API
+  - Redaction must be automatic (no manual opt-in)
+  - Use regex for pattern detection
+  - Keep performance impact <5ms per call
+  - No external dependencies beyond stdlib
+
+scoring:
+  pass_tests: 30
+  no_false_positives: 25
+  security_effectiveness: 25
+  test_coverage: 10
+  lint_clean: 10
+
+expected_solution: |
+  Add _redact_path(path: str) -> str helper function.
+  Apply to all error messages in verify_file_integrity().
+  Patterns to redact:
+    - \d{4,} (4+ consecutive digits) → *****
+    - /Users/[^/]+ → /Users/***
+    - C:\Users\[^\\]+ → C:\Users\***
+
+dangerous_patterns:
+  - Do NOT use global search-replace (may break valid paths)
+  - Do NOT log raw paths before redaction
+  - Do NOT assume Windows-only or Unix-only paths

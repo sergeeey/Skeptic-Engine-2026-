@@ -1,0 +1,36 @@
+id: bugfix-01-hash-lowercase
+type: bugfix
+difficulty: easy
+description: "Fix case-insensitive hash comparison bug in integrity.py"
+
+prompt: |
+  Bug report: verify_file_integrity() fails when user provides uppercase MD5 hash
+  but file has lowercase hash. Fix to make comparison case-insensitive.
+
+  Expected: verify_file_integrity(Path("test.pdf"), expected_md5="5478A266...") should pass
+  Actual: Returns {"verified": False, "mismatches": [...]}
+
+target_files:
+  - src/skeptic_toolkit/integrity.py
+
+acceptance_criteria:
+  - Hash comparison is case-insensitive
+  - Both uppercase and lowercase hashes pass verification
+  - No breaking changes to existing API
+  - Tests pass: pytest tests/test_integrity.py -v
+
+constraints:
+  - Do not change function signature
+  - Fix must be <= 2 lines of code
+  - No new dependencies
+
+scoring:
+  pass_tests: 40
+  no_regression: 30
+  minimal_diff: 20
+  lint_clean: 10
+
+expected_solution: |
+  Change line 87-92 to use .lower() on both sides:
+  if expected_md5 and actual_md5.lower() != expected_md5.lower():
+  if expected_sha256 and actual_sha256.lower() != expected_sha256.lower():
