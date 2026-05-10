@@ -142,7 +142,7 @@ def score_task(task: dict, test_result: dict, lint_result: dict, diff: str) -> d
     }
 
 
-def run_task(task_path: Path, model: str | None = None) -> dict[str, Any]:
+def run_task(task_path: Path, model: str | None = None, auto: bool = False) -> dict[str, Any]:
     """Execute single task and return results."""
     task = load_task(task_path)
     print(f"\n{'='*60}")
@@ -160,8 +160,18 @@ def run_task(task_path: Path, model: str | None = None) -> dict[str, Any]:
             print(f"\n[LLM] Model: {model}")
             print(f"[LLM] Prompt: {task['prompt'][:100]}...")
             print("[LLM] Response: (not implemented — manual mode)")
-            print("\n⚠️  Manual mode: Apply changes manually in worktree, then press Enter")
-            input("Press Enter when ready to evaluate...")
+
+            # Check if auto mode (skip manual intervention)
+            if not auto:
+                print("\n⚠️  Manual mode: Apply changes manually in worktree, then press Enter")
+                try:
+                    input("Press Enter when ready to evaluate...")
+                except EOFError:
+                    print(
+                        "\n⚠️  EOF detected: running in non-interactive mode, skipping manual step"
+                    )
+            else:
+                print("\n⚠️  Auto mode: skipping manual changes, evaluating as-is")
 
         # Run tests
         print("\n[EVAL] Running tests...")
@@ -224,6 +234,11 @@ def main() -> None:
         default=Path("eval/results/latest.json"),
         help="Output file for results",
     )
+    parser.add_argument(
+        "--auto",
+        action="store_true",
+        help="Auto mode: skip manual intervention, evaluate code as-is",
+    )
 
     args = parser.parse_args()
 
@@ -250,7 +265,7 @@ def main() -> None:
     results = []
     for task_file in task_files:
         try:
-            result = run_task(task_file, model)
+            result = run_task(task_file, model, auto=args.auto)
             results.append(result)
         except Exception as e:
             print(f"❌ Task {task_file} failed: {e}")
