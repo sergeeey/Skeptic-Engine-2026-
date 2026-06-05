@@ -1,0 +1,10 @@
+{
+  "RandomForest": {
+    "auc_roc": 0.5855886882251264,
+    "average_precision": 0.00787903841094268
+  },
+  "LogisticRegression": {
+    "auc_roc": 0.4932139728097874,
+    "average_precision": 0.001803726998061103
+  }
+}
