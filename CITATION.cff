@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use Skeptic Engine in your research, please cite it as below."
+authors:
+  - family-names: Boiko
+    given-names: Sergey V.
+    email: sergeikuch80@gmail.com
+    orcid: https://orcid.org/0000-0000-0000-0000
+title: "Skeptic Engine: Statistical Artifact Detection for Scientific Data Integrity"
+version: 0.2.0
+doi: 10.5281/zenodo.19238786
+date-released: 2026-05-10
+url: "https://github.com/sergeeey/Skeptic-Engine-2026-"
+repository-code: "https://github.com/sergeeey/Skeptic-Engine-2026-"
+license: Apache-2.0
+keywords:
+  - data integrity
+  - scientific reproducibility
+  - anomaly detection
+  - fraud detection
+  - genomics
+  - proteomics
+  - adversarial testing
+  - benford law
+  - autoencoder
+abstract: >
+  Skeptic Engine is an adversarial testing framework that transfers
+  anomaly detection methods from finance, clinical trials, and information
+  security to screen scientific datasets for statistical artifacts and
+  structural inconsistencies. Validated on 11 experiments with real-world
+  fraud detection (H25 AUC 0.948 on 284K transactions) and synthetic
+  fabrication scenarios across genomics and proteomics domains.
