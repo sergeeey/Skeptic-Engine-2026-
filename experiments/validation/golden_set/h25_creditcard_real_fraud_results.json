@@ -1,0 +1,6 @@
+{
+  "Autoencoder": {
+    "auc_roc": 0.9482009179588171,
+    "average_precision": 0.1682105857287474
+  }
+}

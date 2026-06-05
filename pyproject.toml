@@ -91,6 +91,8 @@ select = [
 ignore = [
     "E501",  # line length (handled by formatter)
     "B008",  # do not perform function calls in argument defaults (common in FastAPI)
+    "N803",  # argument name should be lowercase (ML convention: X, y)
+    "N806",  # variable name should be lowercase (ML convention: X_train, X_test)
 ]
 
 [tool.ruff.lint.per-file-ignores]

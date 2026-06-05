@@ -35,6 +35,12 @@ _external/
 experiments/h26_geo_screening/data/
 experiments/h30_retracted_validation/data/GSE160269/*.gz
 experiments/mrm_real_data/data/*.gz
+experiments/validation/golden_set/creditcard_fraud_dataset.csv
+experiments/validation/golden_set/*.log
+
+# Temporary / build artifacts
+tmp/
+eval/results/
 
 # Artifacts / outputs
 .coverage
