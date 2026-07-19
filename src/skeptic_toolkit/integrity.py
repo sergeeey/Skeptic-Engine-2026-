@@ -46,8 +46,8 @@ def compute_hash(file_path: Path, algorithm: Literal["md5", "sha256"] = "sha256"
 
 def verify_file_integrity(
     file_path: Path,
-    expected_md5: Optional[str] = None,
-    expected_sha256: Optional[str] = None,
+    expected_md5: str | None = None,
+    expected_sha256: str | None = None,
 ) -> dict[str, str | bool | list[str]]:
     """Verify file integrity against expected checksums.
 
@@ -141,7 +141,7 @@ def fetch_zenodo_checksums(doi: str) -> dict[str, str]:
     return checksums
 
 
-def verify_against_zenodo(file_path: Path, doi: str, filename: Optional[str] = None) -> dict:
+def verify_against_zenodo(file_path: Path, doi: str, filename: str | None = None) -> dict:
     """Verify file against Zenodo canonical version.
 
     Args:
