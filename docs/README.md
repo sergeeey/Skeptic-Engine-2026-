@@ -49,6 +49,9 @@ Experiment results and analysis are in `experiments/` directory, not in docs.
 - `verification/` — candidate-specific review and prior-art notes
 - `verification/skeptic-latest.md` — latest automated prior-art pressure test
 - `verification/top5-skeptic-latest.md` — top-5 family skeptic pass
+- `case-study-riemann-hypothesis.md` — cross-domain case study: context-blind adversarial
+  review catching circularity in a math proof (not a statistical detector; no AUC), incl.
+  cross-model (Codex) confirmation of the 3 critical catches
 
 ### Other
 
