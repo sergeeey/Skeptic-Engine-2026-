@@ -23,9 +23,9 @@
 
 | ID | Experiment | Metric | Data / Domain | Scope / caveat |
 |----|-----------|--------|---------------|----------------|
-| H25 | Banking AE on proteomics/CNA | AUC 1.000 | CPTAC (Bradshaw 2021) | Within-dataset fusion; see REPORT for generalization |
+| H25 | Banking AE on proteomics/CNA | AUC 1.000 `[synthetic]` | CPTAC (Bradshaw 2021), simulated fabrication | Within-dataset only; cross-omics transfer fails (mean AUC 0.33). On real credit-card fraud (different domain) ⭐: AUC 0.948, average precision 0.17 |
 | H31 | Unified Anomaly Score | AUC 1.000 | Multi-modal fusion | Synthetic / controlled fusion benchmark |
-| H24 | Benford forensics on scRNA-seq | AUC 0.978 | PBMC3k, Kang2018 | See limitations: UMI vs Benford |
+| H24 | Benford forensics on scRNA-seq | AUC 0.978 `[synthetic]` | PBMC3k, Kang2018, simulated fabrication | On real credit-card fraud ⭐: AUC 0.586 (random forest), 0.493 (logistic regression), i.e. fails; see limitations |
 | H32 | Temporal P-Hacking detection | F1 1.000 | Simulated time series | Simulation-defined labels |
 | H23 | Behavioral p-hacking detection | AUC 0.729 | Reproducibility Project | Real p-value corpus; scale-up ongoing |
 | H33 | Cross-Modal Consistency | Sep 0.383 | Multi-omics integration | Modest separation; interpret with care |
@@ -34,6 +34,8 @@
 | H27 | Clinical Trials Screening | Prototype | Trial registry data | Early prototype |
 | H28 | Paper Mills Detection | Prototype | Publication metadata | Early prototype |
 | MRM | Materials Reliability Module | v0.1 | Materials science | Stub/fallback backends unless cited artifact |
+
+**How to read the AUC values.** The headline numbers (1.000, 0.978) come from simulated fabrication of scientific data and are in-sample benchmarks of the method, not evidence of real-world detection. The ⭐ numbers come from the golden-set test on real fraud labels (MLG-ULB credit-card transactions, 284,807 rows, 492 fraud). That test checks whether the methods transfer to real fraud in a financial domain; it does not show detection of fabricated scientific data. Details: [GOLDEN_SET_REPORT.md](experiments/validation/golden_set/GOLDEN_SET_REPORT.md).
 
 ## What This Repository Does NOT Do
 
@@ -97,10 +99,10 @@ QWEN_METHODOLOGY.md           # Adversarial testing methodology
 
 ## Known Limitations
 
-- ✅ **Golden-set validation (NEW):** H25 Autoencoder validated on 284,807 real credit card fraud transactions (AUC 0.948) — see `experiments/validation/golden_set/GOLDEN_SET_REPORT.md`
-- ⚠️ **H24 Benford limitation:** Effective on synthetic artifacts (AUC 0.978), fails on real behavioral fraud (AUC 0.586) — use only for data generation audits
+- ✅ **Golden-set test (credit-card fraud, not scientific data):** the H25 autoencoder reaches AUC 0.948 on 284,807 real transactions, but average precision is only 0.17 (492 fraud cases, 0.17% prevalence), so many flagged transactions are false positives. See `experiments/validation/golden_set/GOLDEN_SET_REPORT.md`
+- ⚠️ **H24 Benford limitation:** effective on synthetic artifacts (AUC 0.978), fails on real behavioral fraud (AUC 0.586 random forest, 0.493 logistic regression) — use only for data generation audits
 - **Other experiments:** Validated on synthetic fabrication or expert-labeled data, not confirmed deliberate fraud
-- Cross-dataset generalization degrades for sophisticated artifact types (documented honest negative)
+- Cross-dataset generalization degrades for sophisticated artifact types (documented honest negative); cross-omics transfer (CNA to proteomics) fails with mean AUC 0.33, below random
 - Small sample sizes in some experiments (n=59–99); confidence intervals are wide
 - scRNA-seq UMI counts do **not** follow Benford distribution — compliance is itself an anomaly signal
 - Results indicate anomalous patterns requiring interpretation, not evidence of misconduct
